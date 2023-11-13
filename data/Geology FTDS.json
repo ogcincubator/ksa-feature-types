@@ -1,0 +1,365 @@
+[
+  {
+    "id": "Aquiclude",
+    "name": "Aquiclude",
+    "definition": "An impermeable body of rock or stratum of sediment that acts as a barrier to the flow of groundwater, which, although porous and capable of absorbing water slowly, will not transmit water fast enough to furnish an appreciable supply for a well or spring. Aquicludes are characterized by very low values of \"leakage\" (the ratio of vertical Hydraulic Conductivity to thickness), so that they transmit only minor inter-aquifer flow and also have very low rates of yield from compressible storage. Therefore, they constitute boundaries of aquifer flow systems.",
+    "superclasses": [
+      "HydrogeologicalUnit"
+    ]
+  },
+  {
+    "id": "Aquifer",
+    "name": "Aquifer",
+    "definition": "A wet underground layer of water-bearing permeable rock or unconsolidated materials (gravel, sand, silt, or clay) from which groundwater can be usefully extracted using a water well. Note: An underground geological formation able to store and yield water.",
+    "superclasses": [
+      "HydrogeologicalUnit"
+    ]
+  },
+  {
+    "id": "AquiferSystem",
+    "name": "Aquifer System",
+    "definition": "A collection of aquifers and aquitards, which together constitute the environment of groundwater - \"communicating vessels\" - that are filled, or can be filled, with water. Attributes of Aquifer System and its components determine the feasibility of water collection, its movement, as well as the impact on its chemical state. The Aquifer System components and their attributes (including geometry) are relatively stable over time except in special cases.",
+    "superclasses": [
+      "HydrogeologicalUnit"
+    ]
+  },
+  {
+    "id": "Aquitard",
+    "name": "Aquitard",
+    "definition": "A saturated, but poorly permeable bed that impedes groundwater movement. It does not yield water freely to wells, but may transmit appreciable water to or from adjacent aquifers and, where sufficiently thick, may constitute an important ground-water storage unit. Aquitards are characterized by values of leakance that may range from relatively low to relatively high. A really extensive aquitard of relatively low leakance may function regionally as boundaries of aquiferflow systems.",
+    "superclasses": [
+      "HydrogeologicalUnit"
+    ]
+  },
+  {
+    "id": "GroundWaterBody",
+    "name": "Ground Water Body",
+    "definition": "A distinct volume of groundwater within an aquifer or system of aquifers, which is hydraulically isolated from nearby groundwater bodies. They should be hydraulically continuous entities, and must be defined on the basis of flow or abstraction, and are inextricably linked to surface water bodies",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "HydrogeologicalObject",
+    "name": "Hydrogeological Object",
+    "definition": "An abstract class for man-made facilities or natural features that have an interaction with the hydrogeological system. Hydrogeological objects may be natural (e.g. spring) or man-made (e.g. wells). The vast majority of hydrogeological objects are man-made.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "HydrogeologicalObjectManMade",
+    "name": "Hydrogeological Object Man Made",
+    "definition": "A man-made hydrogeological object. Examples of man-made hydrogeological objects include well, groundwater intake, groundwater monitoring station and monitoring well.",
+    "superclasses": [
+      "HydrogeologicalObject"
+    ]
+  },
+  {
+    "id": "HydrogeologicalObjectNatural",
+    "name": "Hydrogeological Object Natural",
+    "definition": "HydrogeologicalObject which was created by natural processes. Example of natural hydrogeological objects include a source, vanishing point and geyser.",
+    "superclasses": [
+      "HydrogeologicalObject"
+    ]
+  },
+  {
+    "id": "HydrogeologicalUnit",
+    "name": "Hydrogeological Unit",
+    "definition": "A part of the lithosphere with distinctive parameters for water storage and conduction.",
+    "superclasses": [
+      "GeologicalUnit"
+    ]
+  },
+  {
+    "id": "WaterWell",
+    "name": "Water Well",
+    "definition": "A well influencing the groundwater resources of the aquifer. The most common examples of Water Well are: extracting, artificial recharging, or dewatering wells. By extracting, recharging or dewatering influences and Active Wells changes the state of groundwater resources.",
+    "superclasses": [
+      "HydrogeologicalObjectManMade"
+    ]
+  },
+  {
+    "id": "Campaign",
+    "name": "Campaign",
+    "definition": "Geophysical activity extending over a limited time range and limited area for producing similar geophysical measurements, processing results or models. Campaigns can be considered as parents of geophysical measurements or models. Children may refer to parent campaigns through the largerWork.",
+    "superclasses": [
+      "GeophObjectSet"
+    ]
+  },
+  {
+    "id": "GeophMeasurement",
+    "name": "Geoph Measurement",
+    "definition": "Generic Feature Type for geophysical measurements. Geophysical measurements collect data outside or on the boundary of the observed spatial domain",
+    "superclasses": [
+      "GeophObject"
+    ]
+  },
+  {
+    "id": "GeophObject",
+    "name": "Geoph Object",
+    "definition": "A generic class for geophysical objects. GeophObject models single geophysical entities that are used for spatial sampling either by means of data acquisition or data processing.",
+    "superclasses": []
+  },
+  {
+    "id": "GeophObjectSet",
+    "name": "Geoph Object Set",
+    "definition": "Generic class for collections of geophysical objects grouped by some common property. p.e: created in the same measuring campaign. GeophObjectSets are used for spatial sampling either by means of data acquisition or data processing. The produced result of a geophObjectSet is always collective, e.g. a map constructed from the results of the individual member objects.",
+    "superclasses": []
+  },
+  {
+    "id": "GeophProfile",
+    "name": "Geoph Profile",
+    "definition": "Geophysical measurement spatially referenced to a line which is used to collect data along the line. Examples include 2D seismic line (field measurement), borehole logging, airborne geophysical flight line.",
+    "superclasses": [
+      "GeophMeasurement"
+    ]
+  },
+  {
+    "id": "GeophStation",
+    "name": "Geoph Station",
+    "definition": "Geophysical measurement spatially referenced to a single point location. The source-sensor setup may be elongated or two dimensional, but the collected data is spatially referenced to a single point, for example, Gravity station, Magnetic station.",
+    "superclasses": [
+      "GeophMeasurement"
+    ]
+  },
+  {
+    "id": "GeophSwath",
+    "name": "Geoph Swath",
+    "definition": "Geophysical measurement spatially referenced to a surface used to collect data over a surface, for example, a 3D seismic swath.",
+    "superclasses": [
+      "GeophMeasurement"
+    ]
+  },
+  {
+    "id": "AbstractProfileElementType",
+    "name": "Abstract Profile Element Type",
+    "definition": "An abstract Feature Type grouping soil layers and / or horizons for functional/operational aims. A profile element is the general term for both horizons and layers.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "SoilBody",
+    "name": "Soil Body",
+    "definition": "Part of the soil cover that is delineated and homogeneous with regard to certain soil properties and/or spatial patterns. The soils present in the soil body are characterized by one or more derived soil profiles that are found together in the area specified by the geometry attribute of the SoilBody. If several derived soil profiles are used to describe the soil body, the spatial distribution of the soil they describe within the soil body is not defined, but their presence is indicated by a range percentage of area. The underlying reason behind the fact of not delineating the different soils within a soil body is the target scale of the map or spatial dataset. This means that geographical accuracy and preciseness of soil characterization depend on and vary with the target scale, i.e. the soil body can be delineated differently among scales. The concept of soil body is a correlate of the concept soil mapping unit, and the soils of a soilbody might form e.g. a soil association, a soil complex, etc.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "SoilHorizon",
+    "name": "Soil Horizon",
+    "definition": "Domain of a soil with a certain vertical extension, more or less parallel to the surface and homogeneous for most morphological and analytical characteristics, developed in a parent material layer through pedogenic processes or made up of in-situ sedimented organic residues of up-growing plants (peat). Horizons may be part of a layer. Modified: ISO/WD 28258, modified",
+    "superclasses": [
+      "AbstractProfileElementType"
+    ]
+  },
+  {
+    "id": "SoilLayer",
+    "name": "Soil Layer",
+    "definition": "Domain of a soil with a certain vertical extension developed through non-pedogenic processes, displaying a change in structure and/or composition to possibly over- or underlying adjacent domains, or a grouping of soil horizons or other sub-domains with a special purpose. Different kinds of layer concepts are covered by this definition. Example 1: Geogenic layers: These are domains, resulting from e.g. sedimentation (as non-pedogenic) processes, that display an unconformity to possibly over- or underlying adjacent domains. Example 2: Topsoil and Subsoil: These can be domains that group different soil horizon types (e.g. A vs B horizons), or a special case of fixed depths with only two depth ranges (e.g. 0-15 cm: topsoil and, 15-75 cm: subsoil). Example 3 Depth intervals: They are often used in soil monitoring, sampling of contaminated sites and in modeling and include: (i) depth increments (also called fixed depths) that are often used for sampling, e.g. 0-30cm, 30-60cm, and so on, (ii) a single depth range in which a soil sample (specimen) is taken and for which the analytical result is valid, and (iii) soil slicing, that is, profile segmentation according to a specified vector, for instance, either regularly spaced intervals (1cm), or a user-defined vector of segment boundaries (i.e. 0-10, 10-25, 25-50, 50-100). Slicing is used in modeling to generate continuous depth functions for soil properties. Example 4: In the framework of soils deeply modified by human activity, artificial layers may be due to different kinds of deposits (concrete, bricks). Modified from WD ISO28258",
+    "superclasses": [
+      "AbstractProfileElementType"
+    ]
+  },
+  {
+    "id": "SoilPlot",
+    "name": "Soil Plot",
+    "definition": "A spot where a specific soil investigation is carried out. For observed soil profiles, a spot location is defined which is the place on which the observation is made. The profile is an observation made on the plot. All types of plots only provide locality, but no soil information itself. For example, a borehole is the location where the profile information is obtained from. Source: GS Soil",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "SoilProfile",
+    "name": "Soil Profile",
+    "definition": "Description of the soil that is characterized by a vertical succession of profile elements. The soil profile is abstracted from observations in a trial pit or a boring, or derived from expert knowledge using other soil profiles.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "SoilSite",
+    "name": "Soil Site",
+    "definition": "Area within a larger survey, study or monitored area, where a specific soil investigation is carried out. A soil site describes the following; a - the surroundings of the plot and/or b - the larger piece of land that is directly linked to and described by all soil investigations on its one or more spots (SoilPlots). It thus provides the object to which soil data of different kind (or the same kind, but at different points in time, e.g. in soil monitoring) obtained on different plots is related as if it would have been collected at the very same place. This allows for; 1 - combination of data that cannot be obtained on the same place, for example, a soil pit and investigations on earthworm abundance cannot be done in the same place, but possibly some meters apart from each other. Nonetheless shall the results of both investigations be combined to inform about the soil state., or 2 - comparison of soil condition after some time has elapsed, for example, organic carbon stock has been investigated using data from two monitoring periods that had to be conducted on spatially slightly separated places because the sampling is destructive. Nonetheless are the results of both periods regarded as giving an idea how organic carbon stock has changed over the years at the same place. The site is also the object to state the date and time information on validity, etc. The soil site might have delineation, but can be located with a center or reference point location only. Delineated soil sites - possibly in the form of cadastral parcels - are especially used in the inventory of contaminated areas. A Soil Plot can be linked to one specific site only, but there may be several plots in one site. Modified from : GS Soil",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "AnthropogenicGeomorphologicalFeature",
+    "name": "Anthropogenic Geomorphological Feature",
+    "definition": "An anthropogenic geomorphological feature is a geomorphological feature (i.e., landform) which has been created by human activity. For example, a dredged channel, midden, open pit or reclaimed land.",
+    "superclasses": [
+      "GeomorphologicalFeature"
+    ]
+  },
+  {
+    "id": "Borehole",
+    "name": "Borehole",
+    "definition": "A borehole is the generalized term for any narrow shaft drilled in the ground",
+    "superclasses": []
+  },
+  {
+    "id": "Commodity",
+    "name": "Commodity",
+    "definition": "The material of economic interest in the EarthResource. The value should be given as a percentage.",
+    "superclasses": []
+  },
+  {
+    "id": "EarthResource",
+    "name": "Earth Resource",
+    "definition": "The kinds of observable or inferred phenomena required to classify economic and non-economic earth resources. EarthResource is generalized from GeoSciML GeologicFeature.",
+    "superclasses": [
+      "GeologicalFeature"
+    ]
+  },
+  {
+    "id": "ExplorationActivity",
+    "name": "Exploration Activity",
+    "definition": "A period of exploration activity.",
+    "superclasses": []
+  },
+  {
+    "id": "Fold",
+    "name": "Fold",
+    "definition": "A fold is formed by one or more systematically curved layers, surfaces, or lines in a rock body. A fold denotes a structure formed by the deformation of a geological structure, such as a contact which the original undeformed geometry is presumed, to form a structure that may be described by the translation of an abstract line (the fold axis) parallel to itself along some curvilinear path (the fold profile). Folds have a hinge zone (zone of maximum curvature along the surface) and limbs (parts of the deformed surface not in the hinge zone). Folds are described by an axial surface, hinge line, profile geometry, the solid angle between the limbs, and the relationships between adjacent folded surfaces if the folded structure is a Layering fabric.",
+    "superclasses": [
+      "GeologicalStructure"
+    ]
+  },
+  {
+    "id": "GeologicalCollection",
+    "name": "Geological Collection",
+    "definition": "Geological objects are commonly grouped into collections such as geological maps, thematic maps, or the required input to a geological model.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "GeologicalEvent",
+    "name": "Geological Event",
+    "definition": "A GeologicalEvent is an identifiable event during which one or more geological processes act to modify geological entities. It may have a specified geologic age (numeric age or GeochologicEraTerm) and may have specified environments and processes. An example might be a cratonic uplift event during which erosion, sedimentation, and volcanism all take place.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "GeologicalFeature",
+    "name": "Geological Feature",
+    "definition": "The abstract GeologicalFeature class represents a conceptual feature that is hypothesized to exist coherently in the world. It corresponds with a \"legend item\" from a traditional geologic map and its instance acts as the \"description package\". The description package is classified according to its intended purpose as a typicalNorm, definingNorm or instance. GeologicalFeature can be used outside the context of a map (it can lack a MappedFeature), for example when describing typical norms (describing expected property from a feature) or defining norms (describing properties required from a feature to be classifying in a group, such as given geologic unit). A GeologicalFeature appearing on a map is considered as an instance. .",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "GeologicalStructure",
+    "name": "Geological Structure",
+    "definition": "A geological structure is a configuration of matter in the Earth based on describable inhomogeneity, pattern, or fracture in an earth material. The identity of a GeologicalStructure is independent of the material that is the substrate for the structure. The general GeologicalFeatureRelation (available in the Extension package) is used to associate penetrative GeologicalStructures with GeologicalUnits. GeoSciML Basic only provides a limited set of core structures (Contact, Fold, ShearDisplacementStructure and Foliation) with a single property to categorize them. Supplemental properties and geologic structure types are available from the Extension package.",
+    "superclasses": [
+      "GeologicalFeature"
+    ]
+  },
+  {
+    "id": "GeologicalUnit",
+    "name": "Geological Unit",
+    "definition": "Conceptually, a GeologicalUnit may represent a body of material in the Earth whose complete and precise extent is inferred to exist (e.g., North American Data Model GeologicalUnit, Stratigraphic unit in the sense of NACSN, or International Stratigraphic Code ), or a classifier used to characterize parts of the Earth (e.g. lithologic map unit like 'granitic rock' or 'alluvial deposit', surficial units like 'till' or 'old alluvium'). It includes both formal units (i.e. formally adopted and named in an official lexicon) and informal units (i.e. named but not promoted to a lexicon) and unnamed units (i.e., recognizable, described and delineable in the field but not otherwise formalized). In simpler terms, a geologic unit is a package of earth material (generally rock).",
+    "superclasses": [
+      "AbstractFeatureType",
+      "GeologicalFeature"
+    ]
+  },
+  {
+    "id": "GeomorphologicalFeature",
+    "name": "Geomorphological Feature",
+    "definition": "A geomorphologic feature is a kind of GeologicFeature describing the shape and nature of the Earth's land surface. These landforms may be created by natural Earth processes (e.g., river channel, beach, moraine or mountain) or through human (anthropogenic) activity (e.g., dredged channel, reclaimed land, mine waste dumps). In GeoSciML, the geomorphologic feature is modeled as a feature related (through unitDescription property) to a GeologicUnit that composes the form.",
+    "superclasses": [
+      "GeologicalFeature"
+    ]
+  },
+  {
+    "id": "MappedFeature",
+    "name": "Mapped Feature",
+    "definition": "A MappedFeature is part of a geological interpretation. It provides a link between a notional feature (description package) and one spatial representation of it, or part of it (exposures, surface traces and intercepts, etc.). The mapped features are the elements that compose a map, a cross-section, a borehole log, or any other representation. The mappingFrame identifies the domain being mapped by the geometries. For typical geological maps, the mapping frame is the surface of the earth (the 2.5D interface between the surface of the bedrock and whatever sits on it; atmosphere or overburden material for bedrock maps). It can also be abstract frames, such as the arbitrary plane that forms a mine level or a cross-section, the 3D volume enclosing an ore body or the line that approximate the path of a borehole.",
+    "superclasses": []
+  },
+  {
+    "id": "MappedInterval",
+    "name": "Mapped Interval",
+    "definition": "A special kind of mapped feature whose shape is a 1-D interval and which uses the SRS of the containing borehole",
+    "superclasses": [
+      "MappedFeature"
+    ]
+  },
+  {
+    "id": "MineralOccurrence",
+    "name": "Mineral Occurrence",
+    "definition": "A mineral accumulation in the lithosphere.",
+    "superclasses": [
+      "EarthResource"
+    ]
+  },
+  {
+    "id": "MiningActivity",
+    "name": "Mining Activity",
+    "definition": "The process of extracting metallic or non-metallic mineral deposits from the Earth. The term may also include preliminary treatment, for example, cleaning or sizing.",
+    "superclasses": []
+  },
+  {
+    "id": "NaturalGeomorphologicalFeature",
+    "name": "Natural Geomorphological Feature",
+    "definition": "A geomorphological feature (landform) that has been created by natural Earth processes, for example; river channel, beach ridge, caldera, canyon, moraine or mud flat.",
+    "superclasses": [
+      "GeomorphologicalFeature"
+    ]
+  },
+  {
+    "id": "ShearDisplacementStructure",
+    "name": "Shear Displacement Structure",
+    "definition": "A shear displacement structure includes all brittle to ductile style structures along which displacement has occurred, from a simple, single 'planar' brittle or ductile surface to a fault system comprised of tens of strands of both brittle and ductile nature. This structure may have some significant thickness (a deformation zone) and have an associated body of deformed rock that may be considered a deformation unit (for which the geologicalUnitType is 'DeformationUnit') which can be associated to the ShearDisplacementStructure using the GeologicalFeatureRelation from the GeoSciML Extension package.",
+    "superclasses": [
+      "GeologicalStructure"
+    ]
+  },
+  {
+    "id": "ThematicClass",
+    "name": "Thematic Class",
+    "definition": "A generic thematic classifier to enable the reclassification of Geologic Feature with user-defined classes appropriate to thematic maps",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "FloodRiskZone",
+    "name": "Flood Risk Zone",
+    "definition": "Feature representing the flood risk area extent .",
+    "superclasses": [
+      "RiskZone"
+    ]
+  },
+  {
+    "id": "HazardArea",
+    "name": "Hazard Area",
+    "definition": "Discrete Features representing a natural hazard.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "ObservedEvent",
+    "name": "Observed Event",
+    "definition": "Discrete features representing natural phenomenon relevant to the study of a natural hazard which has occurred, or is currently occurring, and which has been observed.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "RiskZone",
+    "name": "Risk Zone",
+    "definition": "Discrete Features representing the spatial extent of a combination of the consequences of an event (hazard) and the associated probability/likelihood of its occurrence.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  }
+]

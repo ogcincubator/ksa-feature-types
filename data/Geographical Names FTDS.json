@@ -1,0 +1,10 @@
+[
+  {
+    "id": "PlaceName",
+    "name": "Place Name",
+    "definition": "Any real world entity referred to by one or several proper nouns.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  }
+]

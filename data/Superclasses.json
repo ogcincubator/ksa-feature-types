@@ -1,0 +1,50 @@
+[
+  {
+    "id": "NetworkElement",
+    "name": "Network Element"
+  },
+  {
+    "id": "NetworkProperty",
+    "name": "Network Property"
+  },
+  {
+    "id": "LinkSequence",
+    "name": "Link Sequence"
+  },
+  {
+    "id": "Node",
+    "name": "Node"
+  },
+  {
+    "id": "Link",
+    "name": "Link"
+  },
+  {
+    "id": "NetworkArea",
+    "name": "Network Area"
+  },
+  {
+    "id": "SpatialDataSet",
+    "name": "Spatial DataSet"
+  },
+  {
+    "id": "AbstractFeatureType",
+    "name": "Abstract Feature Type"
+  },
+  {
+    "id": "LinkSet",
+    "name": "Link Set"
+  },
+  {
+    "id": "RectifiedGridCoverage",
+    "name": "Rectified Grid Coverage"
+  },
+  {
+    "id": "GradeSeparatedCrossing",
+    "name": "Grade Separated Crossing"
+  },
+  {
+    "id": "ReferenceableGridCoverage",
+    "name": "Referenceable Grid Coverage"
+  }
+]

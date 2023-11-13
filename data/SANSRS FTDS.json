@@ -1,0 +1,98 @@
+[
+  {
+    "id": "AbsoluteGravityCalibrationLinePoint",
+    "name": "Absolute Gravity Calibration Line Point",
+    "definition": "A point on the earth's surface where the acceleration of gravity has been measured relative to other points in a sequence or 'calibration line'.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "AbsoluteGravityPoint",
+    "name": "Absolute Gravity Point",
+    "definition": "A point on the earth's surface where the acceleration of gravity has been measured and the geodetic coordinates, including elevation, have been determined.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "BenchmarkLine",
+    "name": "Benchmark Line",
+    "definition": "Consists of a sequence of BenchmarkPoints where the height of one point can be determined from the height difference with another point.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "BenchmarkPoint",
+    "name": "Benchmark Point",
+    "definition": "A physical elevation marker established for vertical measurement control.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "BenchmarkTideGaugePoint",
+    "name": "Benchmark Tide Gauge Point",
+    "definition": "The main BenchMarkPoint corresponding to a tide gauge.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "CORSNetwork",
+    "name": "CORS Network",
+    "definition": "A network of Continuously Operating Reference Stations (CORS). Accuracy is increased in a CORS network, because more than one station helps ensure correct positioning and guards against a false initialization of a single base station.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "CORSStation",
+    "name": "CORS Station",
+    "definition": "A Continuously Operating Reference Station (CORS) is a real time kinematic (RTK) base station that broadcasts corrections, usually over an Internet connection.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "GeodeticControlNetwork",
+    "name": "Geodetic Control Network",
+    "definition": "A network consisting of stable, identifiable Geodetic Control Points with published datum values derived from observations that tie the points together.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "GeodeticControlPoint",
+    "name": "Geodetic Control Point",
+    "definition": "Permanent reference markers in the ground which are precisely located and documented. These markers provide accurate reference points to support the production of consistent and compatible data collection for surveying and mapping.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "GravimetricNetwork",
+    "name": "Gravimetric Network",
+    "definition": "A network of gravimetric stations where the measurement of gravity has been determined by absolute or relative methods.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "JunctionPoint",
+    "name": "Junction Point",
+    "definition": "A BenchmarkPoint that belongs to two or more BenchmarkLines.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "VerticalControlNetwork",
+    "name": "Vertical Control Network",
+    "definition": "A network of stable, identifiable benchmarks with published datum values used to provide a foundation for a vertical datum.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  }
+]

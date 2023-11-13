@@ -1,0 +1,258 @@
+[
+  {
+    "id": "BathymetricBreakLine",
+    "name": "Bathymetric Break Line",
+    "definition": "A line of a critical nature which describes the shape of an bathymetric elevation surface and indicates a discontinuity in the slope of the surface (i.e. an abrupt change in gradient). Examples of breaklines include local ridges or depressions (streams or drainage lines) in the surface, man-made structures (e.g. roads), etc. A breakline connects points with different elevation and therefore its description using 2.5 D coordinates (using the 'geometry' attribute) is recommended. Triangles in TIN may not cross a breakline (i.e. breakline segments are enforced as triangle edges), even if doing so violates the triangulation criterion. All breaklines are located on the ground surface or on any of the artificial structures built on it. Breaklines are useful as input data for the generation of a more appropriate or accurate digital elevation model by using interpolation methods. Adapted from [ISO 19107:2003].",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "BathymetricBreaklineCollection",
+    "name": "Bathymetric Breakline Collection",
+    "definition": "Collection of Bathymetric Break Lines.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "BathymetricElevationContourLine",
+    "name": "Bathymetric Elevation Contour Line",
+    "definition": "A linear feature composed of a set of adjoining locations characterized by having the same elevation depth. It describes, together with other contour lines present in the area, the local morphology of the bathymetry surface.",
+    "superclasses": [
+      "GenericContourLine"
+    ]
+  },
+  {
+    "id": "BathymetricElevationContourLineCollection",
+    "name": "Bathymetric Elevation Contour Line Collection",
+    "definition": "Collection of Bathymetric Elevation Contour Lines.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "BathymetricIsolatedArea",
+    "name": "Bathymetric Isolated Area",
+    "definition": "A delineation of an area of the bathymetric surface where an isolated part of the elevation model exists. Its outside surroundings have no elevation information. They may be included inside void areas. Isolated areas can be useful as masks when calculating a more appropriate or accurate DEM. Adapted from \"IslandArea\" [GIS4EU D3.5].",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "BathymetricIsolatedAreaCollection",
+    "name": "Bathymetric Isolated Area Collection",
+    "definition": "Collection of Bathymetric Isolated Areas.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "BathymetricVoidArea",
+    "name": "Bathymetric Void Area",
+    "definition": "Area of the bathymetric surface where the elevation model is unknown because of missing input data. This area shall be excluded from a DEM. A void area may contain a number of isolated areas with elevation data, these are considered as holes of the container void area. Void areas can be useful as masks when calculating a more appropriate or accurate DEM. Source: 'ObscureArea' [GIS4EU D3.5].",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "BathymetricVoidAreaCollection",
+    "name": "Bathymetric Void Area Collection",
+    "definition": "Collection of Bathymetric Void Areas.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "DepthArea",
+    "name": "Depth Area",
+    "definition": "Bathymetric area with specified maximum and minimum depth.",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "DepthAreaCollection",
+    "name": "Depth Area Collection",
+    "definition": "Collection of Depth Areas.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "ElevationVectorObject",
+    "name": "Elevation Vector Object",
+    "definition": "Elevation feature forming part of a vector data set, which participates in the description of the elevation property of a real-world surface. It consists of an identity base for all vector objects which can be included as part of an elevation data set. It is an abstract Feature Type which generically describes every possible type of elevation vector object. It includes common attributes, properties and constraints for such features.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "GenericContourLine",
+    "name": "Generic Contour Line",
+    "definition": "An abstract linear feature composed of a set of adjoining locations characterized by having the same elevation height or depth. It describes, together with other contour lines present in the area, the local morphology of the Earth's surface.",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "GenericSpotElevation",
+    "name": "Generic Spot Elevation",
+    "definition": "A point feature which describes the elevation of an Earth's surface at a specific location. It provides a single elevation property value. The Generic Spot Elevation feature often represents a singular point in the morphology of a land or water body's floor surface. The attribute propertyType is equal to 'height' in the case of spot heights. It is equal to 'depth' in the case of spot depths.",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "LandBreakLine",
+    "name": "Land Break Line",
+    "definition": "A line of a critical nature which describes the shape of an land elevation surface and indicates a discontinuity in the slope of the surface (i.e. an abrupt change in gradient). Breaklines represent local ridges or depressions (streams or drainage lines) in the surface, man-made structures (e.g. roads) etc. A breakline connects points with different elevation and therefore it is recommended that it is described using 2.5-D coordinates (using the 'geometry' attribute). A triangle in a TIN may not cross a breakline (breakline segments are enforced as triangle edges), even if doing so violates the triangulation criterion. All breaklines are located on the ground surface or on any of the artificial structures built on it. Breaklines are useful as input data for the generation of a more appropriate or accurate digital elevation model by using interpolation methods. Adapted from [ISO 19107:2003]",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "LandBreakLineCollection",
+    "name": "Land Break Line Collection",
+    "definition": "Collection of Land Break Lines.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "LandElevationContourLine",
+    "name": "Land Elevation Contour Line",
+    "definition": "A linear feature composed of a set of adjoining locations characterized by having the same height. It describes, together with other contour lines present in the area, the local morphology of the land surface.",
+    "superclasses": [
+      "GenericContourLine"
+    ]
+  },
+  {
+    "id": "LandElevationContourLineCollection",
+    "name": "Land Elevation Contour Line Collection",
+    "definition": "Collection of Land Elevation Contour Lines.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "LandIsolatedArea",
+    "name": "Land Isolated Area",
+    "definition": "Delimitation of an area of the land surface where an isolated part of the elevation model exists; its outside surroundings have no elevation information. It includes the delimitation of any island of elevation data which are isolated from the main DEM and may be included inside void areas. Two Isolated areas can be useful as masks when calculating a more appropriate or accurate DEM.",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "LandIsolatedAreaCollection",
+    "name": "Land Isolated Area Collection",
+    "definition": "Collection of Land Isolated Areas.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "LandSpotElevation",
+    "name": "Land Spot Elevation",
+    "definition": "A point feature which describes the elevation of an land Earth's surface at a specific location which provides a single elevation property value. It often represents a singular point in the morphology of a land or water body's floor surface. The attribute propertyType is equal to 'height' in the case of spot heights or to 'depth' in the case of spot depths.",
+    "superclasses": [
+      "GenericSpotElevation"
+    ]
+  },
+  {
+    "id": "LandSpotElevationCollection",
+    "name": "Land Spot Elevation Collection",
+    "definition": "Collection of Land Spot Elevations.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "LandVoidArea",
+    "name": "Land Void Area",
+    "definition": "Area of the land surface where the elevation model is unknown because of missing input data. This area is excluded from a DEM. A void area may contain a number of isolated areas with elevation data which are considered as holes of the container void area. Void areas can be useful as masks when calculating a more appropriate or accurate DEM. Source: \"ObscureArea\" [GIS4EU D3.5].",
+    "superclasses": [
+      "ElevationVectorObject"
+    ]
+  },
+  {
+    "id": "LandVoidAreaCollection",
+    "name": "Land Void Area Collection",
+    "definition": "Collection of Land Void Areas.",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "Sounding",
+    "name": "Sounding",
+    "definition": "A point feature which describes the elevation of an bathymetric Earth's surface at a specific location. It often represents a singular point in the morphology of a land or water body's floor surface. The attribute propertyType is equal to 'height' in the case of spot heights or to 'depth' in the case of spot depths.",
+    "superclasses": [
+      "GenericSpotElevation"
+    ]
+  },
+  {
+    "id": "SoundingCollection",
+    "name": "Sounding Collection",
+    "definition": "Collection of Soundings (bathymetric spot elevation points).",
+    "superclasses": [
+      "SpatialDataSet"
+    ]
+  },
+  {
+    "id": "LASPointCloud",
+    "name": "LAS Point Cloud",
+    "definition": "Representation of set of points in a form of an LAS file.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "BathymetricElevationTIN",
+    "name": "Bathymetric Elevation TIN",
+    "definition": "Elevation TIN describing bathymetric elevation which depicts depth (measured downwards).",
+    "superclasses": [
+      "ElevationTIN"
+    ]
+  },
+  {
+    "id": "ElevationTIN",
+    "name": "Elevation TIN",
+    "definition": "Collection of elevation features forming a particular tessellation of the space based on a Triangulated Irregular Network (TIN) according the geometry GM_Tin (defined in ISO 19107:2003). Its components are a set of control points whose depths are known, and a set of break lines and stop lines. The TIN can be calculated using any triangulation method, which determines the spatial relationships between the features in the collection, for example, an elevation TIN model calculated by means of the Delaunay triangulation method.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "LandElevationTIN",
+    "name": "Land Elevation TIN",
+    "definition": "Elevation TIN describing land elevation which depicts heights (measured upwards).",
+    "superclasses": [
+      "ElevationTIN"
+    ]
+  },
+  {
+    "id": "BathymetricElevationGridCoverage",
+    "name": "Bathymetric Elevation Grid Coverage",
+    "definition": "Elevation grid for bathymetric elevation. The value of the grid cells is depth which is measured upwards.",
+    "superclasses": [
+      "ElevationGridCoverage"
+    ]
+  },
+  {
+    "id": "ElevationGridCoverage",
+    "name": "Elevation Grid Coverage",
+    "definition": "Continuous coverage which uses a systematic tessellation based on a regular rectified quadrilateral grid to cover its domain, where the elevation height is usually known for each of the grid points forming this domain. Adapted from [ISO 19123:2005].",
+    "superclasses": [
+      "RectifiedGridCoverage"
+    ]
+  },
+  {
+    "id": "LandElevationGridCoverage",
+    "name": "Land Elevation Grid Coverage",
+    "definition": "Elevation grid for land elevation. The value of the grid cells is height which is measured upwards.",
+    "superclasses": [
+      "ElevationGridCoverage"
+    ]
+  }
+]

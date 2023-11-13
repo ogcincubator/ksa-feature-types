@@ -1,0 +1,106 @@
+[
+  {
+    "id": "ObliqueAirborneImage",
+    "name": "Oblique Airborne Image",
+    "definition": "Image of the Earth surface intentionally captured at a very high offpointing angle for specific applications from aircraft (plane, UAV, helicopter etc.).",
+    "superclasses": [
+      "Image"
+    ]
+  },
+  {
+    "id": "VerticalAirborneImage",
+    "name": "Vertical Airborne Image",
+    "definition": "Raster image of the Earth surface captured close to nadir using aircraft (plane, UAV, helicopter etc.).",
+    "superclasses": [
+      "Image"
+    ]
+  },
+  {
+    "id": "SpaceborneImage",
+    "name": "Spaceborne Image",
+    "definition": "Raster image of the Earth surface that was acquired using spaceborne platform (e.g. satellite).",
+    "superclasses": [
+      "Image"
+    ]
+  },
+  {
+    "id": "AggregatedMosaicElement",
+    "name": "Aggregated Mosaic Element",
+    "definition": "Mosaic element relating to several input images that share the same acquisition time at a given level of definition (e.g. day, month). The geometry of an aggregated mosaic element corresponds to the union of the contributing areas, in the mosaic, of several input images.",
+    "superclasses": [
+      "MosaicElement"
+    ]
+  },
+  {
+    "id": "Image",
+    "name": "Image",
+    "definition": "Raster image that can depict Earth surface seen from above or elements other than Earth surface seen from above, for example, facades of the buildings) that has not been geometrically corrected (\"orthorectified\").",
+    "superclasses": [
+      "ReferenceableGridCoverage"
+    ]
+  },
+  {
+    "id": "MosaicElement",
+    "name": "Mosaic Element",
+    "definition": "Abstract type identifying both the contributing area and the acquisition time of one or several input images used to generate a mosaiced orthoimage coverage. The main purpose of this Feature Type is the provision of a mechanism for describing the spatial distribution of the acquisition dates and times over a mosaiced orthoimage. The acquisition time can be supplied either for each individual input image, or for sets of input images grouped together according to temporal criteria.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "OrthoImage",
+    "name": "Ortho Image",
+    "definition": "Georeferenced raster image of the Earth surface that has been geometrically corrected (\"orthorectified\") to remove distortion caused by differences in elevation, sensor tilt and, optionally, by sensor optics. An orthoimage coverage is a continuous coverage based on a rectified quadrilateral grid. It is provided with an interpolation method to evaluate value records at any direct position within its domain. It can be derived from one single input image or from different input images which have been mosaiced and merged together. An orthoimage coverage may be an aggregation of subsets extracted from other orthoimage coverages. For the avoidance of data duplication, this kind of aggregated orthoimage is dynamically constructed by references to the contributing orthoimage coverages.",
+    "superclasses": [
+      "RectifiedGridCoverage"
+    ]
+  },
+  {
+    "id": "PhotogrammetricControlPoint",
+    "name": "Photogrammetric Control Point",
+    "definition": "Point identified in the terrain or other structure (e.g. building facade) used for georeferencing an image.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "SingleMosaicElement",
+    "name": "Single Mosaic Element",
+    "definition": "Mosaic element relating to a single input image which corresponds exactly to the contributing area, in the mosaic, of the single input image.",
+    "superclasses": [
+      "MosaicElement"
+    ]
+  },
+  {
+    "id": "AbstractTerrestrialImage",
+    "name": "Abstract Terrestrial Image",
+    "definition": "Abstract class that contains elements common for raster datasets used in terrestrial imagery. Specializations of this class are TerrestrialImage, DepthMap and SegmentationMap.",
+    "superclasses": [
+      "Image"
+    ]
+  },
+  {
+    "id": "DepthMap",
+    "name": "Depth Map",
+    "definition": "Raster dataset representing distance between camera and specific spatial elements in the image. This type of dataset can be derived from LIDAR.",
+    "superclasses": [
+      "AbstractTerrestrialImage"
+    ]
+  },
+  {
+    "id": "SegmentationMap",
+    "name": "Segmentation Map",
+    "definition": "Raster dataset representing segmented elements of the image. This type of dataset can be derived from LIDAR.",
+    "superclasses": [
+      "AbstractTerrestrialImage"
+    ]
+  },
+  {
+    "id": "TerrestrialImage",
+    "name": "Terrestrial Image",
+    "definition": "Raster image that can depict elements other than Earth surface seen from above.",
+    "superclasses": [
+      "AbstractTerrestrialImage"
+    ]
+  }
+]

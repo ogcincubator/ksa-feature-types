@@ -1,0 +1,20 @@
+transform:
+  - map(."@type" = (."@type" // "skos:Concept") | if ."@type" == "skos:Concept" then ."inScheme" = "https://w3id.org/ksa/feature-types" end)
+
+context:
+  '$':
+    skos: http://www.w3.org/2004/02/skos/core#
+    '@base': https://w3id.org/ksa/feature-types/
+    id: '@id'
+    name:
+      '@id': skos:prefLabel
+      '@language': en
+    definition:
+      '@id': skos:definition
+      '@language': en
+    superclasses:
+      '@id': skos:broader
+      '@type': '@id'
+    inScheme:
+      '@id': skos:inScheme
+      '@type': '@id'

@@ -1,0 +1,29 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcfg: <http://www.example.org/ogc/domain-cfg#> .
+@prefix profiles: <http://www.opengis.net/def/metamodel/profiles/> .
+@prefix : <https://w3id.org/ksa/catalog#> .
+
+:ksa-ft a dcat:Catalog ;
+  dct:title "KSA Feature Type Catalog" ;
+  dcat:dataset :feature-types-uplift, :feature-types-upload ;
+  dcfg:hasProfileSource "sparql:http://defs-dev.opengis.net/fuseki/query" ;
+.
+
+:feature-types-uplift a dcfg:UpliftConfiguration ;
+  dcfg:glob "data.json" ;
+  dcfg:hasUpliftDefinition [
+    dcfg:order 1 ;
+    dcfg:file ".ogc/uplift.yaml" ;
+  ] ;
+.
+
+:feature-types-upload a dcfg:DomainConfiguration ;
+  dcfg:localPath "." ;
+  dcfg:glob "data.ttl" ;
+  dcfg:uriRootFilter "/ksa/" ;
+  dct:conformsTo profiles:vocprez_ogc, profiles:skos_conceptscheme, profiles:skos_conceptscheme_ogc, profiles:owl2skos ;
+.
+

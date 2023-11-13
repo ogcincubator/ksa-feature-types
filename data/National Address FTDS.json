@@ -1,0 +1,66 @@
+[
+  {
+    "id": "Address",
+    "name": "Address",
+    "definition": "An identification of the fixed location of property by means of a structured composition of geographic names and identifiers.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "AddressComponent",
+    "name": "Address Component",
+    "definition": "Identifier, code or geographic name of a specific geographic area, location, or other Feature Type which defines the scope of an address.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "CityName",
+    "name": "City Name",
+    "definition": "An address component which represents the name of city within which are contained all finer address elements including districts / neighborhoods, street names and building numbers. [Unified National Addressing System]",
+    "superclasses": [
+      "AddressComponent"
+    ]
+  },
+  {
+    "id": "DistrictName",
+    "name": "District Name",
+    "definition": "An address component which represents the name of municipal district/neighborhood within which buildings and addresses sit. [Unified National Addressing System]",
+    "superclasses": [
+      "AddressComponent"
+    ]
+  },
+  {
+    "id": "NonAddressObject",
+    "name": "Non Address Object",
+    "definition": "Physical, visible and stationary objects that are representable as point locations, that you cannot send mail to, and are not classified as a Point of Interest. Non Addressable Objects (NAOs) may have a link to the nearest address.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "PointOfInterest",
+    "name": "Point Of Interest",
+    "definition": "Specific point location of a place, feature, building or landmark that is of interest, or useful to, people. This includes different categories of POIs including accommodation, eating and drinking, commercial services, religious sites, culture and heritage, attractions, sport and entertainment, education and health, public infrastructure, manufacturing and production, retail and transport. Specific point location of a place, feature, building or landmark that is of interest, or useful to, people. This includes different categories of POIs including accommodation, eating, commercial services, religious sites, cultural and heritage, attractions, sport and entertainment, education and health, public infrastructure, manufacturing and production, retail and transport.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "StreetName",
+    "name": "Street Name",
+    "definition": "An address component which represents the name of the road/street (thoroughfare) upon which the address is principally located. [Unified National Addressing System]",
+    "superclasses": [
+      "AddressComponent"
+    ]
+  },
+  {
+    "id": "ZipCodeUnit",
+    "name": "Zip Code Unit",
+    "definition": "A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  }
+]

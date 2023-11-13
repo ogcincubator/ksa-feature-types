@@ -1,0 +1,282 @@
+[
+  {
+    "id": "HydroNode",
+    "name": "Hydro Node",
+    "definition": "A node within the hydrographic network.",
+    "superclasses": [
+      "Node"
+    ]
+  },
+  {
+    "id": "WatercourseLink",
+    "name": "Watercourse Link",
+    "definition": "A segment of a watercourse within a hydrographic network.",
+    "superclasses": [
+      "Link"
+    ]
+  },
+  {
+    "id": "WatercourseLinkSequence",
+    "name": "Watercourse Link Sequence",
+    "definition": "A sequence of watercourse links representing a non-branching path through a hydrographic network.",
+    "superclasses": [
+      "LinkSequence"
+    ]
+  },
+  {
+    "id": "WatercourseSeparatedCrossing",
+    "name": "Watercourse Separated Crossing",
+    "definition": "An element in the hydrographic network used to indicate non-interacting crossing of watercourse links separated by level.",
+    "superclasses": [
+      "GradeSeparatedCrossing"
+    ]
+  },
+  {
+    "id": "AbstractHydroFeature",
+    "name": "Abstract Hydro Feature",
+    "definition": "This base abstract hydrographic class enables associations between different hydrographic feature instances representing the same real world entity. Three mechanisms are provided for this: a shared name attribute that allows an implicit association on the basis of a common name; a shared hydroID attribute where multiple representations are explicitly identified as the same instance; an explicit association between feature instances representing the same real-world entity.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "AbstractMarineLayer",
+    "name": "Abstract Marine Layer",
+    "definition": "A layer that may cover any part of a sea surface or sea bottom, represented as either a surface or point. The point representation reflects the reality that many Marine Layers are identified by point observations.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "Coastline",
+    "name": "Coastline",
+    "definition": "A special case of Shoreline at Lowest Astronomical Tide (LAT), the vertical datum reference used in the Kingdom of Saudi Arabia for viewing, discovery and general-purpose applications where a land/marine boundary is required. It is not designed to infer any political boundaries. The Coastline corresponds to the \u2018nautical charting\u2019 use case, whereas the Shoreline corresponds to \u2018heighting\u2019 and \u2018cadastral\u2019 use cases, with the vertical datum set accordingly to Mean Sea Level (MSL) and the Mean High Water Spring (MHWS) tides, respectively.",
+    "superclasses": [
+      "Shoreline"
+    ]
+  },
+  {
+    "id": "InterTidalArea",
+    "name": "Inter Tidal Area",
+    "definition": "The part of the marine environment that is exposed (not covered in water) during a normal tidal cycle; defined as the difference between any high and any low water level.",
+    "superclasses": [
+      "Shore"
+    ]
+  },
+  {
+    "id": "MarineCirculationZone",
+    "name": "Marine Circulation Zone",
+    "definition": "A sea area defined by its physical and chemical circulation patterns.",
+    "superclasses": [
+      "SeaArea"
+    ]
+  },
+  {
+    "id": "MarineExtent",
+    "name": "Marine Extent",
+    "definition": "The extent of a sea area for a given tidal state.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "SeaArea",
+    "name": "Sea Area",
+    "definition": "An area of sea defined according to its physical and chemical characteristics. It may have multiple geometries (extents) to represent different tidal states.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "SeaSurfaceArea",
+    "name": "Sea Surface Area",
+    "definition": "An area of the sea surface with some type of cover.",
+    "superclasses": [
+      "AbstractMarineLayer"
+    ]
+  },
+  {
+    "id": "SeabedArea",
+    "name": "Seabed Area",
+    "definition": "An area of the sea bed with some identified type of cover, for example, an area of vegetation or sediment type.",
+    "superclasses": [
+      "AbstractMarineLayer"
+    ]
+  },
+  {
+    "id": "ShoreSegment",
+    "name": "Shore Segment",
+    "definition": "A section of shore line.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "Shoreline",
+    "name": "Shoreline",
+    "definition": "A Boundary between a Sea Area and land. The Shoreline corresponds to \u2018heighting\u2019 and \u2018cadastral\u2019 use cases, with the vertical datum set accordingly to Mean Sea Level (MSL) and the Mean High Water Spring (MHWS) tides, respectively.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "AbstractHydroPointOfInterest",
+    "name": "Abstract Hydro Point Of Interest",
+    "definition": "A natural place where water appears, disappears or changes its flow.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "AbstractManMadeObject",
+    "name": "Abstract Man Made Object",
+    "definition": "A man-made object allowing the passage of water above or below an obstacle.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "AbstractSurfaceWater",
+    "name": "Abstract Surface Water",
+    "definition": "Any known inland waterway body.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "Dam",
+    "name": "Dam",
+    "definition": "A permanent barrier across a watercourse used to impound water or to control its flow.",
+    "superclasses": [
+      "AbstractManMadeObject"
+    ]
+  },
+  {
+    "id": "Ditch",
+    "name": "Ditch",
+    "definition": "A typically narrow artificial waterway created to contain water.",
+    "superclasses": [
+      "AbstractManMadeObject"
+    ]
+  },
+  {
+    "id": "DrainageBasin",
+    "name": "Drainage Basin",
+    "definition": "Area having a common outlet for its surface runoff.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "Embankment",
+    "name": "Embankment",
+    "definition": "A man-made raised long mound of earth or other material.",
+    "superclasses": [
+      "AbstractManMadeObject"
+    ]
+  },
+  {
+    "id": "Falls",
+    "name": "Falls",
+    "definition": "A vertically descending part of a watercourse where it falls from a height.",
+    "superclasses": [
+      "FluvialPoint"
+    ]
+  },
+  {
+    "id": "FluvialPoint",
+    "name": "Fluvial Point",
+    "definition": "A hydro point of interest that affects the flow of a watercourse.",
+    "superclasses": [
+      "AbstractHydroPointOfInterest"
+    ]
+  },
+  {
+    "id": "Ford",
+    "name": "Ford",
+    "definition": "A shallow part of a watercourse used as a road crossing.",
+    "superclasses": [
+      "AbstractManMadeObject"
+    ]
+  },
+  {
+    "id": "LandWaterBoundary",
+    "name": "Land Water Boundary",
+    "definition": "The line where a land mass is in contact with a body of water.",
+    "superclasses": [
+      "AbstractFeatureType"
+    ]
+  },
+  {
+    "id": "Lock",
+    "name": "Lock",
+    "definition": "An enclosure with a pair or series of gates used for raising or lowering vessels as they pass from one water level to another.",
+    "superclasses": [
+      "AbstractManMadeObject"
+    ]
+  },
+  {
+    "id": "Rapids",
+    "name": "Rapids",
+    "definition": "Portions of a stream with accelerated current where it descends rapidly but without a break in the slope of the bed sufficient to form a waterfall.",
+    "superclasses": [
+      "FluvialPoint"
+    ]
+  },
+  {
+    "id": "RiverBasin",
+    "name": "River Basin",
+    "definition": "The area of land from which all surface run-off flows through a sequence of streams, rivers and, possibly, lakes into the sea at a single river mouth, estuary or delta.",
+    "superclasses": [
+      "DrainageBasin"
+    ]
+  },
+  {
+    "id": "Shore",
+    "name": "Shore",
+    "definition": "The narrow strip of land in immediate contact with any body of water including the area between high and low water lines.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  },
+  {
+    "id": "ShorelineConstruction",
+    "name": "Shoreline Construction",
+    "definition": "An artificial structure attached to land bordering a body of water and fixed in position.",
+    "superclasses": [
+      "AbstractManMadeObject"
+    ]
+  },
+  {
+    "id": "Sluice",
+    "name": "Sluice",
+    "definition": "An open, inclined conduit fitted with a gate for regulating water flow.",
+    "superclasses": [
+      "AbstractManMadeObject"
+    ]
+  },
+  {
+    "id": "StandingWater",
+    "name": "Standing Water",
+    "definition": "A body of water that is entirely surrounded by land.",
+    "superclasses": [
+      "AbstractSurfaceWater"
+    ]
+  },
+  {
+    "id": "Watercourse",
+    "name": "Watercourse",
+    "definition": "A natural or man-made flowing watercourse or stream.",
+    "superclasses": [
+      "AbstractSurfaceWater"
+    ]
+  },
+  {
+    "id": "Wetland",
+    "name": "Wetland",
+    "definition": "A poorly drained or periodically flooded area where the soil is saturated with water, and vegetation is supported.",
+    "superclasses": [
+      "AbstractHydroFeature"
+    ]
+  }
+]
