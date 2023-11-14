@@ -1,10 +1,15 @@
-[
-  {
-    "id": "PlaceName",
-    "name": "Place Name",
-    "definition": "Any real world entity referred to by one or several proper nouns.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  }
-]
+{
+  "id": "GeographicalNames",
+  "name": "Geographical Names feature types",
+  "definition": "Geographical Names provide cultural, historical and political orientation and identity to geographical places with one or more official or unofficial names. They are location identifiers for man-made and natural features of the real world, such as districts, regions or any feature of public or historical interest.",
+  "concepts": [
+    {
+      "id": "PlaceName",
+      "name": "Place Name",
+      "definition": "Any real world entity referred to by one or several proper nouns.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    }
+  ]
+}

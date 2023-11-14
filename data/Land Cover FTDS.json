@@ -1,26 +1,31 @@
-[
-  {
-    "id": "LandCoverGridCoverage",
-    "name": "Land Cover Grid Coverage",
-    "definition": "A raster representation for Land Cover data. This representation accommodates Land Cover data being supported by rectified grid coverage (ISO 19123).",
-    "superclasses": [
-      "RectifiedGridCoverage"
-    ]
-  },
-  {
-    "id": "LandCoverNomenclature",
-    "name": "Land Cover Nomenclature",
-    "definition": "Information about reference national, institution or local Land Cover nomenclature. The Land Cover Nomenclature allows references to nomenclatures documentation and associated Code List or to define them through an external reference or included within the data according to ISO 19144-2.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "LandCoverUnit",
-    "name": "Land Cover Unit",
-    "definition": "A land cover unit which is part of a Land Cover dataset. (A Land Cover data set is a collection of Land Cover units, each one being called an element.)",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  }
-]
+{
+  "id": "LandCover",
+  "name": "Land Cover feature types",
+  "definition": "The Land Cover Foundation Theme is the observed natural and built environment surface cover in the Kingdom of Saudi Arabia.",
+  "concepts": [
+    {
+      "id": "LandCoverGridCoverage",
+      "name": "Land Cover Grid Coverage",
+      "definition": "A raster representation for Land Cover data. This representation accommodates Land Cover data being supported by rectified grid coverage (ISO 19123).",
+      "superclasses": [
+        "RectifiedGridCoverage"
+      ]
+    },
+    {
+      "id": "LandCoverNomenclature",
+      "name": "Land Cover Nomenclature",
+      "definition": "Information about reference national, institution or local Land Cover nomenclature. The Land Cover Nomenclature allows references to nomenclatures documentation and associated Code List or to define them through an external reference or included within the data according to ISO 19144-2.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "LandCoverUnit",
+      "name": "Land Cover Unit",
+      "definition": "A land cover unit which is part of a Land Cover dataset. (A Land Cover data set is a collection of Land Cover units, each one being called an element.)",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    }
+  ]
+}

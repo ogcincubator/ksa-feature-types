@@ -1,5 +1,6 @@
-transform:
-  - map(."@type" = (."@type" // "skos:Concept") | if ."@type" == "skos:Concept" then ."inScheme" = "https://w3id.org/ksa/feature-types" end)
+types:
+  '$': skos:ConceptScheme
+  '$.concepts[*]': skos:Concept
 
 context:
   '$':
@@ -15,6 +16,5 @@ context:
     superclasses:
       '@id': skos:broader
       '@type': '@id'
-    inScheme:
-      '@id': skos:inScheme
-      '@type': '@id'
+    concepts:
+      '@reverse': skos:inScheme

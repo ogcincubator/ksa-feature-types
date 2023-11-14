@@ -13,7 +13,7 @@
 .
 
 :feature-types-uplift a dcfg:UpliftConfiguration ;
-  dcfg:glob "data.json" ;
+  dcfg:glob "data/*.json" ;
   dcfg:hasUpliftDefinition [
     dcfg:order 1 ;
     dcfg:file ".ogc/uplift.yaml" ;
@@ -22,7 +22,7 @@
 
 :feature-types-upload a dcfg:DomainConfiguration ;
   dcfg:localPath "." ;
-  dcfg:glob "data.ttl" ;
+  dcfg:glob "data/*.ttl" ;
   dcfg:uriRootFilter "/ksa/" ;
   dct:conformsTo profiles:vocprez_ogc, profiles:skos_conceptscheme, profiles:skos_conceptscheme_ogc, profiles:owl2skos ;
 .

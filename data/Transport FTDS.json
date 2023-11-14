@@ -1,605 +1,610 @@
-[
-  {
-    "id": "AbstractTransportType",
-    "name": "Abstract Transport Type",
-    "definition": "Abstract parent class for Feature Types that holds common attributes.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "AccessRestriction",
-    "name": "Access Restriction",
-    "definition": "A restriction on the access to a transport element.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "Accident",
-    "name": "Accident",
-    "definition": "An accident that happened on a transport element.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "Bridge",
-    "name": "Bridge",
-    "definition": "A structure that connects two locations and provides for the passage of a transportation route (for example: a road or a railway) over a terrain obstacle (for example: a waterbody, a gully, and/or a road).",
-    "superclasses": [
-      "AbstractFeatureType",
-      "EngineeringStructure"
-    ]
-  },
-  {
-    "id": "Culvert",
-    "name": "Culvert",
-    "definition": "An enclosed channel for carrying a watercourse (for example: a stream, a sewer, or a drain) under a route (for example: a road, a railway, or an embankment).",
-    "superclasses": [
-      "AbstractFeatureType",
-      "EngineeringStructure"
-    ]
-  },
-  {
-    "id": "EngineeringStructure",
-    "name": "Engineering Structure",
-    "definition": "Abstract Feature class used to describe common attributes for engineering structures e.g. tunnels, bridges, retaining walls.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "Fence",
-    "name": "Fence",
-    "definition": "A barrier, railing, or other upright structure, typically of wood or wire, enclosing an area of ground to prevent or control access or escape.",
-    "superclasses": [
-      "EngineeringStructure"
-    ]
-  },
-  {
-    "id": "MaintenanceAuthority",
-    "name": "Maintenance Authority",
-    "definition": "The authority responsible for maintenance of the transport element.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "MarkerPost",
-    "name": "Marker Post",
-    "definition": "Reference marker placed along a route in a transport network, mostly at regular intervals, indicating the distance from the beginning of the route, or some other reference point, to the point where the marker is located.",
-    "superclasses": [
-      "NetworkElement"
-    ]
-  },
-  {
-    "id": "OwnerAuthority",
-    "name": "Owner Authority",
-    "definition": "The authority owning the transport element.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "RestrictionForVehicles",
-    "name": "Restriction For Vehicles",
-    "definition": "Restriction on vehicles on a transport element.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "RetainingWall",
-    "name": "Retaining Wall",
-    "definition": "A wall that holds back earth.",
-    "superclasses": [
-      "EngineeringStructure"
-    ]
-  },
-  {
-    "id": "TransportArea",
-    "name": "Transport Area",
-    "definition": "Surface that represents the spatial extent of an element of a transport network.",
-    "superclasses": [
-      "NetworkArea"
-    ]
-  },
-  {
-    "id": "TransportLink",
-    "name": "Transport Link",
-    "definition": "A line that describes the geometry and connectivity of a transport network between two points in the network.",
-    "superclasses": [
-      "Link"
-    ]
-  },
-  {
-    "id": "TransportLinkSequence",
-    "name": "Transport Link Sequence",
-    "definition": "A line which is composed of an ordered collection of transport links, which represents a continuous path in the transport network without any branches.",
-    "superclasses": [
-      "LinkSequence"
-    ]
-  },
-  {
-    "id": "TransportLinkSet",
-    "name": "Transport Link Set",
-    "definition": "A collection of individual transport links that has a specific function or significance in a transport network.",
-    "superclasses": [
-      "LinkSet"
-    ]
-  },
-  {
-    "id": "TransportNode",
-    "name": "Transport Node",
-    "definition": "A point which is used for connectivity.",
-    "superclasses": [
-      "Node"
-    ]
-  },
-  {
-    "id": "TransportProperty",
-    "name": "Transport Property",
-    "definition": "A reference to a property that falls upon the network. This property can apply to the whole of the network element it is associated with or - for lines - be described using linear referencing.",
-    "superclasses": [
-      "NetworkProperty"
-    ]
-  },
-  {
-    "id": "Tunnel",
-    "name": "Tunnel",
-    "definition": "An underground passage that is open at both ends and usually contains a land transportation route (for example: a road and/or a railway).",
-    "superclasses": [
-      "AbstractFeatureType",
-      "EngineeringStructure"
-    ]
-  },
-  {
-    "id": "Airport",
-    "name": "Airport",
-    "definition": "A defined site on land or water (including any buildings, installations and equipment) intended to be used either wholly or in part for the arrival, departure and surface movement of aircraft and/or helicopters.",
-    "superclasses": [
-      "TransportNode"
-    ]
-  },
-  {
-    "id": "AirportArea",
-    "name": "Airport Area",
-    "definition": "A defined area on land or water (including any buildings, installations and equipment) intended to be used either wholly or in part for the arrival, departure and surface movement of aircraft and/or helicopters.",
-    "superclasses": [
-      "TransportArea"
-    ]
-  },
-  {
-    "id": "ControlTower",
-    "name": "Control Tower",
-    "definition": "A tall building at an airport from which the movements of air traffic are controlled.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "Seaport",
-    "name": "Seaport",
-    "definition": "A point which is used to represent a sea port in a simplified way, approximately located at the bank of the waterbody where the port is placed.",
-    "superclasses": [
-      "TransportNode"
-    ]
-  },
-  {
-    "id": "SeaportArea",
-    "name": "Seaport Area",
-    "definition": "An area which is used to represent the physical limits of all the facilities which constitute the terrestrial zone of a sea port.",
-    "superclasses": [
-      "TransportArea"
-    ]
-  },
-  {
-    "id": "DesignSpeed",
-    "name": "Design Speed",
-    "definition": "The specification of the maximum speed to which a railway line is designed for.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "MetroLine",
-    "name": "Metro Line",
-    "definition": "A collection of metro link sequences and or individual metro links that are characterized by one or more thematical identifiers and/or properties.",
-    "superclasses": [
-      "TransportLinkSet"
-    ]
-  },
-  {
-    "id": "MetroLink",
-    "name": "Metro Link",
-    "definition": "The centerline of a railway used by the Metro.",
-    "superclasses": [
-      "RailwayLink"
-    ]
-  },
-  {
-    "id": "MetroLinkSequence",
-    "name": "Metro Link Sequence",
-    "definition": "A linear Feature composed of an ordered collection of metro links, which represents a continuous path in a metro network without any branches. The element has a defined beginning and end and every position on the metro link sequence.",
-    "superclasses": [
-      "TransportLinkSequence"
-    ]
-  },
-  {
-    "id": "MetroNode",
-    "name": "Metro Node",
-    "definition": "A point Feature which represents a significant point along the metro network or defines an intersection of metro tracks used to describe its connectivity.",
-    "superclasses": [
-      "TransportNode"
-    ]
-  },
-  {
-    "id": "MetroStation",
-    "name": "Metro Station",
-    "definition": "A metro station is a type of railway station that is part of a metro, rapid transit system, subway or underground railway line or railway network. Geometry representation of metro station is a center point.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "MetroStationArea",
-    "name": "Metro Station Area",
-    "definition": "A metro station is a type of railway station that is part of a metro, rapid transit system, subway or underground railway line or railway network. Geometry representation of metro station area is an extent.",
-    "superclasses": [
-      "TransportArea"
-    ]
-  },
-  {
-    "id": "RailwayArea",
-    "name": "Railway Area",
-    "definition": "Surface occupied by a railway track, including ballast.",
-    "superclasses": [
-      "TransportArea"
-    ]
-  },
-  {
-    "id": "RailwayLine",
-    "name": "Railway Line",
-    "definition": "A collection of railway link sequences and or individual railway links that are characterized by one or more thematical identifiers and/or properties.",
-    "superclasses": [
-      "TransportLinkSet"
-    ]
-  },
-  {
-    "id": "RailwayLink",
-    "name": "Railway Link",
-    "definition": "A linear Feature that describes the geometry and connectivity of a railway network between two points in the network.",
-    "superclasses": [
-      "TransportLink"
-    ]
-  },
-  {
-    "id": "RailwayLinkSequence",
-    "name": "Railway Link Sequence",
-    "definition": "A linear Feature composed of an ordered collection of railway links, which represents a continuous path in a railway network without any branches. The element has a defined beginning and end and every position on the railway link sequence is identifiable with one single parameter such as length. It describes an element of the railway network, characterized by one or more thematical identifiers and/or properties.",
-    "superclasses": [
-      "TransportLinkSequence"
-    ]
-  },
-  {
-    "id": "RailwayNode",
-    "name": "Railway Node",
-    "definition": "A point Feature which represents a significant point along the railway network or defines an intersection of railway tracks used to describe its connectivity.",
-    "superclasses": [
-      "TransportNode"
-    ]
-  },
-  {
-    "id": "RailwayStation",
-    "name": "Railway Station",
-    "definition": "The location of a railway station along the railway network.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "RailwayStationArea",
-    "name": "Railway Station Area",
-    "definition": "An area Feature which is used to represent the topographical limits of the facilities of a railway station (buildings, railway yards, installations and equipment) devoted to carry out railway station operations.",
-    "superclasses": [
-      "TransportArea"
-    ]
-  },
-  {
-    "id": "AdvertisementSign",
-    "name": "Advertisement Sign",
-    "definition": "Advertisement or sign that is visible from a street, road or public place or by passengers carried on any form of public transport.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "BlackSpot",
-    "name": "Black Spot",
-    "definition": "A place where road traffic accidents have historically been concentrated.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "Bollard",
-    "name": "Bollard",
-    "definition": "A short post used to prevent traffic from entering an area.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "BusRoute",
-    "name": "Bus Route",
-    "definition": "The route regularly followed by a passenger bus.",
-    "superclasses": [
-      "TransportLinkSet"
-    ]
-  },
-  {
-    "id": "BusRouteLink",
-    "name": "Bus Route Link",
-    "definition": "A linear Feature that describes the geometry and connectivity of a bus network between two points in the network.",
-    "superclasses": [
-      "TransportLink"
-    ]
-  },
-  {
-    "id": "BusRouteLinkSequence",
-    "name": "Bus Route Link Sequence",
-    "definition": "A linear Feature composed of an ordered collection of bus route links, which represents a continuous path in a bus route network without any branches. The element has a defined beginning and end and every position on the bus route link sequence.",
-    "superclasses": [
-      "TransportLinkSequence"
-    ]
-  },
-  {
-    "id": "BusStation",
-    "name": "Bus Station",
-    "definition": "A place in a town where buses arrive and depart.",
-    "superclasses": [
-      "TransportArea"
-    ]
-  },
-  {
-    "id": "BusStop",
-    "name": "Bus Stop",
-    "definition": "Designated place where buses stop for passengers to board or alight from a bus.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "CarriagewayLink",
-    "name": "Carriageway Link",
-    "definition": "A linear Feature that describes the geometry and connectivity of a carriageway network between two points in the network.",
-    "superclasses": [
-      "TransportLink"
-    ]
-  },
-  {
-    "id": "CarriagewayNode",
-    "name": "Carriageway Node",
-    "definition": "A point Feature that is used to represent connectivity between two carriageway links.",
-    "superclasses": [
-      "TransportNode"
-    ]
-  },
-  {
-    "id": "FormOfWay",
-    "name": "Form Of Way",
-    "definition": "A classification based on the physical properties of the RoadLink.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "FuelStation",
-    "name": "Fuel Station",
-    "definition": "An establishment beside a road selling fuel for motor vehicles, may also be called a petrol or gas station.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "ITSScreen",
-    "name": "ITS Screen",
-    "definition": "A screen used to show how different networks of transport are linked with each other.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "ParkingPayStation",
-    "name": "Parking Pay Station",
-    "definition": "A device used to collect money in exchange for the right to park a vehicle in a particular place for a limited amount of time, includes parking meters.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "Pathway",
-    "name": "Pathway",
-    "definition": "A way beaten, formed, or trodden by the feet of persons or animals.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "PedestrianArea",
-    "name": "Pedestrian Area",
-    "definition": "Paved, tiled, or otherwise hardened surface intended for pedestrians only.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "Road",
-    "name": "Road",
-    "definition": "A collection of road links that are characterized by one or more thematic identifiers and/or properties.",
-    "superclasses": [
-      "TransportLinkSet"
-    ]
-  },
-  {
-    "id": "RoadArea",
-    "name": "Road Area",
-    "definition": "Surface which extends to the limits of a road, including vehicular areas and other parts of it.",
-    "superclasses": [
-      "TransportArea"
-    ]
-  },
-  {
-    "id": "RoadEdge",
-    "name": "Road Edge",
-    "definition": "The edge of a pavement that is nearest to the road.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "RoadFurniture",
-    "name": "Road Furniture",
-    "definition": "Road Furniture includes all fixtures in the road and road reserve. The term includes fixtures on the road, for example, signs, traffic lights or advertisementSign.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "RoadIsland",
-    "name": "Road Island",
-    "definition": "Non-pedestrian islands in the road surface, such as center island, roundabout, etc. Often contains grass, trees, flowers or sculptures.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "RoadLaneLink",
-    "name": "Road Lane Link",
-    "definition": "A linear Feature that describes the geometry and connectivity of a road lane network between two points in the network.",
-    "superclasses": [
-      "TransportLink"
-    ]
-  },
-  {
-    "id": "RoadLaneNode",
-    "name": "Road Lane Node",
-    "definition": "A point that is used to represent connectivity between two road lane links.",
-    "superclasses": [
-      "TransportNode"
-    ]
-  },
-  {
-    "id": "RoadLink",
-    "name": "Road Link",
-    "definition": "A linear Feature that describes the geometry and connectivity of a road network between two points in the network.",
-    "superclasses": [
-      "TransportLink"
-    ]
-  },
-  {
-    "id": "RoadLinkSequence",
-    "name": "Road Link Sequence",
-    "definition": "A line composed of an ordered collection of road links, which represents a continuous path in a road network without any branches. The element has a defined beginning and end and every position on the road link sequence.",
-    "superclasses": [
-      "TransportLinkSequence"
-    ]
-  },
-  {
-    "id": "RoadNode",
-    "name": "Road Node",
-    "definition": "A point that is used to represent connectivity between two road links.",
-    "superclasses": [
-      "TransportNode"
-    ]
-  },
-  {
-    "id": "RoadServiceArea",
-    "name": "Road Service Area",
-    "definition": "Surface annexed to a road and devoted to offer particular services for it (e.g. fuel station, rest area, toll area).",
-    "superclasses": [
-      "TransportArea"
-    ]
-  },
-  {
-    "id": "RoadShoulder",
-    "name": "Road Shoulder",
-    "definition": "A shoulder, or hard shoulder is an emergency stopping lane by the verge of a road or motorway, on the right in countries which drive on the right.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "RoadSign",
-    "name": "Road Sign",
-    "definition": "A sign near a road that has information for drivers.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "SpeedLimit",
-    "name": "Speed Limit",
-    "definition": "Limit for the speed of a vehicle on a road.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "StreetLight",
-    "name": "Street Light",
-    "definition": "A light illuminating a road, typically mounted on a tall post.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "TaxiStation",
-    "name": "Taxi Station",
-    "definition": "A place where taxis may park while awaiting hire.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  },
-  {
-    "id": "TrafficCamera",
-    "name": "Traffic Camera",
-    "definition": "A video camera which observes vehicular traffic on a road.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "TrafficCounter",
-    "name": "Traffic Counter",
-    "definition": "A device, often electronic in nature, used to count, classify, and/or measure the speed of vehicular traffic passing along a given roadway.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "TrafficLight",
-    "name": "Traffic Light",
-    "definition": "A set of automatically operated coloured lights, typically red, amber, and green, for controlling traffic at road junctions, pedestrian crossings, and roundabouts.",
-    "superclasses": [
-      "RoadFurniture"
-    ]
-  },
-  {
-    "id": "Underpass",
-    "name": "Underpass",
-    "definition": "A road or pedestrian tunnel passing under a road or railway.",
-    "superclasses": [
-      "AbstractTransportType"
-    ]
-  },
-  {
-    "id": "WeighStation",
-    "name": "Weigh Station",
-    "definition": "A place near a road where vehicles, especially large trucks, can be weighed.",
-    "superclasses": [
-      "TransportProperty"
-    ]
-  }
-]
+{
+  "id": "Transport",
+  "name": "Transport feature types",
+  "definition": "The Transport Foundation Theme is a suite of road, rail, air and maritime transportation networks and related infrastructure, including connections between the different networks.",
+  "concepts": [
+    {
+      "id": "AbstractTransportType",
+      "name": "Abstract Transport Type",
+      "definition": "Abstract parent class for Feature Types that holds common attributes.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "AccessRestriction",
+      "name": "Access Restriction",
+      "definition": "A restriction on the access to a transport element.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "Accident",
+      "name": "Accident",
+      "definition": "An accident that happened on a transport element.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "Bridge",
+      "name": "Bridge",
+      "definition": "A structure that connects two locations and provides for the passage of a transportation route (for example: a road or a railway) over a terrain obstacle (for example: a waterbody, a gully, and/or a road).",
+      "superclasses": [
+        "AbstractFeatureType",
+        "EngineeringStructure"
+      ]
+    },
+    {
+      "id": "Culvert",
+      "name": "Culvert",
+      "definition": "An enclosed channel for carrying a watercourse (for example: a stream, a sewer, or a drain) under a route (for example: a road, a railway, or an embankment).",
+      "superclasses": [
+        "AbstractFeatureType",
+        "EngineeringStructure"
+      ]
+    },
+    {
+      "id": "EngineeringStructure",
+      "name": "Engineering Structure",
+      "definition": "Abstract Feature class used to describe common attributes for engineering structures e.g. tunnels, bridges, retaining walls.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "Fence",
+      "name": "Fence",
+      "definition": "A barrier, railing, or other upright structure, typically of wood or wire, enclosing an area of ground to prevent or control access or escape.",
+      "superclasses": [
+        "EngineeringStructure"
+      ]
+    },
+    {
+      "id": "MaintenanceAuthority",
+      "name": "Maintenance Authority",
+      "definition": "The authority responsible for maintenance of the transport element.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "MarkerPost",
+      "name": "Marker Post",
+      "definition": "Reference marker placed along a route in a transport network, mostly at regular intervals, indicating the distance from the beginning of the route, or some other reference point, to the point where the marker is located.",
+      "superclasses": [
+        "NetworkElement"
+      ]
+    },
+    {
+      "id": "OwnerAuthority",
+      "name": "Owner Authority",
+      "definition": "The authority owning the transport element.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "RestrictionForVehicles",
+      "name": "Restriction For Vehicles",
+      "definition": "Restriction on vehicles on a transport element.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "RetainingWall",
+      "name": "Retaining Wall",
+      "definition": "A wall that holds back earth.",
+      "superclasses": [
+        "EngineeringStructure"
+      ]
+    },
+    {
+      "id": "TransportArea",
+      "name": "Transport Area",
+      "definition": "Surface that represents the spatial extent of an element of a transport network.",
+      "superclasses": [
+        "NetworkArea"
+      ]
+    },
+    {
+      "id": "TransportLink",
+      "name": "Transport Link",
+      "definition": "A line that describes the geometry and connectivity of a transport network between two points in the network.",
+      "superclasses": [
+        "Link"
+      ]
+    },
+    {
+      "id": "TransportLinkSequence",
+      "name": "Transport Link Sequence",
+      "definition": "A line which is composed of an ordered collection of transport links, which represents a continuous path in the transport network without any branches.",
+      "superclasses": [
+        "LinkSequence"
+      ]
+    },
+    {
+      "id": "TransportLinkSet",
+      "name": "Transport Link Set",
+      "definition": "A collection of individual transport links that has a specific function or significance in a transport network.",
+      "superclasses": [
+        "LinkSet"
+      ]
+    },
+    {
+      "id": "TransportNode",
+      "name": "Transport Node",
+      "definition": "A point which is used for connectivity.",
+      "superclasses": [
+        "Node"
+      ]
+    },
+    {
+      "id": "TransportProperty",
+      "name": "Transport Property",
+      "definition": "A reference to a property that falls upon the network. This property can apply to the whole of the network element it is associated with or - for lines - be described using linear referencing.",
+      "superclasses": [
+        "NetworkProperty"
+      ]
+    },
+    {
+      "id": "Tunnel",
+      "name": "Tunnel",
+      "definition": "An underground passage that is open at both ends and usually contains a land transportation route (for example: a road and/or a railway).",
+      "superclasses": [
+        "AbstractFeatureType",
+        "EngineeringStructure"
+      ]
+    },
+    {
+      "id": "Airport",
+      "name": "Airport",
+      "definition": "A defined site on land or water (including any buildings, installations and equipment) intended to be used either wholly or in part for the arrival, departure and surface movement of aircraft and/or helicopters.",
+      "superclasses": [
+        "TransportNode"
+      ]
+    },
+    {
+      "id": "AirportArea",
+      "name": "Airport Area",
+      "definition": "A defined area on land or water (including any buildings, installations and equipment) intended to be used either wholly or in part for the arrival, departure and surface movement of aircraft and/or helicopters.",
+      "superclasses": [
+        "TransportArea"
+      ]
+    },
+    {
+      "id": "ControlTower",
+      "name": "Control Tower",
+      "definition": "A tall building at an airport from which the movements of air traffic are controlled.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "Seaport",
+      "name": "Seaport",
+      "definition": "A point which is used to represent a sea port in a simplified way, approximately located at the bank of the waterbody where the port is placed.",
+      "superclasses": [
+        "TransportNode"
+      ]
+    },
+    {
+      "id": "SeaportArea",
+      "name": "Seaport Area",
+      "definition": "An area which is used to represent the physical limits of all the facilities which constitute the terrestrial zone of a sea port.",
+      "superclasses": [
+        "TransportArea"
+      ]
+    },
+    {
+      "id": "DesignSpeed",
+      "name": "Design Speed",
+      "definition": "The specification of the maximum speed to which a railway line is designed for.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "MetroLine",
+      "name": "Metro Line",
+      "definition": "A collection of metro link sequences and or individual metro links that are characterized by one or more thematical identifiers and/or properties.",
+      "superclasses": [
+        "TransportLinkSet"
+      ]
+    },
+    {
+      "id": "MetroLink",
+      "name": "Metro Link",
+      "definition": "The centerline of a railway used by the Metro.",
+      "superclasses": [
+        "RailwayLink"
+      ]
+    },
+    {
+      "id": "MetroLinkSequence",
+      "name": "Metro Link Sequence",
+      "definition": "A linear Feature composed of an ordered collection of metro links, which represents a continuous path in a metro network without any branches. The element has a defined beginning and end and every position on the metro link sequence.",
+      "superclasses": [
+        "TransportLinkSequence"
+      ]
+    },
+    {
+      "id": "MetroNode",
+      "name": "Metro Node",
+      "definition": "A point Feature which represents a significant point along the metro network or defines an intersection of metro tracks used to describe its connectivity.",
+      "superclasses": [
+        "TransportNode"
+      ]
+    },
+    {
+      "id": "MetroStation",
+      "name": "Metro Station",
+      "definition": "A metro station is a type of railway station that is part of a metro, rapid transit system, subway or underground railway line or railway network. Geometry representation of metro station is a center point.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "MetroStationArea",
+      "name": "Metro Station Area",
+      "definition": "A metro station is a type of railway station that is part of a metro, rapid transit system, subway or underground railway line or railway network. Geometry representation of metro station area is an extent.",
+      "superclasses": [
+        "TransportArea"
+      ]
+    },
+    {
+      "id": "RailwayArea",
+      "name": "Railway Area",
+      "definition": "Surface occupied by a railway track, including ballast.",
+      "superclasses": [
+        "TransportArea"
+      ]
+    },
+    {
+      "id": "RailwayLine",
+      "name": "Railway Line",
+      "definition": "A collection of railway link sequences and or individual railway links that are characterized by one or more thematical identifiers and/or properties.",
+      "superclasses": [
+        "TransportLinkSet"
+      ]
+    },
+    {
+      "id": "RailwayLink",
+      "name": "Railway Link",
+      "definition": "A linear Feature that describes the geometry and connectivity of a railway network between two points in the network.",
+      "superclasses": [
+        "TransportLink"
+      ]
+    },
+    {
+      "id": "RailwayLinkSequence",
+      "name": "Railway Link Sequence",
+      "definition": "A linear Feature composed of an ordered collection of railway links, which represents a continuous path in a railway network without any branches. The element has a defined beginning and end and every position on the railway link sequence is identifiable with one single parameter such as length. It describes an element of the railway network, characterized by one or more thematical identifiers and/or properties.",
+      "superclasses": [
+        "TransportLinkSequence"
+      ]
+    },
+    {
+      "id": "RailwayNode",
+      "name": "Railway Node",
+      "definition": "A point Feature which represents a significant point along the railway network or defines an intersection of railway tracks used to describe its connectivity.",
+      "superclasses": [
+        "TransportNode"
+      ]
+    },
+    {
+      "id": "RailwayStation",
+      "name": "Railway Station",
+      "definition": "The location of a railway station along the railway network.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "RailwayStationArea",
+      "name": "Railway Station Area",
+      "definition": "An area Feature which is used to represent the topographical limits of the facilities of a railway station (buildings, railway yards, installations and equipment) devoted to carry out railway station operations.",
+      "superclasses": [
+        "TransportArea"
+      ]
+    },
+    {
+      "id": "AdvertisementSign",
+      "name": "Advertisement Sign",
+      "definition": "Advertisement or sign that is visible from a street, road or public place or by passengers carried on any form of public transport.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "BlackSpot",
+      "name": "Black Spot",
+      "definition": "A place where road traffic accidents have historically been concentrated.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "Bollard",
+      "name": "Bollard",
+      "definition": "A short post used to prevent traffic from entering an area.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "BusRoute",
+      "name": "Bus Route",
+      "definition": "The route regularly followed by a passenger bus.",
+      "superclasses": [
+        "TransportLinkSet"
+      ]
+    },
+    {
+      "id": "BusRouteLink",
+      "name": "Bus Route Link",
+      "definition": "A linear Feature that describes the geometry and connectivity of a bus network between two points in the network.",
+      "superclasses": [
+        "TransportLink"
+      ]
+    },
+    {
+      "id": "BusRouteLinkSequence",
+      "name": "Bus Route Link Sequence",
+      "definition": "A linear Feature composed of an ordered collection of bus route links, which represents a continuous path in a bus route network without any branches. The element has a defined beginning and end and every position on the bus route link sequence.",
+      "superclasses": [
+        "TransportLinkSequence"
+      ]
+    },
+    {
+      "id": "BusStation",
+      "name": "Bus Station",
+      "definition": "A place in a town where buses arrive and depart.",
+      "superclasses": [
+        "TransportArea"
+      ]
+    },
+    {
+      "id": "BusStop",
+      "name": "Bus Stop",
+      "definition": "Designated place where buses stop for passengers to board or alight from a bus.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "CarriagewayLink",
+      "name": "Carriageway Link",
+      "definition": "A linear Feature that describes the geometry and connectivity of a carriageway network between two points in the network.",
+      "superclasses": [
+        "TransportLink"
+      ]
+    },
+    {
+      "id": "CarriagewayNode",
+      "name": "Carriageway Node",
+      "definition": "A point Feature that is used to represent connectivity between two carriageway links.",
+      "superclasses": [
+        "TransportNode"
+      ]
+    },
+    {
+      "id": "FormOfWay",
+      "name": "Form Of Way",
+      "definition": "A classification based on the physical properties of the RoadLink.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "FuelStation",
+      "name": "Fuel Station",
+      "definition": "An establishment beside a road selling fuel for motor vehicles, may also be called a petrol or gas station.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "ITSScreen",
+      "name": "ITS Screen",
+      "definition": "A screen used to show how different networks of transport are linked with each other.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "ParkingPayStation",
+      "name": "Parking Pay Station",
+      "definition": "A device used to collect money in exchange for the right to park a vehicle in a particular place for a limited amount of time, includes parking meters.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "Pathway",
+      "name": "Pathway",
+      "definition": "A way beaten, formed, or trodden by the feet of persons or animals.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "PedestrianArea",
+      "name": "Pedestrian Area",
+      "definition": "Paved, tiled, or otherwise hardened surface intended for pedestrians only.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "Road",
+      "name": "Road",
+      "definition": "A collection of road links that are characterized by one or more thematic identifiers and/or properties.",
+      "superclasses": [
+        "TransportLinkSet"
+      ]
+    },
+    {
+      "id": "RoadArea",
+      "name": "Road Area",
+      "definition": "Surface which extends to the limits of a road, including vehicular areas and other parts of it.",
+      "superclasses": [
+        "TransportArea"
+      ]
+    },
+    {
+      "id": "RoadEdge",
+      "name": "Road Edge",
+      "definition": "The edge of a pavement that is nearest to the road.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "RoadFurniture",
+      "name": "Road Furniture",
+      "definition": "Road Furniture includes all fixtures in the road and road reserve. The term includes fixtures on the road, for example, signs, traffic lights or advertisementSign.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "RoadIsland",
+      "name": "Road Island",
+      "definition": "Non-pedestrian islands in the road surface, such as center island, roundabout, etc. Often contains grass, trees, flowers or sculptures.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "RoadLaneLink",
+      "name": "Road Lane Link",
+      "definition": "A linear Feature that describes the geometry and connectivity of a road lane network between two points in the network.",
+      "superclasses": [
+        "TransportLink"
+      ]
+    },
+    {
+      "id": "RoadLaneNode",
+      "name": "Road Lane Node",
+      "definition": "A point that is used to represent connectivity between two road lane links.",
+      "superclasses": [
+        "TransportNode"
+      ]
+    },
+    {
+      "id": "RoadLink",
+      "name": "Road Link",
+      "definition": "A linear Feature that describes the geometry and connectivity of a road network between two points in the network.",
+      "superclasses": [
+        "TransportLink"
+      ]
+    },
+    {
+      "id": "RoadLinkSequence",
+      "name": "Road Link Sequence",
+      "definition": "A line composed of an ordered collection of road links, which represents a continuous path in a road network without any branches. The element has a defined beginning and end and every position on the road link sequence.",
+      "superclasses": [
+        "TransportLinkSequence"
+      ]
+    },
+    {
+      "id": "RoadNode",
+      "name": "Road Node",
+      "definition": "A point that is used to represent connectivity between two road links.",
+      "superclasses": [
+        "TransportNode"
+      ]
+    },
+    {
+      "id": "RoadServiceArea",
+      "name": "Road Service Area",
+      "definition": "Surface annexed to a road and devoted to offer particular services for it (e.g. fuel station, rest area, toll area).",
+      "superclasses": [
+        "TransportArea"
+      ]
+    },
+    {
+      "id": "RoadShoulder",
+      "name": "Road Shoulder",
+      "definition": "A shoulder, or hard shoulder is an emergency stopping lane by the verge of a road or motorway, on the right in countries which drive on the right.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "RoadSign",
+      "name": "Road Sign",
+      "definition": "A sign near a road that has information for drivers.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "SpeedLimit",
+      "name": "Speed Limit",
+      "definition": "Limit for the speed of a vehicle on a road.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "StreetLight",
+      "name": "Street Light",
+      "definition": "A light illuminating a road, typically mounted on a tall post.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "TaxiStation",
+      "name": "Taxi Station",
+      "definition": "A place where taxis may park while awaiting hire.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    },
+    {
+      "id": "TrafficCamera",
+      "name": "Traffic Camera",
+      "definition": "A video camera which observes vehicular traffic on a road.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "TrafficCounter",
+      "name": "Traffic Counter",
+      "definition": "A device, often electronic in nature, used to count, classify, and/or measure the speed of vehicular traffic passing along a given roadway.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "TrafficLight",
+      "name": "Traffic Light",
+      "definition": "A set of automatically operated coloured lights, typically red, amber, and green, for controlling traffic at road junctions, pedestrian crossings, and roundabouts.",
+      "superclasses": [
+        "RoadFurniture"
+      ]
+    },
+    {
+      "id": "Underpass",
+      "name": "Underpass",
+      "definition": "A road or pedestrian tunnel passing under a road or railway.",
+      "superclasses": [
+        "AbstractTransportType"
+      ]
+    },
+    {
+      "id": "WeighStation",
+      "name": "Weigh Station",
+      "definition": "A place near a road where vehicles, especially large trucks, can be weighed.",
+      "superclasses": [
+        "TransportProperty"
+      ]
+    }
+  ]
+}

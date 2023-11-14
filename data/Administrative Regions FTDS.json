@@ -1,66 +1,71 @@
-[
-  {
-    "id": "AbstractAdministrativeBoundary",
-    "name": "Abstract Administrative Boundary",
-    "definition": "A line of demarcation between administrative units.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "AbstractHierarchicalAdministrativeUnit",
-    "name": "Abstract Hierarchical Administrative Unit",
-    "definition": "Abstract Feature Type that establishes a spatial hierarchy of administration units dividing areas where legislated jurisdictional governance rights are exercised.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "MunicipalAdministrativeBoundary",
-    "name": "Municipal Administrative Boundary",
-    "definition": "A line of demarcation between Municipal Administrative Units.",
-    "superclasses": [
-      "AbstractAdministrativeBoundary"
-    ]
-  },
-  {
-    "id": "MunicipalAdministrativeUnit",
-    "name": "Municipal Administrative Unit",
-    "definition": "Spatial hierarchy of municipal administration units, governed by the Ministry of Municipal and Regional Affairs, that divide areas where legislated local governance rights are exercised.",
-    "superclasses": [
-      "AbstractHierarchicalAdministrativeUnit"
-    ]
-  },
-  {
-    "id": "RegionalAdministrativeBoundary",
-    "name": "Regional Administrative Boundary",
-    "definition": "A line of demarcation between Regional Administrative Units.",
-    "superclasses": [
-      "AbstractAdministrativeBoundary"
-    ]
-  },
-  {
-    "id": "RegionalAdministrativeUnit",
-    "name": "Regional Administrative Unit",
-    "definition": "Spatial hierarchy of regional administration units, governed by the Ministry of Interior, that divides areas where legislated regional governance rights are exercised.",
-    "superclasses": [
-      "AbstractHierarchicalAdministrativeUnit"
-    ]
-  },
-  {
-    "id": "Report",
-    "name": "Report",
-    "definition": "A Report provides the ability to publish non-spatial information about or pertaining to any Foundation Theme Feature.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "Service",
-    "name": "Service",
-    "definition": "Administrative and social governmental services such as public administrations, schools and hospitals provided by Public Administrative Bodies.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  }
-]
+{
+  "id": "AdministrativeRegions",
+  "name": "Administrative Regions feature types",
+  "definition": "The Administrative Regions Foundation Theme defines the internal Administrative Units and Service Areas in the Kingdom of Saudi Arabia.",
+  "concepts": [
+    {
+      "id": "AbstractAdministrativeBoundary",
+      "name": "Abstract Administrative Boundary",
+      "definition": "A line of demarcation between administrative units.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "AbstractHierarchicalAdministrativeUnit",
+      "name": "Abstract Hierarchical Administrative Unit",
+      "definition": "Abstract Feature Type that establishes a spatial hierarchy of administration units dividing areas where legislated jurisdictional governance rights are exercised.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "MunicipalAdministrativeBoundary",
+      "name": "Municipal Administrative Boundary",
+      "definition": "A line of demarcation between Municipal Administrative Units.",
+      "superclasses": [
+        "AbstractAdministrativeBoundary"
+      ]
+    },
+    {
+      "id": "MunicipalAdministrativeUnit",
+      "name": "Municipal Administrative Unit",
+      "definition": "Spatial hierarchy of municipal administration units, governed by the Ministry of Municipal and Regional Affairs, that divide areas where legislated local governance rights are exercised.",
+      "superclasses": [
+        "AbstractHierarchicalAdministrativeUnit"
+      ]
+    },
+    {
+      "id": "RegionalAdministrativeBoundary",
+      "name": "Regional Administrative Boundary",
+      "definition": "A line of demarcation between Regional Administrative Units.",
+      "superclasses": [
+        "AbstractAdministrativeBoundary"
+      ]
+    },
+    {
+      "id": "RegionalAdministrativeUnit",
+      "name": "Regional Administrative Unit",
+      "definition": "Spatial hierarchy of regional administration units, governed by the Ministry of Interior, that divides areas where legislated regional governance rights are exercised.",
+      "superclasses": [
+        "AbstractHierarchicalAdministrativeUnit"
+      ]
+    },
+    {
+      "id": "Report",
+      "name": "Report",
+      "definition": "A Report provides the ability to publish non-spatial information about or pertaining to any Foundation Theme Feature.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "Service",
+      "name": "Service",
+      "definition": "Administrative and social governmental services such as public administrations, schools and hospitals provided by Public Administrative Bodies.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    }
+  ]
+}

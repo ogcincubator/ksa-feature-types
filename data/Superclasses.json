@@ -1,50 +1,55 @@
-[
-  {
-    "id": "NetworkElement",
-    "name": "Network Element"
-  },
-  {
-    "id": "NetworkProperty",
-    "name": "Network Property"
-  },
-  {
-    "id": "LinkSequence",
-    "name": "Link Sequence"
-  },
-  {
-    "id": "Node",
-    "name": "Node"
-  },
-  {
-    "id": "Link",
-    "name": "Link"
-  },
-  {
-    "id": "NetworkArea",
-    "name": "Network Area"
-  },
-  {
-    "id": "SpatialDataSet",
-    "name": "Spatial DataSet"
-  },
-  {
-    "id": "AbstractFeatureType",
-    "name": "Abstract Feature Type"
-  },
-  {
-    "id": "LinkSet",
-    "name": "Link Set"
-  },
-  {
-    "id": "RectifiedGridCoverage",
-    "name": "Rectified Grid Coverage"
-  },
-  {
-    "id": "GradeSeparatedCrossing",
-    "name": "Grade Separated Crossing"
-  },
-  {
-    "id": "ReferenceableGridCoverage",
-    "name": "Referenceable Grid Coverage"
-  }
-]
+{
+  "id": "https://w3id.org/ksa/feature-types/superclasses",
+  "name": "Superclasses feature types",
+  "definition": "This concept scheme contains a taxonomy representing the superclasses used by other feature types concept schemes",
+  "concepts": [
+    {
+      "id": "superclasses/NetworkElement",
+      "name": "Network Element"
+    },
+    {
+      "id": "superclasses/NetworkProperty",
+      "name": "Network Property"
+    },
+    {
+      "id": "superclasses/LinkSequence",
+      "name": "Link Sequence"
+    },
+    {
+      "id": "superclasses/Node",
+      "name": "Node"
+    },
+    {
+      "id": "superclasses/Link",
+      "name": "Link"
+    },
+    {
+      "id": "superclasses/NetworkArea",
+      "name": "Network Area"
+    },
+    {
+      "id": "superclasses/SpatialDataSet",
+      "name": "Spatial DataSet"
+    },
+    {
+      "id": "superclasses/AbstractFeatureType",
+      "name": "Abstract Feature Type"
+    },
+    {
+      "id": "superclasses/LinkSet",
+      "name": "Link Set"
+    },
+    {
+      "id": "superclasses/RectifiedGridCoverage",
+      "name": "Rectified Grid Coverage"
+    },
+    {
+      "id": "superclasses/GradeSeparatedCrossing",
+      "name": "Grade Separated Crossing"
+    },
+    {
+      "id": "superclasses/ReferenceableGridCoverage",
+      "name": "Referenceable Grid Coverage"
+    }
+  ]
+}

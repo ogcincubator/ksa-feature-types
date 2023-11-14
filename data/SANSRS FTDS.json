@@ -1,98 +1,103 @@
-[
-  {
-    "id": "AbsoluteGravityCalibrationLinePoint",
-    "name": "Absolute Gravity Calibration Line Point",
-    "definition": "A point on the earth's surface where the acceleration of gravity has been measured relative to other points in a sequence or 'calibration line'.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "AbsoluteGravityPoint",
-    "name": "Absolute Gravity Point",
-    "definition": "A point on the earth's surface where the acceleration of gravity has been measured and the geodetic coordinates, including elevation, have been determined.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "BenchmarkLine",
-    "name": "Benchmark Line",
-    "definition": "Consists of a sequence of BenchmarkPoints where the height of one point can be determined from the height difference with another point.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "BenchmarkPoint",
-    "name": "Benchmark Point",
-    "definition": "A physical elevation marker established for vertical measurement control.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "BenchmarkTideGaugePoint",
-    "name": "Benchmark Tide Gauge Point",
-    "definition": "The main BenchMarkPoint corresponding to a tide gauge.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "CORSNetwork",
-    "name": "CORS Network",
-    "definition": "A network of Continuously Operating Reference Stations (CORS). Accuracy is increased in a CORS network, because more than one station helps ensure correct positioning and guards against a false initialization of a single base station.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "CORSStation",
-    "name": "CORS Station",
-    "definition": "A Continuously Operating Reference Station (CORS) is a real time kinematic (RTK) base station that broadcasts corrections, usually over an Internet connection.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "GeodeticControlNetwork",
-    "name": "Geodetic Control Network",
-    "definition": "A network consisting of stable, identifiable Geodetic Control Points with published datum values derived from observations that tie the points together.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "GeodeticControlPoint",
-    "name": "Geodetic Control Point",
-    "definition": "Permanent reference markers in the ground which are precisely located and documented. These markers provide accurate reference points to support the production of consistent and compatible data collection for surveying and mapping.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "GravimetricNetwork",
-    "name": "Gravimetric Network",
-    "definition": "A network of gravimetric stations where the measurement of gravity has been determined by absolute or relative methods.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "JunctionPoint",
-    "name": "Junction Point",
-    "definition": "A BenchmarkPoint that belongs to two or more BenchmarkLines.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  },
-  {
-    "id": "VerticalControlNetwork",
-    "name": "Vertical Control Network",
-    "definition": "A network of stable, identifiable benchmarks with published datum values used to provide a foundation for a vertical datum.",
-    "superclasses": [
-      "AbstractFeatureType"
-    ]
-  }
-]
+{
+  "id": "SANSRS",
+  "name": "SANSRS feature types",
+  "definition": "The Saudi Arabia National Spatial Reference System (SANSRS) is a national and unified system which allows users to precisely determine and express locations on the Earth, as well as to quantify changes of the Earth and its gravity field in space and time. SANSRS is a consistent reference system that defines Cartesian coordinates, longitude, latitude, height, scale, gravity and orientation throughout the Kingdom of Saudi Arabia. SANSRS is designed to meet national economic, social and environmental needs, and is used in all applications and services for positioning in horizontal and vertical directions. Also, all existing geospatial products and services are referenced to it.\n \nThe SANSRS consists of the following geodetic components:\n \n Geodetic Reference Frame (KSA-GRF) is defined in such a way that it (1) coincides with the latest International Terrestrial Reference Frame (ITRF2014) at epoch 2017.0 and (2) is co-moving with the stable part of the Arabian tectonic plate. KSA-GRF is established based on the Global Navigation Satellite System (GNSS) observation data of the National Continuously Operating Reference Stations Network (KSA-CORS) and CORS Networks of other organizations. The first and latest realization of this GRF is named KSA-GRF17. Vertical Reference Frame (KSA-VRF) is based on satellite altimetry, Gravity Field and Steady State Ocean Circulation Explorer (GOCE) data utilizing also in-situ observations from Tide Gauges (TGs), precise leveling and gravity. The last realization of this VRF is named KSA-VRF14. Geoid Model (KSA-GEOID) is a hybrid model based on gravimetric geoid, which utilizes satellite data (altimetric and gravity satellite data) together with land and shipborne gravity pointwise and grid data. Saudi Arabia Geodetic Infrastructure, which includes different geodetic networks (3D GNSS CORS, horizontal, vertical, tide gauge and gravity), together with necessary data from other satellite techniques and Earth observations. It supplies the data and information for the definition of the SANSRS components above. Transformation parameters and tools for transformation between KSA-GRF17 and other existing reference frames.",
+  "concepts": [
+    {
+      "id": "AbsoluteGravityCalibrationLinePoint",
+      "name": "Absolute Gravity Calibration Line Point",
+      "definition": "A point on the earth's surface where the acceleration of gravity has been measured relative to other points in a sequence or 'calibration line'.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "AbsoluteGravityPoint",
+      "name": "Absolute Gravity Point",
+      "definition": "A point on the earth's surface where the acceleration of gravity has been measured and the geodetic coordinates, including elevation, have been determined.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "BenchmarkLine",
+      "name": "Benchmark Line",
+      "definition": "Consists of a sequence of BenchmarkPoints where the height of one point can be determined from the height difference with another point.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "BenchmarkPoint",
+      "name": "Benchmark Point",
+      "definition": "A physical elevation marker established for vertical measurement control.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "BenchmarkTideGaugePoint",
+      "name": "Benchmark Tide Gauge Point",
+      "definition": "The main BenchMarkPoint corresponding to a tide gauge.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "CORSNetwork",
+      "name": "CORS Network",
+      "definition": "A network of Continuously Operating Reference Stations (CORS). Accuracy is increased in a CORS network, because more than one station helps ensure correct positioning and guards against a false initialization of a single base station.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "CORSStation",
+      "name": "CORS Station",
+      "definition": "A Continuously Operating Reference Station (CORS) is a real time kinematic (RTK) base station that broadcasts corrections, usually over an Internet connection.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "GeodeticControlNetwork",
+      "name": "Geodetic Control Network",
+      "definition": "A network consisting of stable, identifiable Geodetic Control Points with published datum values derived from observations that tie the points together.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "GeodeticControlPoint",
+      "name": "Geodetic Control Point",
+      "definition": "Permanent reference markers in the ground which are precisely located and documented. These markers provide accurate reference points to support the production of consistent and compatible data collection for surveying and mapping.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "GravimetricNetwork",
+      "name": "Gravimetric Network",
+      "definition": "A network of gravimetric stations where the measurement of gravity has been determined by absolute or relative methods.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "JunctionPoint",
+      "name": "Junction Point",
+      "definition": "A BenchmarkPoint that belongs to two or more BenchmarkLines.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    },
+    {
+      "id": "VerticalControlNetwork",
+      "name": "Vertical Control Network",
+      "definition": "A network of stable, identifiable benchmarks with published datum values used to provide a foundation for a vertical datum.",
+      "superclasses": [
+        "AbstractFeatureType"
+      ]
+    }
+  ]
+}

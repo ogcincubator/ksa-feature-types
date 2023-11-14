@@ -1,6 +1,0 @@
-{
-  "@type": "skos:ConceptScheme",
-  "id": "https://w3id.org/ksa/feature-types",
-  "name": "Kingdom of Saudi Arabia Feature Type Catalog",
-  "definition": "This concept scheme contains a taxonomy representing the Feature Type Catalog for the Kingdom of Saudi Arabia"
-}
