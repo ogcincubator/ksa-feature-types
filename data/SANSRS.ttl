@@ -296,8 +296,7 @@ ksa-ft:AbsoluteGravityCalibrationLinePoint a owl:Class,
     rdfs:label "SANSRS Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:SANSRS .
 
-ksa-ft:SANSRS a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:SANSRS a skos:ConceptScheme ;
     rdfs:label "SANSRS Foundation Theme"@en ;
     skos:definition """The Saudi Arabia National Spatial Reference System (SANSRS) is a national and unified system which allows users to precisely determine and express locations on the Earth, as well as to quantify changes of the Earth and its gravity field in space and time. SANSRS is a consistent reference system that defines Cartesian coordinates, longitude, latitude, height, scale, gravity and orientation throughout the Kingdom of Saudi Arabia. SANSRS is designed to meet national economic, social and environmental needs, and is used in all applications and services for positioning in horizontal and vertical directions. Also, all existing geospatial products and services are referenced to it.
  

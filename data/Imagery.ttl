@@ -235,8 +235,7 @@ ksa-ft:SpaceborneImage a owl:Class,
     rdfs:label "Imagery Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:Imagery .
 
-ksa-ft:Imagery a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:Imagery a skos:ConceptScheme ;
     rdfs:label "Imagery Foundation Theme"@en ;
     skos:definition "The Imagery Foundation Theme is a suite of continuously updated georeferenced spaceborne, airborne and terrestrial imagery, as well as any novel sources, for the Kingdom of Saudi Arabia. The Foundation Theme makes imagery with different resolutions available nationally to multiple users for a wide range of missions such as national security, natural resource management and urban development."@en .
 

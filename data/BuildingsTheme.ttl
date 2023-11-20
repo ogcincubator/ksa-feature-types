@@ -50,7 +50,6 @@ ksa-ft:BuildingUnit a owl:Class,
     rdfs:label "Buildings Theme code list or type"@en ;
     skos:inScheme ksa-ft:BuildingsTheme .
 
-ksa-ft:BuildingsTheme a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:BuildingsTheme a skos:ConceptScheme ;
     rdfs:label "Buildings Theme"@en .
 

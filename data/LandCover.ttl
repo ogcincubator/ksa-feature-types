@@ -95,8 +95,7 @@ ksa-ft:LandCoverCollection a owl:Class,
     skos:definition "A Land Cover Collection is a collection of units (areas or locations) for which information on observed (bio)physical cover on the Earth's surface is provided. A land cover information were captured in the same methodology and classification.  This representation allows Land Cover data being supported by a vector geometry."@en ;
     skos:inScheme ksa-ft:LandCover .
 
-ksa-ft:LandCover a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:LandCover a skos:ConceptScheme ;
     rdfs:label "Land Cover Foundation Theme"@en ;
     skos:definition "The Land Cover Foundation Theme is the observed natural and built environment surface cover in the Kingdom of Saudi Arabia."@en .
 

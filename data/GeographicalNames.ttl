@@ -176,8 +176,7 @@ ksa-ft:PlaceName a owl:Class,
     skos:definition "Any real world entity referred to by one or several proper nouns."@en ;
     skos:inScheme ksa-ft:GeographicalNames .
 
-ksa-ft:GeographicalNames a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:GeographicalNames a skos:ConceptScheme ;
     rdfs:label "Geographical Names Foundation Theme"@en ;
     skos:definition "Geographical Names provide cultural, historical and political orientation and identity to geographical places with one or more official or unofficial names. They are location identifiers for man-made and natural features of the real world, such as districts, regions or any feature of public or historical interest."@en .
 

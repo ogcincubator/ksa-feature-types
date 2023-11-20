@@ -230,8 +230,7 @@ ksa-ft:MapDocument a owl:Class,
     rdfs:label "Land Use Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:LandUse .
 
-ksa-ft:LandUse a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:LandUse a skos:ConceptScheme ;
     rdfs:label "Land Use Foundation Theme"@en ;
     skos:definition "The Land Use Foundation Theme describes human activities in the built and natural environments and includes both existing and future uses of land and natural resources."@en .
 

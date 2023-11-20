@@ -930,8 +930,7 @@ ksa-ft:HazardArea a owl:Class,
     rdfs:label "Geology Foundation Theme code list or type"@en ;
     skos:inScheme ksa-ft:Geology .
 
-ksa-ft:Geology a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:Geology a skos:ConceptScheme ;
     rdfs:label "Geology Foundation Theme"@en ;
     skos:definition "The Geology Foundation Theme includes geological formations, geological structures and tectonics, geological strata, geomorphological features, geophysics and geochemistry, coastal and marine geology, hydrogeology, environmental geology and the distribution of rocks, minerals and groundwater. The Foundation Theme also includes sediment, rock and soil types and their properties. Additionally, seismic activities including earthquake and volcanic zones, man-made hazards, and information on the geological history and depositional environments, are included in the Geology Foundation Theme."@en .
 

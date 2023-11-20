@@ -24,6 +24,6 @@
   dcfg:localPath "." ;
   dcfg:glob "data/*.ttl" ;
   dcfg:uriRootFilter "/ksa/" ;
-  dct:conformsTo profiles:vocprez_ogc, profiles:skos_conceptscheme, profiles:skos_conceptscheme_ogc, profiles:owl2skos ;
+  dct:conformsTo profiles:vocprez_ogc, profiles:skos_conceptscheme, profiles:skos_conceptscheme_ogc ;
 .
 

@@ -142,8 +142,7 @@ ksa-ft:Report a owl:Class,
     rdfs:label "Administrative Regions Foundation Theme code list or type"@en ;
     skos:inScheme ksa-ft:AdministrativeRegions .
 
-ksa-ft:AdministrativeRegions a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:AdministrativeRegions a skos:ConceptScheme ;
     rdfs:label "Administrative Regions Foundation Theme"@en ;
     skos:definition "The Administrative Regions Foundation Theme defines the internal Administrative Units and Service Areas in the Kingdom of Saudi Arabia."@en .
 

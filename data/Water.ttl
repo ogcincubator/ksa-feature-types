@@ -231,8 +231,7 @@ ksa-ft:AbstractHydroFeature a owl:Class,
     rdfs:label "Water Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:Water .
 
-ksa-ft:Water a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:Water a skos:ConceptScheme ;
     rdfs:label "Water Foundation Theme"@en ;
     skos:definition "The Water Foundation Theme depicts and specifies all surface water types and water resources including perpetual and transient water courses, artificial surface water bodies, and sea water. While it includes all water features that are intrinsic to (part of) a surface water hydrological network, it excludes ultimate uses of water such as irrigation and waterborne transport."@en .
 

@@ -407,8 +407,7 @@ ksa-ft:AbstractTransportType a owl:Class,
     rdfs:label "Transport Foundation Theme code list or type"@en ;
     skos:inScheme ksa-ft:Transport .
 
-ksa-ft:Transport a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:Transport a skos:ConceptScheme ;
     rdfs:label "Transport Foundation Theme"@en ;
     skos:definition "The Transport Foundation Theme is a suite of road, rail, air and maritime transportation networks and related infrastructure, including connections between the different networks."@en .
 

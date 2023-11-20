@@ -187,8 +187,7 @@ ksa-ft:Antenna a owl:Class,
         <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/mountHeight> ;
     skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
 
-ksa-ft:PhysicalInfrastructureTheme a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:PhysicalInfrastructureTheme a skos:ConceptScheme ;
     rdfs:label "Physical Infrastructure Theme"@en .
 
 <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> a owl:Class,

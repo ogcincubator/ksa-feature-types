@@ -107,8 +107,7 @@ ksa-ft:SpatialUnit a owl:Class,
     rdfs:label "Land Parcels Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:LandParcels .
 
-ksa-ft:LandParcels a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:LandParcels a skos:ConceptScheme ;
     rdfs:label "Land Parcels Foundation Theme"@en ;
     skos:definition "The Land Parcels Foundation Theme is a continuously updated nationwide information resource, which contains detailed geometry and other attribute information for Land Parcels and Building Footprints. It also enables linking of land registration, ownership and rights information to Land Parcels and Building Footprints. Geometry must be referenced to the Saudi Arabia National Spatial Reference System (SANSRS) and be topologically structured. Each Land Parcel and Building Footprint shall have a unique identifier allowing other Foundation Themes (e.g. Land Use) and applications to reference them."@en .
 

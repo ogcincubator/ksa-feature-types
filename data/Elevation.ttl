@@ -767,8 +767,7 @@ ksa-ft:LASPointCloud a owl:Class,
     skos:definition "Representation of set of points in a form of an LAS file."@en ;
     skos:inScheme ksa-ft:Elevation .
 
-ksa-ft:Elevation a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:Elevation a skos:ConceptScheme ;
     rdfs:label "Elevation Foundation Theme"@en ;
     skos:definition "The Elevation Foundation Theme measures and describes the surface of the Earth both on land and under a body of water, relative to a vertical and a horizontal datum. Its data may commonly be expressed as a Digital Terrain Model (DTM) of the ‘bare earth’ or seabed or as a Digital Surface Model (DSM), to include the shape of natural and man-made objects."@en .
 

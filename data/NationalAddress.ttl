@@ -171,8 +171,7 @@ ksa-ft:Address a owl:Class,
     skos:definition "An identification of the fixed location of property by means of a structured composition of geographic names and identifiers."@en ;
     skos:inScheme ksa-ft:NationalAddress .
 
-ksa-ft:NationalAddress a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:NationalAddress a skos:ConceptScheme ;
     rdfs:label "National Address Foundation Theme"@en ;
     skos:definition "The National Address Foundation Theme is a unified location identification Foundation Theme, in the form of a geocoded structured label, for properties, non-addressable objects and points of interest. Labels contain building numbers, street names, district names, city names, zip codes, additional and unit numbers."@en .
 

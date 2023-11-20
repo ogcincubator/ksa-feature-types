@@ -67,8 +67,7 @@ ksa-ft:DemographicObservation a owl:Class,
     skos:broader ksa-ft:StatisticalObservation ;
     skos:inScheme ksa-ft:PopulationandDemographicsTheme .
 
-ksa-ft:PopulationandDemographicsTheme a owl:Class,
-        skos:ConceptScheme ;
+ksa-ft:PopulationandDemographicsTheme a skos:ConceptScheme ;
     rdfs:label "Population and Demographics Theme"@en .
 
 <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> a owl:Class,
