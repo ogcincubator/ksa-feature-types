@@ -1,0 +1,198 @@
+@prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ksa-ft:CopperCable a owl:Class,
+        skos:Concept ;
+    rdfs:label "CopperCable"@en ;
+    rdfs:subClassOf ksa-ft:Cable ;
+    skos:broader ksa-ft:Cable ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:DataCenter a owl:Class,
+        skos:Concept ;
+    rdfs:label "Communications Building"@en ;
+    rdfs:subClassOf ksa-ft:CommsBuilding ;
+    skos:broader ksa-ft:CommsBuilding ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:FrequencyBand a owl:Class,
+        skos:Concept ;
+    rdfs:label "FrequencyBand"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/codeLists> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/cellSite> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "cellSite" ;
+    rdfs:domain ksa-ft:Antenna ;
+    rdfs:range ksa-ft:CellSite ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/landingStation> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "landingStation" ;
+    rdfs:domain ksa-ft:BeachManhole ;
+    rdfs:range ksa-ft:LandingStation ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/segments> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "segments" ;
+    rdfs:domain ksa-ft:Cable,
+        ksa-ft:Pipeline ;
+    rdfs:range ksa-ft:LinkSequence ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/tower> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "tower" ;
+    rdfs:domain ksa-ft:Antenna ;
+    rdfs:range ksa-ft:Tower ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> .
+
+ksa-ft:WirelessTechnology a owl:Class,
+        skos:Concept ;
+    rdfs:label "WirelessTechnology"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/codeLists> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:AssetAreaFootprint a owl:Class,
+        skos:Concept ;
+    rdfs:label "AssetAreaFootprint"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/geometry> ;
+    skos:definition "A description of the area occupied by an asset, allowing a straditional network model to have indicative location to act as point geometry for a network node."@en ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:BeachManhole a owl:Class,
+        skos:Concept ;
+    rdfs:label "BeachManhole"@en ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:CellSite a owl:Class,
+        skos:Concept ;
+    rdfs:label "CellSite"@en .
+
+ksa-ft:LandingStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "LandingStation"@en ;
+    skos:definition "<font color=\"#000061\"></font>"@en .
+
+ksa-ft:LinkSequence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Link Sequence"@en ;
+    skos:definition "A network element which represents a continuous path in the network without any branches. The element has a defined beginning and end and every position on the link sequence is identifiable with one single parameter such as length."@en .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/azimuth> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "azimuth"@en ;
+    rdfs:domain ksa-ft:Antenna ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/beamWidth> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "beamWidth"@en ;
+    rdfs:domain ksa-ft:Antenna ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/electricalTilt> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "electricalTilt"@en ;
+    rdfs:domain ksa-ft:Antenna ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/mechanicalTilt> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "mechanicalTilt"@en ;
+    rdfs:domain ksa-ft:Antenna ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/mountHeight> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "mountHeight"@en ;
+    rdfs:domain ksa-ft:Antenna ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/voltageClass> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "voltageClass"@en ;
+    rdfs:domain ksa-ft:Cable ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:Tower a owl:Class,
+        skos:Concept ;
+    rdfs:label "Tower"@en .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/codeLists> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Physical Infrastructure Theme code list or type"@en ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:Pipeline a owl:Class,
+        skos:Concept ;
+    rdfs:label "Pipeline"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/geometry> ;
+    skos:definition "A named Entity that may link a single pathway between one or more network nodes in a defined sequence."@en ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/geometry> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geometry"@en ;
+    rdfs:domain ksa-ft:AssetAreaFootprint,
+        ksa-ft:Cable,
+        ksa-ft:Pipeline ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:Cable a owl:Class,
+        skos:Concept ;
+    rdfs:label "Cable"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/geometry>,
+        <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/voltageClass> ;
+    skos:definition "A named Entity that may link a single pathway between one or more network nodes in a defined sequence."@en ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:Antenna a owl:Class,
+        skos:Concept ;
+    rdfs:label "Antenna"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/azimuth>,
+        <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/beamWidth>,
+        <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/electricalTilt>,
+        <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/mechanicalTilt>,
+        <https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute/mountHeight> ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+
+ksa-ft:PhysicalInfrastructureTheme a owl:Class,
+        skos:ConceptScheme ;
+    rdfs:label "Physical Infrastructure Theme"@en .
+
+<https://w3id.org/ksa/feature-types/PhysicalInfrastructureTheme/attribute> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Physical Infrastructure Theme attribute"@en ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme .
+

@@ -1,0 +1,56 @@
+@prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ksa-ft:BuildingConstructionStatusValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Building Construction Status Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BuildingsTheme/codeLists> ;
+    skos:inScheme ksa-ft:BuildingsTheme .
+
+ksa-ft:BuildingMaterialValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Building Material Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BuildingsTheme/codeLists> ;
+    skos:inScheme ksa-ft:BuildingsTheme .
+
+ksa-ft:BuildingStatusValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Building Status Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BuildingsTheme/codeLists> ;
+    skos:inScheme ksa-ft:BuildingsTheme .
+
+ksa-ft:BuildingUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "Building Unit"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/BuildingsTheme/attribute/floorNumber> ;
+    skos:definition "A BuildingUnit is a subdivision of Building with its own lockable access from the outside or from a common area (i.e. not from another BuildingUnit), which is atomic, functionally independent, and may be separately sold, rented out, inherited, etc."@en ;
+    skos:inScheme ksa-ft:BuildingsTheme .
+
+<https://w3id.org/ksa/feature-types/BuildingsTheme/attribute/floorNumber> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "floorNumber"@en ;
+    rdfs:domain ksa-ft:BuildingUnit ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BuildingsTheme/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BuildingsTheme/attribute> ;
+    skos:definition "Floor number of the main entrance level to the building unit in a building (to allow mezzaine, ground)."@en ;
+    skos:inScheme ksa-ft:BuildingsTheme .
+
+<https://w3id.org/ksa/feature-types/BuildingsTheme/attribute> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Buildings Theme attribute"@en ;
+    skos:inScheme ksa-ft:BuildingsTheme .
+
+<https://w3id.org/ksa/feature-types/BuildingsTheme/codeLists> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Buildings Theme code list or type"@en ;
+    skos:inScheme ksa-ft:BuildingsTheme .
+
+ksa-ft:BuildingsTheme a owl:Class,
+        skos:ConceptScheme ;
+    rdfs:label "Buildings Theme"@en .
+

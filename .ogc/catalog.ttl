@@ -8,7 +8,7 @@
 
 :ksa-ft a dcat:Catalog ;
   dct:title "KSA Feature Type Catalog" ;
-  dcat:dataset :feature-types-uplift, :feature-types-upload ;
+  dcat:dataset :feature-types-upload ; # Note: uplift is disabled
   dcfg:hasProfileSource "sparql:http://defs-dev.opengis.net/fuseki/query" ;
 .
 

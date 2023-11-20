@@ -1,0 +1,414 @@
+@prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ksa-ft:AccessRestrictionValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Access Restriction Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "A coded domain value denoting a access restriction for a transport element (e.g. private, public access)."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:AccidentCategoryValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Accident Category Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:AirportCategoryValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Airport Category Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:AirportTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Airport Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:BridgeConstructionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bridge Construction Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "A coded domain value denoting a type of bridge construction (e.g. grider, cable stayed)."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:BulbTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bulb Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:BusRouteTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bus Route Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:CulvertConstructionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Culvert Construction Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:FormOfRailwayNodeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "FormOfRailwayNodeValue"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "The possible functions of a railway node within the railway network."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:FormOfRoadNodeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Form Of Road Node Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Functions of road nodes."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:FormOfWayValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Form Of Way Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Classification based on the physical properties of the road link."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:FunctionalRoadClassValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Functional Road Class Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "A classification based on the importance of the role that the road performs in the road network."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:GroundCompositionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Ground Composition Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Type of the ground composition for different transport networks."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:LightWattageValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Light Wattage Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:MaterialTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Material Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "A coded domain value denoting a type of material (e.g. steel, concrete)."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:MetroConstructionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Metro Construction Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:PhysicalConditionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Physical Condition Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "A coded domain value denoting a physical condition of a transport element (e.g. good, acceptable)."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RailwayClassTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Class Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RailwayTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RailwayUsageTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Usage Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RestrictionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Restriction Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "A coded domain value denoting possible restrictions on vehicles that can access a transport element."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RoadClassTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Class Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "The hierarchy of roads categorizes roads according to their functions and capacities."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RoadIntersectionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Intersection Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "An area where roads meet at junctions, primarily mapped for easy manipulation of roads data. Roads with comparatively few junctions, such as highways are also split where another feature crosses them, such as a road bridge or footbridge."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RoadServiceTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Service Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Types of road service areas."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RoadSignSubtypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Sign Subtype Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:RoadSignTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Sign Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:SeaportArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Seaport Area"@en ;
+    rdfs:subClassOf ksa-ft:TransportArea ;
+    skos:broader ksa-ft:TransportArea ;
+    skos:definition "An area which is used to represent the physical limits of all the facilities which constitute the terrestrial zone of a sea port."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:SeaportTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Seaport Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:SignboardColorValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Signboard Color Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:SpeedLimitMinMaxValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Speed Limit Min Max Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Indicates if the speed limit is maximum or minimum and if it is recommended."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:SpeedLimitSourceValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Speed Limit Source Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Possible sources for speed limits."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:SurfaceTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Surface Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Type of road surface e.g. asphalt, soil, concrete."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:TrafficCameraTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Traffic Camera Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:TrafficLightTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Traffic Light Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/node> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "node" ;
+    rdfs:domain ksa-ft:MetroStation ;
+    rdfs:range ksa-ft:MetroNode ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> .
+
+ksa-ft:VehicleTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vehicle Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Possible types of vehicles."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:VerticalPositionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Position Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "A coded domain value denoting a relative vertical position of the transport element."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:MetroNode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Metro Node"@en ;
+    skos:definition "A point feature which represents a significant point along the metro network or defines an intersection of metro tracks used to describe its connectivity."@en .
+
+ksa-ft:PathwayTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Pathway Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "Type of pathway for pedestrian or wheelchair."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:StatusTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Status Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/codeLists> ;
+    skos:definition "A coded domain value denoting a status of a transport element (e.g. projected, underConstruction)"@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/alternativeName> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "alternativeName"@en ;
+    rdfs:domain ksa-ft:Pathway ;
+    rdfs:range ksa-ft:GeographicalName ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Alternative name of a pathway, as assigned by the responsible authority."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/centerline> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "centerline"@en ;
+    rdfs:domain ksa-ft:Pathway ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Geometry of the pathway."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/class> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "class"@en ;
+    rdfs:domain ksa-ft:Pathway ;
+    rdfs:range ksa-ft:PathwayTypeValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Type of pathway for pedestrian or wheelchair."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/description> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "description"@en ;
+    rdfs:domain ksa-ft:AbstractTransportType ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Description of the transport element."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/height> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "height"@en ;
+    rdfs:domain ksa-ft:ControlTower ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Height of the control tower."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/name> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain ksa-ft:AbstractTransportType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Name of the transport element."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/status> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "status"@en ;
+    rdfs:domain ksa-ft:AbstractTransportType ;
+    rdfs:range ksa-ft:StatusTypeValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Status of the transport element (e.g. projected, under construction)."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/width> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "width"@en ;
+    rdfs:domain ksa-ft:Pathway ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Width of the pathway."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:ControlTower a owl:Class,
+        skos:Concept ;
+    rdfs:label "Control Tower"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/Transport/attribute/centerpoint>,
+        <https://w3id.org/ksa/feature-types/Transport/attribute/height> ;
+    rdfs:subClassOf ksa-ft:AbstractTransportType ;
+    skos:broader ksa-ft:AbstractTransportType ;
+    skos:definition "A tall building at an airport from which the movements of air traffic are controlled."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:MetroStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Metro Station"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/Transport/attribute/centerpoint> ;
+    rdfs:subClassOf ksa-ft:AbstractTransportType ;
+    skos:broader ksa-ft:AbstractTransportType ;
+    skos:definition "A metro station is a type of railway station that is part of a metro, rapid transit system, subway or underground railway line or railway network. Geometry representation of metro station is a center point."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute/centerpoint> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "centerpoint"@en ;
+    rdfs:domain ksa-ft:ControlTower,
+        ksa-ft:MetroStation ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Transport/attribute> ;
+    skos:definition "Geometry representation of metro station is a center point."@en,
+        "Location of the control tower."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:Pathway a owl:Class,
+        skos:Concept ;
+    rdfs:label "Pathway"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/Transport/attribute/alternativeName>,
+        <https://w3id.org/ksa/feature-types/Transport/attribute/centerline>,
+        <https://w3id.org/ksa/feature-types/Transport/attribute/class>,
+        <https://w3id.org/ksa/feature-types/Transport/attribute/width> ;
+    rdfs:subClassOf ksa-ft:AbstractTransportType ;
+    skos:broader ksa-ft:AbstractTransportType ;
+    skos:definition "A way beaten, formed, or trodden by the feet of persons or animals."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:AbstractTransportType a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Transport Type"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/Transport/attribute/description>,
+        <https://w3id.org/ksa/feature-types/Transport/attribute/name>,
+        <https://w3id.org/ksa/feature-types/Transport/attribute/status> ;
+    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
+    skos:broader ksa-ft:AbstractFeatureType ;
+    skos:definition "Abstract parent class for feature types that holds common attributes."@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/attribute> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transport Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:Transport .
+
+<https://w3id.org/ksa/feature-types/Transport/codeLists> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transport Foundation Theme code list or type"@en ;
+    skos:inScheme ksa-ft:Transport .
+
+ksa-ft:Transport a owl:Class,
+        skos:ConceptScheme ;
+    rdfs:label "Transport Foundation Theme"@en ;
+    skos:definition "The Transport Foundation Theme is a suite of road, rail, air and maritime transportation networks and related infrastructure, including connections between the different networks."@en .
+

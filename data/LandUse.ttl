@@ -1,0 +1,237 @@
+@prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ksa-ft:DateType a owl:Class,
+        skos:Concept ;
+    rdfs:label "Date Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "Reference date and event of lifecycle/process stage of spatial plan document used to describe it."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:LandUseClassificationValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Use Classification"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "List of land use classes to be used in The Kingdom."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:LandUsePercentage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Use Percentage"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "Percentage of a land use object that is covered by a presence."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:OwnershipTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Ownership Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "Type of ownership."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:ParcelLandUseValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Parcel Land Use Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "Land Use information within the parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:ProcessStepGeneralValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Process Step General"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "General indication of the step of the planning process that the plan is undergoing."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:RegulationNatureValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Regulation Nature"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:RoadSurfaceCategoryValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Surface Catagory"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "Values to indicate whether a road is paved or not paved."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:SpatialPlanTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Spatial Plan Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "Type of spatial plan document."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:UrbanBoundaryTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Urban Boundary Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "Type of urban boundary."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:VerticalLandUse a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Land Use"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "Land Use classes that are present in a specific vertical level of using of a parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:VerticalLevelValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Level"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/codeLists> ;
+    skos:definition "The relative vertical level of a land use of a parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/additionalDescription> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "additionalDescription"@en ;
+    rdfs:domain ksa-ft:MapDocument ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition "Plain text description of additional information not fitting in other attributes."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/coordinateReferenceSystem> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "coordinateReferenceSystem"@en ;
+    rdfs:domain ksa-ft:MapDocument ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition """Identifier and codespace for coordinate reference system of map document.
+
+NOTE. Refer to EPSG Geodetic Parameter Dataset  (EPSG) as URI identifier of reference system e.g.  http://www.opengis.net/def/crs/EPSG/0/4326"""@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/extent> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extent"@en ;
+    rdfs:domain ksa-ft:ExistingLandUseCollection ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition """Contains the extent of the data set.
+
+NOTE 01. For an area objects boundary of the geometrical union of all the instances of the spatial object type ExistingLandUseUnit.
+For an sampled objects the convex hull of all the instances of the spatial object type ExistingLandUseUnit."""@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/legend> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "legend"@en ;
+    rdfs:domain ksa-ft:MapDocument ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition "Link to online version of legend of map document."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/link> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "link"@en ;
+    rdfs:domain ksa-ft:MapDocument ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition "Link to online version of map document."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/name> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain ksa-ft:ExistingLandUseCollection ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition "Name of the Land Use collection"@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/spatialResolution> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "spatialResolution"@en ;
+    rdfs:domain ksa-ft:MapDocument ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition "Level of detail expressed as an integer value expressing the scale denominator of a comparable hardcopy map."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/title> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "title"@en ;
+    rdfs:domain ksa-ft:MapDocument ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition "Official title of the map document."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/validFrom> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validFrom"@en ;
+    rdfs:domain ksa-ft:ExistingLandUseCollection,
+        ksa-ft:MapDocument ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition "First date at which the map document is valid in reality."@en,
+        "The date when the Land Use data set started to exist in the real world."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute/validTo> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validTo"@en ;
+    rdfs:domain ksa-ft:ExistingLandUseCollection,
+        ksa-ft:MapDocument ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/LandUse/attribute> ;
+    skos:definition "The dwte from which the Land Use data set no longer exists in the real world."@en,
+        "The time from which the map document no longer exists in the real world."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:ExistingLandUseCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Existing Land Use Collection"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/LandUse/attribute/extent>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/name>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/validFrom>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/validTo> ;
+    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
+    skos:broader ksa-ft:AbstractFeatureType ;
+    skos:definition "A collection of units (areas or locations) for which information on existing land use is provided as a polygon."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:MapDocument a owl:Class,
+        skos:Concept ;
+    rdfs:label "Map Document"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/LandUse/attribute/additionalDescription>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/coordinateReferenceSystem>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/legend>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/link>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/spatialResolution>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/title>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/validFrom>,
+        <https://w3id.org/ksa/feature-types/LandUse/attribute/validTo> ;
+    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
+    skos:broader ksa-ft:AbstractFeatureType ;
+    skos:definition "The scanned plan and structural drawing which may geo-referenced e.g. raster images, vector drawings."@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/codeLists> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Use Foundation Theme code list or type"@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+<https://w3id.org/ksa/feature-types/LandUse/attribute> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Use Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:LandUse .
+
+ksa-ft:LandUse a owl:Class,
+        skos:ConceptScheme ;
+    rdfs:label "Land Use Foundation Theme"@en ;
+    skos:definition "The Land Use Foundation Theme describes human activities in the built and natural environments and includes both existing and future uses of land and natural resources."@en .
+

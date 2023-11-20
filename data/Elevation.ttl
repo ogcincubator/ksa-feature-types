@@ -1,0 +1,779 @@
+@prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ksa-ft:BathymetricElevationGridCoverageAggregation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Elevation Grid Coverage Aggregation"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "Geometrical characteristics of the elevation grid coverage aggregation."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:BathymetricSpotElevationClassValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "BathymetricSpotElevationClassValue"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Possible classification values for bathymetric spot elevations based on Topo-Bathy LAS Domain Profile.
+
+NOTE These classes are proposed regardless of the acquisition method of the spot elevation. They correspond to the Topo-Bathy LAS Domain Profile point classes."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:BreakLineTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Break Line Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "List of possible type values for break lines based on the physical characteristics of the break line [in the elevation surface]."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:ContourLineTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Contour Line Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "List of possible categories of contour lines based on the equidistance parameter of the data set."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:DepthMeasurementQualityValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Depth Mesurement Quality"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Quality of depth measurement conformant with IHO s-57. 
+
+NOTE S-57 acronym is QUASOU."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/CRS> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "CRS" ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:CRS ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> .
+
+ksa-ft:LandElevationGridCoverageAggregation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Elevation Grid Coverage Aggregation"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "Geometrical characteristics of the elevation grid coverage aggregation."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:LandSpotElevationClassValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Spot Elevation Class"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Possible classification values for land spot elevations based on the LAS specification maintained by the American Society for Photogrammetry and Remote Sensing (ASPRS).
+
+NOTE These classes are proposed regardless of the acquisition method of the spot elevation. They correspond to the ASPRS Standard LIDAR Point Classes."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:SoundingExpositionValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Sounding Exposition Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Sounding exposition conformant with IHO s-57. 
+
+NOTE S-57 acronym is EXPSOU."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:SoundingStatusValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "SoundingStatus"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Sounding status conformant with IHO S-101. 
+
+NOTE S-57 acronym is STATUS."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:SpotElevationTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Spot Elevation Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "Possible values for spot elevation points that describe a singularity of the surface."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:SurveyTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Survey Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Type of the survey conformant with IHO S-101. 
+
+NOTE S-101 acronym is SURTYP."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:TechniqueOfSoundingMeasurementValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "TechniqueOfSoundingMeasurement"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Technique of sounding measurement corresponding to IHO s-57 and IHO S-101.
+
+NOTE S-57 and S-101 acronym is TECSOU."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:AcquisitionMethodValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Acquisition Method"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """List of methods of acquisition of the points in the point cloud.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:BathymetricElevationGridCoverage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Elevation Grid Coverage"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/Elevation/attribute/localDepthDatum> ;
+    rdfs:subClassOf ksa-ft:ElevationGridCoverage ;
+    skos:broader ksa-ft:ElevationGridCoverage ;
+    skos:definition "Elevation grid for bathymetric elevation.  The value of the grid cells is depth which is measured upwards."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:CRS a owl:Class,
+        skos:Concept ;
+    rdfs:label "CRS"@en ;
+    skos:definition "coordinate reference system which is usually single but may be compound"@en .
+
+ksa-ft:CRSRepresentationInLASFileValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "CRS Representation In LAS File"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Representation of the Coordinate Reference System as it is in the LAS file.
+
+NOTE 1 In LAS files versions 1.0-1.3 the CRS was represented as GeoTIFF. In version 1.4 the CRS can be represent as GeoTIFF or WKT (Well Known Text).
+
+NOTE 2 Point Record Formats 0-5 can use either GeoTIFF of WKT. Point Record Formats 6-10 must use WKT.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:ChartDatum a owl:Class,
+        skos:Concept ;
+    rdfs:label "Chart Datum"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "Local vertical coordinate reference system (Coordinate Reference System) which is used to refer and portray depth measurements as property values. This data type is intended to describe the main characteristics of a vertical Coordinate Reference System for measurement of depths in cases where this information is rarely or not available through a Coordinate Reference System registry (for example, like EPSG). Examples of a local vertical Coordinate Reference System include local datums for referring depths in lakes and navigable rivers."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:CoordinateComputationalData a owl:Class,
+        skos:Concept ;
+    rdfs:label "Coordinate Computational Data"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "Encapsulation of data used to compute points coordinates in specified Coordinate Reference System when points are given in raw form of integers only.  For further explanation see ASPRS LAS file specification 1.4 - R15."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:DomainProfile a owl:Class,
+        skos:Concept ;
+    rdfs:label "Domain Profile"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "Domain profile of LAS file."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/CRSRepresentation> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "CRSRepresentation"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:CRSRepresentationInLASFileValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Representation of the Coordinate Reference System as it is in the LAS file.
+
+NOTE 1 In LAS files versions 1.0-1.3 the CRS was represented as GeoTIFF. In version 1.4 the CRS can be represent as GeoTIFF or WKT (Well Known Text).
+
+NOTE 2 Point Record Formats 0-5 can use either GeoTIFF of WKT. Point Record Formats 6-10 must use WKT."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/GPSTimeType> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "GPSTimeType"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:GPSTimeTypeValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "The meaning of GPS Time in the point records."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/LASFile> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "LASFile"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Identifier of LAS file contaninig data for this point cloud."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/LASFileSpecificationVersion> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "LASFileSpecificationVersion"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Version of the LAS file specification.
+
+EXAMPLE 1: 1.2
+
+EXAMPLE 2: 1.4"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/WDPFile> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "WDPFile"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "WDP file contaninig asociated with LAS file."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/WDPStorageType> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "WDPStorageType"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:WDPStorageTypeValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Type of storage of Waveform Data Package.
+
+EXAMPLE 1 Internal in the LAS file (deprecated in LAS 1.4)
+
+EXAMPLE 2 External in the separate (to LAS file) WDP file that has the same name as corresponding LAS file."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/acquisitionMethod> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "acquisitionMethod"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:AcquisitionMethodValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Method of acquisition of the points in the point cloud."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/averageAltitude> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "averageAltitude"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Average flying altitude above the ground."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/averagePositionalAccuracy> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "averagePositionalAccuracy"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Average positional accuracy."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/averageVerticalAccuracy> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "averageVerticalAccuracy"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Average vertical accuracy of points within point cloud."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/coordinateComputationalData> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "coordinateComputationalData"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:CoordinateComputationalData ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Encapsulation of data used to compute points coordinates in specified CRS when points are given in raw form of integers only.
+
+NOTE For further explanation see ASPRS LAS file specification 1.4 - R15."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/domainProfile> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "domainProfile"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:DomainProfile ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Domain profile of LAS file associated with this point cloud."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/extent> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extent"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Extent of the spatiotemporal domain of the point cloud.
+
+SOURCE [ISO 19123:2005].
+
+NOTE 1 The data type EX_Extent, is defined in ISO 19103.  Extents may be specified in both space and time. 
+
+NOTE 2 The domain extent shall be specified at least in space by using EX_BoundingPolygon, EX_GeographicBoundingBox or EX_GeographicDescription."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/extremalUnscaledCoordinates> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extremalUnscaledCoordinates"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:ExtremalUnscaledCoordinates ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """The max and min data fields are the actual unscaled extents of the LAS point file data, specified in the coordinate system of the LAS data.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/fieldOfView> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "fieldOfView"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Field of the view of the lidar sensor."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/fileCreationDate> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "fileCreationDate"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Date on which this file was created."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/footprint> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "footprint"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Footprint of the area covered by lidar data.
+
+NOTE 1 It shall be convex hull of the projection od the point cloud onto the CRS.
+
+NOTE 2 The CRS shall be the same as CRS of point cloud."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/generatingSoftware> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "generatingSoftware"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:GeneratingSoftwareValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Specification which generating software package and version was used during LAS file creation."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/geometries> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geometries"@en ;
+    rdfs:domain ksa-ft:ElevationTIN ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Represents the collection of geometric properties of the elevation TIN spatial object."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/horizontalAccuracy> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "horizontalAccuracy"@en ;
+    rdfs:domain ksa-ft:ElevationVectorObject ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Horizontal accurracy."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/laserLateral> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "laserLateral"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Laser lateral in percents.
+
+EXAMPLE 20%"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/laserPower> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "laserPower"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Laser power in percents.
+
+EXAMPLE 100%"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/laserPulseRate> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "laserPulseRate"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Laser pulse rate.
+
+EXAMPLE: 700 kHz"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/lineScanningSpeed> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "lineScanningSpeed"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Line scanning speed (lines per second).
+
+Example 150 lps"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/localDepthDatum> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "localDepthDatum"@en ;
+    rdfs:domain ksa-ft:BathymetricElevationGridCoverage ;
+    rdfs:range ksa-ft:ChartDatum ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Identification of a local vertical coordinate reference system not included in a registry, which is used to refer depth measurements.
+
+NOTE This data type is applicable only to bathymetric vector objects.
+
+EXAMPLE Local datums for referring depths in lakes and navigable rivers."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/maxFlyingHeightMSL> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "maxFlyingHeightMSL"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Max flight height expressed in reference to mean sea level."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/minFlyingHeightMSL> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "minFlyingHeightMSL"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Min flight height expressed in reference to mean sea level."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/minPointDensity> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "minPointDensity"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:decimal ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Min point density in pt/m2.
+
+EXAMPLE: 4.65 pt/m2"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/numberOfPoints> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfPoints"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Number of points in this point cloud."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/numberOfPointsByReturn> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfPointsByReturn"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Number of points by return.
+
+NOTE The first value will be the total number of records from the first return, the second contains the total number for return two, and so on."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/pointDataRecordFormat> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "pointDataRecordFormat"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:LASPointDataRecordFormatValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Format which is used to store points characteristics."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/pointDensity> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "pointDensity"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Average amount of points measured per square meter."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/surfaceType> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surfaceType"@en ;
+    rdfs:domain ksa-ft:ElevationTIN ;
+    rdfs:range ksa-ft:SurfaceTypeValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Attribute indicating the type of elevation surface that the elevation TIN describes in relation to the Earth's bare surface."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/syntheticReturnNumbers> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "syntheticReturnNumbers"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Determination if return numbers associated with points are synthetically created.
+
+NOTE If "true", the point return numbers in the point data records
+have been synthetically generated. This could be the case, for
+example, when a composite file is created by combining a First
+Return File and a Last Return File, or when simulating return
+numbers for a system not directly supporting multiple returns."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/systemIdentifier> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "systemIdentifier"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:SystemIdentifierValue ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Information about what hardware or what method were used to create points.
+
+NOTE 1 The version 1.0 specification assumed that LAS files are exclusively generated as a result of collection by a hardware sensor. Subsequent versions recognize that files often result from extraction, merging, or modifying existing data files.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/userData> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "userData"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Optional text description of the data.
+
+NOTE In this attribute can be stored custom information normally included in the LAS file in the variable length records (VLR) or extended variable length records (EVLR)."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/verticalAccuracy> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "verticalAccuracy"@en ;
+    rdfs:domain ksa-ft:ElevationVectorObject ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition "Vertical Accuracy."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/waveformPacketDescriptor> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "waveformPacketDescriptor"@en ;
+    rdfs:domain ksa-ft:LASPointCloud ;
+    rdfs:range ksa-ft:WaveformPacketDescriptor ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Configuration of the waveform packets.
+
+NOTE This attribute is required if points records in LAS file are in format that contains information about wavelength (eg. formats 4, 5, 9, 10).
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:ExtremalUnscaledCoordinates a owl:Class,
+        skos:Concept ;
+    rdfs:label "Extremal Unscaled Coordinates"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "The maximum and minimum data fields are the actual unscaled extents of the LAS point file data, specified in the coordinate system of the LAS data.  SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:GPSTimeTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "GPS Time Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Type of the GPS time used in the point records.
+
+NOTE Available values hall be conformant with ASPRS LAS file specification.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:GeneratingSoftwareValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Generating Software Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Specification which generating software package and version was used during LAS file creation.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:LASPointDataRecordFormatValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "LAS point Data Record Format"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Record format associated with points within this point cloud. 
+
+NOTE 1 Point Data Record Format specifies set of attributes that single point holds. The list of available formats is maintained by American Society for Photogrammetry and Remote Sensing in the LAS Specification document.
+
+NOTE 2 In the LAS Specification 1.4 document Point Data Record Formats are indexed for 0 (zero) to 10. In the newer versions of LAS Specification this range can change.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:SurfaceTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Surface Type"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Closed codeList type which determines the elevation surface with regard to its relative adherence to the Earth's bare surface.
+
+EXAMPLE DTM and DSM."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:SystemIdentifierValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "SystemIdentifierValue"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Information about what hardware or what method were used to create points.
+
+NOTE 1 The version 1.0 specification assumed that LAS files are exclusively generated as a result of collection by a hardware sensor. Subsequent versions recognize that files often result from extraction, merging, or modifying existing data files.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:WDPStorageTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "WDP Storage Type Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition """Type of storage of Waveform Data Package.
+
+EXAMPLE 1 Internal in the LAS file (deprecated in LAS 1.4)
+
+EXAMPLE 2 External in the separate (to LAS file) WDP file that has the same name as corresponding LAS file.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:WaveformPacketDescriptor a owl:Class,
+        skos:Concept ;
+    rdfs:label "Waveform Packet Descriptor"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/codeLists> ;
+    skos:definition "Information describing the configuration of the waveform packets.  Source: ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute/phenomenonTime> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "phenomenonTime"@en ;
+    rdfs:domain ksa-ft:ElevationTIN,
+        ksa-ft:ElevationVectorObject,
+        ksa-ft:LASPointCloud ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/Elevation/attribute> ;
+    skos:definition """Temporal validity of terrain surface depicted by this TIN.
+
+NOTE This attribute carry information at what period in time this TIN depicts actual shape of the terrain.
+
+EXAMPLE TIN was generated 03 Mar 2013, and it was generated based on set of points measured between 01 Jan 2001 and 02 Feb 2002. The phenomenon time is  01 Jan 2001 - 02 Feb 2002."""@en,
+        """Temporal validity of terrain surface depicted by this object.
+
+NOTE This attribute carry information at what moment in time the terrain shape looked exactly like this object show it.
+
+EXAMPLE 1 Breakline was drawn 01 Jan 2016, and it was drawn based on set of points measured 02 Feb 2010. The phenomenon time is 02 Feb 2010 - 02 Feb 2010. 
+
+EXAMPLE 2 Contour lines were drawn 03 Mar 2013, and they were drawn based on DTM raster created 02 Feb 2012 that was generated based on LIDAR point cloud acquired between 01 Jan 2011 and 11 Jan 2011. The phenomenon time is 01 Jan 2011 - 11 Jan 2011"""@en,
+        """Time range in which points were acquired.
+
+EXAMPLE 1 If all points in the point cloud were measured via LIDAR between 01 Jan 2001 10:01:01 AM and 02 Jan 2001 07:07:07 PM the range shall be 01 Jan 2001 10:01:01 AM - 02 Jan 2001 07:07:07 PM.
+
+EXAMPLE 2 If some of the points in the point cloud were acquired from stereopair of images shot 05 May 2005 05:05:05 AM, and the rest of the points were measured via LIDAR between 06 Jun 2006 06:06:06 AM and 07 Jun 2006 07:07:07 PM then the range shall be 05 May 2005 05:05:05 AM - 07 Jun 2006 07:07:07 PM."""@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:ElevationTIN a owl:Class,
+        skos:Concept ;
+    rdfs:label "Elevation TIN"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/Elevation/attribute/geometries>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/phenomenonTime>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/surfaceType> ;
+    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
+    skos:broader ksa-ft:AbstractFeatureType ;
+    skos:definition "Collection of elevation features forming a particular tessellation of the space based on a Triangulated Irregular Network (TIN) according the geometry GM_Tin (defined in ISO 19107:2003). Its components are a set of control points whose depths are known, and a set of break lines and stop lines.  The TIN can be calculated using any triangulation method, which determines the spatial relationships between the features in the collection, for example, an elevation TIN model calculated by means of the Delaunay triangulation method."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:ElevationVectorObject a owl:Class,
+        skos:Concept ;
+    rdfs:label "Elevation Vector Object"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/Elevation/attribute/horizontalAccuracy>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/phenomenonTime>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/verticalAccuracy> ;
+    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
+    skos:broader ksa-ft:AbstractFeatureType ;
+    skos:definition "Elevation feature forming part of a vector data set, which participates in the description of the elevation property of a real world surface. It consists of an identity base for all vector objects which can be included as part of an elevation data set.  It is an abstract feature type which generically describes every possible type of elevation vector object. It includes common attributes, properties and constraints for such features."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+<https://w3id.org/ksa/feature-types/Elevation/codeLists> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Elevation Foundation Theme code list or type"@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:LASPointCloud a owl:Class,
+        skos:Concept ;
+    rdfs:label "LAS Point Cloud"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/Elevation/attribute/CRSRepresentation>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/GPSTimeType>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/LASFile>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/LASFileSpecificationVersion>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/WDPFile>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/WDPStorageType>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/acquisitionMethod>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/averageAltitude>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/averagePositionalAccuracy>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/averageVerticalAccuracy>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/coordinateComputationalData>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/domainProfile>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/extent>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/extremalUnscaledCoordinates>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/fieldOfView>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/fileCreationDate>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/footprint>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/generatingSoftware>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/laserLateral>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/laserPower>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/laserPulseRate>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/lineScanningSpeed>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/maxFlyingHeightMSL>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/minFlyingHeightMSL>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/minPointDensity>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/numberOfPoints>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/numberOfPointsByReturn>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/phenomenonTime>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/pointDataRecordFormat>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/pointDensity>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/syntheticReturnNumbers>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/systemIdentifier>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/userData>,
+        <https://w3id.org/ksa/feature-types/Elevation/attribute/waveformPacketDescriptor> ;
+    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
+    skos:broader ksa-ft:AbstractFeatureType ;
+    skos:definition "Representation of set of points in a form of an LAS file."@en ;
+    skos:inScheme ksa-ft:Elevation .
+
+ksa-ft:Elevation a owl:Class,
+        skos:ConceptScheme ;
+    rdfs:label "Elevation Foundation Theme"@en ;
+    skos:definition "The Elevation Foundation Theme measures and describes the surface of the Earth both on land and under a body of water, relative to a vertical and a horizontal datum. Its data may commonly be expressed as a Digital Terrain Model (DTM) of the ‘bare earth’ or seabed or as a Digital Surface Model (DSM), to include the shape of natural and man-made objects."@en .
+
+<https://w3id.org/ksa/feature-types/Elevation/attribute> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Elevation Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:Elevation .
+
