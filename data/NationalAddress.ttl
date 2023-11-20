@@ -10,7 +10,8 @@ ksa-ft:AddressRepresentation a owl:Class,
     rdfs:label "Address Representation"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/codeLists> ;
     skos:definition "Representation of an address feature for use in external application schemas that need to include the basic, address information in a readable way.   Attributes are filled from the values from Address and AddressComponent classes."@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "Address Representation"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/postalQuarter> a owl:ObjectProperty,
         skos:Concept ;
@@ -18,19 +19,22 @@ ksa-ft:AddressRepresentation a owl:Class,
     rdfs:domain ksa-ft:Address ;
     rdfs:range ksa-ft:ZipCodeUnit ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> .
+    skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
+    skos:prefLabel "postalQuarter" .
 
 ksa-ft:NonAddressObject a owl:Class,
         skos:Concept ;
     rdfs:label "Non-Addressable Object"@en ;
-    skos:definition "Physical, visible and stationary objects that are representable as point locations, that you cannot send mail to, and are not classified as a Point of Interest. Non Addressable Objects (NAOs) may have a link to the nearest address."@en .
+    skos:definition "Physical, visible and stationary objects that are representable as point locations, that you cannot send mail to, and are not classified as a Point of Interest. Non Addressable Objects (NAOs) may have a link to the nearest address."@en ;
+    skos:prefLabel "Non-Addressable Object"@en .
 
 ksa-ft:ObjectCategoryValue a owl:Class,
         skos:Concept ;
     rdfs:label "ObjectCategoryValue"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/codeLists> ;
     skos:definition "The category that describes the Non-Addressable Object"@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "ObjectCategoryValue"@en .
 
 ksa-ft:POICategoryListValue a owl:Class,
         skos:Concept ;
@@ -39,20 +43,23 @@ ksa-ft:POICategoryListValue a owl:Class,
     skos:definition """List of category names of POI (Point of Interest).
 
 NOTE The list is divided into sub categories and some of categories are divided into sub sub categories."""@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "POICategoryListValue"@en .
 
 ksa-ft:ZipCodeHierarchyLevelValue a owl:Class,
         skos:Concept ;
     rdfs:label "zip code hierarchy level"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/codeLists> ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "zip code hierarchy level"@en .
 
 ksa-ft:AddressLifeCycleStageValue a owl:Class,
         skos:Concept ;
     rdfs:label "AddressLifeCycleStageValue"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/codeLists> ;
     skos:definition "The list defining the stage of the address life."@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "AddressLifeCycleStageValue"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/additionalNumber> a owl:DatatypeProperty,
         skos:Concept ;
@@ -62,7 +69,8 @@ ksa-ft:AddressLifeCycleStageValue a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:definition "Similar to the building number and also consists of four numbers. [Unified National Addressing System]"@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "additionalNumber"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/alternativeId> a owl:ObjectProperty,
         skos:Concept ;
@@ -73,7 +81,8 @@ ksa-ft:AddressLifeCycleStageValue a owl:Class,
     skos:definition """External, thematic identifier of the address spatial object, which enables interoperability with existing legacy systems or applications.
 
 This attribute permits links to the same address in other addressing systems."""@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "alternativeId"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/buildingNumber> a owl:DatatypeProperty,
         skos:Concept ;
@@ -83,7 +92,8 @@ This attribute permits links to the same address in other addressing systems."""
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:definition "Consists of four numbers, the number represents either a commercial or residential building; the numbers are unique and not repeated on the street. [Unified National Addressing System]"@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "buildingNumber"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/lifeCycleStage> a owl:ObjectProperty,
         skos:Concept ;
@@ -93,7 +103,8 @@ This attribute permits links to the same address in other addressing systems."""
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:definition "Represents the different stages of an address such as planned, under construction, exisiting demolished etc."@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "lifeCycleStage"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/location> a owl:ObjectProperty,
         skos:Concept ;
@@ -102,7 +113,8 @@ This attribute permits links to the same address in other addressing systems."""
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:definition "Position of a characteristic point or area which represents the location of the address (coordinates in the coordinate reference system)."@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "location"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/unitNumber> a owl:DatatypeProperty,
         skos:Concept ;
@@ -112,7 +124,8 @@ This attribute permits links to the same address in other addressing systems."""
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:definition "Represents the number of each unit inside a building that contains a group of units, such as: Residential buildings and Commercial offices.  [Unified National Addressing System]"@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "unitNumber"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/validFrom> a owl:DatatypeProperty,
         skos:Concept ;
@@ -122,7 +135,8 @@ This attribute permits links to the same address in other addressing systems."""
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:definition "Date of the address was or will be valid in the real world."@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "validFrom"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/validTo> a owl:DatatypeProperty,
         skos:Concept ;
@@ -132,7 +146,8 @@ This attribute permits links to the same address in other addressing systems."""
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:definition "Date of the address ceased or will cease to exist in the real world."@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "validTo"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute/zipCode> a owl:DatatypeProperty,
         skos:Concept ;
@@ -142,17 +157,20 @@ This attribute permits links to the same address in other addressing systems."""
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/NationalAddress/attribute> ;
     skos:definition "This code covers a specific geographical area such as a neighborhood or any residential community, its dimensions start from 1 x 1 square kilometers and rise in dimensions. Consists of five digital boxes, each box has a significant location. [Unified National Addressing System]"@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "zipCode"@en .
 
 ksa-ft:ZipCodeUnit a owl:Class,
         skos:Concept ;
     rdfs:label "Zip Code Unit"@en ;
-    skos:definition "A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points."@en .
+    skos:definition "A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points."@en ;
+    skos:prefLabel "Zip Code Unit"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/codeLists> a owl:Class,
         skos:Concept ;
     rdfs:label "National Address Foundation Theme code list or type"@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "National Address Foundation Theme code list or type"@en .
 
 ksa-ft:Address a owl:Class,
         skos:Concept ;
@@ -169,14 +187,17 @@ ksa-ft:Address a owl:Class,
     rdfs:subClassOf ksa-ft:AbstractFeatureType ;
     skos:broader ksa-ft:AbstractFeatureType ;
     skos:definition "An identification of the fixed location of property by means of a structured composition of geographic names and identifiers."@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "Address"@en .
 
 ksa-ft:NationalAddress a skos:ConceptScheme ;
     rdfs:label "National Address Foundation Theme"@en ;
-    skos:definition "The National Address Foundation Theme is a unified location identification Foundation Theme, in the form of a geocoded structured label, for properties, non-addressable objects and points of interest. Labels contain building numbers, street names, district names, city names, zip codes, additional and unit numbers."@en .
+    skos:definition "The National Address Foundation Theme is a unified location identification Foundation Theme, in the form of a geocoded structured label, for properties, non-addressable objects and points of interest. Labels contain building numbers, street names, district names, city names, zip codes, additional and unit numbers."@en ;
+    skos:prefLabel "National Address Foundation Theme"@en .
 
 <https://w3id.org/ksa/feature-types/NationalAddress/attribute> a owl:Class,
         skos:Concept ;
     rdfs:label "National Address Foundation Theme attribute"@en ;
-    skos:inScheme ksa-ft:NationalAddress .
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "National Address Foundation Theme attribute"@en .
 

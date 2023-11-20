@@ -11,35 +11,40 @@
     rdfs:domain ksa-ft:PlaceName ;
     rdfs:range ksa-ft:AbstractFeatureType ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/GeographicalNames/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/GeographicalNames/attribute> .
+    skos:broader <https://w3id.org/ksa/feature-types/GeographicalNames/attribute> ;
+    skos:prefLabel "relatedSpatialObject" .
 
 ksa-ft:NameStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "Name Status Value"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/GeographicalNames/codeLists> ;
     skos:definition "Code list for name status values of a geographical name"@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Name Status Value"@en .
 
 ksa-ft:NativenessValue a owl:Class,
         skos:Concept ;
     rdfs:label "Nativeness Value"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/GeographicalNames/codeLists> ;
     skos:definition "Code list for indication of nativeness of a geographical name"@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Nativeness Value"@en .
 
 ksa-ft:SpellingOfName a owl:Class,
         skos:Concept ;
     rdfs:label "Spelling Of Name"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/GeographicalNames/codeLists> ;
     skos:definition "Proper way of spelling a name; the writing of a name with the correct capitalization and the correct letters and diacritics present in an accepted standard order."@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Spelling Of Name"@en .
 
 ksa-ft:GeographicalName a owl:Class,
         skos:Concept ;
     rdfs:label "Geographical Name"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/GeographicalNames/codeLists> ;
     skos:definition "Proper noun applied to a real world entity."@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Geographical Name"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/attribute/leastDetailedViewingResolution> a owl:DatatypeProperty,
         skos:Concept ;
@@ -61,7 +66,8 @@ EXAMPLES The following examples use the equivalentScale attribute to express the
 NOTE 3 If the data set contain multiple representations of the same real world entity represented at different levels of detail, the scale ranges defined by the attributes leastDetailedViewingResolution and mostDetailedViewingResolution should not overlap, in order to avoid displaying the same names several times.
 
 NOTE 4 The geometry of the named place should have a level of detail (i.e. resolution, granularity, precision, etc.) roughly compatible with its associated viewing scales."""@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "leastDetailedViewingResolution"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/attribute/mostDetailedViewingResolution> a owl:DatatypeProperty,
         skos:Concept ;
@@ -77,7 +83,8 @@ NOTE See description of leastDetailedViewingResolution
 EXAMPLES The following examples use the equivalentScale attribute to express the attribute value.
 - Names of wide areas like mountain ranges may not be displayed at all in viewing scales greater than 1/100,000. In this case, the value of the attribute is 100,000
 - Names of small hamlets may be displayed at any large scale. In this case, this attribute is not filled."""@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "mostDetailedViewingResolution"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/attribute/multiMediaImage> a owl:ObjectProperty,
         skos:Concept ;
@@ -91,7 +98,8 @@ NOTE 1 One or more images can be attached to the specific geographical name to v
 NOTE 2 The image can be of form PNG
 
 EXAMPLE In the case of a mountain name, the image of the mountain can be added"""@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "multiMediaImage"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/attribute/multiMediaVideo> a owl:ObjectProperty,
         skos:Concept ;
@@ -105,7 +113,8 @@ NOTE One or more videos can be attached to the specific geographical name to vis
 NOTE The image should be of format MP4
 
 EXAMPLE In the case of a mountain name, the image of the mountain can be added"""@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "multiMediaVideo"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/attribute/name> a owl:ObjectProperty,
         skos:Concept ;
@@ -115,7 +124,8 @@ EXAMPLE In the case of a mountain name, the image of the mountain can be added""
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/GeographicalNames/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/GeographicalNames/attribute> ;
     skos:definition "Name of the place name."@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "name"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/attribute/position> a owl:ObjectProperty,
         skos:Concept ;
@@ -129,7 +139,8 @@ NOTE 1 The most common geometry types for a named place are a reference point (m
 NOTE 2 If the geometry depicts the spatial footprint of the named place, a reference point and a bounding box could be derived from it. However, this specification does not require the explicit provision of any specific type of geometry such as bounding boxes or reference points.
 NOTE 3 To avoid any misunderstanding, note that null geometry is not allowed by this specification.
 NOTE 4 3D geometries are not really required for Geographical Names, but the model allows for it, so a data provider may publish it."""@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "position"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/attribute/type> a owl:ObjectProperty,
         skos:Concept ;
@@ -142,24 +153,28 @@ NOTE 4 3D geometries are not really required for Geographical Names, but the mod
 
 NOTE 1 This attribute should be consistent with the attribute 'relatedSpatialObject'. More precisely, if the attribute 'relatedSpatialObject' is filled in, the attribute 'type' should be filled in, and its value(s) should be consistent with the spatial data theme(s) of the related object(s).
 NOTE 2 Even if this attribute may introduce some redundancy with the attribute 'relatedSpatialObject', it has to be filled in order to allow to use geographical names on their own without accessing to any other INSPIRE data set, which may be necessary in most cases."""@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "type"@en .
 
 ksa-ft:PlaceNameTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Place Name Type Value"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/GeographicalNames/codeLists> ;
     skos:definition "Code list for the place name type value of a geographical name"@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Place Name Type Value"@en .
 
 ksa-ft:AbstractFeatureType a owl:Class,
         skos:Concept ;
     rdfs:label "Abstract Feature Type"@en ;
-    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en .
+    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en ;
+    skos:prefLabel "Abstract Feature Type"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/codeLists> a owl:Class,
         skos:Concept ;
     rdfs:label "Geographical Names Foundation Theme code list or type"@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Geographical Names Foundation Theme code list or type"@en .
 
 ksa-ft:PlaceName a owl:Class,
         skos:Concept ;
@@ -174,14 +189,17 @@ ksa-ft:PlaceName a owl:Class,
     rdfs:subClassOf ksa-ft:AbstractFeatureType ;
     skos:broader ksa-ft:AbstractFeatureType ;
     skos:definition "Any real world entity referred to by one or several proper nouns."@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Place Name"@en .
 
 ksa-ft:GeographicalNames a skos:ConceptScheme ;
     rdfs:label "Geographical Names Foundation Theme"@en ;
-    skos:definition "Geographical Names provide cultural, historical and political orientation and identity to geographical places with one or more official or unofficial names. They are location identifiers for man-made and natural features of the real world, such as districts, regions or any feature of public or historical interest."@en .
+    skos:definition "Geographical Names provide cultural, historical and political orientation and identity to geographical places with one or more official or unofficial names. They are location identifiers for man-made and natural features of the real world, such as districts, regions or any feature of public or historical interest."@en ;
+    skos:prefLabel "Geographical Names Foundation Theme"@en .
 
 <https://w3id.org/ksa/feature-types/GeographicalNames/attribute> a owl:Class,
         skos:Concept ;
     rdfs:label "Geographical Names Foundation Theme attribute"@en ;
-    skos:inScheme ksa-ft:GeographicalNames .
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Geographical Names Foundation Theme attribute"@en .
 

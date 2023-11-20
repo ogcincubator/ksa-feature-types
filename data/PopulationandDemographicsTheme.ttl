@@ -11,7 +11,8 @@
     rdfs:domain ksa-ft:DemographicObservation ;
     rdfs:range ksa-ft:AreaStatisticalUnit ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> .
+    skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
+    skos:prefLabel "featureOfInterest" .
 
 <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/observableProperty> a owl:ObjectProperty,
         skos:Concept ;
@@ -19,7 +20,8 @@
     rdfs:domain ksa-ft:DemographicObservation ;
     rdfs:range ksa-ft:ObservableProperty ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> .
+    skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
+    skos:prefLabel "observableProperty" .
 
 ksa-ft:AreaStatisticalUnit a owl:Class,
         skos:Concept ;
@@ -33,12 +35,14 @@ Vector statistical unit with a surfacic reference geometry.
 -- Description --
 Such object can be composed of other area statistical unit.
 
-EXAMPLE A country area, an administrative unit, a NUTS region."""@en .
+EXAMPLE A country area, an administrative unit, a NUTS region."""@en ;
+    skos:prefLabel "AreaStatisticalUnit"@en .
 
 ksa-ft:ObservableProperty a owl:Class,
         skos:Concept ;
     rdfs:label "Observable Property"@en ;
-    skos:definition "The Observable Property represents a single observable property, for example, 'temperature'. It may have associations to additional constraints or measures that make it more complex, e.g. 'daily mean temperature'."@en .
+    skos:definition "The Observable Property represents a single observable property, for example, 'temperature'. It may have associations to additional constraints or measures that make it more complex, e.g. 'daily mean temperature'."@en ;
+    skos:prefLabel "Observable Property"@en .
 
 <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/hasSimpleResult> a owl:DatatypeProperty,
         skos:Concept ;
@@ -47,7 +51,8 @@ ksa-ft:ObservableProperty a owl:Class,
     rdfs:range xsd:double ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
-    skos:inScheme ksa-ft:PopulationandDemographicsTheme .
+    skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
+    skos:prefLabel "hasSimpleResult"@en .
 
 <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/value> a owl:DatatypeProperty,
         skos:Concept ;
@@ -56,7 +61,8 @@ ksa-ft:ObservableProperty a owl:Class,
     rdfs:range xsd:double ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
-    skos:inScheme ksa-ft:PopulationandDemographicsTheme .
+    skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
+    skos:prefLabel "value"@en .
 
 ksa-ft:DemographicObservation a owl:Class,
         skos:Concept ;
@@ -65,13 +71,16 @@ ksa-ft:DemographicObservation a owl:Class,
         <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/value> ;
     rdfs:subClassOf ksa-ft:StatisticalObservation ;
     skos:broader ksa-ft:StatisticalObservation ;
-    skos:inScheme ksa-ft:PopulationandDemographicsTheme .
+    skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
+    skos:prefLabel "DemographicObservation"@en .
 
 ksa-ft:PopulationandDemographicsTheme a skos:ConceptScheme ;
-    rdfs:label "Population and Demographics Theme"@en .
+    rdfs:label "Population and Demographics Theme"@en ;
+    skos:prefLabel "Population and Demographics Theme"@en .
 
 <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> a owl:Class,
         skos:Concept ;
     rdfs:label "Population and Demographics Theme attribute"@en ;
-    skos:inScheme ksa-ft:PopulationandDemographicsTheme .
+    skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
+    skos:prefLabel "Population and Demographics Theme attribute"@en .
 

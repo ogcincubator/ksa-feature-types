@@ -10,7 +10,8 @@ ksa-ft:ImageAggregation a owl:Class,
     rdfs:label "Image Aggregation"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/codeLists> ;
     skos:definition "Geometrical characteristics of the image aggregation."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Image Aggregation"@en .
 
 ksa-ft:InterpolationMethodValue a owl:Class,
         skos:Concept ;
@@ -21,42 +22,48 @@ ksa-ft:InterpolationMethodValue a owl:Class,
 NOTE 1 This Saudi NSDI-governed code list is derived from the code list CV_InterpolationMethod specified in ISO 19123. CV_InterpolationMethod is not used  as such because not actually implemented.
 
 NOTE 2 Example values: nearestneighbor, bilinear, biquadratic, bicubic, etc..."""@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Interpolation Method"@en .
 
 ksa-ft:TerrestrialImageShapeTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Terrestrial Image Shape Type"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/codeLists> ;
     skos:definition "The shape type of the terrestrial image."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Terrestrial Image Shape Type"@en .
 
 ksa-ft:ViewVolume a owl:Class,
         skos:Concept ;
     rdfs:label "View Volume"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/codeLists> ;
     skos:definition "Specify what is the horizontal and vertical field of view of the image."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "View Volume"@en .
 
 ksa-ft:Attitude a owl:Class,
         skos:Concept ;
     rdfs:label "Attitude"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/codeLists> ;
     skos:definition "Values describing orientation of the satellite at the given moment in time."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Attitude"@en .
 
 ksa-ft:Ephemeris a owl:Class,
         skos:Concept ;
     rdfs:label "Ephemeris"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/codeLists> ;
     skos:definition "Position and velocity of the satellite at specific point in time. Position and velocity should be specified in the same Coordinate Reference System and in 3D."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Ephemeris"@en .
 
 ksa-ft:ExteriorOrientation a owl:Class,
         skos:Concept ;
     rdfs:label "Exterior Orientation"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/codeLists> ;
     skos:definition "Elements of the exterior orientation of the camera. The Coordinate Reference System is specified by the Coordinate Reference System of the nodal point."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Exterior Orientation"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/GSD> a owl:ObjectProperty,
         skos:Concept ;
@@ -65,7 +72,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Coarse specification of the distance between pixels' centres."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "GSD"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/RPCs> a owl:DatatypeProperty,
         skos:Concept ;
@@ -75,7 +83,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Rational polynomial coefficients."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "RPCs"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/attitude> a owl:ObjectProperty,
         skos:Concept ;
@@ -85,7 +94,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Values describing orientation of the satellite at the given moment in time."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "attitude"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/auxFile> a owl:ObjectProperty,
         skos:Concept ;
@@ -94,7 +104,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Aux file associated with this depth map."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "auxFile"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/environmentalConditions> a owl:ObjectProperty,
         skos:Concept ;
@@ -103,7 +114,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Description of environmental conditions like: wind, temperature, humidity etc."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "environmentalConditions"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/ephemeris> a owl:ObjectProperty,
         skos:Concept ;
@@ -113,7 +125,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Ephemeris of the satellite during creating the image."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "ephemeris"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/exteriorOrientation> a owl:ObjectProperty,
         skos:Concept ;
@@ -123,7 +136,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Elements of the exterior orientation of the camera."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "exteriorOrientation"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/flightHeight> a owl:ObjectProperty,
         skos:Concept ;
@@ -132,7 +146,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Height of the flight."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "flightHeight"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/mosaicExtent> a owl:ObjectProperty,
         skos:Concept ;
@@ -143,7 +158,8 @@ ksa-ft:ExteriorOrientation a owl:Class,
     skos:definition """Geometric representation spatially delineating the date and time of acquisition of the several input images that contribute to the final mosaic.
 
 NOTE The boundaries of the geometries are commonly based on the seamlines used for the mosaicking process."""@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "mosaicExtent"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/phenomenonTime> a owl:ObjectProperty,
         skos:Concept ;
@@ -160,7 +176,8 @@ NOTE 2 When the acquisition is considered as instantaneous, despite the exposure
 EXAMPLE 1 begin: 2011-10-30 end: 2011-10-30
 
 EXAMPLE 2 begin: 2011-06-07T14:31:02Z end: 2011-06-07T16:10:54Z."""@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "phenomenonTime"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/scale> a owl:DatatypeProperty,
         skos:Concept ;
@@ -170,7 +187,8 @@ EXAMPLE 2 begin: 2011-06-07T14:31:02Z end: 2011-06-07T16:10:54Z."""@en ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Scale of the image."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "scale"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute/segFile> a owl:ObjectProperty,
         skos:Concept ;
@@ -179,7 +197,8 @@ EXAMPLE 2 begin: 2011-06-07T14:31:02Z end: 2011-06-07T16:10:54Z."""@en ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/Imagery/attribute> ;
     skos:definition "Seg file associated with this depth map."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "segFile"@en .
 
 ksa-ft:DepthMap a owl:Class,
         skos:Concept ;
@@ -189,7 +208,8 @@ ksa-ft:DepthMap a owl:Class,
     rdfs:subClassOf ksa-ft:AbstractTerrestrialImage ;
     skos:broader ksa-ft:AbstractTerrestrialImage ;
     skos:definition "Raster dataset representing distance between camera and specific spatial elements in the image. This type of dataset can be derived from LIDAR."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Depth Map"@en .
 
 ksa-ft:MosaicElement a owl:Class,
         skos:Concept ;
@@ -199,7 +219,8 @@ ksa-ft:MosaicElement a owl:Class,
     rdfs:subClassOf ksa-ft:AbstractFeatureType ;
     skos:broader ksa-ft:AbstractFeatureType ;
     skos:definition "Abstract type identifying both the contributing area and the acquisition time of one or several input images used to generate a mosaiced orthoimage coverage. The main purpose of this feature type is the provision of a mechanism for describing the spatial distribution of the acquisition dates and times over a mosaiced orthoimage. The acquisition time can be supplied either for each individual input image, or for sets of input images grouped together according to temporal criteria."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Mosaic Element"@en .
 
 ksa-ft:ObliqueAirborneImage a owl:Class,
         skos:Concept ;
@@ -210,7 +231,8 @@ ksa-ft:ObliqueAirborneImage a owl:Class,
     rdfs:subClassOf ksa-ft:Image ;
     skos:broader ksa-ft:Image ;
     skos:definition "Image of the Earth surface intentionally captured at a very high offpointing angle for specific applications from aircraft (plane, UAV, helicopter etc.)."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Oblique Airborne Image"@en .
 
 ksa-ft:SpaceborneImage a owl:Class,
         skos:Concept ;
@@ -223,19 +245,23 @@ ksa-ft:SpaceborneImage a owl:Class,
     rdfs:subClassOf ksa-ft:Image ;
     skos:broader ksa-ft:Image ;
     skos:definition "Raster image of the Earth surface that was acquired using spaceborne platform (e.g. satellite)."@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Spaceborne Image"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/codeLists> a owl:Class,
         skos:Concept ;
     rdfs:label "Imagery Foundation Theme code list or type"@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Imagery Foundation Theme code list or type"@en .
 
 <https://w3id.org/ksa/feature-types/Imagery/attribute> a owl:Class,
         skos:Concept ;
     rdfs:label "Imagery Foundation Theme attribute"@en ;
-    skos:inScheme ksa-ft:Imagery .
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Imagery Foundation Theme attribute"@en .
 
 ksa-ft:Imagery a skos:ConceptScheme ;
     rdfs:label "Imagery Foundation Theme"@en ;
-    skos:definition "The Imagery Foundation Theme is a suite of continuously updated georeferenced spaceborne, airborne and terrestrial imagery, as well as any novel sources, for the Kingdom of Saudi Arabia. The Foundation Theme makes imagery with different resolutions available nationally to multiple users for a wide range of missions such as national security, natural resource management and urban development."@en .
+    skos:definition "The Imagery Foundation Theme is a suite of continuously updated georeferenced spaceborne, airborne and terrestrial imagery, as well as any novel sources, for the Kingdom of Saudi Arabia. The Foundation Theme makes imagery with different resolutions available nationally to multiple users for a wide range of missions such as national security, natural resource management and urban development."@en ;
+    skos:prefLabel "Imagery Foundation Theme"@en .
 

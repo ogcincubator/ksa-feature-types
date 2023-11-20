@@ -11,28 +11,32 @@
     rdfs:domain ksa-ft:Report ;
     rdfs:range ksa-ft:AbstractFeatureType ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> .
+    skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> ;
+    skos:prefLabel "about" .
 
 ksa-ft:EdgeMatchStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "EdgeMatchStatusValue"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> ;
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/EdgeMatchStatusValue."@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "EdgeMatchStatusValue"@en .
 
 ksa-ft:MunicipalAdministrativeUnitCategoryValue a owl:Class,
         skos:Concept ;
     rdfs:label "MunicipalAdministrativeUnitCategoryValue"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> ;
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MunicipalAdministrativeUnitCategoryValue."@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "MunicipalAdministrativeUnitCategoryValue"@en .
 
 ksa-ft:MunicipalAdministrativeUnitTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "MunicipalAdministrativeUnitTypeValue"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> ;
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following code list register http://nsdi.sa/codelist/MunicipalAdministrativeUnitTypeValue."@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "MunicipalAdministrativeUnitTypeValue"@en .
 
 ksa-ft:RegionalAdministrationHierarchyLevelValue a owl:Class,
         skos:Concept ;
@@ -40,7 +44,8 @@ ksa-ft:RegionalAdministrationHierarchyLevelValue a owl:Class,
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> ;
     skos:definition """Levels of administration in the regional administrative hierarchy. This code list reflects the level in the hierarchical pyramid of the administrative structures, which is based on geometric aggregation of administrated areas and does not necessarily describe the subordination between the related administrative authorities.
 This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/RegionalAdministrationHierarchyLevelValue"""@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "RegionalAdministrationHierarchyLevelValue"@en .
 
 ksa-ft:RegionalAdministrativeUnitCategoryValue a owl:Class,
         skos:Concept ;
@@ -48,21 +53,24 @@ ksa-ft:RegionalAdministrativeUnitCategoryValue a owl:Class,
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> ;
     skos:definition """Type of regional administrative unit.
 This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/RegionalAdministrativeUnitCategoryValue"""@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "RegionalAdministrativeUnitCategoryValue"@en .
 
 ksa-ft:RegionalAdministrativeUnitTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "RegionalAdministrativeUnitTypeValue"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> ;
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/RegionalAdministrativeUnitTypeValue"@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "RegionalAdministrativeUnitTypeValue"@en .
 
 ksa-ft:ServiceTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "ServiceTypeValue"@en ;
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> ;
     skos:definition "Types of services provided within the Kingdom of Saudi Arabia."@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "ServiceTypeValue"@en .
 
 ksa-ft:SubnationalAdministrationHierarchyLevelValue a owl:Class,
         skos:Concept ;
@@ -71,7 +79,8 @@ ksa-ft:SubnationalAdministrationHierarchyLevelValue a owl:Class,
     skos:definition """Levels of administration in the sub-national administrative hierarchy. This code list reflects the level in the hierarchical pyramid of the administrative structures, which is based on geometric aggregation of administrated areas and does not necessarily describe the subordination between the related administrative authorities.
 The national administrative hierarchy begins at the sub-national level (Level 1). As such there is no level representing the entire country (Level 0).
 This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/SubnationalAdministrationHierarchyLevelValue."""@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "SubnationalAdministrationHierarchyLevelValue"@en .
 
 <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute/level> a owl:ObjectProperty,
         skos:Concept ;
@@ -81,7 +90,8 @@ This code list class is only an indicative placeholder for a vocabulary of terms
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> ;
     skos:definition "The hierarchy level of all adjacent administrative units this boundary is part of."@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "level"@en .
 
 <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute/reportContent> a owl:DatatypeProperty,
         skos:Concept ;
@@ -90,7 +100,8 @@ This code list class is only an indicative placeholder for a vocabulary of terms
     rdfs:range xsd:string ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "reportContent"@en .
 
 <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute/reportLink> a owl:ObjectProperty,
         skos:Concept ;
@@ -98,7 +109,8 @@ This code list class is only an indicative placeholder for a vocabulary of terms
     rdfs:domain ksa-ft:Report ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "reportLink"@en .
 
 ksa-ft:MunicipalAdministrationHierarchyLevelValue a owl:Class,
         skos:Concept ;
@@ -106,7 +118,8 @@ ksa-ft:MunicipalAdministrationHierarchyLevelValue a owl:Class,
     skos:broader <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> ;
     skos:definition """Levels of administration in the municipal (local government) administrative hierarchy. This code list reflects the level in the hierarchical pyramid of the administrative structures, which is based on geometric aggregation of administrated areas and does not necessarily describe the subordination between the related administrative authorities.
 This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following code list register http://nsdi.sa/codelist/MunicipalAdministrationHierarchyLevelValue."""@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "MunicipalAdministrationHierarchyLevelValue"@en .
 
 ksa-ft:MunicipalAdministrativeBoundary a owl:Class,
         skos:Concept ;
@@ -115,12 +128,14 @@ ksa-ft:MunicipalAdministrativeBoundary a owl:Class,
     rdfs:subClassOf ksa-ft:AbstractAdministrativeBoundary ;
     skos:broader ksa-ft:AbstractAdministrativeBoundary ;
     skos:definition "A line of demarcation between administrative units."@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Municipa lAdministrative Boundary"@en .
 
 ksa-ft:AbstractFeatureType a owl:Class,
         skos:Concept ;
     rdfs:label "Abstract Feature Type"@en ;
-    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en .
+    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en ;
+    skos:prefLabel "Abstract Feature Type"@en .
 
 ksa-ft:Report a owl:Class,
         skos:Concept ;
@@ -130,19 +145,23 @@ ksa-ft:Report a owl:Class,
     rdfs:subClassOf ksa-ft:AbstractFeatureType ;
     skos:broader ksa-ft:AbstractFeatureType ;
     skos:definition "A Report provides the ability to publish information about or pertaining to any Foundation Theme feature. In this manner, Feature Theme features act as spatial references for such published information and allows the non-spatial data to be visualized as a map or enable spatial analysis."@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Report"@en .
 
 <https://w3id.org/ksa/feature-types/AdministrativeRegions/attribute> a owl:Class,
         skos:Concept ;
     rdfs:label "Administrative Regions Foundation Theme attribute"@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Administrative Regions Foundation Theme attribute"@en .
 
 <https://w3id.org/ksa/feature-types/AdministrativeRegions/codeLists> a owl:Class,
         skos:Concept ;
     rdfs:label "Administrative Regions Foundation Theme code list or type"@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions .
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Administrative Regions Foundation Theme code list or type"@en .
 
 ksa-ft:AdministrativeRegions a skos:ConceptScheme ;
     rdfs:label "Administrative Regions Foundation Theme"@en ;
-    skos:definition "The Administrative Regions Foundation Theme defines the internal Administrative Units and Service Areas in the Kingdom of Saudi Arabia."@en .
+    skos:definition "The Administrative Regions Foundation Theme defines the internal Administrative Units and Service Areas in the Kingdom of Saudi Arabia."@en ;
+    skos:prefLabel "Administrative Regions Foundation Theme"@en .
 
