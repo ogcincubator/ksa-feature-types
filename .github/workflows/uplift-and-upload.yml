@@ -7,8 +7,8 @@ on:
       - master
       - main
     paths:
-      - data/*.json
-      - uplift.yaml
+      - data/*.ttl
+      - .ogc/*
 
 jobs:
   uplift:
