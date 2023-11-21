@@ -7,6 +7,90 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+admRegions-att:about a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "about" ;
+    rdfs:domain admRegions:Report ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:prefLabel "about" .
+
+admRegions-att:administers a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "administers" ;
+    rdfs:domain admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:range admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:prefLabel "administers" .
+
+admRegions-att:deliveryLocationByAddress a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "deliveryLocationByAddress" ;
+    rdfs:domain admRegions:Service ;
+    rdfs:range admRegions:Address ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:prefLabel "deliveryLocationByAddress" .
+
+admRegions-att:demarcatedBy a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "demarcatedBy" ;
+    rdfs:domain admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:range admRegions:AbstractAdministrativeBoundary ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:prefLabel "demarcatedBy" .
+
+admRegions-att:serviceAreaByAdministrativeUnit a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "serviceAreaByAdministrativeUnit" ;
+    rdfs:domain admRegions:Service ;
+    rdfs:range admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:prefLabel "serviceAreaByAdministrativeUnit" .
+
+admRegions-att:serviceAreaByPlace a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "serviceAreaByPlace" ;
+    rdfs:domain admRegions:Service ;
+    rdfs:range admRegions:PlaceName ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:prefLabel "serviceAreaByPlace" .
+
+admRegions-att:serviceLocationByBuilding a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "serviceLocationByBuilding" ;
+    rdfs:domain admRegions:Service ;
+    rdfs:range admRegions:Building ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:prefLabel "serviceLocationByBuilding" .
+
+admRegions-att:serviceLocationByPOI a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "serviceLocationByPOI" ;
+    rdfs:domain admRegions:Service ;
+    rdfs:range admRegions:PointOfInterest ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:prefLabel "serviceLocationByPOI" .
+
+admRegions:Address a owl:Class,
+        skos:Concept ;
+    rdfs:label "Address"@en ;
+    skos:definition "An identification of the fixed location of property by means of a structured composition of geographic names and identifiers."@en ;
+    skos:prefLabel "Address"@en .
+
+admRegions:Building a owl:Class,
+        skos:Concept ;
+    rdfs:label "Building"@en ;
+    skos:definition "A free-standing self-supporting construction that is roofed, usually walled, and is intended for human occupancy (for example: a place of work or recreation) and/or habitation."@en ;
+    skos:prefLabel "Building"@en .
+
 admRegions:EdgeMatchStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "EdgeMatchStatusValue"@en ;
@@ -14,6 +98,25 @@ admRegions:EdgeMatchStatusValue a owl:Class,
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/EdgeMatchStatusValue."@en ;
     skos:inScheme ksa-ft:AdministrativeRegions ;
     skos:prefLabel "EdgeMatchStatusValue"@en .
+
+admRegions:MunicipalAdministrationHierarchyLevelValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "MunicipalAdministrationHierarchyLevelValue"@en ;
+    skos:broader admRegions:codeLists ;
+    skos:definition """Levels of administration in the municipal (local government) administrative hierarchy. This code list reflects the level in the hierarchical pyramid of the administrative structures, which is based on geometric aggregation of administrated areas and does not necessarily describe the subordination between the related administrative authorities.
+This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following code list register http://nsdi.sa/codelist/MunicipalAdministrationHierarchyLevelValue."""@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "MunicipalAdministrationHierarchyLevelValue"@en .
+
+admRegions:MunicipalAdministrativeBoundary a owl:Class,
+        skos:Concept ;
+    rdfs:label "Municipa lAdministrative Boundary"@en ;
+    ogc-ft:hasProperty admRegions-att:level ;
+    rdfs:subClassOf admRegions:AbstractAdministrativeBoundary ;
+    skos:broader admRegions:AbstractAdministrativeBoundary ;
+    skos:definition "A line of demarcation between administrative units."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Municipa lAdministrative Boundary"@en .
 
 admRegions:MunicipalAdministrativeUnitCategoryValue a owl:Class,
         skos:Concept ;
@@ -31,6 +134,20 @@ admRegions:MunicipalAdministrativeUnitTypeValue a owl:Class,
     skos:inScheme ksa-ft:AdministrativeRegions ;
     skos:prefLabel "MunicipalAdministrativeUnitTypeValue"@en .
 
+admRegions:PlaceName a owl:Class,
+        skos:Concept ;
+    rdfs:label "Place Name"@en ;
+    skos:definition "Any real world entity referred to by one or several proper nouns."@en ;
+    skos:prefLabel "Place Name"@en .
+
+admRegions:PointOfInterest a owl:Class,
+        skos:Concept ;
+    rdfs:label "Point Of Interest"@en ;
+    skos:definition """Specific point location of a place, feature, building or landmark that is of interest, or useful to, people. This includes different categories of POIs including accommodation, eating and drinking, commercial services, religious sites, culture and heritage, attractions, sport and entertainment, education and health, public infrastructure, manufacturing and production, retail and transport.
+
+Specific point location of a place, feature, building or landmark that is of interest, or useful to, people. This includes different categories of POIs including accommodation, eating, commercial services, religious sites, cultural and heritage, attractions, sport and entertainment, education and health, public infrastructure, manufacturing and production, retail and transport."""@en ;
+    skos:prefLabel "Point Of Interest"@en .
+
 admRegions:RegionalAdministrationHierarchyLevelValue a owl:Class,
         skos:Concept ;
     rdfs:label "RegionalAdministrationHierarchyLevelValue"@en ;
@@ -39,6 +156,16 @@ admRegions:RegionalAdministrationHierarchyLevelValue a owl:Class,
 This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/RegionalAdministrationHierarchyLevelValue"""@en ;
     skos:inScheme ksa-ft:AdministrativeRegions ;
     skos:prefLabel "RegionalAdministrationHierarchyLevelValue"@en .
+
+admRegions:RegionalAdministrativeBoundary a owl:Class,
+        skos:Concept ;
+    rdfs:label "Regional Administrative Boundary"@en ;
+    ogc-ft:hasProperty admRegions-att:level ;
+    rdfs:subClassOf admRegions:AbstractAdministrativeBoundary ;
+    skos:broader admRegions:AbstractAdministrativeBoundary ;
+    skos:definition "A line of demarcation between administrative units."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Regional Administrative Boundary"@en .
 
 admRegions:RegionalAdministrativeUnitCategoryValue a owl:Class,
         skos:Concept ;
@@ -75,44 +202,96 @@ This code list class is only an indicative placeholder for a vocabulary of terms
     skos:inScheme ksa-ft:AdministrativeRegions ;
     skos:prefLabel "SubnationalAdministrationHierarchyLevelValue"@en .
 
-admRegions-att:about a owl:ObjectProperty,
+admRegions-att:authority a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "about" ;
-    rdfs:domain admRegions:Report ;
-    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:label "authority"@en ;
+    rdfs:domain admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/RelatedOrganization> ;
     rdfs:subClassOf admRegions:attribute ;
     skos:broader admRegions:attribute ;
-    skos:prefLabel "about" .
-
-admRegions:MunicipalAdministrationHierarchyLevelValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "MunicipalAdministrationHierarchyLevelValue"@en ;
-    skos:broader admRegions:codeLists ;
-    skos:definition """Levels of administration in the municipal (local government) administrative hierarchy. This code list reflects the level in the hierarchical pyramid of the administrative structures, which is based on geometric aggregation of administrated areas and does not necessarily describe the subordination between the related administrative authorities.
-This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following code list register http://nsdi.sa/codelist/MunicipalAdministrationHierarchyLevelValue."""@en ;
+    skos:definition "The responsible authority of the administrative unit."@en ;
     skos:inScheme ksa-ft:AdministrativeRegions ;
-    skos:prefLabel "MunicipalAdministrationHierarchyLevelValue"@en .
+    skos:prefLabel "authority"@en .
 
-admRegions:MunicipalAdministrativeBoundary a owl:Class,
+admRegions-att:boundary a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Municipa lAdministrative Boundary"@en ;
-    ogc-ft:hasProperty admRegions-att:level ;
-    rdfs:subClassOf admRegions:AbstractAdministrativeBoundary ;
-    skos:broader admRegions:AbstractAdministrativeBoundary ;
-    skos:definition "A line of demarcation between administrative units."@en ;
-    skos:inScheme ksa-ft:AdministrativeRegions ;
-    skos:prefLabel "Municipa lAdministrative Boundary"@en .
-
-admRegions-att:level a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "level"@en ;
-    rdfs:domain admRegions:MunicipalAdministrativeBoundary ;
-    rdfs:range admRegions:MunicipalAdministrationHierarchyLevelValue ;
+    rdfs:label "boundary"@en ;
+    rdfs:domain admRegions:AbstractAdministrativeBoundary ;
     rdfs:subClassOf admRegions:attribute ;
     skos:broader admRegions:attribute ;
-    skos:definition "The hierarchy level of all adjacent administrative units this boundary is part of."@en ;
+    skos:definition "Geometric representation of the line demarcating the boundary of an administrative unit."@en ;
     skos:inScheme ksa-ft:AdministrativeRegions ;
-    skos:prefLabel "level"@en .
+    skos:prefLabel "boundary"@en .
+
+admRegions-att:code a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "code"@en ;
+    rdfs:domain admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "Code identifier(s) as defined by the Data Owner."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "code"@en .
+
+admRegions-att:deliveryLocationByCentrePoint a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "deliveryLocationByCentrePoint"@en ;
+    rdfs:domain admRegions:Service ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "deliveryLocationByCentrePoint"@en .
+
+admRegions-att:deliveryLocationByExtent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "deliveryLocationByExtent"@en ;
+    rdfs:domain admRegions:Service ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "deliveryLocationByExtent"@en .
+
+admRegions-att:description a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "description"@en ;
+    rdfs:domain admRegions:Service ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "Descriptive text to provide further information regarding the service."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "description"@en .
+
+admRegions-att:edgeMatchStatus a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "edgeMatchStatus"@en ;
+    rdfs:domain admRegions:AbstractAdministrativeBoundary ;
+    rdfs:range admRegions:EdgeMatchStatusValue ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "The topological status of the boundary in terms of its topological matching or not-matching with the borders of all separated administrative units. Edge-matched means that the same set of coordinates is used."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "edgeMatchStatus"@en .
+
+admRegions-att:extent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extent"@en ;
+    rdfs:domain admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "Spatial extent of the administrative unit."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "extent"@en .
+
+admRegions-att:provider a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "provider"@en ;
+    rdfs:domain admRegions:Service ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/RelatedOrganization> ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "provider"@en .
 
 admRegions-att:reportContent a owl:DatatypeProperty,
         skos:Concept ;
@@ -133,6 +312,79 @@ admRegions-att:reportLink a owl:ObjectProperty,
     skos:inScheme ksa-ft:AdministrativeRegions ;
     skos:prefLabel "reportLink"@en .
 
+admRegions-att:serviceAreaByExtent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "serviceAreaByExtent"@en ;
+    rdfs:domain admRegions:Service ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "Geographic area from which a public service attracts or otherwise allows a population to use its services."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "serviceAreaByExtent"@en .
+
+admRegions-att:category a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "category"@en ;
+    rdfs:domain admRegions:MunicipalAdministrativeUnit,
+        admRegions:RegionalAdministrativeUnit ;
+    rdfs:range admRegions:MunicipalAdministrativeUnitCategoryValue,
+        admRegions:RegionalAdministrativeUnitCategoryValue ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "The category of administrative unit as determined by the Ministry of Interior."@en,
+        "The category of administrative unit as determined by the Ministry of Municipal and Rural Affairs."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "category"@en .
+
+admRegions-att:name a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain admRegions:AbstractHierarchicalAdministrativeUnit,
+        admRegions:Service ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "Common or useful name for the service, for example, 'Al Habib Hospital'."@en,
+        "Official name of the administrative unit, given at a minimum in Arabic; English as possible; and optionally other languages."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "name"@en .
+
+admRegions-att:subnationalLevel a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "subnationalLevel"@en ;
+    rdfs:domain admRegions:AbstractAdministrativeBoundary,
+        admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:range admRegions:SubnationalAdministrationHierarchyLevelValue ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "The sub-national hierarchy level of all adjacent administrative units this boundary is part of."@en,
+        "The subnational hierarchy level of all adjacent administrative units this boundary is part of."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "subnationalLevel"@en .
+
+admRegions:MunicipalAdministrativeUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "Municipal Administrative Unit"@en ;
+    ogc-ft:hasProperty admRegions-att:category,
+        admRegions-att:level,
+        admRegions-att:type ;
+    rdfs:subClassOf admRegions:AbstractHierarchicalAdministrativeUnit ;
+    skos:broader admRegions:AbstractHierarchicalAdministrativeUnit ;
+    skos:definition "Spatial hierarchy of municipal administration units, governed by the  Ministry of Municipal and Regional Affairs, that divide areas where legislated local governance rights are exercised."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Municipal Administrative Unit"@en .
+
+admRegions:RegionalAdministrativeUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "Regional Administrative Unit"@en ;
+    ogc-ft:hasProperty admRegions-att:category,
+        admRegions-att:level,
+        admRegions-att:type ;
+    rdfs:subClassOf admRegions:AbstractHierarchicalAdministrativeUnit ;
+    skos:broader admRegions:AbstractHierarchicalAdministrativeUnit ;
+    skos:definition "Spatial hierarchy of regional administration units, governed by the Ministry of Interior, that divides areas where legislated regional governance rights are exercised."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Regional Administrative Unit"@en .
+
 admRegions:Report a owl:Class,
         skos:Concept ;
     rdfs:label "Report"@en ;
@@ -144,17 +396,48 @@ admRegions:Report a owl:Class,
     skos:inScheme ksa-ft:AdministrativeRegions ;
     skos:prefLabel "Report"@en .
 
-<https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> a owl:Class,
+admRegions-att:type a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Abstract Feature Type"@en ;
-    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en ;
-    skos:prefLabel "Abstract Feature Type"@en .
-
-admRegions:attribute a owl:Class,
-        skos:Concept ;
-    rdfs:label "Administrative Regions Foundation Theme attribute"@en ;
+    rdfs:label "type"@en ;
+    rdfs:domain admRegions:MunicipalAdministrativeUnit,
+        admRegions:RegionalAdministrativeUnit,
+        admRegions:Service ;
+    rdfs:range admRegions:MunicipalAdministrativeUnitTypeValue,
+        admRegions:RegionalAdministrativeUnitTypeValue,
+        admRegions:ServiceTypeValue ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "The type of administrative unit as determined by the Ministry of Interior."@en,
+        "The type of administrative unit, as determined by the Ministry of Municipal and Rural Affairs."@en ;
     skos:inScheme ksa-ft:AdministrativeRegions ;
-    skos:prefLabel "Administrative Regions Foundation Theme attribute"@en .
+    skos:prefLabel "type"@en .
+
+admRegions-att:level a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "level"@en ;
+    rdfs:domain admRegions:MunicipalAdministrativeBoundary,
+        admRegions:MunicipalAdministrativeUnit,
+        admRegions:RegionalAdministrativeBoundary,
+        admRegions:RegionalAdministrativeUnit ;
+    rdfs:range admRegions:MunicipalAdministrationHierarchyLevelValue,
+        admRegions:RegionalAdministrationHierarchyLevelValue ;
+    rdfs:subClassOf admRegions:attribute ;
+    skos:broader admRegions:attribute ;
+    skos:definition "The hierarchy level of all adjacent administrative units this boundary is part of."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "level"@en .
+
+admRegions:AbstractAdministrativeBoundary a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Administrative Boundary"@en ;
+    ogc-ft:hasProperty admRegions-att:boundary,
+        admRegions-att:edgeMatchStatus,
+        admRegions-att:subnationalLevel ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A line of demarcation between administrative units."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Abstract Administrative Boundary"@en .
 
 admRegions:codeLists a owl:Class,
         skos:Concept ;
@@ -162,8 +445,50 @@ admRegions:codeLists a owl:Class,
     skos:inScheme ksa-ft:AdministrativeRegions ;
     skos:prefLabel "Administrative Regions Foundation Theme code list or type"@en .
 
+<https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Feature Type"@en ;
+    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en ;
+    skos:prefLabel "Abstract Feature Type"@en .
+
+admRegions:Service a owl:Class,
+        skos:Concept ;
+    rdfs:label "Service"@en ;
+    ogc-ft:hasProperty admRegions-att:deliveryLocationByCentrePoint,
+        admRegions-att:deliveryLocationByExtent,
+        admRegions-att:description,
+        admRegions-att:name,
+        admRegions-att:provider,
+        admRegions-att:serviceAreaByExtent,
+        admRegions-att:type ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Administrative and social governmental services such as public administrations, schools and hospitals provided by Public Administrative Bodies."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Service"@en .
+
+admRegions:AbstractHierarchicalAdministrativeUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "administrative unit"@en ;
+    ogc-ft:hasProperty admRegions-att:authority,
+        admRegions-att:code,
+        admRegions-att:extent,
+        admRegions-att:name,
+        admRegions-att:subnationalLevel ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Abstract feature type that establishes a spatial hierarchy of administration units dividing areas where legislated jurisdictional governance rights are exercised."@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "administrative unit"@en .
+
 ksa-ft:AdministrativeRegions a skos:ConceptScheme ;
     rdfs:label "Administrative Regions Foundation Theme"@en ;
     skos:definition "The Administrative Regions Foundation Theme defines the internal Administrative Units and Service Areas in the Kingdom of Saudi Arabia."@en ;
     skos:prefLabel "Administrative Regions Foundation Theme"@en .
+
+admRegions:attribute a owl:Class,
+        skos:Concept ;
+    rdfs:label "Administrative Regions Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:AdministrativeRegions ;
+    skos:prefLabel "Administrative Regions Foundation Theme attribute"@en .
 

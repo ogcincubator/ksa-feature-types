@@ -7,6 +7,91 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+sansrs:CRSNameValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "CRSNameValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "CRSNameValue"@en .
+
+sansrs:HeightTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "HeightTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "HeightTypeValue"@en .
+
+sansrs-att:benchmarkPoint a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "benchmarkPoint" ;
+    rdfs:domain sansrs:BenchmarkLine,
+        sansrs:BenchmarkTideGaugePoint ;
+    rdfs:range sansrs:BenchmarkPoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:prefLabel "benchmarkPoint" .
+
+sansrs-att:connectingLine a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "connectingLine" ;
+    rdfs:domain sansrs:JunctionPoint ;
+    rdfs:range sansrs:BenchmarkLine ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:prefLabel "connectingLine" .
+
+sansrs-att:geodeticReferenceFrame a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geodeticReferenceFrame" ;
+    rdfs:domain sansrs:CORSNetwork ;
+    rdfs:range sansrs:GeodeticCRS ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:prefLabel "geodeticReferenceFrame" .
+
+sansrs-att:member a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "member" ;
+    rdfs:domain sansrs:CORSNetwork,
+        sansrs:GeodeticControlNetwork,
+        sansrs:GravimetricNetwork,
+        sansrs:VerticalControlNetwork ;
+    rdfs:range sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:CORSStation,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:prefLabel "member" .
+
+sansrs-att:verticalReferenceFrame a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "verticalReferenceFrame" ;
+    rdfs:domain sansrs:VerticalControlNetwork ;
+    rdfs:range sansrs:VerticalCRS ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:prefLabel "verticalReferenceFrame" .
+
+sansrs:AbsoluteGravity a owl:Class,
+        skos:Concept ;
+    rdfs:label "Absolute Gravity"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "Absolute gravity measure. The units (e.g. mGal, Gal) must be specified in the unit of measurement attribute."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Absolute Gravity"@en .
+
+sansrs:AbsoluteGravityCalibrationLineTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "AbsoluteGravityCalibrationLineTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AboluteGravityCalibrationLineTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "AbsoluteGravityCalibrationLineTypeValue"@en .
+
 sansrs:AbsoluteGravityTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "AbsoluteGravityTypeValue"@en ;
@@ -55,59 +140,12 @@ sansrs:CORSStationTypeValue a owl:Class,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "CORSStationTypeValue"@en .
 
-sansrs:CRSNameValue a owl:Class,
+sansrs:GeodeticCRS a owl:Class,
         skos:Concept ;
-    rdfs:label "CRSNameValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "CRSNameValue"@en .
-
-sansrs:HeightTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "HeightTypeValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "HeightTypeValue"@en .
-
-sansrs:NetworkOwnerValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "NetworkOwnerValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/NetworkOwnerValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "NetworkOwnerValue"@en .
-
-sansrs:ReceiverTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "ReceiverTypeValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/ReceiverTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "ReceiverTypeValue"@en .
-
-sansrs:SatelliteSystemTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "SatelliteSystemTypeValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/SatelliteSystemTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "SatelliteSystemTypeValue"@en .
-
-sansrs:AbsoluteGravity a owl:Class,
-        skos:Concept ;
-    rdfs:label "Absolute Gravity"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "Absolute gravity measure. The units (e.g. mGal, Gal) must be specified in the unit of measurement attribute."@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "Absolute Gravity"@en .
-
-sansrs:AbsoluteGravityCalibrationLineTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "AbsoluteGravityCalibrationLineTypeValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AboluteGravityCalibrationLineTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "AbsoluteGravityCalibrationLineTypeValue"@en .
+    rdfs:label "GeodeticCRS"@en ;
+    skos:definition """coordinate reference system associated with a geodetic reference frame and a three-dimensional Cartesian or spherical coordinate system
+Note: If the geodetic reference frame is dynamic then the geodetic CRS is dynamic, else it is static."""@en ;
+    skos:prefLabel "GeodeticCRS"@en .
 
 sansrs:MaintenanceUnitValue a owl:Class,
         skos:Concept ;
@@ -133,16 +171,37 @@ sansrs:MonumentTypeValue a owl:Class,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "MonumentTypeValue"@en .
 
-sansrs-att:absoluteGravity a owl:ObjectProperty,
+sansrs:NetworkOwnerValue a owl:Class,
         skos:Concept ;
-    rdfs:label "absoluteGravity"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range sansrs:AbsoluteGravity ;
-    rdfs:subClassOf sansrs:attribute ;
-    skos:broader sansrs:attribute ;
-    skos:definition "Value of absolute gravity, calculated based on the absolute gravity measure. The units (e.g. mGal,&#181;Gal) must be specified in the uom attribute."@en ;
+    rdfs:label "NetworkOwnerValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/NetworkOwnerValue"@en ;
     skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "absoluteGravity"@en .
+    skos:prefLabel "NetworkOwnerValue"@en .
+
+sansrs:ReceiverTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "ReceiverTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/ReceiverTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "ReceiverTypeValue"@en .
+
+sansrs:SatelliteSystemTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "SatelliteSystemTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/SatelliteSystemTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "SatelliteSystemTypeValue"@en .
+
+sansrs:VerticalCRS a owl:Class,
+        skos:Concept ;
+    rdfs:label "VerticalCRS"@en ;
+    skos:definition """coordinate reference system having a vertical reference frame and a one-dimensional vertical coordinate system used for recording gravity-related heights or depths; vertical CRSs make use of the direction of gravity to define the concept of height or depth, but the relationship with gravity may not be straightforward. 
+Note 1: If the vertical reference frame is dynamic then the vertical CRS is dynamic, else it is static. 
+Note 2: Ellipsoidal heights cannot be captured in a vertical coordinate reference system. They exist only as an inseparable part of a 3D coordinate tuple defined in a geographic 3D coordinate reference system."""@en ;
+    skos:prefLabel "VerticalCRS"@en .
 
 sansrs-att:absoluteGravityCalibrationLinePointID a owl:ObjectProperty,
         skos:Concept ;
@@ -154,31 +213,387 @@ sansrs-att:absoluteGravityCalibrationLinePointID a owl:ObjectProperty,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "absoluteGravityCalibrationLinePointID"@en .
 
+sansrs-att:absoluteGravityPointID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "absoluteGravityPointID"@en ;
+    rdfs:domain sansrs:AbsoluteGravityPoint ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for absolute gravity point. Naming convention: <b><i>AG0XXY, where XX = (00…99);  Y = (0, 1)</i></b>"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "absoluteGravityPointID"@en .
+
+sansrs-att:antennaCalibrationType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "antennaCalibrationType"@en ;
+    rdfs:domain sansrs:CORSStation ;
+    rdfs:range sansrs:AntennaCalibrationTypeValue ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "antennaCalibrationType"@en .
+
+sansrs-att:antennaHeight a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "antennaHeight"@en ;
+    rdfs:domain sansrs:CORSStation ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "The height of the antenna, which is an offset to the ellipsoidal height of the CORS Station."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "antennaHeight"@en .
+
+sansrs-att:antennaType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "antennaType"@en ;
+    rdfs:domain sansrs:CORSStation ;
+    rdfs:range sansrs:AntennaTypeValue ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "antennaType"@en .
+
+sansrs-att:benchMarkLineID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "benchMarkLineID"@en ;
+    rdfs:domain sansrs:BenchmarkLine ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for the benchmark line. Naming convention: XX, where XX = (00…99)"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "benchMarkLineID"@en .
+
+sansrs-att:benchMarkPointID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "benchMarkPointID"@en ;
+    rdfs:domain sansrs:BenchmarkPoint ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for the benchmark point. Naming convention: <b><i>BMXX-ZZZ, where XX = (00…99);  ZZ = (000...999)</i></b>"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "benchMarkPointID"@en .
+
+sansrs-att:benchmarkTideGaugePointID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "benchmarkTideGaugePointID"@en ;
+    rdfs:domain sansrs:BenchmarkTideGaugePoint ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition """Unique local ID for the benchmark tide gauge point. Naming convention: <b><i>TG-XXX-Y, where XXX = (OQR, DUB, JED, JEN, KFJ, MAG, MAR, QUN, RAQ, RAT, WAJ, YAN);</i></b>
+<b><i>Y = (1, 2, A, B, C, S)</i></b>"""@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "benchmarkTideGaugePointID"@en .
+
+sansrs-att:corsNetworkID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "corsNetworkID"@en ;
+    rdfs:domain sansrs:CORSNetwork ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for the CORS Network: KSA-CORS"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "corsNetworkID"@en .
+
+sansrs-att:corsStationID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "corsStationID"@en ;
+    rdfs:domain sansrs:CORSStation ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for CORS. Naming convention: <b><i>CCXX, where CC=(A..Z); XX = (00…99)</i></b>"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "corsStationID"@en .
+
+sansrs-att:documentationURL a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "documentationURL"@en ;
+    rdfs:domain sansrs:CORSNetwork ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "documentationURL"@en .
+
+sansrs-att:geodeticControlNetworkID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geodeticControlNetworkID"@en ;
+    rdfs:domain sansrs:GeodeticControlNetwork ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for the Geodetic Control Network: KSA Primary Control Network (KSA-PGN)"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "geodeticControlNetworkID"@en .
+
+sansrs-att:geodeticControlPointID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geodeticControlPointID"@en ;
+    rdfs:domain sansrs:GeodeticControlPoint ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for the  geodetic control point. Naming convention: <b><i>F0XXX, where F - fundamental; XXX = (000…999). PGNXXX, where P - primary; XXX = (000…999)</i></b>"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "geodeticControlPointID"@en .
+
+sansrs-att:gravimetricNetworkID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "gravimetricNetworkID"@en ;
+    rdfs:domain sansrs:GravimetricNetwork ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for the Gravimetric Network: KSA National Gravimetric Network (KSA-NGN)"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "gravimetricNetworkID"@en .
+
+sansrs-att:iersDomesNumber a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "iersDomesNumber"@en ;
+    rdfs:domain sansrs:CORSStation ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "iersDomesNumber"@en .
+
+sansrs-att:junctionPointID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "junctionPointID"@en ;
+    rdfs:domain sansrs:JunctionPoint ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for the junction point. Naming convention: <b><i>JPXX-Q, where XX = (00…99);  Q = (A, B, C)</i></b>"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "junctionPointID"@en .
+
+sansrs-att:numberOfStations a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfStations"@en ;
+    rdfs:domain sansrs:CORSNetwork ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "numberOfStations"@en .
+
+sansrs-att:positionalSystemSupported a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "positionalSystemSupported"@en ;
+    rdfs:domain sansrs:CORSNetwork ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "positionalSystemSupported"@en .
+
+sansrs-att:receiverType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "receiverType"@en ;
+    rdfs:domain sansrs:CORSStation ;
+    rdfs:range sansrs:ReceiverTypeValue ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "receiverType"@en .
+
+sansrs-att:satelliteSystem a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "satelliteSystem"@en ;
+    rdfs:domain sansrs:CORSStation ;
+    rdfs:range sansrs:SatelliteSystemTypeValue ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "satelliteSystem"@en .
+
+sansrs-att:service a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "service"@en ;
+    rdfs:domain sansrs:CORSNetwork ;
+    rdfs:range sansrs:CORSNetworkServiceValue ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "service"@en .
+
+sansrs-att:siteDataTimeSeries a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "siteDataTimeSeries"@en ;
+    rdfs:domain sansrs:CORSStation ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "siteDataTimeSeries"@en .
+
+sansrs-att:verticalControlNetworkID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "verticalControlNetworkID"@en ;
+    rdfs:domain sansrs:VerticalControlNetwork ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for the Vertical Control Network: KSA National Vertical Network (KSA-NVN)"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "verticalControlNetworkID"@en .
+
+sansrs:VerticalHeight a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Height"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "Height value for the vertical datum."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Vertical Height"@en .
+
+sansrs-att:type a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "type"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:CORSStation ;
+    rdfs:range sansrs:AbsoluteGravityCalibrationLineTypeValue,
+        sansrs:AbsoluteGravityTypeValue,
+        sansrs:CORSStationTypeValue ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "type"@en .
+
+sansrs-att:order a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "order"@en ;
+    rdfs:domain sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
+    rdfs:range sansrs:AccuracyOrderValue ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "The order code indicating the <b>Accuracy level.</b>"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "order"@en .
+
+sansrs-att:owner a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "owner"@en ;
+    rdfs:domain sansrs:CORSNetwork,
+        sansrs:GeodeticControlNetwork,
+        sansrs:GravimetricNetwork,
+        sansrs:VerticalControlNetwork ;
+    rdfs:range sansrs:NetworkOwnerValue ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "The network owner code (e.g. GCS"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "owner"@en .
+
+sansrs:BenchmarkLine a owl:Class,
+        skos:Concept ;
+    rdfs:label "Benchmark Line"@en ;
+    ogc-ft:hasProperty sansrs-att:accessURL,
+        sansrs-att:benchMarkLineID,
+        sansrs-att:name ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Consists of a sequence of BenchmarkPoints where the height of one point can be determined from the height difference with another point."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Benchmark Line"@en .
+
+sansrs:GeodeticControlNetwork a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geodetic Control Network"@en ;
+    ogc-ft:hasProperty sansrs-att:accessURL,
+        sansrs-att:geodeticControlNetworkID,
+        sansrs-att:name,
+        sansrs-att:owner ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A network consisting of stable, identifiable Geodetic Control Points with published datum values derived from observations that tie the points together."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Geodetic Control Network"@en .
+
+sansrs:GravimetricNetwork a owl:Class,
+        skos:Concept ;
+    rdfs:label "Gravimetric Network"@en ;
+    ogc-ft:hasProperty sansrs-att:accessURL,
+        sansrs-att:gravimetricNetworkID,
+        sansrs-att:name,
+        sansrs-att:owner ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A network of gravimetric stations where the measurement of gravity has been determined by absolute or relative methods."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Gravimetric Network"@en .
+
+sansrs:VerticalControlNetwork a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Control Network"@en ;
+    ogc-ft:hasProperty sansrs-att:accessURL,
+        sansrs-att:name,
+        sansrs-att:owner,
+        sansrs-att:verticalControlNetworkID ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A network of stable, identifiable benchmarks with published datum values used to  provide a foundation for a vertical datum."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Vertical Control Network"@en .
+
+sansrs-att:absoluteGravity a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "absoluteGravity"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
+    rdfs:range sansrs:AbsoluteGravity ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Value of absolute gravity, calculated based on the absolute gravity measure. The units (e.g. mGal,&#181;Gal) must be specified in the uom attribute."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "absoluteGravity"@en .
+
+sansrs-att:accessURL a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "accessURL"@en ;
+    rdfs:domain sansrs:BenchmarkLine,
+        sansrs:CORSNetwork,
+        sansrs:CORSStation,
+        sansrs:GeodeticControlNetwork,
+        sansrs:GravimetricNetwork,
+        sansrs:VerticalControlNetwork ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "accessURL"@en .
+
 sansrs-att:descriptionOfLocation a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "descriptionOfLocation"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:definition "General text description of the location (in English and/or Arabic)"@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "descriptionOfLocation"@en .
 
-sansrs-att:ellipsoidalHeight a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "ellipsoidalHeight"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range sansrs:VerticalHeight ;
-    rdfs:subClassOf sansrs:attribute ;
-    skos:broader sansrs:attribute ;
-    skos:definition "Height measured along the perpendicular from the surface of the GRS80 ellipsoid. The units (e.g. meters, feet) must be specified in the uom attribute."@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "ellipsoidalHeight"@en .
-
 sansrs-att:lastMaintenanceDate a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "lastMaintenanceDate"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:range xsd:date ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
@@ -189,7 +604,12 @@ sansrs-att:lastMaintenanceDate a owl:DatatypeProperty,
 sansrs-att:maintenanceUnit a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "maintenanceUnit"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:range sansrs:MaintenanceUnitValue ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
@@ -200,7 +620,12 @@ sansrs-att:maintenanceUnit a owl:ObjectProperty,
 sansrs-att:monumentCondition a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "monumentCondition"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:range sansrs:MonumentConditionTypeValue ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
@@ -208,21 +633,15 @@ sansrs-att:monumentCondition a owl:ObjectProperty,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "monumentCondition"@en .
 
-sansrs-att:monumentInstallationDate a owl:DatatypeProperty,
-        skos:Concept ;
-    rdfs:label "monumentInstallationDate"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range xsd:date ;
-    rdfs:subClassOf sansrs:attribute ;
-    skos:broader sansrs:attribute ;
-    skos:definition "The installation date of the monument"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "monumentInstallationDate"@en .
-
 sansrs-att:monumentType a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "monumentType"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:range sansrs:MonumentTypeValue ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
@@ -230,20 +649,15 @@ sansrs-att:monumentType a owl:ObjectProperty,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "monumentType"@en .
 
-sansrs-att:name a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "name"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:subClassOf sansrs:attribute ;
-    skos:broader sansrs:attribute ;
-    skos:definition "Name in English and/or Arabic"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "name"@en .
-
 sansrs-att:orthometricHeight a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "orthometricHeight"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:range sansrs:VerticalHeight ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
@@ -251,10 +665,50 @@ sansrs-att:orthometricHeight a owl:ObjectProperty,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "orthometricHeight"@en .
 
+sansrs-att:ellipsoidalHeight a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "ellipsoidalHeight"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:CORSStation,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
+    rdfs:range sansrs:VerticalHeight ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Height measured along the perpendicular from the surface of the GRS80 ellipsoid. The units (e.g. meters, feet) must be specified in the uom attribute."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "ellipsoidalHeight"@en .
+
+sansrs-att:monumentInstallationDate a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "monumentInstallationDate"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:CORSStation,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "The installation date of the monument"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "monumentInstallationDate"@en .
+
 sansrs-att:position a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "position"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:CORSStation,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:definition "A Point-valued 2-dimensional position"@en ;
@@ -264,7 +718,13 @@ sansrs-att:position a owl:ObjectProperty,
 sansrs-att:siteLog a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "siteLog"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:CORSStation,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:inScheme ksa-ft:SANSRS ;
@@ -273,29 +733,55 @@ sansrs-att:siteLog a owl:ObjectProperty,
 sansrs-att:sitePicture a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "sitePicture"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:CORSStation,
+        sansrs:GeodeticControlPoint,
+        sansrs:JunctionPoint ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "sitePicture"@en .
 
-sansrs-att:type a owl:ObjectProperty,
+sansrs:CORSNetwork a owl:Class,
         skos:Concept ;
-    rdfs:label "type"@en ;
-    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range sansrs:AbsoluteGravityCalibrationLineTypeValue ;
+    rdfs:label "CORS Network"@en ;
+    ogc-ft:hasProperty sansrs-att:accessURL,
+        sansrs-att:corsNetworkID,
+        sansrs-att:documentationURL,
+        sansrs-att:name,
+        sansrs-att:numberOfStations,
+        sansrs-att:owner,
+        sansrs-att:positionalSystemSupported,
+        sansrs-att:service ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A network of Continuously Operating Reference Stations (CORS). Accuracy is increased in a CORS network, because more than one station helps ensure correct positioning and guards against a false initialization of a single base station."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "CORS Network"@en .
+
+sansrs-att:name a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint,
+        sansrs:AbsoluteGravityPoint,
+        sansrs:BenchmarkLine,
+        sansrs:BenchmarkPoint,
+        sansrs:BenchmarkTideGaugePoint,
+        sansrs:CORSNetwork,
+        sansrs:CORSStation,
+        sansrs:GeodeticControlNetwork,
+        sansrs:GeodeticControlPoint,
+        sansrs:GravimetricNetwork,
+        sansrs:JunctionPoint,
+        sansrs:VerticalControlNetwork ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
+    skos:definition "Name in English and/or Arabic"@en ;
     skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "type"@en .
-
-sansrs:VerticalHeight a owl:Class,
-        skos:Concept ;
-    rdfs:label "Vertical Height"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "Height value for the vertical datum."@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "Vertical Height"@en .
+    skos:prefLabel "name"@en .
 
 sansrs:AbsoluteGravityCalibrationLinePoint a owl:Class,
         skos:Concept ;
@@ -321,17 +807,156 @@ sansrs:AbsoluteGravityCalibrationLinePoint a owl:Class,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "Absolute Gravity Calibration Line Point"@en .
 
+sansrs:AbsoluteGravityPoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "Absolute Gravity Point"@en ;
+    ogc-ft:hasProperty sansrs-att:absoluteGravity,
+        sansrs-att:absoluteGravityPointID,
+        sansrs-att:descriptionOfLocation,
+        sansrs-att:ellipsoidalHeight,
+        sansrs-att:lastMaintenanceDate,
+        sansrs-att:maintenanceUnit,
+        sansrs-att:monumentCondition,
+        sansrs-att:monumentInstallationDate,
+        sansrs-att:monumentType,
+        sansrs-att:name,
+        sansrs-att:orthometricHeight,
+        sansrs-att:position,
+        sansrs-att:siteLog,
+        sansrs-att:sitePicture,
+        sansrs-att:type ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A point on the earth's surface where the acceleration of gravity has been measured and the geodetic coordinates, including elevation, have been determined."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Absolute Gravity Point"@en .
+
+sansrs:GeodeticControlPoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geodetic Control Point"@en ;
+    ogc-ft:hasProperty sansrs-att:absoluteGravity,
+        sansrs-att:descriptionOfLocation,
+        sansrs-att:ellipsoidalHeight,
+        sansrs-att:geodeticControlPointID,
+        sansrs-att:lastMaintenanceDate,
+        sansrs-att:maintenanceUnit,
+        sansrs-att:monumentCondition,
+        sansrs-att:monumentInstallationDate,
+        sansrs-att:monumentType,
+        sansrs-att:name,
+        sansrs-att:order,
+        sansrs-att:orthometricHeight,
+        sansrs-att:position,
+        sansrs-att:siteLog,
+        sansrs-att:sitePicture ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Permanent reference markers in the ground which are precisely located and documented. These markers provide accurate reference points to support the production of consistent and compatible data collection for surveying and mapping."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Geodetic Control Point"@en .
+
+sansrs:BenchmarkPoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "Benchmark Point"@en ;
+    ogc-ft:hasProperty sansrs-att:absoluteGravity,
+        sansrs-att:benchMarkPointID,
+        sansrs-att:descriptionOfLocation,
+        sansrs-att:ellipsoidalHeight,
+        sansrs-att:lastMaintenanceDate,
+        sansrs-att:maintenanceUnit,
+        sansrs-att:monumentCondition,
+        sansrs-att:monumentInstallationDate,
+        sansrs-att:monumentType,
+        sansrs-att:name,
+        sansrs-att:order,
+        sansrs-att:orthometricHeight,
+        sansrs-att:position,
+        sansrs-att:siteLog,
+        sansrs-att:sitePicture ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A physical elevation marker established for vertical measurement control."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Benchmark Point"@en .
+
+sansrs:BenchmarkTideGaugePoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "Benchmark Tide Gauge Point"@en ;
+    ogc-ft:hasProperty sansrs-att:absoluteGravity,
+        sansrs-att:benchmarkTideGaugePointID,
+        sansrs-att:descriptionOfLocation,
+        sansrs-att:ellipsoidalHeight,
+        sansrs-att:lastMaintenanceDate,
+        sansrs-att:maintenanceUnit,
+        sansrs-att:monumentCondition,
+        sansrs-att:monumentInstallationDate,
+        sansrs-att:monumentType,
+        sansrs-att:name,
+        sansrs-att:order,
+        sansrs-att:orthometricHeight,
+        sansrs-att:position,
+        sansrs-att:siteLog,
+        sansrs-att:sitePicture ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "The main BenchMarkPoint corresponding to a tide gauge."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Benchmark Tide Gauge Point"@en .
+
+sansrs:CORSStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "CORS Station"@en ;
+    ogc-ft:hasProperty sansrs-att:accessURL,
+        sansrs-att:antennaCalibrationType,
+        sansrs-att:antennaHeight,
+        sansrs-att:antennaType,
+        sansrs-att:corsStationID,
+        sansrs-att:ellipsoidalHeight,
+        sansrs-att:iersDomesNumber,
+        sansrs-att:monumentInstallationDate,
+        sansrs-att:name,
+        sansrs-att:position,
+        sansrs-att:receiverType,
+        sansrs-att:satelliteSystem,
+        sansrs-att:siteDataTimeSeries,
+        sansrs-att:siteLog,
+        sansrs-att:sitePicture,
+        sansrs-att:type ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A Continuously Operating Reference Station (CORS) is a real time kinematic (RTK) base station that broadcasts corrections, usually over an Internet connection."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "CORS Station"@en .
+
+sansrs:JunctionPoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "Junction Point"@en ;
+    ogc-ft:hasProperty sansrs-att:absoluteGravity,
+        sansrs-att:descriptionOfLocation,
+        sansrs-att:ellipsoidalHeight,
+        sansrs-att:junctionPointID,
+        sansrs-att:lastMaintenanceDate,
+        sansrs-att:maintenanceUnit,
+        sansrs-att:monumentCondition,
+        sansrs-att:monumentInstallationDate,
+        sansrs-att:monumentType,
+        sansrs-att:name,
+        sansrs-att:order,
+        sansrs-att:orthometricHeight,
+        sansrs-att:position,
+        sansrs-att:siteLog,
+        sansrs-att:sitePicture ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A BenchmarkPoint that belongs to two or more BenchmarkLines."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Junction Point"@en .
+
 sansrs:codeLists a owl:Class,
         skos:Concept ;
     rdfs:label "SANSRS Foundation Theme code list or type"@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "SANSRS Foundation Theme code list or type"@en .
-
-sansrs:attribute a owl:Class,
-        skos:Concept ;
-    rdfs:label "SANSRS Foundation Theme attribute"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "SANSRS Foundation Theme attribute"@en .
 
 ksa-ft:SANSRS a skos:ConceptScheme ;
     rdfs:label "SANSRS Foundation Theme"@en ;
@@ -341,4 +966,10 @@ The SANSRS consists of the following geodetic components:
  
  Geodetic Reference Frame (KSA-GRF) is defined in such a way that it (1) coincides with the latest International Terrestrial Reference Frame (ITRF2014) at epoch 2017.0 and (2) is co-moving with the stable part of the Arabian tectonic plate. KSA-GRF is established based on the Global Navigation Satellite System (GNSS) observation data of the National Continuously Operating Reference Stations Network (KSA-CORS) and CORS Networks of other organizations. The first and latest realization of this GRF is named KSA-GRF17. Vertical Reference Frame (KSA-VRF) is based on satellite altimetry, Gravity Field and Steady State Ocean Circulation Explorer (GOCE) data utilizing also in-situ observations from Tide Gauges (TGs), precise leveling and gravity. The last realization of this VRF is named KSA-VRF14. Geoid Model (KSA-GEOID) is a hybrid model based on gravimetric geoid, which utilizes satellite data (altimetric and gravity satellite data) together with land and shipborne gravity pointwise and grid data. Saudi Arabia Geodetic Infrastructure, which includes different geodetic networks (3D GNSS CORS, horizontal, vertical, tide gauge and gravity), together with necessary data from other satellite techniques and Earth observations. It supplies the data and information for the definition of the SANSRS components above. Transformation parameters and tools for transformation between KSA-GRF17 and other existing reference frames."""@en ;
     skos:prefLabel "SANSRS Foundation Theme"@en .
+
+sansrs:attribute a owl:Class,
+        skos:Concept ;
+    rdfs:label "SANSRS Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "SANSRS Foundation Theme attribute"@en .
 

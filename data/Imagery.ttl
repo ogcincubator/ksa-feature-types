@@ -1,11 +1,22 @@
+@prefix admRegions: <https://w3id.org/ksa/feature-types/AdministrativeRegions/> .
 @prefix imagery: <https://w3id.org/ksa/feature-types/Imagery/> .
 @prefix imagery-att: <https://w3id.org/ksa/feature-types/Imagery/attribute/> .
 @prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix nationalAddress: <https://w3id.org/ksa/feature-types/NationalAddress/> .
 @prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+imagery:AggregatedMosaicElement a owl:Class,
+        skos:Concept ;
+    rdfs:label "Aggregeted Mosaic Element"@en ;
+    rdfs:subClassOf imagery:MosaicElement ;
+    skos:broader imagery:MosaicElement ;
+    skos:definition "Mosaic element relating to several input images that share the same acquisition time at a given level of definition (e.g. day, month). The geometry of an aggregated mosaic element corresponds to the union of the contributing areas, in the mosaic, of several input images."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Aggregeted Mosaic Element"@en .
 
 imagery:ImageAggregation a owl:Class,
         skos:Concept ;
@@ -15,33 +26,59 @@ imagery:ImageAggregation a owl:Class,
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Image Aggregation"@en .
 
-imagery:InterpolationMethodValue a owl:Class,
+imagery-att:controlPoint a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Interpolation Method"@en ;
-    skos:broader imagery:codeLists ;
-    skos:definition """List of codes that identify the interpolation methods which may be used for evaluating orthoimage coverages.
+    rdfs:label "controlPoint" ;
+    rdfs:domain imagery:Image,
+        imagery:OrthoImage ;
+    rdfs:range imagery:PhotogrammetricControlPoint ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:prefLabel "controlPoint" .
 
-NOTE 1 This Saudi NSDI-governed code list is derived from the code list CV_InterpolationMethod specified in ISO 19123. CV_InterpolationMethod is not used  as such because not actually implemented.
-
-NOTE 2 Example values: nearestneighbor, bilinear, biquadratic, bicubic, etc..."""@en ;
-    skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "Interpolation Method"@en .
-
-imagery:TerrestrialImageShapeTypeValue a owl:Class,
+imagery-att:depthMap a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Terrestrial Image Shape Type"@en ;
-    skos:broader imagery:codeLists ;
-    skos:definition "The shape type of the terrestrial image."@en ;
-    skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "Terrestrial Image Shape Type"@en .
+    rdfs:label "depthMap" ;
+    rdfs:domain imagery:TerrestrialImage ;
+    rdfs:range imagery:DepthMap ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:prefLabel "depthMap" .
 
-imagery:ViewVolume a owl:Class,
+imagery-att:mosaicElement a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "View Volume"@en ;
-    skos:broader imagery:codeLists ;
-    skos:definition "Specify what is the horizontal and vertical field of view of the image."@en ;
-    skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "View Volume"@en .
+    rdfs:label "mosaicElement" ;
+    rdfs:domain imagery:OrthoImage ;
+    rdfs:range imagery:MosaicElement ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:prefLabel "mosaicElement" .
+
+imagery-att:pointOfInterest a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "pointOfInterest" ;
+    rdfs:domain imagery:TerrestrialImage ;
+    rdfs:range admRegions:PointOfInterest ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:prefLabel "pointOfInterest" .
+
+imagery-att:segmentationMap a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "segmentationMap" ;
+    rdfs:domain imagery:TerrestrialImage ;
+    rdfs:range imagery:SegmentationMap ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:prefLabel "segmentationMap" .
+
+admRegions:PointOfInterest a owl:Class,
+        skos:Concept ;
+    rdfs:label "Point Of Interest"@en ;
+    skos:definition """Specific point location of a place, feature, building or landmark that is of interest, or useful to, people. This includes different categories of POIs including accommodation, eating and drinking, commercial services, religious sites, culture and heritage, attractions, sport and entertainment, education and health, public infrastructure, manufacturing and production, retail and transport.
+
+Specific point location of a place, feature, building or landmark that is of interest, or useful to, people. This includes different categories of POIs including accommodation, eating, commercial services, religious sites, cultural and heritage, attractions, sport and entertainment, education and health, public infrastructure, manufacturing and production, retail and transport."""@en ;
+    skos:prefLabel "Point Of Interest"@en .
 
 imagery:Attitude a owl:Class,
         skos:Concept ;
@@ -67,15 +104,43 @@ imagery:ExteriorOrientation a owl:Class,
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Exterior Orientation"@en .
 
-imagery-att:GSD a owl:ObjectProperty,
+imagery:InterpolationMethodValue a owl:Class,
         skos:Concept ;
-    rdfs:label "GSD"@en ;
-    rdfs:domain imagery:SpaceborneImage ;
-    rdfs:subClassOf imagery:attribute ;
-    skos:broader imagery:attribute ;
-    skos:definition "Coarse specification of the distance between pixels' centres."@en ;
+    rdfs:label "Interpolation Method"@en ;
+    skos:broader imagery:codeLists ;
+    skos:definition """List of codes that identify the interpolation methods which may be used for evaluating orthoimage coverages.
+
+NOTE 1 This Saudi NSDI-governed code list is derived from the code list CV_InterpolationMethod specified in ISO 19123. CV_InterpolationMethod is not used  as such because not actually implemented.
+
+NOTE 2 Example values: nearestneighbor, bilinear, biquadratic, bicubic, etc..."""@en ;
     skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "GSD"@en .
+    skos:prefLabel "Interpolation Method"@en .
+
+imagery:SingleMosaicElement a owl:Class,
+        skos:Concept ;
+    rdfs:label "Single Mosaic Element"@en ;
+    ogc-ft:hasProperty imagery-att:imageSourceReference ;
+    rdfs:subClassOf imagery:MosaicElement ;
+    skos:broader imagery:MosaicElement ;
+    skos:definition "Mosaic element relating to a single input image which corresponds exactly to the contributing area, in the mosaic, of the single input image."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Single Mosaic Element"@en .
+
+imagery:TerrestrialImageShapeTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Terrestrial Image Shape Type"@en ;
+    skos:broader imagery:codeLists ;
+    skos:definition "The shape type of the terrestrial image."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Terrestrial Image Shape Type"@en .
+
+imagery:ViewVolume a owl:Class,
+        skos:Concept ;
+    rdfs:label "View Volume"@en ;
+    skos:broader imagery:codeLists ;
+    skos:definition "Specify what is the horizontal and vertical field of view of the image."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "View Volume"@en .
 
 imagery-att:RPCs a owl:DatatypeProperty,
         skos:Concept ;
@@ -87,6 +152,17 @@ imagery-att:RPCs a owl:DatatypeProperty,
     skos:definition "Rational polynomial coefficients."@en ;
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "RPCs"@en .
+
+imagery-att:address a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "address"@en ;
+    rdfs:domain imagery:TerrestrialImage ;
+    rdfs:range nationalAddress:AddressRepresentation ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition "Address that can be found in this terrestrial image."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "address"@en .
 
 imagery-att:attitude a owl:ObjectProperty,
         skos:Concept ;
@@ -109,15 +185,26 @@ imagery-att:auxFile a owl:ObjectProperty,
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "auxFile"@en .
 
-imagery-att:environmentalConditions a owl:ObjectProperty,
+imagery-att:dateOfMeasurement a owl:DatatypeProperty,
         skos:Concept ;
-    rdfs:label "environmentalConditions"@en ;
-    rdfs:domain imagery:ObliqueAirborneImage ;
+    rdfs:label "dateOfMeasurement"@en ;
+    rdfs:domain imagery:PhotogrammetricControlPoint ;
+    rdfs:range xsd:date ;
     rdfs:subClassOf imagery:attribute ;
     skos:broader imagery:attribute ;
-    skos:definition "Description of environmental conditions like: wind, temperature, humidity etc."@en ;
+    skos:definition "Date of determining the coordinates of the photogrammetric control point."@en ;
     skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "environmentalConditions"@en .
+    skos:prefLabel "dateOfMeasurement"@en .
+
+imagery-att:description a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "description"@en ;
+    rdfs:domain imagery:PhotogrammetricControlPoint ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition "Description of the location of the photogrammetric control point that allows to identify it in the image."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "description"@en .
 
 imagery-att:ephemeris a owl:ObjectProperty,
         skos:Concept ;
@@ -130,26 +217,50 @@ imagery-att:ephemeris a owl:ObjectProperty,
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "ephemeris"@en .
 
-imagery-att:exteriorOrientation a owl:ObjectProperty,
+imagery-att:footprint a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "exteriorOrientation"@en ;
-    rdfs:domain imagery:ObliqueAirborneImage ;
-    rdfs:range imagery:ExteriorOrientation ;
+    rdfs:label "footprint"@en ;
+    rdfs:domain imagery:OrthoImage ;
     rdfs:subClassOf imagery:attribute ;
     skos:broader imagery:attribute ;
-    skos:definition "Elements of the exterior orientation of the camera."@en ;
-    skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "exteriorOrientation"@en .
+    skos:definition """Geographic area enclosing valid data of the image coverage.
 
-imagery-att:flightHeight a owl:ObjectProperty,
+NOTE 1 The footprint shall be enclosed in the geographic domain extent that it defines.
+
+NOTE 2 This property is mandatory if the ImageCoverage instance is an aggregation of other ImageCoverage instances or if mosaic elements are provided."""@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "footprint"@en .
+
+imagery-att:imageSourceReference a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "flightHeight"@en ;
-    rdfs:domain imagery:ObliqueAirborneImage ;
+    rdfs:label "imageSourceReference"@en ;
+    rdfs:domain imagery:SingleMosaicElement ;
     rdfs:subClassOf imagery:attribute ;
     skos:broader imagery:attribute ;
-    skos:definition "Height of the flight."@en ;
+    skos:definition """Reference to the input image.
+
+NOTE 1 There is no restriction on the nature of the input image. It can be raw or pre-processed or orthorectified, for instance.
+
+NOTE 2 Identifiers of the input images should be URIs in the “http” scheme though full national or local codes are allowed.
+
+EXAMPLE: http://land.data.gov.uk/id/imagery/2011-5864726."""@en ;
     skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "flightHeight"@en .
+    skos:prefLabel "imageSourceReference"@en .
+
+imagery-att:interpolationType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "interpolationType"@en ;
+    rdfs:domain imagery:OrthoImage ;
+    rdfs:range imagery:InterpolationMethodValue ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition """Mathematical method which shall be used to evaluate a continuous coverage, i.e. determine the values of the coverage at any direct position within the domain of the coverage.
+
+NOTE 1 Nearestneighbor is set as a default value in case where this information is omitted by data producers.
+
+NOTE 2 A continuous grid coverage that uses nearest neighbour interpolation acts as a discrete surface coverage."""@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "interpolationType"@en .
 
 imagery-att:mosaicExtent a owl:ObjectProperty,
         skos:Concept ;
@@ -163,34 +274,35 @@ NOTE The boundaries of the geometries are commonly based on the seamlines used f
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "mosaicExtent"@en .
 
-imagery-att:phenomenonTime a owl:ObjectProperty,
+imagery-att:planePalette a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "phenomenonTime"@en ;
-    rdfs:domain imagery:MosaicElement ;
+    rdfs:label "planePalette"@en ;
+    rdfs:domain imagery:SegmentationMap ;
     rdfs:subClassOf imagery:attribute ;
     skos:broader imagery:attribute ;
-    skos:definition """Description of the observation/acquisition extent in time of the input image(s).
-
-NOTE 1 This temporal extent refers to the interval of time in which the input image(s) was/were acquired by the sensor.
-
-NOTE 2 When the acquisition is considered as instantaneous, despite the exposure time, the end date and time can be identical to the begin date and time.
-
-EXAMPLE 1 begin: 2011-10-30 end: 2011-10-30
-
-EXAMPLE 2 begin: 2011-06-07T14:31:02Z end: 2011-06-07T16:10:54Z."""@en ;
+    skos:definition "File that contains plane palette e.g. as .txt file."@en ;
     skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "phenomenonTime"@en .
+    skos:prefLabel "planePalette"@en .
 
-imagery-att:scale a owl:DatatypeProperty,
+imagery-att:position a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "scale"@en ;
-    rdfs:domain imagery:SpaceborneImage ;
-    rdfs:range xsd:decimal ;
+    rdfs:label "position"@en ;
+    rdfs:domain imagery:PhotogrammetricControlPoint ;
     rdfs:subClassOf imagery:attribute ;
     skos:broader imagery:attribute ;
-    skos:definition "Scale of the image."@en ;
+    skos:definition "Position of the photogrammetric control point specified in the geographic CRS in three dimensions."@en ;
     skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "scale"@en .
+    skos:prefLabel "position"@en .
+
+imagery-att:positionalAccuracy a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "positionalAccuracy"@en ;
+    rdfs:domain imagery:PhotogrammetricControlPoint ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition "Positional accuracy of the photogrammetric control point specified in three dimensions."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "positionalAccuracy"@en .
 
 imagery-att:segFile a owl:ObjectProperty,
         skos:Concept ;
@@ -201,6 +313,127 @@ imagery-att:segFile a owl:ObjectProperty,
     skos:definition "Seg file associated with this depth map."@en ;
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "segFile"@en .
+
+imagery-att:shapeType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "shapeType"@en ;
+    rdfs:domain imagery:AbstractTerrestrialImage ;
+    rdfs:range imagery:TerrestrialImageShapeTypeValue ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition """The shape type of the terrestrial image.
+
+EXAMPLE: cylindrical"""@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "shapeType"@en .
+
+imagery-att:viewVolume a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "viewVolume"@en ;
+    rdfs:domain imagery:AbstractTerrestrialImage ;
+    rdfs:range imagery:ViewVolume ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition "Specify what is the horizontal and vertical field of view of the image."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "viewVolume"@en .
+
+imagery:SegmentationMap a owl:Class,
+        skos:Concept ;
+    rdfs:label "Segmantation Map"@en ;
+    ogc-ft:hasProperty imagery-att:planePalette ;
+    rdfs:subClassOf imagery:AbstractTerrestrialImage ;
+    skos:broader imagery:AbstractTerrestrialImage ;
+    skos:definition "Raster dataset representing segmented elements of the image. This type of dataset can be derived from LIDAR."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Segmantation Map"@en .
+
+imagery-att:GSD a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "GSD"@en ;
+    rdfs:domain imagery:SpaceborneImage,
+        imagery:VerticalAirborneImage ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition """Coarse specification of the distance between pixels' centres "on the ground".
+
+NOTE GSD stands for Ground Sampling Distance."""@en,
+        "Coarse specification of the distance between pixels' centres."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "GSD"@en .
+
+imagery-att:domainExtent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "domainExtent"@en ;
+    rdfs:domain imagery:Image,
+        imagery:OrthoImage ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition """Extent of the spatiotemporal domain of the coverage.
+
+SOURCE [ISO 19123:2005].
+
+NOTE 1 The data type EX_Extent, is defined in ISO 19103.  Extents may be specified in both space and time. 
+
+NOTE 2 The domain extent shall be specified at least in space by using EX_BoundingPolygon, EX_GeographicBoundingBox or EX_GeographicDescription."""@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "domainExtent"@en .
+
+imagery-att:environmentalConditions a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "environmentalConditions"@en ;
+    rdfs:domain imagery:ObliqueAirborneImage,
+        imagery:VerticalAirborneImage ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition "Description of environmental conditions like: wind, temperature, humidity etc."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "environmentalConditions"@en .
+
+imagery-att:flightHeight a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "flightHeight"@en ;
+    rdfs:domain imagery:ObliqueAirborneImage,
+        imagery:VerticalAirborneImage ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition "Height of the flight."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "flightHeight"@en .
+
+imagery-att:name a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain imagery:Image,
+        imagery:OrthoImage ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition """Free text name of the image coverage.
+
+NOTE This field is intended to hold a name that a data provider may use in addition to the nsdi identifier
+
+EXAMPLE "Aerial image of Riyadh, KAS, 2018, 25cm\""""@en,
+        """Free text name of the orthoimage coverage.
+
+NOTE This field is intended to hold a name that a data provider may use in addition to the nsdi identifier
+
+EXAMPLE 1 "Orthofoto's, middenschalig, kleur, provincie Limburg, opname 2011" is the name used by the Flemish Geographic Information Agency (AGIV) to indicate the OrthoImageCoverage Instance holding the orthophotomosaic covering the administrative unit 'provincie Limburg' at a resolution of 25 cm 'middenschalig' acquired in the year 2011 'opname 2011'
+
+EXAMPLE 2  "BDOrtho coverage on Savoie at 50 cm - 2011" could be the name of an OrthoimageCoverage instance corresponding to a subset of the BDOrtho product of IGN France, the orthophoto of the "department" Savoie (an administrative unit) at a resolution of 50 cm."""@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "name"@en .
+
+imagery-att:scale a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "scale"@en ;
+    rdfs:domain imagery:SpaceborneImage,
+        imagery:VerticalAirborneImage ;
+    rdfs:range xsd:decimal ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition "Scale of the image."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "scale"@en .
 
 imagery:DepthMap a owl:Class,
         skos:Concept ;
@@ -213,17 +446,6 @@ imagery:DepthMap a owl:Class,
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Depth Map"@en .
 
-imagery:MosaicElement a owl:Class,
-        skos:Concept ;
-    rdfs:label "Mosaic Element"@en ;
-    ogc-ft:hasProperty imagery-att:mosaicExtent,
-        imagery-att:phenomenonTime ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
-    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
-    skos:definition "Abstract type identifying both the contributing area and the acquisition time of one or several input images used to generate a mosaiced orthoimage coverage. The main purpose of this feature type is the provision of a mechanism for describing the spatial distribution of the acquisition dates and times over a mosaiced orthoimage. The acquisition time can be supplied either for each individual input image, or for sets of input images grouped together according to temporal criteria."@en ;
-    skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "Mosaic Element"@en .
-
 imagery:ObliqueAirborneImage a owl:Class,
         skos:Concept ;
     rdfs:label "Oblique Airborne Image"@en ;
@@ -235,6 +457,74 @@ imagery:ObliqueAirborneImage a owl:Class,
     skos:definition "Image of the Earth surface intentionally captured at a very high offpointing angle for specific applications from aircraft (plane, UAV, helicopter etc.)."@en ;
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Oblique Airborne Image"@en .
+
+imagery-att:exteriorOrientation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "exteriorOrientation"@en ;
+    rdfs:domain imagery:AbstractTerrestrialImage,
+        imagery:ObliqueAirborneImage,
+        imagery:VerticalAirborneImage ;
+    rdfs:range imagery:ExteriorOrientation ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition "Elements of the exterior orientation of the camera."@en,
+        """Elements of the exterior orientation of the camera.
+
+NOTE In case of cylindrical or spherical images the orientation of the camera should point to the centre of the image so that proper spatial orientation of the image is ensured."""@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "exteriorOrientation"@en .
+
+imagery-att:phenomenonTime a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "phenomenonTime"@en ;
+    rdfs:domain imagery:Image,
+        imagery:MosaicElement,
+        imagery:OrthoImage ;
+    rdfs:subClassOf imagery:attribute ;
+    skos:broader imagery:attribute ;
+    skos:definition """Description of the observation/acquisition extent in time of the input image(s).
+
+NOTE 1 This temporal extent refers to the interval of time in which the input image(s) was/were acquired by the sensor.
+
+NOTE 2 When the acquisition is considered as instantaneous, despite the exposure time, the end date and time can be identical to the begin date and time.
+
+EXAMPLE 1 begin: 2011-10-30 end: 2011-10-30
+
+EXAMPLE 2 begin: 2011-06-07T14:31:02Z end: 2011-06-07T16:10:54Z."""@en,
+        """Description of the observation/acquisition extent in time.
+
+NOTE 1 This temporal extent refers to the range in time in which the image(s) contributing to the Image coverage has/have been acquired.
+
+NOTE 2 When the acquisition is considered as instantaneous, despite the exposure time, the end date and time can be identical to the begin date and time.
+
+EXAMPLE 1 begin: 2011-10-30 end: 2011-10-30
+
+EXAMPLE 2 begin: 2011-06-07T14:31:02Z end: 2011-06-07T16:10:54Z."""@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "phenomenonTime"@en .
+
+imagery:TerrestrialImage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Terrestrial Image"@en ;
+    ogc-ft:hasProperty imagery-att:address ;
+    rdfs:subClassOf imagery:AbstractTerrestrialImage ;
+    skos:broader imagery:AbstractTerrestrialImage ;
+    skos:definition "Raster image that can depict elements other than Earth surface seen from above."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Terrestrial Image"@en .
+
+imagery:PhotogrammetricControlPoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "Photogrammetric Control Point"@en ;
+    ogc-ft:hasProperty imagery-att:dateOfMeasurement,
+        imagery-att:description,
+        imagery-att:position,
+        imagery-att:positionalAccuracy ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Point identified in the terrain or other structure (e.g. building facade) used for georeferencing an image."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Photogrammetric Control Point"@en .
 
 imagery:SpaceborneImage a owl:Class,
         skos:Concept ;
@@ -250,20 +540,83 @@ imagery:SpaceborneImage a owl:Class,
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Spaceborne Image"@en .
 
+imagery:VerticalAirborneImage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Airborne Image"@en ;
+    ogc-ft:hasProperty imagery-att:GSD,
+        imagery-att:environmentalConditions,
+        imagery-att:exteriorOrientation,
+        imagery-att:flightHeight,
+        imagery-att:scale ;
+    rdfs:subClassOf imagery:Image ;
+    skos:broader imagery:Image ;
+    skos:definition "Raster image of the Earth surface captured close to nadir using aircraft (plane, UAV, helicopter etc.)."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Vertical Airborne Image"@en .
+
+imagery:MosaicElement a owl:Class,
+        skos:Concept ;
+    rdfs:label "Mosaic Element"@en ;
+    ogc-ft:hasProperty imagery-att:mosaicExtent,
+        imagery-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Abstract type identifying both the contributing area and the acquisition time of one or several input images used to generate a mosaiced orthoimage coverage. The main purpose of this feature type is the provision of a mechanism for describing the spatial distribution of the acquisition dates and times over a mosaiced orthoimage. The acquisition time can be supplied either for each individual input image, or for sets of input images grouped together according to temporal criteria."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Mosaic Element"@en .
+
+imagery:OrthoImage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Orthoimage"@en ;
+    ogc-ft:hasProperty imagery-att:domainExtent,
+        imagery-att:footprint,
+        imagery-att:interpolationType,
+        imagery-att:name,
+        imagery-att:phenomenonTime ;
+    rdfs:subClassOf imagery:RectifiedGridCoverage ;
+    skos:broader imagery:RectifiedGridCoverage ;
+    skos:definition "Georeferenced raster image of the Earth surface that has been geometrically corrected (\"orthorectified\") to remove distortion caused by differences in elevation, sensor tilt and, optionally, by sensor optics.  An orthoimage coverage is a continuous coverage based on a rectified quadrilateral grid. It is provided with an interpolation method to evaluate value records at any direct position within its domain.  It can be derived from one single input image or from different input images which have been mosaiced and merged together.  An orthoimage coverage may be an aggregation of subsets extracted from other orthoimage coverages. For the avoidance of data duplication, this kind of aggregated orthoimage is dynamically constructed by references to the contributing orthoimage coverages."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Orthoimage"@en .
+
 imagery:codeLists a owl:Class,
         skos:Concept ;
     rdfs:label "Imagery Foundation Theme code list or type"@en ;
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Imagery Foundation Theme code list or type"@en .
 
-imagery:attribute a owl:Class,
+imagery:AbstractTerrestrialImage a owl:Class,
         skos:Concept ;
-    rdfs:label "Imagery Foundation Theme attribute"@en ;
+    rdfs:label "Abstract Terrestrial Image"@en ;
+    ogc-ft:hasProperty imagery-att:exteriorOrientation,
+        imagery-att:shapeType,
+        imagery-att:viewVolume ;
+    rdfs:subClassOf imagery:Image ;
+    skos:broader imagery:Image ;
+    skos:definition "Abstract class that contains elements common for raster datasets used in terrestrial imagery.  Specializations of this class are TerrestrialImage, DepthMap and SegmentationMap."@en ;
     skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "Imagery Foundation Theme attribute"@en .
+    skos:prefLabel "Abstract Terrestrial Image"@en .
+
+imagery:Image a owl:Class,
+        skos:Concept ;
+    rdfs:label "Image"@en ;
+    ogc-ft:hasProperty imagery-att:domainExtent,
+        imagery-att:name,
+        imagery-att:phenomenonTime ;
+    rdfs:subClassOf imagery:ReferenceableGridCoverage ;
+    skos:broader imagery:ReferenceableGridCoverage ;
+    skos:definition "Raster image that can depict Earth surface seen from above or elements other than Earth surface seen from above, for example, facades of the buildings) that has not been geometrically corrected (\"orthorectified\")."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Image"@en .
 
 ksa-ft:Imagery a skos:ConceptScheme ;
     rdfs:label "Imagery Foundation Theme"@en ;
     skos:definition "The Imagery Foundation Theme is a suite of continuously updated georeferenced spaceborne, airborne and terrestrial imagery, as well as any novel sources, for the Kingdom of Saudi Arabia. The Foundation Theme makes imagery with different resolutions available nationally to multiple users for a wide range of missions such as national security, natural resource management and urban development."@en ;
     skos:prefLabel "Imagery Foundation Theme"@en .
+
+imagery:attribute a owl:Class,
+        skos:Concept ;
+    rdfs:label "Imagery Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Imagery Foundation Theme attribute"@en .
 

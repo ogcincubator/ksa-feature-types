@@ -5,15 +5,16 @@
 @prefix utilities-att: <https://w3id.org/ksa/feature-types/Utilities/attribute/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix transport: <https://w3id.org/ksa/feature-types/Transport/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-utilities:CopperCable a owl:Class,
+utilities:AngleJoint a owl:Class,
         skos:Concept ;
-    rdfs:label "CopperCable"@en ;
-    rdfs:subClassOf utilities:Cable ;
-    skos:broader utilities:Cable ;
+    rdfs:label "AngleJoint"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
     skos:inScheme ksa-ft:Utilities ;
-    skos:prefLabel "CopperCable"@en .
+    skos:prefLabel "AngleJoint"@en .
 
 utilities:DataCenter a owl:Class,
         skos:Concept ;
@@ -23,6 +24,30 @@ utilities:DataCenter a owl:Class,
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "Communications Building"@en .
 
+utilities:DistributionMains a owl:Class,
+        skos:Concept ;
+    rdfs:label "DistributionMains"@en ;
+    rdfs:subClassOf utilities:Pipeline ;
+    skos:broader utilities:Pipeline ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "DistributionMains"@en .
+
+utilities:Exchange a owl:Class,
+        skos:Concept ;
+    rdfs:label "Communications Building"@en ;
+    rdfs:subClassOf utilities:CommsBuilding ;
+    skos:broader utilities:CommsBuilding ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Communications Building"@en .
+
+utilities:FireHydrant a owl:Class,
+        skos:Concept ;
+    rdfs:label "FireHydrant"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "FireHydrant"@en .
+
 utilities:FrequencyBand a owl:Class,
         skos:Concept ;
     rdfs:label "FrequencyBand"@en ;
@@ -30,12 +55,202 @@ utilities:FrequencyBand a owl:Class,
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "FrequencyBand"@en .
 
+utilities:LVJoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "LVJoint"@en ;
+    rdfs:subClassOf utilities:Appurtenance ;
+    skos:broader utilities:Appurtenance ;
+    skos:definition "Low Voltage Joint"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "LVJoint"@en .
+
+utilities:MVJoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "MVJoint"@en ;
+    rdfs:subClassOf utilities:Appurtenance ;
+    skos:broader utilities:Appurtenance ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "MVJoint"@en .
+
+utilities:Meter a owl:Class,
+        skos:Concept ;
+    rdfs:label "Meter"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:definition "Low Voltage Joint"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Meter"@en .
+
+utilities:NetworkOpCenter a owl:Class,
+        skos:Concept ;
+    rdfs:label "Communications Building"@en ;
+    rdfs:subClassOf utilities:CommsBuilding ;
+    skos:broader utilities:CommsBuilding ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Communications Building"@en .
+
+utilities:OtherBuilding a owl:Class,
+        skos:Concept ;
+    rdfs:label "Communications Building"@en ;
+    rdfs:subClassOf utilities:CommsBuilding ;
+    skos:broader utilities:CommsBuilding ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Communications Building"@en .
+
+utilities:OverheadCable a owl:Class,
+        skos:Concept ;
+    rdfs:label "OverheadCable"@en ;
+    rdfs:subClassOf utilities:Cable ;
+    skos:broader utilities:Cable ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "OverheadCable"@en .
+
+utilities:Poles a owl:Class,
+        skos:Concept ;
+    rdfs:label "Poles"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Poles"@en .
+
+utilities:PressureReducingStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "PressureReducingStation"@en ;
+    rdfs:subClassOf utilities:Facility ;
+    skos:broader utilities:Facility ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "PressureReducingStation"@en .
+
+utilities:PumpStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "PumpStation"@en ;
+    rdfs:subClassOf utilities:Facility ;
+    skos:broader utilities:Facility ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "PumpStation"@en .
+
+utilities:Pylon a owl:Class,
+        skos:Concept ;
+    rdfs:label "Pylon"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Pylon"@en .
+
+utilities:ServicePoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "ServicePoint"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "ServicePoint"@en .
+
+utilities:Storage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Storage"@en ;
+    rdfs:subClassOf utilities:Facility ;
+    skos:broader utilities:Facility ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Storage"@en .
+
+utilities:Switch a owl:Class,
+        skos:Concept ;
+    rdfs:label "Switch"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Switch"@en .
+
+utilities:TechnicalBuilding a owl:Class,
+        skos:Concept ;
+    rdfs:label "Communications Building"@en ;
+    rdfs:subClassOf utilities:CommsBuilding ;
+    skos:broader utilities:CommsBuilding ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Communications Building"@en .
+
+utilities:Transformer a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transformer"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Transformer"@en .
+
+utilities:TransmissionMains a owl:Class,
+        skos:Concept ;
+    rdfs:label "TransmissionMains"@en ;
+    rdfs:subClassOf utilities:Pipeline ;
+    skos:broader utilities:Pipeline ;
+    skos:definition "Subtype of Pipeline"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "TransmissionMains"@en .
+
+utilities:UndergroundCable a owl:Class,
+        skos:Concept ;
+    rdfs:label "UndergroundCable"@en ;
+    rdfs:subClassOf utilities:Cable ;
+    skos:broader utilities:Cable ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "UndergroundCable"@en .
+
+utilities:Valve a owl:Class,
+        skos:Concept ;
+    rdfs:label "Valve"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Valve"@en .
+
 utilities:WirelessTechnology a owl:Class,
         skos:Concept ;
     rdfs:label "WirelessTechnology"@en ;
     skos:broader utilities:codeLists ;
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "WirelessTechnology"@en .
+
+utilities-att:area a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "area" ;
+    rdfs:domain utilities:Facility,
+        utilities:PhysicalAsset,
+        utilities:PowerStation ;
+    rdfs:range utilities:AssetAreaFootprint ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "area" .
+
+utilities-att:beachManhole a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "beachManhole" ;
+    rdfs:domain utilities:SubmarineCable ;
+    rdfs:range utilities:BeachManhole ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "beachManhole" .
+
+utilities-att:cabinet a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "cabinet" ;
+    rdfs:domain utilities:WallPlate ;
+    rdfs:range utilities:Cabinet ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "cabinet" .
+
+utilities-att:cable a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "cable" ;
+    rdfs:domain utilities:AccessTerminalBox,
+        utilities:Cabinet,
+        utilities:FiberDistributionTerminal,
+        utilities:OpticalLineTerminal,
+        utilities:WallPlate ;
+    rdfs:range utilities:CopperCable,
+        utilities:FiberCable ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "cable" .
 
 utilities-att:cellSite a owl:ObjectProperty,
         skos:Concept ;
@@ -46,14 +261,63 @@ utilities-att:cellSite a owl:ObjectProperty,
     skos:broader utilities:attribute ;
     skos:prefLabel "cellSite" .
 
+utilities-att:commsBuilding a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "commsBuilding" ;
+    rdfs:domain utilities:OpticalLineTerminal ;
+    rdfs:range utilities:CommsBuilding ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "commsBuilding" .
+
+utilities-att:featureOfInterest a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "featureOfInterest" ;
+    rdfs:domain utilities:InfrastructureStatusObservation ;
+    rdfs:range utilities:PhysicalAsset ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "featureOfInterest" .
+
+utilities-att:ftd a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "ftd" ;
+    rdfs:domain utilities:AccessTerminalBox ;
+    rdfs:range utilities:FiberDistributionTerminal ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "ftd" .
+
 utilities-att:landingStation a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "landingStation" ;
-    rdfs:domain utilities:BeachManhole ;
+    rdfs:domain utilities:BeachManhole,
+        utilities:SubmarineCable ;
     rdfs:range utilities:LandingStation ;
     rdfs:subClassOf utilities:attribute ;
     skos:broader utilities:attribute ;
     skos:prefLabel "landingStation" .
+
+utilities-att:opticalLineTerminal a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "opticalLineTerminal" ;
+    rdfs:domain utilities:FiberDistributionTerminal ;
+    rdfs:range utilities:OpticalLineTerminal ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "opticalLineTerminal" .
+
+utilities-att:regionalCable a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "regionalCable" ;
+    rdfs:domain utilities:LandingStation,
+        utilities:OpticalLineTerminal,
+        utilities:SubmarineCable,
+        utilities:TerrestrialCable ;
+    rdfs:range utilities:RegionalFiberCable ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "regionalCable" .
 
 utilities-att:segments a owl:ObjectProperty,
         skos:Concept ;
@@ -65,39 +329,58 @@ utilities-att:segments a owl:ObjectProperty,
     skos:broader utilities:attribute ;
     skos:prefLabel "segments" .
 
+utilities-att:serviceArea a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "serviceArea" ;
+    rdfs:domain utilities:Network ;
+    rdfs:range utilities:NetworkArea ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "serviceArea" .
+
+utilities-att:subNetwork a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "subNetwork" ;
+    rdfs:domain utilities:Network ;
+    rdfs:range utilities:Network ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:prefLabel "subNetwork" .
+
 utilities-att:tower a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "tower" ;
-    rdfs:domain utilities:Antenna ;
+    rdfs:domain utilities:Antenna,
+        utilities:CellSite ;
     rdfs:range utilities:Tower ;
     rdfs:subClassOf utilities:attribute ;
     skos:broader utilities:attribute ;
     skos:prefLabel "tower" .
 
-utilities:AssetAreaFootprint a owl:Class,
+utilities:CopperCable a owl:Class,
         skos:Concept ;
-    rdfs:label "AssetAreaFootprint"@en ;
-    ogc-ft:hasProperty utilities-att:geometry ;
-    skos:definition "A description of the area occupied by an asset, allowing a straditional network model to have indicative location to act as point geometry for a network node."@en ;
+    rdfs:label "CopperCable"@en ;
+    rdfs:subClassOf utilities:Cable ;
+    skos:broader utilities:Cable ;
     skos:inScheme ksa-ft:Utilities ;
-    skos:prefLabel "AssetAreaFootprint"@en .
+    skos:prefLabel "CopperCable"@en .
 
-utilities:BeachManhole a owl:Class,
+utilities:FiberCable a owl:Class,
         skos:Concept ;
-    rdfs:label "BeachManhole"@en ;
+    rdfs:label "FiberCable"@en ;
+    rdfs:subClassOf utilities:Cable ;
+    skos:broader utilities:Cable ;
     skos:inScheme ksa-ft:Utilities ;
-    skos:prefLabel "BeachManhole"@en .
+    skos:prefLabel "FiberCable"@en .
 
-utilities:CellSite a owl:Class,
+utilities:InfrastructureStatusObservation a owl:Class,
         skos:Concept ;
-    rdfs:label "CellSite"@en ;
-    skos:prefLabel "CellSite"@en .
-
-utilities:LandingStation a owl:Class,
-        skos:Concept ;
-    rdfs:label "LandingStation"@en ;
-    skos:definition "<font color=\"#000061\"></font>"@en ;
-    skos:prefLabel "LandingStation"@en .
+    rdfs:label "InfrastructureStatusObservation"@en ;
+    rdfs:subClassOf utilities:OM_Observation ;
+    skos:broader utilities:OM_Observation ;
+    skos:definition "An observation of the state (past, present or potential future) of some aspect of a physical asset. The types of observations may be further specified in specific thematic models."@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "InfrastructureStatusObservation"@en .
 
 utilities:LinkSequence a owl:Class,
         skos:Concept ;
@@ -105,10 +388,28 @@ utilities:LinkSequence a owl:Class,
     skos:definition "A network element which represents a continuous path in the network without any branches. The element has a defined beginning and end and every position on the link sequence is identifiable with one single parameter such as length."@en ;
     skos:prefLabel "Link Sequence"@en .
 
-utilities:Tower a owl:Class,
+utilities:NetworkArea a owl:Class,
         skos:Concept ;
-    rdfs:label "Tower"@en ;
-    skos:prefLabel "Tower"@en .
+    rdfs:label "Network Area"@en ;
+    skos:definition "A 2-dimensional element in a network."@en ;
+    skos:prefLabel "Network Area"@en .
+
+utilities:PowerStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "PowerStation"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "PowerStation"@en .
+
+utilities-att:areaType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "areaType"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "areaType"@en .
 
 utilities-att:azimuth a owl:DatatypeProperty,
         skos:Concept ;
@@ -120,6 +421,35 @@ utilities-att:azimuth a owl:DatatypeProperty,
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "azimuth"@en .
 
+utilities-att:backupLinkConfiguredCapacity a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "backupLinkConfiguredCapacity"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "backupLinkConfiguredCapacity"@en .
+
+utilities-att:backupLinkMaxCapacity a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "backupLinkMaxCapacity"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "backupLinkMaxCapacity"@en .
+
+utilities-att:backupLinkType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "backupLinkType"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "backupLinkType"@en .
+
 utilities-att:beamWidth a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "beamWidth"@en ;
@@ -130,6 +460,83 @@ utilities-att:beamWidth a owl:DatatypeProperty,
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "beamWidth"@en .
 
+utilities-att:constructionStatus a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "constructionStatus"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "constructionStatus"@en .
+
+utilities-att:contractDuration a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "contractDuration"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "contractDuration"@en .
+
+utilities-att:contractValidity a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "contractValidity"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "contractValidity"@en .
+
+utilities-att:dataCenterTierClass a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "dataCenterTierClass"@en ;
+    rdfs:domain utilities:CommsBuilding ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "dataCenterTierClass"@en .
+
+utilities-att:dateContractEnd a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "dateContractEnd"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "dateContractEnd"@en .
+
+utilities-att:dateOfInstallation a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "dateOfInstallation"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "dateOfInstallation"@en .
+
+utilities-att:ductedOrBuried a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "ductedOrBuried"@en ;
+    rdfs:domain utilities:RegionalFiberCable ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "ductedOrBuried"@en .
+
+utilities-att:eNodeBID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "eNodeBID"@en ;
+    rdfs:domain utilities:CellSite4G ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "eNodeBID"@en .
+
 utilities-att:electricalTilt a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "electricalTilt"@en ;
@@ -139,6 +546,94 @@ utilities-att:electricalTilt a owl:DatatypeProperty,
     skos:broader utilities:attribute ;
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "electricalTilt"@en .
+
+utilities-att:firstBackupPowerSupply a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "firstBackupPowerSupply"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "firstBackupPowerSupply"@en .
+
+utilities-att:fourthBackupPowerSupply a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "fourthBackupPowerSupply"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "fourthBackupPowerSupply"@en .
+
+utilities-att:gNodeBID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "gNodeBID"@en ;
+    rdfs:domain utilities:CellSite5G ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "gNodeBID"@en .
+
+utilities-att:height a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "height"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "height"@en .
+
+utilities-att:isHUBStation a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "isHUBStation"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "isHUBStation"@en .
+
+utilities-att:isSharable a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "isSharable"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "isSharable"@en .
+
+utilities-att:isShared a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "isShared"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "isShared"@en .
+
+utilities-att:landOwner a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "landOwner"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/LocalizedName> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "landOwner"@en .
+
+utilities-att:maxOccupancy a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "maxOccupancy"@en ;
+    rdfs:domain utilities:OpticalLineTerminal ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "maxOccupancy"@en .
 
 utilities-att:mechanicalTilt a owl:DatatypeProperty,
         skos:Concept ;
@@ -160,6 +655,236 @@ utilities-att:mountHeight a owl:DatatypeProperty,
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "mountHeight"@en .
 
+utilities-att:nationalRoaming a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "nationalRoaming"@en ;
+    rdfs:domain utilities:CellSite ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "nationalRoaming"@en .
+
+utilities-att:noOfATB a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "noOfATB"@en ;
+    rdfs:domain utilities:FiberDistributionTerminal ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "noOfATB"@en .
+
+utilities-att:noOfFDT a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "noOfFDT"@en ;
+    rdfs:domain utilities:OpticalLineTerminal ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "noOfFDT"@en .
+
+utilities-att:noOfLinkedInternationalCables a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "noOfLinkedInternationalCables"@en ;
+    rdfs:domain utilities:LandingStation ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "noOfLinkedInternationalCables"@en .
+
+utilities-att:ownerID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "ownerID"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/LocalizedName> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "ownerID"@en .
+
+utilities-att:ownershipType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "ownershipType"@en ;
+    rdfs:domain utilities:RegionalFiberCable ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "ownershipType"@en .
+
+utilities-att:partyNames a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "partyNames"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/LocalizedName> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "partyNames"@en .
+
+utilities-att:primaryLinkConfiguredCapacity a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "primaryLinkConfiguredCapacity"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "primaryLinkConfiguredCapacity"@en .
+
+utilities-att:primaryLinkMaxCapacity a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "primaryLinkMaxCapacity"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "primaryLinkMaxCapacity"@en .
+
+utilities-att:primaryLinkType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "primaryLinkType"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "primaryLinkType"@en .
+
+utilities-att:primaryPowerSupply a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "primaryPowerSupply"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "primaryPowerSupply"@en .
+
+utilities-att:rentalValue a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "rentalValue"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "rentalValue"@en .
+
+utilities-att:secondBackupPowerSupply a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "secondBackupPowerSupply"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "secondBackupPowerSupply"@en .
+
+utilities-att:siteArea a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "siteArea"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "siteArea"@en .
+
+utilities-att:siteOwnershipType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "siteOwnershipType"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "siteOwnershipType"@en .
+
+utilities-att:stationType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "stationType"@en ;
+    rdfs:domain utilities:LandingStation ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "stationType"@en .
+
+utilities-att:supportLTEM a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "supportLTEM"@en ;
+    rdfs:domain utilities:CellSite4G ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "supportLTEM"@en .
+
+utilities-att:supportVoLTE a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "supportVoLTE"@en ;
+    rdfs:domain utilities:CellSite4G ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "supportVoLTE"@en .
+
+utilities-att:supportVoNR a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "supportVoNR"@en ;
+    rdfs:domain utilities:CellSite5G ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "supportVoNR"@en .
+
+utilities-att:supportedViWiFi a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "supportedViWiFi"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "supportedViWiFi"@en .
+
+utilities-att:technologyType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "technologyType"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "technologyType"@en .
+
+utilities-att:thirdBackupPowerSupply a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "thirdBackupPowerSupply"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "thirdBackupPowerSupply"@en .
+
+utilities-att:towerType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "towerType"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "towerType"@en .
+
+utilities-att:vendorName a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "vendorName"@en ;
+    rdfs:domain utilities:Tower ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/LocalizedName> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "vendorName"@en .
+
 utilities-att:voltageClass a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "voltageClass"@en ;
@@ -169,6 +894,286 @@ utilities-att:voltageClass a owl:ObjectProperty,
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "voltageClass"@en .
 
+utilities:AssetAreaFootprint a owl:Class,
+        skos:Concept ;
+    rdfs:label "AssetAreaFootprint"@en ;
+    ogc-ft:hasProperty utilities-att:geometry ;
+    skos:definition "A description of the area occupied by an asset, allowing a straditional network model to have indicative location to act as point geometry for a network node."@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "AssetAreaFootprint"@en .
+
+utilities:BeachManhole a owl:Class,
+        skos:Concept ;
+    rdfs:label "BeachManhole"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "BeachManhole"@en .
+
+utilities:SatelliteStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "SatelliteStation"@en ;
+    ogc-ft:hasProperty utilities-att:name,
+        utilities-att:serviceProvider ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "SatelliteStation"@en .
+
+utilities-att:BSCID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "BSCID"@en ;
+    rdfs:domain utilities:CellSite2G,
+        utilities:CellSite3G ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "BSCID"@en .
+
+utilities-att:IGWID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "IGWID"@en ;
+    rdfs:domain utilities:LandingStation,
+        utilities:TerrestrialCable ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "IGWID"@en .
+
+utilities-att:LAC a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "LAC"@en ;
+    rdfs:domain utilities:CellSite2G,
+        utilities:CellSite3G ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "LAC"@en .
+
+utilities-att:MSCID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "MSCID"@en ;
+    rdfs:domain utilities:CellSite2G,
+        utilities:CellSite3G ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "MSCID"@en .
+
+utilities-att:RAC a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "RAC"@en ;
+    rdfs:domain utilities:CellSite2G,
+        utilities:CellSite3G ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "RAC"@en .
+
+utilities-att:capacity a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "capacity"@en ;
+    rdfs:domain utilities:LandingStation,
+        utilities:RegionalFiberCable ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "capacity"@en .
+
+utilities-att:mobilityMgmtEntity a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "mobilityMgmtEntity"@en ;
+    rdfs:domain utilities:CellSite4G,
+        utilities:CellSite5G ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "mobilityMgmtEntity"@en .
+
+utilities-att:noOfServiceProviderFiberPairs a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "noOfServiceProviderFiberPairs"@en ;
+    rdfs:domain utilities:SubmarineCable,
+        utilities:TerrestrialCable ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "noOfServiceProviderFiberPairs"@en .
+
+utilities-att:ownedType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "ownedType"@en ;
+    rdfs:domain utilities:SubmarineCable,
+        utilities:TerrestrialCable ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "ownedType"@en .
+
+utilities-att:packetGWID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "packetGWID"@en ;
+    rdfs:domain utilities:CellSite4G,
+        utilities:CellSite5G ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "packetGWID"@en .
+
+utilities-att:servingGWID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "servingGWID"@en ;
+    rdfs:domain utilities:CellSite4G,
+        utilities:CellSite5G ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "servingGWID"@en .
+
+utilities-att:supportNBioT a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "supportNBioT"@en ;
+    rdfs:domain utilities:CellSite4G,
+        utilities:CellSite5G ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "supportNBioT"@en .
+
+utilities-att:trackingAreaCode a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "trackingAreaCode"@en ;
+    rdfs:domain utilities:CellSite4G,
+        utilities:CellSite5G ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "trackingAreaCode"@en .
+
+utilities:codeLists a owl:Class,
+        skos:Concept ;
+    rdfs:label "Utilities Theme code list or type"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Utilities Theme code list or type"@en .
+
+utilities:Network a owl:Class,
+        skos:Concept ;
+    rdfs:label "Network"@en ;
+    rdfs:subClassOf utilities:PhysicalAsset ;
+    skos:broader utilities:PhysicalAsset ;
+    skos:definition "Abstract base type representing a collection of network elements whereby the behavior of the network as a whole is dependent on the state of its component network elements, comprising nodes and links."@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Network"@en .
+
+utilities-att:isReadyForService a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "isReadyForService"@en ;
+    rdfs:domain utilities:AccessTerminalBox,
+        utilities:Cabinet,
+        utilities:WallPlate ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "isReadyForService"@en .
+
+utilities-att:noOfFiberPairs a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "noOfFiberPairs"@en ;
+    rdfs:domain utilities:LandingStation,
+        utilities:SubmarineCable,
+        utilities:TerrestrialCable ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "noOfFiberPairs"@en .
+
+utilities:Appurtenance a owl:Class,
+        skos:Concept ;
+    rdfs:label "Appurtenance"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Appurtenance"@en .
+
+utilities:CellSite2G a owl:Class,
+        skos:Concept ;
+    rdfs:label "CellSite2G"@en ;
+    ogc-ft:hasProperty utilities-att:BSCID,
+        utilities-att:LAC,
+        utilities-att:MSCID,
+        utilities-att:RAC ;
+    rdfs:subClassOf utilities:CellSite ;
+    skos:broader utilities:CellSite ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "CellSite2G"@en .
+
+utilities:CellSite3G a owl:Class,
+        skos:Concept ;
+    rdfs:label "CellSite3G"@en ;
+    ogc-ft:hasProperty utilities-att:BSCID,
+        utilities-att:LAC,
+        utilities-att:MSCID,
+        utilities-att:RAC ;
+    rdfs:subClassOf utilities:CellSite ;
+    skos:broader utilities:CellSite ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "CellSite3G"@en .
+
+utilities-att:geometry a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geometry"@en ;
+    rdfs:domain utilities:AssetAreaFootprint,
+        utilities:Cable,
+        utilities:CommsBuilding,
+        utilities:Pipeline ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "geometry"@en .
+
+utilities-att:noOfActivePorts a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "noOfActivePorts"@en ;
+    rdfs:domain utilities:AccessTerminalBox,
+        utilities:Cabinet,
+        utilities:FiberDistributionTerminal,
+        utilities:OpticalLineTerminal,
+        utilities:WallPlate ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "noOfActivePorts"@en .
+
+utilities-att:noOfPorts a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "noOfPorts"@en ;
+    rdfs:domain utilities:AccessTerminalBox,
+        utilities:Cabinet,
+        utilities:FiberDistributionTerminal,
+        utilities:OpticalLineTerminal,
+        utilities:WallPlate ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "noOfPorts"@en .
+
+utilities:PhysicalAsset a owl:Class,
+        skos:Concept ;
+    rdfs:label "PhysicalAsset"@en ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A view of any Feature Type which records its status and physical condition. Physical Assets will typically be modelled in specific thematic models describing their function and interactions with other assets."@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "PhysicalAsset"@en .
+
 utilities:Pipeline a owl:Class,
         skos:Concept ;
     rdfs:label "Pipeline"@en ;
@@ -177,31 +1182,33 @@ utilities:Pipeline a owl:Class,
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "Pipeline"@en .
 
-utilities:codeLists a owl:Class,
+utilities:RegionalFiberCable a owl:Class,
         skos:Concept ;
-    rdfs:label "Utilities Theme code list or type"@en ;
+    rdfs:label "RegionalFiberCable"@en ;
+    ogc-ft:hasProperty utilities-att:capacity,
+        utilities-att:ductedOrBuried,
+        utilities-att:name,
+        utilities-att:ownershipType,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf transport:Link ;
+    skos:broader transport:Link ;
+    skos:definition "<font color=\"#000061\"></font>"@en ;
     skos:inScheme ksa-ft:Utilities ;
-    skos:prefLabel "Utilities Theme code list or type"@en .
+    skos:prefLabel "RegionalFiberCable"@en .
 
-utilities-att:geometry a owl:ObjectProperty,
+utilities:AccessTerminalBox a owl:Class,
         skos:Concept ;
-    rdfs:label "geometry"@en ;
-    rdfs:domain utilities:AssetAreaFootprint,
-        utilities:Cable,
-        utilities:Pipeline ;
-    rdfs:subClassOf utilities:attribute ;
-    skos:broader utilities:attribute ;
+    rdfs:label "AccessTerminalBox"@en ;
+    ogc-ft:hasProperty utilities-att:isReadyForService,
+        utilities-att:name,
+        utilities-att:noOfActivePorts,
+        utilities-att:noOfPorts,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:definition "<font color=\"#000061\"></font>"@en ;
     skos:inScheme ksa-ft:Utilities ;
-    skos:prefLabel "geometry"@en .
-
-utilities:Cable a owl:Class,
-        skos:Concept ;
-    rdfs:label "Cable"@en ;
-    ogc-ft:hasProperty utilities-att:geometry,
-        utilities-att:voltageClass ;
-    skos:definition "A named Entity that may link a single pathway between one or more network nodes in a defined sequence."@en ;
-    skos:inScheme ksa-ft:Utilities ;
-    skos:prefLabel "Cable"@en .
+    skos:prefLabel "AccessTerminalBox"@en .
 
 utilities:Antenna a owl:Class,
         skos:Concept ;
@@ -213,6 +1220,256 @@ utilities:Antenna a owl:Class,
         utilities-att:mountHeight ;
     skos:inScheme ksa-ft:Utilities ;
     skos:prefLabel "Antenna"@en .
+
+utilities:Cabinet a owl:Class,
+        skos:Concept ;
+    rdfs:label "Cabinet"@en ;
+    ogc-ft:hasProperty utilities-att:isReadyForService,
+        utilities-att:name,
+        utilities-att:noOfActivePorts,
+        utilities-att:noOfPorts,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Cabinet"@en .
+
+utilities:CellSite5G a owl:Class,
+        skos:Concept ;
+    rdfs:label "CellSite5G"@en ;
+    ogc-ft:hasProperty utilities-att:gNodeBID,
+        utilities-att:mobilityMgmtEntity,
+        utilities-att:packetGWID,
+        utilities-att:servingGWID,
+        utilities-att:supportNBioT,
+        utilities-att:supportVoNR,
+        utilities-att:trackingAreaCode ;
+    rdfs:subClassOf utilities:CellSite ;
+    skos:broader utilities:CellSite ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "CellSite5G"@en .
+
+utilities:Facility a owl:Class,
+        skos:Concept ;
+    rdfs:label "Facility"@en ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Facility"@en .
+
+utilities:TerrestrialCable a owl:Class,
+        skos:Concept ;
+    rdfs:label ""@en ;
+    ogc-ft:hasProperty utilities-att:IGWID,
+        utilities-att:name,
+        utilities-att:noOfFiberPairs,
+        utilities-att:noOfServiceProviderFiberPairs,
+        utilities-att:ownedType,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf transport:Link ;
+    skos:broader transport:Link ;
+    skos:definition "<font color=\"#000061\"></font>"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel ""@en .
+
+utilities:WallPlate a owl:Class,
+        skos:Concept ;
+    rdfs:label "WallPlate"@en ;
+    ogc-ft:hasProperty utilities-att:isReadyForService,
+        utilities-att:name,
+        utilities-att:noOfActivePorts,
+        utilities-att:noOfPorts,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "WallPlate"@en .
+
+utilities:CellSite4G a owl:Class,
+        skos:Concept ;
+    rdfs:label "CellSite4G"@en ;
+    ogc-ft:hasProperty utilities-att:eNodeBID,
+        utilities-att:mobilityMgmtEntity,
+        utilities-att:packetGWID,
+        utilities-att:servingGWID,
+        utilities-att:supportLTEM,
+        utilities-att:supportNBioT,
+        utilities-att:supportVoLTE,
+        utilities-att:trackingAreaCode ;
+    rdfs:subClassOf utilities:CellSite ;
+    skos:broader utilities:CellSite ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "CellSite4G"@en .
+
+utilities:FiberDistributionTerminal a owl:Class,
+        skos:Concept ;
+    rdfs:label "FiberDistributionTerminal"@en ;
+    ogc-ft:hasProperty utilities-att:name,
+        utilities-att:noOfATB,
+        utilities-att:noOfActivePorts,
+        utilities-att:noOfPorts,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:definition "<font color=\"#000061\"></font>"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "FiberDistributionTerminal"@en .
+
+utilities:SubmarineCable a owl:Class,
+        skos:Concept ;
+    rdfs:label "SubmarineCable"@en ;
+    ogc-ft:hasProperty utilities-att:name,
+        utilities-att:noOfFiberPairs,
+        utilities-att:noOfServiceProviderFiberPairs,
+        utilities-att:ownedType,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf transport:Link ;
+    skos:broader transport:Link ;
+    skos:definition "<font color=\"#000061\"></font>"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "SubmarineCable"@en .
+
+utilities:LandingStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "LandingStation"@en ;
+    ogc-ft:hasProperty utilities-att:IGWID,
+        utilities-att:capacity,
+        utilities-att:name,
+        utilities-att:noOfFiberPairs,
+        utilities-att:noOfLinkedInternationalCables,
+        utilities-att:serviceProvider,
+        utilities-att:stationType ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:definition "<font color=\"#000061\"></font>"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "LandingStation"@en .
+
+utilities:OpticalLineTerminal a owl:Class,
+        skos:Concept ;
+    rdfs:label "OpticalLineTerminal"@en ;
+    ogc-ft:hasProperty utilities-att:maxOccupancy,
+        utilities-att:name,
+        utilities-att:noOfActivePorts,
+        utilities-att:noOfFDT,
+        utilities-att:noOfPorts,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:definition "<font color=\"#000061\"></font>"@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "OpticalLineTerminal"@en .
+
+utilities:Cable a owl:Class,
+        skos:Concept ;
+    rdfs:label "Cable"@en ;
+    ogc-ft:hasProperty utilities-att:geometry,
+        utilities-att:voltageClass ;
+    skos:definition "A named Entity that may link a single pathway between one or more network nodes in a defined sequence."@en ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Cable"@en .
+
+utilities:CellSite a owl:Class,
+        skos:Concept ;
+    rdfs:label "CellSite"@en ;
+    ogc-ft:hasProperty utilities-att:nationalRoaming ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "CellSite"@en .
+
+utilities-att:name a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain utilities:AccessTerminalBox,
+        utilities:Cabinet,
+        utilities:FiberDistributionTerminal,
+        utilities:LandingStation,
+        utilities:OpticalLineTerminal,
+        utilities:RegionalFiberCable,
+        utilities:SatelliteStation,
+        utilities:SubmarineCable,
+        utilities:TerrestrialCable,
+        utilities:Tower,
+        utilities:WallPlate ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/LocalizedName> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "name"@en .
+
+utilities-att:serviceProvider a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "serviceProvider"@en ;
+    rdfs:domain utilities:AccessTerminalBox,
+        utilities:Cabinet,
+        utilities:CommsBuilding,
+        utilities:FiberDistributionTerminal,
+        utilities:LandingStation,
+        utilities:OpticalLineTerminal,
+        utilities:RegionalFiberCable,
+        utilities:SatelliteStation,
+        utilities:SubmarineCable,
+        utilities:TerrestrialCable,
+        utilities:Tower,
+        utilities:WallPlate ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/LocalizedName> ;
+    rdfs:subClassOf utilities:attribute ;
+    skos:broader utilities:attribute ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "serviceProvider"@en .
+
+utilities:CommsBuilding a owl:Class,
+        skos:Concept ;
+    rdfs:label "Communications Building"@en ;
+    ogc-ft:hasProperty utilities-att:dataCenterTierClass,
+        utilities-att:geometry,
+        utilities-att:serviceProvider ;
+    rdfs:subClassOf utilities:PhysicalAsset ;
+    skos:broader utilities:PhysicalAsset ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Communications Building"@en .
+
+utilities:Tower a owl:Class,
+        skos:Concept ;
+    rdfs:label "Tower"@en ;
+    ogc-ft:hasProperty utilities-att:areaType,
+        utilities-att:backupLinkConfiguredCapacity,
+        utilities-att:backupLinkMaxCapacity,
+        utilities-att:backupLinkType,
+        utilities-att:constructionStatus,
+        utilities-att:contractDuration,
+        utilities-att:contractValidity,
+        utilities-att:dateContractEnd,
+        utilities-att:dateOfInstallation,
+        utilities-att:firstBackupPowerSupply,
+        utilities-att:fourthBackupPowerSupply,
+        utilities-att:height,
+        utilities-att:isHUBStation,
+        utilities-att:isSharable,
+        utilities-att:isShared,
+        utilities-att:landOwner,
+        utilities-att:name,
+        utilities-att:ownerID,
+        utilities-att:partyNames,
+        utilities-att:primaryLinkConfiguredCapacity,
+        utilities-att:primaryLinkMaxCapacity,
+        utilities-att:primaryLinkType,
+        utilities-att:primaryPowerSupply,
+        utilities-att:rentalValue,
+        utilities-att:secondBackupPowerSupply,
+        utilities-att:serviceProvider,
+        utilities-att:siteArea,
+        utilities-att:siteOwnershipType,
+        utilities-att:supportedViWiFi,
+        utilities-att:technologyType,
+        utilities-att:thirdBackupPowerSupply,
+        utilities-att:towerType,
+        utilities-att:vendorName ;
+    rdfs:subClassOf utilities:Node ;
+    skos:broader utilities:Node ;
+    skos:inScheme ksa-ft:Utilities ;
+    skos:prefLabel "Tower"@en .
 
 ksa-ft:Utilities a skos:ConceptScheme ;
     rdfs:label "Utilities Theme"@en ;

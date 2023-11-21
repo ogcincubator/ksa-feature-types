@@ -84,6 +84,15 @@
     skos:inScheme ksa-ft:BaseTypes ;
     skos:prefLabel "Void Reason Value"@en .
 
+<https://w3id.org/ksa/feature-types/BaseTypes/attribute/member> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "member" ;
+    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:prefLabel "member" .
+
 <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> a owl:Class,
         skos:Concept ;
     rdfs:label "Identifier"@en ;
@@ -117,17 +126,20 @@
 <https://w3id.org/ksa/feature-types/BaseTypes/attribute/metadata> a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "metadata"@en ;
-    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType>,
+        <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
-    skos:definition "Feature-level metadata that conforms to the KSA Metadata Profile"@en ;
+    skos:definition "Dataset-level metadata that conforms to the KSA Metadata Profile"@en,
+        "Feature-level metadata that conforms to the KSA Metadata Profile"@en ;
     skos:inScheme ksa-ft:BaseTypes ;
     skos:prefLabel "metadata"@en .
 
 <https://w3id.org/ksa/feature-types/BaseTypes/attribute/nsdiId> a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "nsdiId"@en ;
-    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType>,
+        <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
     rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
     rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
     skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
@@ -136,6 +148,15 @@
 NOTE The nsdiId object identifier is a Globally Unique Identifier (GUID) published by the responsible body, which may be used by external applications to reference the feature. The identifier is an identifier of the feature instance, not an identifier of the feature type, i.e. real-world phenomenon."""@en ;
     skos:inScheme ksa-ft:BaseTypes ;
     skos:prefLabel "nsdiId"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Spatial Data Set"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/BaseTypes/attribute/metadata>,
+        <https://w3id.org/ksa/feature-types/BaseTypes/attribute/nsdiId> ;
+    skos:definition "An identifiable collection of Foundation Theme features."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Spatial Data Set"@en .
 
 <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> a owl:Class,
         skos:Concept ;

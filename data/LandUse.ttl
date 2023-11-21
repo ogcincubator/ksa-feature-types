@@ -1,3 +1,4 @@
+@prefix admRegions: <https://w3id.org/ksa/feature-types/AdministrativeRegions/> .
 @prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
 @prefix landUse: <https://w3id.org/ksa/feature-types/LandUse/> .
 @prefix landUse-att: <https://w3id.org/ksa/feature-types/LandUse/attribute/> .
@@ -5,6 +6,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix transport: <https://w3id.org/ksa/feature-types/Transport/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 landUse:DateType a owl:Class,
@@ -14,14 +16,6 @@ landUse:DateType a owl:Class,
     skos:definition "Reference date and event of lifecycle/process stage of spatial plan document used to describe it."@en ;
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "Date Type"@en .
-
-landUse:LandUseClassificationValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Land Use Classification"@en ;
-    skos:broader landUse:codeLists ;
-    skos:definition "List of land use classes to be used in The Kingdom."@en ;
-    skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "Land Use Classification"@en .
 
 landUse:LandUsePercentage a owl:Class,
         skos:Concept ;
@@ -38,6 +32,90 @@ landUse:OwnershipTypeValue a owl:Class,
     skos:definition "Type of ownership."@en ;
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "Ownership Type"@en .
+
+landUse:VerticalLandUse a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Land Use"@en ;
+    skos:broader landUse:codeLists ;
+    skos:definition "Land Use classes that are present in a specific vertical level of using of a parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Vertical Land Use"@en .
+
+landUse:VerticalLevelValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Level"@en ;
+    skos:broader landUse:codeLists ;
+    skos:definition "The relative vertical level of a land use of a parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Vertical Level"@en .
+
+landUse-att:admUnit a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "admUnit" ;
+    rdfs:domain landUse:SpatialPlan ;
+    rdfs:range admRegions:AbstractHierarchicalAdministrativeUnit ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:prefLabel "admUnit" .
+
+landUse-att:landParcel a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "landParcel" ;
+    rdfs:domain landUse:ParcelLandUse ;
+    rdfs:range landUse:Parcel ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:prefLabel "landParcel" .
+
+landUse-att:map a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "map" ;
+    rdfs:domain landUse:SpatialPlan ;
+    rdfs:range landUse:MapDocument ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:prefLabel "map" .
+
+landUse-att:officialDocument a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "officialDocument" ;
+    rdfs:domain landUse:SpatialPlan ;
+    rdfs:range landUse:OfficialDocument ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:prefLabel "officialDocument" .
+
+landUse-att:restriction a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "restriction" ;
+    rdfs:domain landUse:SpatialPlan ;
+    rdfs:range landUse:SupplementaryRegulation ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:prefLabel "restriction" .
+
+landUse-att:textRegulation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "textRegulation" ;
+    rdfs:domain landUse:SpatialPlan,
+        landUse:SupplementaryRegulation,
+        landUse:ZoningElement ;
+    rdfs:range landUse:RegulationText ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:prefLabel "textRegulation" .
+
+admRegions:AbstractHierarchicalAdministrativeUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "administrative unit"@en ;
+    skos:definition "Abstract feature type that establishes a spatial hierarchy of administration units dividing areas where legislated jurisdictional governance rights are exercised."@en ;
+    skos:prefLabel "administrative unit"@en .
+
+landUse:Parcel a owl:Class,
+        skos:Concept ;
+    rdfs:label "Parcel"@en ;
+    skos:definition "Land Parcel or Real estate is Property consisting of land and the buildings on it, along with its natural resources such as crops, minerals, or water; immovable property of this nature; an interest vested in this; (also) an item of real property; (more generally) buildings or housing in general."@en ;
+    skos:prefLabel "Parcel"@en .
 
 landUse:ParcelLandUseValue a owl:Class,
         skos:Concept ;
@@ -86,31 +164,37 @@ landUse:UrbanBoundaryTypeValue a owl:Class,
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "Urban Boundary Type"@en .
 
-landUse:VerticalLandUse a owl:Class,
+landUse-att:alternativeTitle a owl:DatatypeProperty,
         skos:Concept ;
-    rdfs:label "Vertical Land Use"@en ;
-    skos:broader landUse:codeLists ;
-    skos:definition "Land Use classes that are present in a specific vertical level of using of a parcel object."@en ;
-    skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "Vertical Land Use"@en .
-
-landUse:VerticalLevelValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Vertical Level"@en ;
-    skos:broader landUse:codeLists ;
-    skos:definition "The relative vertical level of a land use of a parcel object."@en ;
-    skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "Vertical Level"@en .
-
-landUse-att:additionalDescription a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "additionalDescription"@en ;
-    rdfs:domain landUse:MapDocument ;
+    rdfs:label "alternativeTitle"@en ;
+    rdfs:domain landUse:SpatialPlan ;
+    rdfs:range xsd:string ;
     rdfs:subClassOf landUse:attribute ;
     skos:broader landUse:attribute ;
-    skos:definition "Plain text description of additional information not fitting in other attributes."@en ;
+    skos:definition "Alternative (unofficial) title of the spatial plan."@en ;
     skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "additionalDescription"@en .
+    skos:prefLabel "alternativeTitle"@en .
+
+landUse-att:buildingArea a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "buildingArea"@en ;
+    rdfs:domain landUse:PlannedParcel ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Information about building area."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "buildingArea"@en .
+
+landUse-att:buildingCount a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "buildingCount"@en ;
+    rdfs:domain landUse:PlannedParcel ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Information about building count."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "buildingCount"@en .
 
 landUse-att:coordinateReferenceSystem a owl:ObjectProperty,
         skos:Concept ;
@@ -124,18 +208,59 @@ NOTE. Refer to EPSG Geodetic Parameter Dataset  (EPSG) as URI identifier of refe
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "coordinateReferenceSystem"@en .
 
-landUse-att:extent a owl:ObjectProperty,
+landUse-att:documentCitation a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "extent"@en ;
-    rdfs:domain landUse:ExistingLandUseCollection ;
+    rdfs:label "documentCitation"@en ;
+    rdfs:domain landUse:OfficialDocument ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/DocumentCitation> ;
     rdfs:subClassOf landUse:attribute ;
     skos:broader landUse:attribute ;
-    skos:definition """Contains the extent of the data set.
-
-NOTE 01. For an area objects boundary of the geometrical union of all the instances of the spatial object type ExistingLandUseUnit.
-For an sampled objects the convex hull of all the instances of the spatial object type ExistingLandUseUnit."""@en ;
+    skos:definition "Citation of official document."@en ;
     skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "extent"@en .
+    skos:prefLabel "documentCitation"@en .
+
+landUse-att:electricityService a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "electricityService"@en ;
+    rdfs:domain landUse:PlannedParcel ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Information about electricity service."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "electricityService"@en .
+
+landUse-att:emptyArea a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "emptyArea"@en ;
+    rdfs:domain landUse:PlannedParcel ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Information about empty area."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "emptyArea"@en .
+
+landUse-att:functionalClass a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "functionalClass"@en ;
+    rdfs:domain landUse:RoadSupplementaryRegulation ;
+    rdfs:range transport:FunctionalRoadClassValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Function and capacities of a road."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "functionalClass"@en .
+
+landUse-att:inheritedFromOtherPlans a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "inheritedFromOtherPlans"@en ;
+    rdfs:domain landUse:SupplementaryRegulation ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Indication whether the supplementary regulation is inherited from another spatial plan."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "inheritedFromOtherPlans"@en .
 
 landUse-att:legend a owl:ObjectProperty,
         skos:Concept ;
@@ -147,6 +272,17 @@ landUse-att:legend a owl:ObjectProperty,
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "legend"@en .
 
+landUse-att:legislationCitation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "legislationCitation"@en ;
+    rdfs:domain landUse:OfficialDocument ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/LegislationCitation> ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Citation of  legal act."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "legislationCitation"@en .
+
 landUse-att:link a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "link"@en ;
@@ -157,16 +293,80 @@ landUse-att:link a owl:ObjectProperty,
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "link"@en .
 
-landUse-att:name a owl:DatatypeProperty,
+landUse-att:mainClassification a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "name"@en ;
-    rdfs:domain landUse:ExistingLandUseCollection ;
+    rdfs:label "mainClassification"@en ;
+    rdfs:domain landUse:ParcelLandUse ;
+    rdfs:range landUse:LandUseClassificationValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Main class of Land Use that is present in a parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "mainClassification"@en .
+
+landUse-att:mainPresence a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "mainPresence"@en ;
+    rdfs:domain landUse:ParcelLandUse ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Actual presence of main class of land use within the parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "mainPresence"@en .
+
+landUse-att:observationDate a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "observationDate"@en ;
+    rdfs:domain landUse:ExistingLandUseUnit ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "The observation date associated  to a description."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "observationDate"@en .
+
+landUse-att:officialTitle a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "officialTitle"@en ;
+    rdfs:domain landUse:SpatialPlan ;
     rdfs:range xsd:string ;
     rdfs:subClassOf landUse:attribute ;
     skos:broader landUse:attribute ;
-    skos:definition "Name of the Land Use collection"@en ;
+    skos:definition "Official title of the spatial plan."@en ;
     skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "name"@en .
+    skos:prefLabel "officialTitle"@en .
+
+landUse-att:parcelLevel a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "parcelLevel"@en ;
+    rdfs:domain landUse:PlannedParcel ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Height of parcel over the level of street."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "parcelLevel"@en .
+
+landUse-att:relevantDate a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "relevantDate"@en ;
+    rdfs:domain landUse:SpatialPlan ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Relevant date of lifecycle/process stage of spatial plan document."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "relevantDate"@en .
+
+landUse-att:sewerHistory a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "sewerHistory"@en ;
+    rdfs:domain landUse:PlannedParcel ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Information about sewer history."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "sewerHistory"@en .
 
 landUse-att:spatialResolution a owl:DatatypeProperty,
         skos:Concept ;
@@ -179,6 +379,50 @@ landUse-att:spatialResolution a owl:DatatypeProperty,
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "spatialResolution"@en .
 
+landUse-att:status a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "status"@en ;
+    rdfs:domain landUse:RoadSupplementaryRegulation ;
+    rdfs:range transport:StatusTypeValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Status of a road object. (e.g. projected, functional)."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "status"@en .
+
+landUse-att:surfaceCategory a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surfaceCategory"@en ;
+    rdfs:domain landUse:RoadSupplementaryRegulation ;
+    rdfs:range landUse:RoadSurfaceCategoryValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Type of road surface."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "surfaceCategory"@en .
+
+landUse-att:telecomService a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "telecomService"@en ;
+    rdfs:domain landUse:PlannedParcel ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Information about telecom service."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "telecomService"@en .
+
+landUse-att:text a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "text"@en ;
+    rdfs:domain landUse:RegulationText ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Text of the regulation."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "text"@en .
+
 landUse-att:title a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "title"@en ;
@@ -190,31 +434,200 @@ landUse-att:title a owl:DatatypeProperty,
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "title"@en .
 
-landUse-att:validFrom a owl:DatatypeProperty,
+landUse-att:version a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "validFrom"@en ;
-    rdfs:domain landUse:ExistingLandUseCollection,
-        landUse:MapDocument ;
-    rdfs:range xsd:date ;
+    rdfs:label "version"@en ;
+    rdfs:domain landUse:SpatialPlan ;
     rdfs:subClassOf landUse:attribute ;
     skos:broader landUse:attribute ;
-    skos:definition "First date at which the map document is valid in reality."@en,
-        "The date when the Land Use data set started to exist in the real world."@en ;
+    skos:definition "The version of spatial plan document."@en ;
     skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "validFrom"@en .
+    skos:prefLabel "version"@en .
 
-landUse-att:validTo a owl:DatatypeProperty,
+landUse-att:waterService a owl:DatatypeProperty,
         skos:Concept ;
-    rdfs:label "validTo"@en ;
-    rdfs:domain landUse:ExistingLandUseCollection,
-        landUse:MapDocument ;
+    rdfs:label "waterService"@en ;
+    rdfs:domain landUse:PlannedParcel ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Information about water service."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "waterService"@en .
+
+landUse-att:yearDate a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "yearDate"@en ;
+    rdfs:domain landUse:UrbanBoundary ;
     rdfs:range xsd:date ;
     rdfs:subClassOf landUse:attribute ;
     skos:broader landUse:attribute ;
-    skos:definition "The dwte from which the Land Use data set no longer exists in the real world."@en,
-        "The time from which the map document no longer exists in the real world."@en ;
+    skos:definition "Annual date defining a urban development limit."@en ;
     skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "validTo"@en .
+    skos:prefLabel "yearDate"@en .
+
+landUse:LandUseClassificationValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Use Classification"@en ;
+    skos:broader landUse:codeLists ;
+    skos:definition "List of land use classes to be used in The Kingdom."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Land Use Classification"@en .
+
+landUse:UrbanBoundary a owl:Class,
+        skos:Concept ;
+    rdfs:label "Urban Boundary"@en ;
+    ogc-ft:hasProperty landUse-att:type,
+        landUse-att:yearDate ;
+    rdfs:subClassOf landUse:SupplementaryRegulation ;
+    skos:broader landUse:SupplementaryRegulation ;
+    skos:definition "A regional boundary set in an attempt to control urban sprawl."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Urban Boundary"@en .
+
+landUse-att:landUseClassification a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "landUseClassification"@en ;
+    rdfs:domain landUse:ExistingLandUseUnit,
+        landUse:ZoningElement ;
+    rdfs:range landUse:LandUseClassificationValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition """Land Use classes that are present in this existing land use object.
+
+NOTE 1. The Existing Land Use model enables the provision of information on land uses inside one land use object. The ExistingLandUseUnit may be associated with 1 to many  Land Use classification value  that represents the Land Uses for the unit from the economical point of view. It makes possible the assignment of more than one Land Use classification value existences when they cannot be managed by Land Use Presences class."""@en,
+        "Land Use classes that are present in this zoning element."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "landUseClassification"@en .
+
+landUse-att:landUsePresence a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "landUsePresence"@en ;
+    rdfs:domain landUse:ExistingLandUseUnit,
+        landUse:ZoningElement ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Actual presence of a land use category within the object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "landUsePresence"@en .
+
+landUse-att:number a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "number"@en ;
+    rdfs:domain landUse:SpatialPlan,
+        landUse:ZoningElement ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Official number of the spatial plan."@en,
+        "Official number of the zoning element."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "number"@en .
+
+landUse-att:parcelLandUse a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "parcelLandUse"@en ;
+    rdfs:domain landUse:ParcelLandUse,
+        landUse:PlannedParcel ;
+    rdfs:range landUse:ParcelLandUseValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Detailed Land Use information within the parcel object."@en,
+        "Land Use information within the parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "parcelLandUse"@en .
+
+landUse-att:regulationNature a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "regulationNature"@en ;
+    rdfs:domain landUse:SupplementaryRegulation,
+        landUse:ZoningElement ;
+    rdfs:range landUse:RegulationNatureValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition """Legal nature of the land use regulation.
+
+NOTE Indicates whether the land use regulation is legally binding or not."""@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "regulationNature"@en .
+
+landUse-att:spatialRepresentation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "spatialRepresentation"@en ;
+    rdfs:domain landUse:ExistingLandUseUnit,
+        landUse:SupplementaryRegulation ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Geometry of the piece of land on which the supplementary regulation applies."@en,
+        "Spatial representation of the Land Use unit."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "spatialRepresentation"@en .
+
+landUse-att:type a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "type"@en ;
+    rdfs:domain landUse:SpatialPlan,
+        landUse:UrbanBoundary ;
+    rdfs:range landUse:SpatialPlanTypeValue,
+        landUse:UrbanBoundaryTypeValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Official name of type of spatial plan."@en,
+        "Type of urban boundary."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "type"@en .
+
+landUse:OfficialDocument a owl:Class,
+        skos:Concept ;
+    rdfs:label "Official Document"@en ;
+    ogc-ft:hasProperty landUse-att:documentCitation,
+        landUse-att:legislationCitation ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "The document drawn up by public authorities and other state bodies appointed for this purpose that may be associated with the complete spatial plan or any its object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Official Document"@en .
+
+landUse:RoadSupplementaryRegulation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Supplementary Regulation"@en ;
+    ogc-ft:hasProperty landUse-att:functionalClass,
+        landUse-att:status,
+        landUse-att:surfaceCategory ;
+    rdfs:subClassOf landUse:SupplementaryRegulation ;
+    skos:broader landUse:SupplementaryRegulation ;
+    skos:definition "Areas used for road transport (e.g. roads, parking areas, service stations)."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Road Supplementary Regulation"@en .
+
+landUse-att:name a owl:DatatypeProperty,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain landUse:ExistingLandUseCollection,
+        landUse:LandUseGridCoverage,
+        landUse:SupplementaryRegulation ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Name of the Land Use collection"@en,
+        "Name of the Land Use coverage."@en,
+        "Official name of the supplementary regulation"@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "name"@en .
+
+landUse-att:processStepGeneral a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "processStepGeneral"@en ;
+    rdfs:domain landUse:SpatialPlan,
+        landUse:SupplementaryRegulation,
+        landUse:ZoningElement ;
+    rdfs:range landUse:ProcessStepGeneralValue ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "General indication of the step of the planning process that the plan is undergoing."@en,
+        "General indication of the step of the planning process that the supplementary regulation is undergoing."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "processStepGeneral"@en .
 
 landUse:ExistingLandUseCollection a owl:Class,
         skos:Concept ;
@@ -228,6 +641,138 @@ landUse:ExistingLandUseCollection a owl:Class,
     skos:definition "A collection of units (areas or locations) for which information on existing land use is provided as a polygon."@en ;
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "Existing Land Use Collection"@en .
+
+landUse:ExistingLandUseUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "Existing Land Use Unit"@en ;
+    ogc-ft:hasProperty landUse-att:landUseClassification,
+        landUse-att:landUsePresence,
+        landUse-att:observationDate,
+        landUse-att:spatialRepresentation ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A land use unit which is part of a Land Use Collection.  (A Land Use Collection is a collection of Land Use Units, each one being called an member.)"@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Existing Land Use Unit"@en .
+
+landUse:LandUseGridCoverage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Use Grid Coverage"@en ;
+    ogc-ft:hasProperty landUse-att:extent,
+        landUse-att:name,
+        landUse-att:validFrom,
+        landUse-att:validTo ;
+    rdfs:subClassOf landUse:RectifiedGridCoverage ;
+    skos:broader landUse:RectifiedGridCoverage ;
+    skos:definition "A raster representation of Land Use data.  Source: ISO 19123."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Land Use Grid Coverage"@en .
+
+landUse:ParcelLandUse a owl:Class,
+        skos:Concept ;
+    rdfs:label "Parcel Land Use"@en ;
+    ogc-ft:hasProperty landUse-att:mainClassification,
+        landUse-att:mainPresence,
+        landUse-att:parcelLandUse ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Land Use information within the parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Parcel Land Use"@en .
+
+landUse:RegulationText a owl:Class,
+        skos:Concept ;
+    rdfs:label "Regulation Text"@en ;
+    ogc-ft:hasProperty landUse-att:text,
+        landUse-att:validFrom,
+        landUse-att:validTo ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Independently readable piece of text that starts with a capital letter and ends with a period."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Regulation Text"@en .
+
+landUse-att:additionalDescription a owl:DatatypeProperty,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "additionalDescription"@en ;
+    rdfs:domain landUse:MapDocument,
+        landUse:SpatialPlan,
+        landUse:SupplementaryRegulation,
+        landUse:ZoningElement ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "Plain text description of additional information not fitting in other attributes."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "additionalDescription"@en .
+
+landUse-att:extent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extent"@en ;
+    rdfs:domain landUse:ExistingLandUseCollection,
+        landUse:LandUseGridCoverage,
+        landUse:SpatialPlan,
+        landUse:ZoningElement ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition """Contains the extent of the data set.
+
+NOTE 01. For an area objects boundary of the geometrical union of all the instances of the spatial object type ExistingLandUseUnit.
+For an sampled objects the convex hull of all the instances of the spatial object type ExistingLandUseUnit."""@en,
+        """Contains the extent of the data set.
+
+NOTE Extents may be specified in space, time or space-time."""@en,
+        "Spatial extent of a zoning element"@en,
+        "The area covered by the spatial planning document."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "extent"@en .
+
+landUse-att:validFrom a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validFrom"@en ;
+    rdfs:domain landUse:ExistingLandUseCollection,
+        landUse:LandUseGridCoverage,
+        landUse:MapDocument,
+        landUse:RegulationText,
+        landUse:SpatialPlan,
+        landUse:SupplementaryRegulation,
+        landUse:ZoningElement ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "First date at which the map document is valid in reality."@en,
+        "First date at which the spatial plan is valid in reality."@en,
+        "First date at which the text regulation is valid in reality."@en,
+        "First date at which the zoning element is valid in reality."@en,
+        "First date at which this supplementary regulation is valid in reality."@en,
+        "The date when the Land Use data set started to exist in the real world."@en,
+        "The date when the phenomenon started to exist in the real world."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "validFrom"@en .
+
+landUse-att:validTo a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validTo"@en ;
+    rdfs:domain landUse:ExistingLandUseCollection,
+        landUse:LandUseGridCoverage,
+        landUse:MapDocument,
+        landUse:RegulationText,
+        landUse:SpatialPlan,
+        landUse:SupplementaryRegulation,
+        landUse:ZoningElement ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf landUse:attribute ;
+    skos:broader landUse:attribute ;
+    skos:definition "The date from which the  supplementary regulation no longer exists in the real world."@en,
+        "The date from which the spatial plan no longer exists in the real world."@en,
+        "The date from which the text regulation no longer exists in the real world."@en,
+        "The date from which the zoning element no longer exists in the real world."@en,
+        "The date when the phenomenon no longer exist in the real world."@en,
+        "The dwte from which the Land Use data set no longer exists in the real world."@en,
+        "The time from which the map document no longer exists in the real world."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "validTo"@en .
 
 landUse:MapDocument a owl:Class,
         skos:Concept ;
@@ -246,20 +791,93 @@ landUse:MapDocument a owl:Class,
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "Map Document"@en .
 
+landUse:PlannedParcel a owl:Class,
+        skos:Concept ;
+    rdfs:label "Planned Parcel"@en ;
+    ogc-ft:hasProperty landUse-att:buildingArea,
+        landUse-att:buildingCount,
+        landUse-att:electricityService,
+        landUse-att:emptyArea,
+        landUse-att:parcelLandUse,
+        landUse-att:parcelLevel,
+        landUse-att:sewerHistory,
+        landUse-att:telecomService,
+        landUse-att:waterService ;
+    rdfs:subClassOf landUse:ZoningElement ;
+    skos:broader landUse:ZoningElement ;
+    skos:definition "The planned plot object represents a part of the land area with a specific land use intended for establishing the Land Parcel object."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Planned Parcel"@en .
+
+landUse:ZoningElement a owl:Class,
+        skos:Concept ;
+    rdfs:label "Zoning Element"@en ;
+    ogc-ft:hasProperty landUse-att:additionalDescription,
+        landUse-att:extent,
+        landUse-att:landUseClassification,
+        landUse-att:landUsePresence,
+        landUse-att:number,
+        landUse-att:processStepGeneral,
+        landUse-att:regulationNature,
+        landUse-att:validFrom,
+        landUse-att:validTo ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A spatial object which is homogeneous regarding the permitted uses of land based on zoning which separate one set of land uses from another."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Zoning Element"@en .
+
 landUse:codeLists a owl:Class,
         skos:Concept ;
     rdfs:label "Land Use Foundation Theme code list or type"@en ;
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "Land Use Foundation Theme code list or type"@en .
 
-landUse:attribute a owl:Class,
+landUse:SupplementaryRegulation a owl:Class,
         skos:Concept ;
-    rdfs:label "Land Use Foundation Theme attribute"@en ;
+    rdfs:label "Supplementary Regulation"@en ;
+    ogc-ft:hasProperty landUse-att:additionalDescription,
+        landUse-att:inheritedFromOtherPlans,
+        landUse-att:name,
+        landUse-att:processStepGeneral,
+        landUse-att:regulationNature,
+        landUse-att:spatialRepresentation,
+        landUse-att:validFrom,
+        landUse-att:validTo ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A feature (point, line or polygon) of a spatial plan that provides supplementary information and/or limitation of the use of land/water necessary for spatial planning reasons or to formalize external rules defined in legal text.  The supplementary regulations affects all land use that overlap with the geometry.  For example, an air field generates restrictions in its surroundings regarding aircraft landing, radar and telecommunication devices. It is the buffer around these features that generates the supplementary regulation on the Land Use."@en ;
     skos:inScheme ksa-ft:LandUse ;
-    skos:prefLabel "Land Use Foundation Theme attribute"@en .
+    skos:prefLabel "Supplementary Regulation"@en .
+
+landUse:SpatialPlan a owl:Class,
+        skos:Concept ;
+    rdfs:label "Spatial Plan"@en ;
+    ogc-ft:hasProperty landUse-att:additionalDescription,
+        landUse-att:alternativeTitle,
+        landUse-att:extent,
+        landUse-att:number,
+        landUse-att:officialTitle,
+        landUse-att:processStepGeneral,
+        landUse-att:relevantDate,
+        landUse-att:type,
+        landUse-att:validFrom,
+        landUse-att:validTo,
+        landUse-att:version ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A set of documents that indicates a strategic direction for the development of a given geographic area, states the policies, priorities, programmes and land allocations that will implement the strategic direction and influences the distribution of people and activities in spaces of various scales. Spatial plans may be developed for urban planning, regional planning, environmental planning, landscape planning, national spatial plans."@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Spatial Plan"@en .
 
 ksa-ft:LandUse a skos:ConceptScheme ;
     rdfs:label "Land Use Foundation Theme"@en ;
     skos:definition "The Land Use Foundation Theme describes human activities in the built and natural environments and includes both existing and future uses of land and natural resources."@en ;
     skos:prefLabel "Land Use Foundation Theme"@en .
+
+landUse:attribute a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Use Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:LandUse ;
+    skos:prefLabel "Land Use Foundation Theme attribute"@en .
 

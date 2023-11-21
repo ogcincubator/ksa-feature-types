@@ -7,6 +7,14 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+popDemo:PopulationDistribution a owl:Class,
+        skos:Concept ;
+    rdfs:label "PopulationDistribution"@en ;
+    rdfs:subClassOf popDemo:StatisticalDistribution ;
+    skos:broader popDemo:StatisticalDistribution ;
+    skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
+    skos:prefLabel "PopulationDistribution"@en .
+
 popDemo-att:featureOfInterest a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "featureOfInterest" ;
@@ -56,16 +64,16 @@ popDemo-att:value a owl:DatatypeProperty,
     skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
     skos:prefLabel "value"@en .
 
-ksa-ft:PopulationandDemographicsTheme a skos:ConceptScheme ;
-    rdfs:label "Population and Demographics Theme"@en ;
-    skos:prefLabel "Population and Demographics Theme"@en .
-
 popDemo:DemographicObservation a owl:Class,
         skos:Concept ;
     rdfs:label "DemographicObservation"@en ;
     ogc-ft:hasProperty popDemo-att:value ;
     skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
     skos:prefLabel "DemographicObservation"@en .
+
+ksa-ft:PopulationandDemographicsTheme a skos:ConceptScheme ;
+    rdfs:label "Population and Demographics Theme"@en ;
+    skos:prefLabel "Population and Demographics Theme"@en .
 
 popDemo:attribute a owl:Class,
         skos:Concept ;

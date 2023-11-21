@@ -7,13 +7,278 @@
 @prefix transport-att: <https://w3id.org/ksa/feature-types/Transport/attribute/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-transport:AccessRestrictionValue a owl:Class,
+transport:Bollard a owl:Class,
         skos:Concept ;
-    rdfs:label "Access Restriction Value"@en ;
-    skos:broader transport:codeLists ;
-    skos:definition "A coded domain value denoting a access restriction for a transport element (e.g. private, public access)."@en ;
+    rdfs:label "Bollard"@en ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "A short post used to prevent traffic from entering an area."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Access Restriction Value"@en .
+    skos:prefLabel "Bollard"@en .
+
+transport:BusRouteLink a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bus Route Link"@en ;
+    rdfs:subClassOf transport:TransportLink ;
+    skos:broader transport:TransportLink ;
+    skos:definition "A linear feature that describes the geometry and connectivity of a bus network between two points in the network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Bus Route Link"@en .
+
+transport:BusRouteLinkSequence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bus Route Link Sequence"@en ;
+    rdfs:subClassOf transport:TransportLinkSequence ;
+    skos:broader transport:TransportLinkSequence ;
+    skos:definition "A linear feature composed of an ordered collection of bus route links, which represents a continuous path in a bus route network without any branches. The element has a defined beginning and end and every position on the bus route link sequence."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Bus Route Link Sequence"@en .
+
+transport:CarriagewayNode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Carriageway Node"@en ;
+    rdfs:subClassOf transport:TransportNode ;
+    skos:broader transport:TransportNode ;
+    skos:definition "A point feature that is used to represent connectivity between two carriageway links."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Carriageway Node"@en .
+
+transport:FuelStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Fuel Station"@en ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "An establishment beside a road selling fuel for motor vehicles, may also be called a petrol or gas station."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Fuel Station"@en .
+
+transport:ITSScreen a owl:Class,
+        skos:Concept ;
+    rdfs:label "ITS Screen"@en ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "A screen used to show how different networks of transport are linked with each other."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "ITS Screen"@en .
+
+transport:MetroLinkSequence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Metro Link Sequence"@en ;
+    rdfs:subClassOf transport:TransportLinkSequence ;
+    skos:broader transport:TransportLinkSequence ;
+    skos:definition "A linear feature composed of an ordered collection of metro links, which represents a continuous path in a metro network without any branches. The element has a defined beginning and end and every position on the metro link sequence."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Metro Link Sequence"@en .
+
+transport:MetroStationArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Metro Station Area"@en ;
+    rdfs:subClassOf transport:TransportArea ;
+    skos:broader transport:TransportArea ;
+    skos:definition "A metro station is a type of railway station that is part of a metro, rapid transit system, subway or underground railway line or railway network. Geometry representation of metro station area is an extent."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Metro Station Area"@en .
+
+transport:ParkingPayStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Parking Pay Station"@en ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "A device used to collect money in exchange for the right to park a vehicle in a particular place for a limited amount of time, includes parking meters."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Parking Pay Station"@en .
+
+transport:RailwayLinkSequence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Link Sequence"@en ;
+    rdfs:subClassOf transport:TransportLinkSequence ;
+    skos:broader transport:TransportLinkSequence ;
+    skos:definition "A linear feature composed of an ordered collection of railway links, which represents a continuous path in a railway network without any branches. The element has a defined beginning and end and every position on the railway link sequence is identifiable with one single parameter such as length. It describes an element of the railway network, characterized by one or more thematical identifiers and/or properties."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Railway Link Sequence"@en .
+
+transport:RailwayStationArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Station Area"@en ;
+    rdfs:subClassOf transport:TransportArea ;
+    skos:broader transport:TransportArea ;
+    skos:definition "An area feature which is used to represent the topographical limits of the facilities of a railway station (buildings, railway yards, installations and equipment) devoted to carry out railway station operations."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Railway Station Area"@en .
+
+transport:RoadLaneNode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Lane Node"@en ;
+    rdfs:subClassOf transport:TransportNode ;
+    skos:broader transport:TransportNode ;
+    skos:definition "A point that is used to represent connectivity between two road lane links."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Lane Node"@en .
+
+transport:RoadLinkSequence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Link Sequence"@en ;
+    rdfs:subClassOf transport:TransportLinkSequence ;
+    skos:broader transport:TransportLinkSequence ;
+    skos:definition "A line composed of an ordered collection of road links, which represents a continuous path in a road network without any branches. The element has a defined beginning and end and every position on the road link sequence."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Link Sequence"@en .
+
+transport:TaxiStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Taxi Station"@en ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "A place where taxis may park while awaiting hire."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Taxi Station"@en .
+
+transport-att:airportArea a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "airportArea" ;
+    rdfs:domain transport:Airport ;
+    rdfs:range transport:AirportArea ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "airportArea" .
+
+transport-att:busStation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "busStation" ;
+    rdfs:domain transport:BusRoute ;
+    rdfs:range transport:BusStation ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "busStation" .
+
+transport-att:busStop a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "busStop" ;
+    rdfs:domain transport:BusRoute ;
+    rdfs:range transport:BusStop ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "busStop" .
+
+transport-att:carriageway a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "carriageway" ;
+    rdfs:domain transport:RoadEdge,
+        transport:RoadLaneLink,
+        transport:RoadLink,
+        transport:RoadShoulder ;
+    rdfs:range transport:CarriagewayLink ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "carriageway" .
+
+transport-att:controlTower a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "controlTower" ;
+    rdfs:domain transport:Airport ;
+    rdfs:range transport:ControlTower ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "controlTower" .
+
+transport-att:fromOrigin a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "fromOrigin" ;
+    rdfs:domain transport:BusRoute,
+        transport:MetroLine ;
+    rdfs:range transport:BusStation,
+        transport:MetroStation ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "fromOrigin" .
+
+transport-att:link a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "link" ;
+    rdfs:domain transport:EngineeringStructure ;
+    rdfs:range transport:Link ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "link" .
+
+transport-att:linkSet a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "linkSet" ;
+    rdfs:domain transport:EngineeringStructure ;
+    rdfs:range transport:LinkSet ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "linkSet" .
+
+transport-att:node a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "node" ;
+    rdfs:domain transport:MetroStation,
+        transport:RailwayStation ;
+    rdfs:range transport:MetroNode,
+        transport:RailwayNode ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "node" .
+
+transport-att:post a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "post" ;
+    rdfs:domain transport:TransportLinkSet ;
+    rdfs:range transport:MarkerPost ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "post" .
+
+transport-att:road a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "road" ;
+    rdfs:domain transport:CarriagewayLink,
+        transport:RoadLaneLink ;
+    rdfs:range transport:Road ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "road" .
+
+transport-att:seaportArea a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "seaportArea" ;
+    rdfs:domain transport:Seaport ;
+    rdfs:range transport:SeaportArea ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "seaportArea" .
+
+transport-att:streetName a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "streetName" ;
+    rdfs:domain transport:CarriagewayLink,
+        transport:Road ;
+    rdfs:range transport:StreetName ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "streetName" .
+
+transport-att:toDestination a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "toDestination" ;
+    rdfs:domain transport:BusRoute,
+        transport:MetroLine ;
+    rdfs:range transport:BusStation,
+        transport:MetroStation ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:prefLabel "toDestination" .
+
+transport:AccessRestriction a owl:Class,
+        skos:Concept ;
+    rdfs:label "Access Restriction"@en ;
+    ogc-ft:hasProperty transport-att:restriction ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "A restriction on the access to a transport element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Access Restriction"@en .
 
 transport:AccidentCategoryValue a owl:Class,
         skos:Concept ;
@@ -21,6 +286,15 @@ transport:AccidentCategoryValue a owl:Class,
     skos:broader transport:codeLists ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Accident Category Value"@en .
+
+transport:AirportArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Airport Area"@en ;
+    rdfs:subClassOf transport:TransportArea ;
+    skos:broader transport:TransportArea ;
+    skos:definition "A defined area on land or water (including any buildings, installations and equipment) intended to be used either wholly or in part for the arrival, departure and surface movement of aircraft and/or helicopters."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Airport Area"@en .
 
 transport:AirportCategoryValue a owl:Class,
         skos:Concept ;
@@ -58,12 +332,42 @@ transport:BusRouteTypeValue a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Bus Route Type Value"@en .
 
+transport:Culvert a owl:Class,
+        skos:Concept ;
+    rdfs:label "Culvert"@en ;
+    ogc-ft:hasProperty transport-att:culvertConstruction ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "An enclosed channel for carrying a watercourse (for example: a stream, a sewer, or a drain) under a route (for example: a road, a railway, or an embankment)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Culvert"@en .
+
 transport:CulvertConstructionTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Culvert Construction Type Value"@en ;
     skos:broader transport:codeLists ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Culvert Construction Type Value"@en .
+
+transport:DesignSpeed a owl:Class,
+        skos:Concept ;
+    rdfs:label "Design Speed"@en ;
+    ogc-ft:hasProperty transport-att:speed ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "The specification of the maximum speed to which a railway line is designed for."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Design Speed"@en .
+
+transport:Fence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Fence"@en ;
+    ogc-ft:hasProperty transport-att:material ;
+    rdfs:subClassOf transport:EngineeringStructure ;
+    skos:broader transport:EngineeringStructure ;
+    skos:definition "A barrier, railing, or other upright structure, typically of wood or wire, enclosing an area of ground to prevent or control access or escape."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Fence"@en .
 
 transport:FormOfRailwayNodeValue a owl:Class,
         skos:Concept ;
@@ -80,6 +384,16 @@ transport:FormOfRoadNodeValue a owl:Class,
     skos:definition "Functions of road nodes."@en ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Form Of Road Node Value"@en .
+
+transport:FormOfWay a owl:Class,
+        skos:Concept ;
+    rdfs:label "Form Of Way"@en ;
+    ogc-ft:hasProperty transport-att:formOfWay ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "A classification based on the physical properties of the RoadLink."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Form Of Way"@en .
 
 transport:FormOfWayValue a owl:Class,
         skos:Concept ;
@@ -112,6 +426,16 @@ transport:LightWattageValue a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Light Wattage Value"@en .
 
+transport:MaintenanceAuthority a owl:Class,
+        skos:Concept ;
+    rdfs:label "Maintenance Authority"@en ;
+    ogc-ft:hasProperty transport-att:authority ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "The authority responsible for maintenance of the transport element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Maintenance Authority"@en .
+
 transport:MaterialTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Material Type Value"@en ;
@@ -127,13 +451,32 @@ transport:MetroConstructionTypeValue a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Metro Construction Type Value"@en .
 
-transport:PhysicalConditionTypeValue a owl:Class,
+transport:OwnerAuthority a owl:Class,
         skos:Concept ;
-    rdfs:label "Physical Condition Type Value"@en ;
-    skos:broader transport:codeLists ;
-    skos:definition "A coded domain value denoting a physical condition of a transport element (e.g. good, acceptable)."@en ;
+    rdfs:label "Owner Authority"@en ;
+    ogc-ft:hasProperty transport-att:authority ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "The authority owning the transport element."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Physical Condition Type Value"@en .
+    skos:prefLabel "Owner Authority"@en .
+
+transport:PathwayTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Pathway Type Value"@en ;
+    skos:broader transport:codeLists ;
+    skos:definition "Type of pathway for pedestrian or wheelchair."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Pathway Type Value"@en .
+
+transport:RailwayArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Area"@en ;
+    rdfs:subClassOf transport:TransportArea ;
+    skos:broader transport:TransportArea ;
+    skos:definition "Surface occupied by a railway track, including ballast."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Railway Area"@en .
 
 transport:RailwayClassTypeValue a owl:Class,
         skos:Concept ;
@@ -141,6 +484,16 @@ transport:RailwayClassTypeValue a owl:Class,
     skos:broader transport:codeLists ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Railway Class Type Value"@en .
+
+transport:RailwayLine a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Line"@en ;
+    ogc-ft:hasProperty transport-att:railwayNumber ;
+    rdfs:subClassOf transport:TransportLinkSet ;
+    skos:broader transport:TransportLinkSet ;
+    skos:definition "A collection of railway link sequences and or individual railway links that are characterized by one or more thematical identifiers and/or properties."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Railway Line"@en .
 
 transport:RailwayTypeValue a owl:Class,
         skos:Concept ;
@@ -164,6 +517,16 @@ transport:RestrictionTypeValue a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Restriction Type Value"@en .
 
+transport:RetainingWall a owl:Class,
+        skos:Concept ;
+    rdfs:label "Retaining Wall"@en ;
+    ogc-ft:hasProperty transport-att:material ;
+    rdfs:subClassOf transport:EngineeringStructure ;
+    skos:broader transport:EngineeringStructure ;
+    skos:definition "A wall that holds back earth."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Retaining Wall"@en .
+
 transport:RoadClassTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Road Class Type Value"@en ;
@@ -179,6 +542,45 @@ transport:RoadIntersectionTypeValue a owl:Class,
     skos:definition "An area where roads meet at junctions, primarily mapped for easy manipulation of roads data. Roads with comparatively few junctions, such as highways are also split where another feature crosses them, such as a road bridge or footbridge."@en ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Road Intersection Type Value"@en .
+
+transport:RoadIsland a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Island"@en ;
+    ogc-ft:hasProperty transport-att:extent ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
+    skos:definition "Non-pedestrian islands in the road surface, such as center island, roundabout, etc. Often contains grass, trees, flowers or sculptures."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Island"@en .
+
+transport:RoadLink a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Link"@en ;
+    rdfs:subClassOf transport:TransportLink ;
+    skos:broader transport:TransportLink ;
+    skos:definition "A linear spatial object that describes the geometry and connectivity of a road network between two points in the network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Link"@en .
+
+transport:RoadNode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Node"@en ;
+    ogc-ft:hasProperty transport-att:formOfRoadNode ;
+    rdfs:subClassOf transport:TransportNode ;
+    skos:broader transport:TransportNode ;
+    skos:definition "A point that is used to represent connectivity between two road links."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Node"@en .
+
+transport:RoadServiceArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Service Area"@en ;
+    ogc-ft:hasProperty transport-att:roadService ;
+    rdfs:subClassOf transport:TransportArea ;
+    skos:broader transport:TransportArea ;
+    skos:definition "Surface annexed to a road and devoted to offer particular services for it (e.g. fuel station, rest area, toll area)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Service Area"@en .
 
 transport:RoadServiceTypeValue a owl:Class,
         skos:Concept ;
@@ -241,13 +643,29 @@ transport:SpeedLimitSourceValue a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Speed Limit Source Value"@en .
 
-transport:SurfaceTypeValue a owl:Class,
+transport:StatusTypeValue a owl:Class,
         skos:Concept ;
-    rdfs:label "Surface Type Value"@en ;
+    rdfs:label "Status Type Value"@en ;
     skos:broader transport:codeLists ;
-    skos:definition "Type of road surface e.g. asphalt, soil, concrete."@en ;
+    skos:definition "A coded domain value denoting a status of a transport element (e.g. projected, underConstruction)"@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Surface Type Value"@en .
+    skos:prefLabel "Status Type Value"@en .
+
+transport:StreetName a owl:Class,
+        skos:Concept ;
+    rdfs:label "Street Name"@en ;
+    skos:definition "An address component which represents the name of the road/street (thoroughfare) upon which the address is principally located. [Unified National Addressing System]"@en ;
+    skos:prefLabel "Street Name"@en .
+
+transport:TrafficCamera a owl:Class,
+        skos:Concept ;
+    rdfs:label "Traffic Camera"@en ;
+    ogc-ft:hasProperty transport-att:type ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "A video camera which observes vehicular traffic on a road."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Traffic Camera"@en .
 
 transport:TrafficCameraTypeValue a owl:Class,
         skos:Concept ;
@@ -255,6 +673,16 @@ transport:TrafficCameraTypeValue a owl:Class,
     skos:broader transport:codeLists ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Traffic Camera Type Value"@en .
+
+transport:TrafficCounter a owl:Class,
+        skos:Concept ;
+    rdfs:label "Traffic Counter"@en ;
+    ogc-ft:hasProperty transport-att:orientation ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "A device, often electronic in nature, used to count, classify, and/or measure the speed of vehicular traffic passing along a given roadway."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Traffic Counter"@en .
 
 transport:TrafficLightTypeValue a owl:Class,
         skos:Concept ;
@@ -279,36 +707,60 @@ transport:VerticalPositionTypeValue a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Vertical Position Type Value"@en .
 
-transport-att:node a owl:ObjectProperty,
+transport-att:access a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "node" ;
-    rdfs:domain transport:MetroStation ;
-    rdfs:range transport:MetroNode ;
+    rdfs:label "access"@en ;
+    rdfs:domain transport:PedestrianArea ;
+    rdfs:range transport:AccessRestrictionValue ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
-    skos:prefLabel "node" .
-
-transport:MetroNode a owl:Class,
-        skos:Concept ;
-    rdfs:label "Metro Node"@en ;
-    skos:definition "A point feature which represents a significant point along the metro network or defines an intersection of metro tracks used to describe its connectivity."@en ;
-    skos:prefLabel "Metro Node"@en .
-
-transport:PathwayTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Pathway Type Value"@en ;
-    skos:broader transport:codeLists ;
-    skos:definition "Type of pathway for pedestrian or wheelchair."@en ;
+    skos:definition "Access restriction for a pedestrian area (e.g. private, public access)."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Pathway Type Value"@en .
+    skos:prefLabel "access"@en .
 
-transport:StatusTypeValue a owl:Class,
+transport-att:accidentCategory a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Status Type Value"@en ;
-    skos:broader transport:codeLists ;
-    skos:definition "A coded domain value denoting a status of a transport element (e.g. projected, underConstruction)"@en ;
+    rdfs:label "accidentCategory"@en ;
+    rdfs:domain transport:Accident ;
+    rdfs:range transport:AccidentCategoryValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Category of the accident (e.g. injuries, death, damage)"@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Status Type Value"@en .
+    skos:prefLabel "accidentCategory"@en .
+
+transport-att:accidentDate a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "accidentDate"@en ;
+    rdfs:domain transport:Accident ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Date of the accident."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "accidentDate"@en .
+
+transport-att:airportCategory a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "airportCategory"@en ;
+    rdfs:domain transport:Airport ;
+    rdfs:range transport:AirportCategoryValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A category of the airport (e.g. international, national)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "airportCategory"@en .
+
+transport-att:airportType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "airportType"@en ;
+    rdfs:domain transport:Airport ;
+    rdfs:range transport:AirportTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A type of the airport (e.g. aerodromeOnly, heliportOnly)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "airportType"@en .
 
 transport-att:alternativeName a owl:ObjectProperty,
         skos:Concept ;
@@ -320,15 +772,36 @@ transport-att:alternativeName a owl:ObjectProperty,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "alternativeName"@en .
 
-transport-att:centerline a owl:ObjectProperty,
+transport-att:bridgeConstruction a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "centerline"@en ;
-    rdfs:domain transport:Pathway ;
+    rdfs:label "bridgeConstruction"@en ;
+    rdfs:domain transport:Bridge ;
+    rdfs:range transport:BridgeConstructionTypeValue ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
-    skos:definition "Geometry of the pathway."@en ;
+    skos:definition "Construction of the bridge (e.g. grider, cable stayed)."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "centerline"@en .
+    skos:prefLabel "bridgeConstruction"@en .
+
+transport-att:busRouteNumber a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "busRouteNumber"@en ;
+    rdfs:domain transport:BusRoute ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A number of the bus route."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "busRouteNumber"@en .
+
+transport-att:carriageWayWidth a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "carriageWayWidth"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Width of carriage way. The road, measured including surface, shoulder or ditch."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "carriageWayWidth"@en .
 
 transport-att:class a owl:ObjectProperty,
         skos:Concept ;
@@ -341,57 +814,1025 @@ transport-att:class a owl:ObjectProperty,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "class"@en .
 
-transport-att:description a owl:DatatypeProperty,
+transport-att:code a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "description"@en ;
-    rdfs:domain transport:AbstractTransportType ;
+    rdfs:label "code"@en ;
+    rdfs:domain transport:Airport ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A code of the airport."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "code"@en .
+
+transport-att:condition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "condition"@en ;
+    rdfs:domain transport:EngineeringStructure ;
+    rdfs:range transport:PhysicalConditionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Physical condition of the engineering structure (e.g. good, weak)"@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "condition"@en .
+
+transport-att:constructionType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "constructionType"@en ;
+    rdfs:domain transport:MetroLink ;
+    rdfs:range transport:MetroConstructionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The code indicating the construction of a metro link."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "constructionType"@en .
+
+transport-att:culvertConstruction a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "culvertConstruction"@en ;
+    rdfs:domain transport:Culvert ;
+    rdfs:range transport:CulvertConstructionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "culvertConstruction"@en .
+
+transport-att:deadNumber a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "deadNumber"@en ;
+    rdfs:domain transport:Accident ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Number of persons recorded as killed who die within 24 hours as a result of the accident."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "deadNumber"@en .
+
+transport-att:designCapacity a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "designCapacity"@en ;
+    rdfs:domain transport:WeighStation ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Design capacity of the weigh station."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "designCapacity"@en .
+
+transport-att:designatorIATA a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "designatorIATA"@en ;
+    rdfs:domain transport:Airport ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The three letter IATA designator of the airport/heliport."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "designatorIATA"@en .
+
+transport-att:direction a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "direction"@en ;
+    rdfs:domain transport:SpeedLimit ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Indicates which direction the speed limit is valid for."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "direction"@en .
+
+transport-att:edge a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "edge"@en ;
+    rdfs:domain transport:RoadEdge ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Geometry of the road edge which is a line."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "edge"@en .
+
+transport-att:electrified a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "electrified"@en ;
+    rdfs:domain transport:RailwayLink ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Indicates whether the railway is provided with an electric system to power vehicles moving along it."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "electrified"@en .
+
+transport-att:envelope a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "envelope"@en ;
+    rdfs:domain transport:EngineeringStructure ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Geometry of the engineering structure is a polygon."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "envelope"@en .
+
+transport-att:formOfRoadNode a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "formOfRoadNode"@en ;
+    rdfs:domain transport:RoadNode ;
+    rdfs:range transport:FormOfRoadNodeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Description of the function of a road node in the road transport network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "formOfRoadNode"@en .
+
+transport-att:formOfWay a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "formOfWay"@en ;
+    rdfs:domain transport:FormOfWay ;
+    rdfs:range transport:FormOfWayValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Physical form of the way."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "formOfWay"@en .
+
+transport-att:functionalClass a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "functionalClass"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:range transport:FunctionalRoadClassValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Functional rank of the road link in the road network (e.g. mainRoad, firstClass, secondClass e.t.c.)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "functionalClass"@en .
+
+transport-att:groundComposition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "groundComposition"@en ;
+    rdfs:domain transport:EngineeringStructure ;
+    rdfs:range transport:GroundCompositionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Ground composition of the engineering structure (e.g. gravel, sand)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "groundComposition"@en .
+
+transport-att:injuriesNumber a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "injuriesNumber"@en ;
+    rdfs:domain transport:Accident ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Number of persons recorded as injured who die later then 24 hours as a result of the accident."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "injuriesNumber"@en .
+
+transport-att:internationalRoadNumber a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "internationalRoadNumber"@en ;
+    rdfs:domain transport:Road ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The international number of the road."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "internationalRoadNumber"@en .
+
+transport-att:isShelter a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "isShelter"@en ;
+    rdfs:domain transport:BusStop ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "isShelter"@en .
+
+transport-att:laneExtension a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "laneExtension"@en ;
+    rdfs:domain transport:SpeedLimit ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Number of lanes including the start lane counted from the right hand side for which the speed limit applies."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "laneExtension"@en .
+
+transport-att:lightWattage a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "lightWattage"@en ;
+    rdfs:domain transport:StreetLight ;
+    rdfs:range transport:LightWattageValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A wattage of the street light (e.g. 100Watts, 150Watts, 175Watts)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "lightWattage"@en .
+
+transport-att:localRoadNumber a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "localRoadNumber"@en ;
+    rdfs:domain transport:Road ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Identification number assigned to the road by the local road authority."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "localRoadNumber"@en .
+
+transport-att:location a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "location"@en ;
+    rdfs:domain transport:MarkerPost ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Distance from the beginning of the route, or some other reference point, to the point where a marker post is located."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "location"@en .
+
+transport-att:locationIndicatorICAO a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "locationIndicatorICAO"@en ;
+    rdfs:domain transport:Airport ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The four letter ICAO location indicator of the airport/heliport."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "locationIndicatorICAO"@en .
+
+transport-att:maxLengthSpan a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "maxLengthSpan"@en ;
+    rdfs:domain transport:Bridge ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Max length of the span in the bridge."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "maxLengthSpan"@en .
+
+transport-att:maxWeight a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "maxWeight"@en ;
+    rdfs:domain transport:Bridge ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Max weight limit for the bridge."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "maxWeight"@en .
+
+transport-att:nationalRoadNumber a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "nationalRoadNumber"@en ;
+    rdfs:domain transport:Road ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The national number of the road."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "nationalRoadNumber"@en .
+
+transport-att:nominalGauge a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "nominalGauge"@en ;
+    rdfs:domain transport:RailwayLink ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A single value that identifies the track gauge."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "nominalGauge"@en .
+
+transport-att:numberOfLanes a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfLanes"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The number of lanes of a road element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "numberOfLanes"@en .
+
+transport-att:numberOfLanesRoadServices a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfLanesRoadServices"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The number of lanes of a service road element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "numberOfLanesRoadServices"@en .
+
+transport-att:numberOfSpan a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfSpan"@en ;
+    rdfs:domain transport:Bridge ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Number of spans in the bridge."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "numberOfSpan"@en .
+
+transport-att:numberOfTerminals a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfTerminals"@en ;
+    rdfs:domain transport:BusStation ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A number of terminals assigned to a bus station."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "numberOfTerminals"@en .
+
+transport-att:numberOfTracks a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfTracks"@en ;
+    rdfs:domain transport:RailwayLink ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The number of tracks for a railway stretch."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "numberOfTracks"@en .
+
+transport-att:operationalCapacity a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "operationalCapacity"@en ;
+    rdfs:domain transport:WeighStation ;
+    rdfs:range xsd:double ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Operational capacity of the weigh station."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "operationalCapacity"@en .
+
+transport-att:orientation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "orientation"@en ;
+    rdfs:domain transport:TrafficCounter ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "orientation"@en .
+
+transport-att:pavementWidth a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "pavementWidth"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The portion of a street available for vehicular traffic, the width between the faces of the curbs."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "pavementWidth"@en .
+
+transport-att:position a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "position"@en ;
+    rdfs:domain transport:MarkerPost ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The location of the marker."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "position"@en .
+
+transport-att:railwayClass a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "railwayClass"@en ;
+    rdfs:domain transport:RailwayLink ;
+    rdfs:range transport:RailwayClassTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Inidicates whether the railway link is a main line or a side track."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "railwayClass"@en .
+
+transport-att:railwayCondition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "railwayCondition"@en ;
+    rdfs:domain transport:RailwayLink ;
+    rdfs:range transport:PhysicalConditionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Indicates the phisical condition of the transport element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "railwayCondition"@en .
+
+transport-att:railwayNumber a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "railwayNumber"@en ;
+    rdfs:domain transport:RailwayLine ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A number assigned to a railway line which is unique."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "railwayNumber"@en .
+
+transport-att:railwayType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "railwayType"@en ;
+    rdfs:domain transport:RailwayLink ;
+    rdfs:range transport:RailwayTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The type of railway transport to which the line is designed for."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "railwayType"@en .
+
+transport-att:railwayUsage a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "railwayUsage"@en ;
+    rdfs:domain transport:RailwayLink ;
+    rdfs:range transport:RailwayUsageTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The current use of the railway."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "railwayUsage"@en .
+
+transport-att:restriction a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "restriction"@en ;
+    rdfs:domain transport:AccessRestriction ;
+    rdfs:range transport:AccessRestrictionValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Nature of the access restriction."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "restriction"@en .
+
+transport-att:restrictionType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "restrictionType"@en ;
+    rdfs:domain transport:RestrictionForVehicles ;
+    rdfs:range transport:RestrictionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The type of restriction."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "restrictionType"@en .
+
+transport-att:restrictionValue a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "restrictionValue"@en ;
+    rdfs:domain transport:RestrictionForVehicles ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The measure for the restriction."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "restrictionValue"@en .
+
+transport-att:roadClass a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "roadClass"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:range transport:RoadClassTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The hierarchy of roads categorizes roads according to their functions and capacities."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "roadClass"@en .
+
+transport-att:roadCondition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "roadCondition"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:range transport:PhysicalConditionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Physical condition of the road link."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "roadCondition"@en .
+
+transport-att:roadDirection a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "roadDirection"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Indicates direction for transport in road link (e.g. both directions, in direction)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "roadDirection"@en .
+
+transport-att:roadIntersection a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "roadIntersection"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:range transport:RoadIntersectionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Indicates whether road link has type of intersection."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "roadIntersection"@en .
+
+transport-att:roadService a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "roadService"@en ;
+    rdfs:domain transport:RoadServiceArea ;
+    rdfs:range transport:RoadServiceTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Type of road service area."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "roadService"@en .
+
+transport-att:sideWalkAvailability a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "sideWalkAvailability"@en ;
+    rdfs:domain transport:MetroLink ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Indicates whether the side walk is available with a metro link."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "sideWalkAvailability"@en .
+
+transport-att:sideWalkWidth a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "sideWalkWidth"@en ;
+    rdfs:domain transport:MetroLink ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The metro side walk width value if available."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "sideWalkWidth"@en .
+
+transport-att:signText a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "signText"@en ;
+    rdfs:domain transport:RoadSign ;
     rdfs:range xsd:string ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
-    skos:definition "Description of the transport element."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "description"@en .
+    skos:prefLabel "signText"@en .
 
-transport-att:height a owl:ObjectProperty,
+transport-att:signboardColor a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "height"@en ;
-    rdfs:domain transport:ControlTower ;
+    rdfs:label "signboardColor"@en ;
+    rdfs:domain transport:RoadSign ;
+    rdfs:range transport:SignboardColorValue ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
-    skos:definition "Height of the control tower."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "height"@en .
+    skos:prefLabel "signboardColor"@en .
 
-transport-att:name a owl:ObjectProperty,
+transport-att:speed a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "name"@en ;
-    rdfs:domain transport:AbstractTransportType ;
+    rdfs:label "speed"@en ;
+    rdfs:domain transport:DesignSpeed ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
-    skos:definition "Name of the transport element."@en ;
+    skos:definition "The specification of the maximum speed to which a railway line is designed for."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "name"@en .
+    skos:prefLabel "speed"@en .
 
-transport-att:status a owl:ObjectProperty,
+transport-att:speedLimitMinMaxType a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "status"@en ;
-    rdfs:domain transport:AbstractTransportType ;
-    rdfs:range transport:StatusTypeValue ;
+    rdfs:label "speedLimitMinMaxType"@en ;
+    rdfs:domain transport:SpeedLimit ;
+    rdfs:range transport:SpeedLimitMinMaxValue ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
-    skos:definition "Status of the transport element (e.g. projected, under construction)."@en ;
+    skos:definition "Indicates if the speed limit is maximum or minimum and if it is recommended."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "status"@en .
+    skos:prefLabel "speedLimitMinMaxType"@en .
 
-transport-att:width a owl:ObjectProperty,
+transport-att:speedLimitSource a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "width"@en ;
-    rdfs:domain transport:Pathway ;
+    rdfs:label "speedLimitSource"@en ;
+    rdfs:domain transport:SpeedLimit ;
+    rdfs:range transport:SpeedLimitSourceValue ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
-    skos:definition "Width of the pathway."@en ;
+    skos:definition "Source for speed limit."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "width"@en .
+    skos:prefLabel "speedLimitSource"@en .
+
+transport-att:speedLimitValue a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "speedLimitValue"@en ;
+    rdfs:domain transport:SpeedLimit ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Value for speed limit."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "speedLimitValue"@en .
+
+transport-att:startLane a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "startLane"@en ;
+    rdfs:domain transport:SpeedLimit ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Start lane counted from the right side for which speed limit applies."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "startLane"@en .
+
+transport-att:stationCode a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "stationCode"@en ;
+    rdfs:domain transport:RailwayStation ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The unique code assigned to the railway station."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "stationCode"@en .
+
+transport-att:subtype a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "subtype"@en ;
+    rdfs:domain transport:RoadSign ;
+    rdfs:range transport:RoadSignSubtypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "subtype"@en .
+
+transport-att:totalAccident a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "totalAccident"@en ;
+    rdfs:domain transport:BlackSpot ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Total number of an accidents."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "totalAccident"@en .
+
+transport-att:totalDead a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "totalDead"@en ;
+    rdfs:domain transport:BlackSpot ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Total number of dead."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "totalDead"@en .
+
+transport-att:totalInjuries a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "totalInjuries"@en ;
+    rdfs:domain transport:BlackSpot ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Total number of injuries."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "totalInjuries"@en .
+
+transport-att:typeOfSurface a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "typeOfSurface"@en ;
+    rdfs:domain transport:CarriagewayLink ;
+    rdfs:range transport:SurfaceTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Type of road surface (e.g. asphalt, concrete)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "typeOfSurface"@en .
+
+transport-att:validityPeriod a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "validityPeriod"@en ;
+    rdfs:domain transport:SpeedLimit ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Period during which the speed limit is valid."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "validityPeriod"@en .
+
+transport-att:vehicleType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "vehicleType"@en ;
+    rdfs:domain transport:SpeedLimit ;
+    rdfs:range transport:VehicleTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Vehicle type the speed limit is restricted to."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "vehicleType"@en .
+
+transport-att:vehiclesNumber a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "vehiclesNumber"@en ;
+    rdfs:domain transport:Accident ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Number of vehicles participating on an accident."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "vehiclesNumber"@en .
+
+transport-att:verticalClearance a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "verticalClearance"@en ;
+    rdfs:domain transport:Tunnel ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Vertical clearance is the minimum vertical clearance in a tunnel."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "verticalClearance"@en .
+
+transport-att:verticalOverClearance a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "verticalOverClearance"@en ;
+    rdfs:domain transport:Bridge ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Vertical clearance is the minimum vertical clearance over overhead structures."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "verticalOverClearance"@en .
+
+transport-att:verticalUnderClearance a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "verticalUnderClearance"@en ;
+    rdfs:domain transport:Bridge ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Vertical clearance is the minimum vertical clearance under overhead structures."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "verticalUnderClearance"@en .
+
+transport:AccessRestrictionValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Access Restriction Value"@en ;
+    skos:broader transport:codeLists ;
+    skos:definition "A coded domain value denoting a access restriction for a transport element (e.g. private, public access)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Access Restriction Value"@en .
+
+transport:AdvertisementSign a owl:Class,
+        skos:Concept ;
+    rdfs:label "Advertisement Sign"@en ;
+    ogc-ft:hasProperty transport-att:length,
+        transport-att:width ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "Advertisement or sign that is visible from a street, road or public place or by passengers carried on any form of public transport."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Advertisement Sign"@en .
+
+transport:BusStop a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bus Stop"@en ;
+    ogc-ft:hasProperty transport-att:isShelter ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "Designated place where buses stop for passengers to board or alight from a bus."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Bus Stop"@en .
+
+transport:MetroNode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Metro Node"@en ;
+    ogc-ft:hasProperty transport-att:formOfNode ;
+    rdfs:subClassOf transport:TransportNode ;
+    skos:broader transport:TransportNode ;
+    skos:definition "A point feature which represents a significant point along the metro network or defines an intersection of metro tracks used to describe its connectivity."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Metro Node"@en .
+
+transport:RailwayNode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Node"@en ;
+    ogc-ft:hasProperty transport-att:formOfNode ;
+    rdfs:subClassOf transport:TransportNode ;
+    skos:broader transport:TransportNode ;
+    skos:definition "A point feature which represents a significant point along the railway network or defines an intersection of railway tracks used to describe its connectivity."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Railway Node"@en .
+
+transport:RestrictionForVehicles a owl:Class,
+        skos:Concept ;
+    rdfs:label "Restriction For Vehicles"@en ;
+    ogc-ft:hasProperty transport-att:restrictionType,
+        transport-att:restrictionValue ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "Restriction on vehicles on a transport element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Restriction For Vehicles"@en .
+
+transport:RoadArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Area"@en ;
+    ogc-ft:hasProperty transport-att:surface ;
+    rdfs:subClassOf transport:TransportArea ;
+    skos:broader transport:TransportArea ;
+    skos:definition "Surface which extends to the limits of a road, including vehicular areas and other parts of it."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Area"@en .
+
+transport:RoadEdge a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Edge"@en ;
+    ogc-ft:hasProperty transport-att:edge ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
+    skos:definition "The edge of a pavement that is nearest to the road."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Edge"@en .
+
+transport:RoadLaneLink a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Lane Link"@en ;
+    rdfs:subClassOf transport:TransportLink ;
+    skos:broader transport:TransportLink ;
+    skos:definition "A linear feature that describes the geometry and connectivity of a road lane network between two points in the network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Lane Link"@en .
+
+transport:RoadShoulder a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Shoulder"@en ;
+    ogc-ft:hasProperty transport-att:extent ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
+    skos:definition "A shoulder, or hard shoulder is an emergency stopping lane by the verge of a road or motorway, on the right in countries which drive on the right."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Shoulder"@en .
+
+transport:StreetLight a owl:Class,
+        skos:Concept ;
+    rdfs:label "Street Light"@en ;
+    ogc-ft:hasProperty transport-att:bulbType,
+        transport-att:lightWattage ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "A light illuminating a road, typically mounted on a tall post."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Street Light"@en .
+
+transport:SurfaceTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Surface Type Value"@en ;
+    skos:broader transport:codeLists ;
+    skos:definition "Type of road surface e.g. asphalt, soil, concrete."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Surface Type Value"@en .
+
+transport:TrafficLight a owl:Class,
+        skos:Concept ;
+    rdfs:label "Traffic Light"@en ;
+    ogc-ft:hasProperty transport-att:bulbType,
+        transport-att:type ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "A set of automatically operated coloured lights, typically red, amber, and green, for controlling traffic at road junctions, pedestrian crossings, and roundabouts."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Traffic Light"@en .
+
+transport:Tunnel a owl:Class,
+        skos:Concept ;
+    rdfs:label "Tunnel"@en ;
+    ogc-ft:hasProperty transport-att:lighted,
+        transport-att:verticalClearance ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "An underground passage that is open at both ends and usually contains a land transportation route (for example: a road and/or a railway)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Tunnel"@en .
+
+transport:Underpass a owl:Class,
+        skos:Concept ;
+    rdfs:label "Underpass"@en ;
+    ogc-ft:hasProperty transport-att:centerline,
+        transport-att:width ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
+    skos:definition "A road or pedestrian tunnel passing under a road or railway."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Underpass"@en .
+
+transport-att:area a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "area",
+        "area"@en ;
+    rdfs:domain transport:BusStation,
+        transport:CarriagewayLink,
+        transport:RailwayLink,
+        transport:Seaport ;
+    rdfs:range transport:RailwayArea,
+        transport:RoadArea ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "An area of the seaport."@en,
+        "Area of the bus station."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "area",
+        "area"@en .
+
+transport-att:authority a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "authority"@en ;
+    rdfs:domain transport:MaintenanceAuthority,
+        transport:OwnerAuthority ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Identification of the maintenance authority."@en,
+        "Identification of the owning authority."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "authority"@en .
+
+transport-att:bulbType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "bulbType"@en ;
+    rdfs:domain transport:StreetLight,
+        transport:TrafficLight ;
+    rdfs:range transport:BulbTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A type of bulb used by a street light (e.g. fluorescent, high pressure sodium)."@en,
+        "A type of bulb used by a traffic light (e.g. fluorescent, high pressure sodium)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "bulbType"@en .
+
+transport-att:formOfNode a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "formOfNode"@en ;
+    rdfs:domain transport:MetroNode,
+        transport:RailwayNode ;
+    rdfs:range transport:FormOfRailwayNodeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The function of a metro node within the metro network."@en,
+        "The function of a railway node within the railway network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "formOfNode"@en .
+
+transport-att:length a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "length"@en ;
+    rdfs:domain transport:AdvertisementSign,
+        transport:EngineeringStructure ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Length of the advertisement sign."@en,
+        "Length of the engineering structure."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "length"@en .
+
+transport-att:lighted a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "lighted"@en ;
+    rdfs:domain transport:Bridge,
+        transport:Tunnel ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Indicates whether bridge is lighted."@en,
+        "Indicates whether tunnel is lighted."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "lighted"@en .
+
+transport-att:numberOfPlatforms a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "numberOfPlatforms"@en ;
+    rdfs:domain transport:RailwayStation,
+        transport:WeighStation ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The number of platforms which measure weight of vehicles."@en,
+        "Value indicating the number of platforms available at a railway station."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "numberOfPlatforms"@en .
+
+transport-att:surface a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surface"@en ;
+    rdfs:domain transport:PedestrianArea,
+        transport:RoadArea ;
+    rdfs:range transport:SurfaceTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Type of pedestrian area surface (e.g. asphalt, concrete)."@en,
+        "Type of road surface (e.g. asphalt, concrete)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "surface"@en .
+
+transport-att:verticalPosition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "verticalPosition"@en ;
+    rdfs:domain transport:CarriagewayLink,
+        transport:RailwayLink ;
+    rdfs:range transport:VerticalPositionTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Relative vertical position of the road element."@en,
+        "Relative vertical position of the transport element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "verticalPosition"@en .
+
+transport:BlackSpot a owl:Class,
+        skos:Concept ;
+    rdfs:label "Black Spot"@en ;
+    ogc-ft:hasProperty transport-att:totalAccident,
+        transport-att:totalDead,
+        transport-att:totalInjuries ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "A place where road traffic accidents have historically been concentrated."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Black Spot"@en .
 
 transport:ControlTower a owl:Class,
         skos:Concept ;
@@ -404,6 +1845,129 @@ transport:ControlTower a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Control Tower"@en .
 
+transport:Link a owl:Class,
+        skos:Concept ;
+    rdfs:label "Link"@en ;
+    skos:definition "Curvilinear network element that connects two positions and represents a homogeneous path in the network. The connected positions may be represented as nodes."@en ;
+    skos:prefLabel "Link"@en .
+
+transport:LinkSet a owl:Class,
+        skos:Concept ;
+    rdfs:label "Link Set"@en ;
+    skos:definition "A collection of individual links that has a specific function or significance in a network."@en ;
+    skos:prefLabel "Link Set"@en .
+
+transport:MetroLine a owl:Class,
+        skos:Concept ;
+    rdfs:label "Metro Line"@en ;
+    ogc-ft:hasProperty transport-att:name ;
+    rdfs:subClassOf transport:TransportLinkSet ;
+    skos:broader transport:TransportLinkSet ;
+    skos:definition "A collection of metro link sequences and or individual metro links that are characterized by one or more thematical identifiers and/or properties."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Metro Line"@en .
+
+transport:PedestrianArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Pedestrian Area"@en ;
+    ogc-ft:hasProperty transport-att:access,
+        transport-att:extent,
+        transport-att:surface ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
+    skos:definition "Paved, tiled, or otherwise hardened surface intended for pedestrians only."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Pedestrian Area"@en .
+
+transport:PhysicalConditionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Physical Condition Type Value"@en ;
+    skos:broader transport:codeLists ;
+    skos:definition "A coded domain value denoting a physical condition of a transport element (e.g. good, acceptable)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Physical Condition Type Value"@en .
+
+transport:WeighStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Weigh Station"@en ;
+    ogc-ft:hasProperty transport-att:designCapacity,
+        transport-att:numberOfPlatforms,
+        transport-att:operationalCapacity ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "A place near a road where vehicles, especially large trucks, can be weighed."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Weigh Station"@en .
+
+transport-att:centerline a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "centerline"@en ;
+    rdfs:domain transport:EngineeringStructure,
+        transport:Pathway,
+        transport:Underpass ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Geometry of the engineering structure is a line."@en,
+        "Geometry of the pathway."@en,
+        "Geometry of the underpass."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "centerline"@en .
+
+transport-att:extent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extent"@en ;
+    rdfs:domain transport:PedestrianArea,
+        transport:RoadIsland,
+        transport:RoadShoulder ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Geometry of the pedestrian area."@en,
+        "Geometry of the road island."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "extent"@en .
+
+transport-att:height a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "height"@en ;
+    rdfs:domain transport:ControlTower,
+        transport:EngineeringStructure,
+        transport:RoadFurniture ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Height of the control tower."@en,
+        "Height of the engineering structure."@en,
+        "Height of the road furniture."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "height"@en .
+
+transport-att:material a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "material"@en ;
+    rdfs:domain transport:Bridge,
+        transport:Fence,
+        transport:RetainingWall ;
+    rdfs:range transport:MaterialTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Material of the bridge from which it is built."@en,
+        "Material of the fence from which it is built."@en,
+        "Material of the retaining wall from which it is built."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "material"@en .
+
+transport:MetroLink a owl:Class,
+        skos:Concept ;
+    rdfs:label "Metro Link"@en ;
+    ogc-ft:hasProperty transport-att:constructionType,
+        transport-att:sideWalkAvailability,
+        transport-att:sideWalkWidth,
+        transport-att:width ;
+    rdfs:subClassOf transport:RailwayLink ;
+    skos:broader transport:RailwayLink ;
+    skos:definition "The centerline of a railway used by the Metro."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Metro Link"@en .
+
 transport:MetroStation a owl:Class,
         skos:Concept ;
     rdfs:label "Metro Station"@en ;
@@ -413,18 +1977,6 @@ transport:MetroStation a owl:Class,
     skos:definition "A metro station is a type of railway station that is part of a metro, rapid transit system, subway or underground railway line or railway network. Geometry representation of metro station is a center point."@en ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Metro Station"@en .
-
-transport-att:centerpoint a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "centerpoint"@en ;
-    rdfs:domain transport:ControlTower,
-        transport:MetroStation ;
-    rdfs:subClassOf transport:attribute ;
-    skos:broader transport:attribute ;
-    skos:definition "Geometry representation of metro station is a center point."@en,
-        "Location of the control tower."@en ;
-    skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "centerpoint"@en .
 
 transport:Pathway a owl:Class,
         skos:Concept ;
@@ -439,6 +1991,447 @@ transport:Pathway a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Pathway"@en .
 
+transport:RailwayStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Station"@en ;
+    ogc-ft:hasProperty transport-att:centerpoint,
+        transport-att:numberOfPlatforms,
+        transport-att:stationCode ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
+    skos:definition "The location of a railway station along the railway network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Railway Station"@en .
+
+transport:RoadSign a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Sign"@en ;
+    ogc-ft:hasProperty transport-att:signText,
+        transport-att:signboardColor,
+        transport-att:subtype,
+        transport-att:type ;
+    rdfs:subClassOf transport:RoadFurniture ;
+    skos:broader transport:RoadFurniture ;
+    skos:definition "A sign near a road that has information for drivers."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Sign"@en .
+
+transport:Accident a owl:Class,
+        skos:Concept ;
+    rdfs:label "Accident"@en ;
+    ogc-ft:hasProperty transport-att:accidentCategory,
+        transport-att:accidentDate,
+        transport-att:deadNumber,
+        transport-att:injuriesNumber,
+        transport-att:vehiclesNumber ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "An accident that happened on a transport element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Accident"@en .
+
+transport:BusStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bus Station"@en ;
+    ogc-ft:hasProperty transport-att:area,
+        transport-att:numberOfTerminals ;
+    rdfs:subClassOf transport:TransportArea ;
+    skos:broader transport:TransportArea ;
+    skos:definition "A place in a town where buses arrive and depart."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Bus Station"@en .
+
+transport-att:centerpoint a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "centerpoint"@en ;
+    rdfs:domain transport:ControlTower,
+        transport:EngineeringStructure,
+        transport:MetroStation,
+        transport:RailwayStation,
+        transport:TransportProperty ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Geometry of the engineering structure is a point."@en,
+        "Geometry representation of metro station is a center point."@en,
+        "Location of the control tower."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "centerpoint"@en .
+
+transport-att:type a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "type"@en ;
+    rdfs:domain transport:BusRoute,
+        transport:RoadSign,
+        transport:Seaport,
+        transport:TrafficCamera,
+        transport:TrafficLight ;
+    rdfs:range transport:BusRouteTypeValue,
+        transport:RoadSignTypeValue,
+        transport:SeaportTypeValue,
+        transport:TrafficCameraTypeValue,
+        transport:TrafficLightTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A type of the seaport (e.g. commercial or industrial)."@en,
+        "A type of the traffic light (e.g. traffic control signal or pedestrian signal)."@en,
+        "Type of the road sign."@en,
+        "Type of the traffic camera."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "type"@en .
+
+transport-att:width a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "width"@en ;
+    rdfs:domain transport:AdvertisementSign,
+        transport:EngineeringStructure,
+        transport:MetroLink,
+        transport:Pathway,
+        transport:Underpass ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Metro width value."@en,
+        "The width of the underpass."@en,
+        "Width of the advertisement sign."@en,
+        "Width of the engineering structure."@en,
+        "Width of the pathway."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "width"@en .
+
+transport:BusRoute a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bus Route"@en ;
+    ogc-ft:hasProperty transport-att:busRouteNumber,
+        transport-att:type ;
+    rdfs:subClassOf transport:TransportLinkSet ;
+    skos:broader transport:TransportLinkSet ;
+    skos:definition "The route regularly followed by a passenger bus."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Bus Route"@en .
+
+transport:Road a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road"@en ;
+    ogc-ft:hasProperty transport-att:internationalRoadNumber,
+        transport-att:localRoadNumber,
+        transport-att:name,
+        transport-att:nationalRoadNumber ;
+    rdfs:subClassOf transport:TransportLinkSet ;
+    skos:broader transport:TransportLinkSet ;
+    skos:definition "A collection of road links that are characterized by one or more thematic identifiers and/or properties."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road"@en .
+
+transport:Seaport a owl:Class,
+        skos:Concept ;
+    rdfs:label "Seaport"@en ;
+    ogc-ft:hasProperty transport-att:area,
+        transport-att:description,
+        transport-att:name,
+        transport-att:status,
+        transport-att:type ;
+    rdfs:subClassOf transport:TransportNode ;
+    skos:broader transport:TransportNode ;
+    skos:definition "A point which is used to represent a sea port in a simplified way, approximately located at the bank of the waterbody where the port is placed."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Seaport"@en .
+
+transport:MarkerPost a owl:Class,
+        skos:Concept ;
+    rdfs:label "Marker Post"@en ;
+    ogc-ft:hasProperty transport-att:description,
+        transport-att:location,
+        transport-att:position,
+        transport-att:status,
+        transport-att:validFrom,
+        transport-att:validTo ;
+    rdfs:subClassOf transport:NetworkElement ;
+    skos:broader transport:NetworkElement ;
+    skos:definition "Reference marker placed along a route in a transport network, mostly at regular intervals, indicating the distance from the beginning of the route, or some other reference point, to the point where the marker is located."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Marker Post"@en .
+
+transport-att:validFrom a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validFrom"@en ;
+    rdfs:domain transport:MarkerPost,
+        transport:TransportArea,
+        transport:TransportLink,
+        transport:TransportLinkSequence,
+        transport:TransportLinkSet,
+        transport:TransportNode,
+        transport:TransportProperty ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The time when the marker started to exist in the real world."@en,
+        "The time when the transport area started to exist in the real world."@en,
+        "The time when the transport link sequence started to exist in the real world."@en,
+        "The time when the transport link started to exist in the real world."@en,
+        "The time when the transport node started to exist in the real world."@en,
+        "The time when the transport property started to exist in the real world."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "validFrom"@en .
+
+transport-att:validTo a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validTo"@en ;
+    rdfs:domain transport:MarkerPost,
+        transport:TransportArea,
+        transport:TransportLink,
+        transport:TransportLinkSequence,
+        transport:TransportLinkSet,
+        transport:TransportNode,
+        transport:TransportProperty ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "The time from which the marker no longer exists in the real world."@en,
+        "The time from which the transport area no longer exists in the real world."@en,
+        "The time from which the transport link no longer exists in the real world."@en,
+        "The time from which the transport link sequence no longer exists in the real world."@en,
+        "The time from which the transport node no longer exists in the real world."@en,
+        "The time from which the transport property no longer exists in the real world."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "validTo"@en .
+
+transport:Bridge a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bridge"@en ;
+    ogc-ft:hasProperty transport-att:bridgeConstruction,
+        transport-att:lighted,
+        transport-att:material,
+        transport-att:maxLengthSpan,
+        transport-att:maxWeight,
+        transport-att:numberOfSpan,
+        transport-att:verticalOverClearance,
+        transport-att:verticalUnderClearance ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A structure that connects two locations and provides for the passage of a transportation route (for example: a road or a railway) over a terrain obstacle (for example: a waterbody, a gully, and/or a road)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Bridge"@en .
+
+transport:SpeedLimit a owl:Class,
+        skos:Concept ;
+    rdfs:label "Speed Limit"@en ;
+    ogc-ft:hasProperty transport-att:direction,
+        transport-att:laneExtension,
+        transport-att:speedLimitMinMaxType,
+        transport-att:speedLimitSource,
+        transport-att:speedLimitValue,
+        transport-att:startLane,
+        transport-att:validityPeriod,
+        transport-att:vehicleType ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "Limit for the speed of a vehicle on a road."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Speed Limit"@en .
+
+transport-att:description a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "description"@en ;
+    rdfs:domain transport:AbstractTransportType,
+        transport:Airport,
+        transport:EngineeringStructure,
+        transport:MarkerPost,
+        transport:Seaport,
+        transport:TransportArea,
+        transport:TransportLink,
+        transport:TransportProperty ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "Description of the airport."@en,
+        "Description of the marker post."@en,
+        "Description of the seaport."@en,
+        "Description of the transport area element."@en,
+        "Description of the transport element."@en,
+        "Description of the transport link element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "description"@en .
+
+transport-att:status a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "status"@en ;
+    rdfs:domain transport:AbstractTransportType,
+        transport:Airport,
+        transport:EngineeringStructure,
+        transport:MarkerPost,
+        transport:Seaport,
+        transport:TransportArea,
+        transport:TransportLink,
+        transport:TransportProperty ;
+    rdfs:range transport:StatusTypeValue ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A status of the airport (e.g. projected, under construction)."@en,
+        "A status of the seaport (e.g. projected, under construction)."@en,
+        "Status of the engineering structure (e.g. projected, under construction)."@en,
+        "Status of the marker post (e.g. projected, under construction)."@en,
+        "Status of the transport area element (e.g. projected, under construction)."@en,
+        "Status of the transport element (e.g. projected, under construction)."@en,
+        "Status of the transport link element (e.g. projected, under construction)."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "status"@en .
+
+transport-att:name a owl:DatatypeProperty,
+        owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain transport:AbstractTransportType,
+        transport:Airport,
+        transport:EngineeringStructure,
+        transport:MetroLine,
+        transport:Road,
+        transport:Seaport,
+        transport:TransportArea,
+        transport:TransportLink,
+        transport:TransportProperty ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf transport:attribute ;
+    skos:broader transport:attribute ;
+    skos:definition "A geographical name that is used to identify a airport/heliport."@en,
+        "A geographical name that is used to identify a seaport."@en,
+        "A name assigned to a metro line which is unique."@en,
+        "Name of a road, as assigned by the responsible authority."@en,
+        "Name of the transport area element."@en,
+        "Name of the transport element."@en,
+        "Name of the transport link element."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "name"@en .
+
+transport:Airport a owl:Class,
+        skos:Concept ;
+    rdfs:label "Airport"@en ;
+    ogc-ft:hasProperty transport-att:airportCategory,
+        transport-att:airportType,
+        transport-att:code,
+        transport-att:description,
+        transport-att:designatorIATA,
+        transport-att:locationIndicatorICAO,
+        transport-att:name,
+        transport-att:status ;
+    rdfs:subClassOf transport:TransportNode ;
+    skos:broader transport:TransportNode ;
+    skos:definition "A defined site on land or water (including any buildings, installations and equipment) intended to be used either wholly or in part for the arrival, departure and surface movement of aircraft and/or helicopters."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Airport"@en .
+
+transport:TransportLinkSequence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transport Link Sequence"@en ;
+    ogc-ft:hasProperty transport-att:validFrom,
+        transport-att:validTo ;
+    rdfs:subClassOf transport:LinkSequence ;
+    skos:broader transport:LinkSequence ;
+    skos:definition "A line which is composed of an ordered collection of transport links, which represents a continuous path in the transport network without any branches."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Transport Link Sequence"@en .
+
+transport:RailwayLink a owl:Class,
+        skos:Concept ;
+    rdfs:label "Railway Link"@en ;
+    ogc-ft:hasProperty transport-att:electrified,
+        transport-att:nominalGauge,
+        transport-att:numberOfTracks,
+        transport-att:railwayClass,
+        transport-att:railwayCondition,
+        transport-att:railwayType,
+        transport-att:railwayUsage,
+        transport-att:verticalPosition ;
+    rdfs:subClassOf transport:TransportLink ;
+    skos:broader transport:TransportLink ;
+    skos:definition "A linear feature that describes the geometry and connectivity of a railway network between two points in the network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Railway Link"@en .
+
+transport:TransportLinkSet a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transport Link Set"@en ;
+    ogc-ft:hasProperty transport-att:validFrom,
+        transport-att:validTo ;
+    rdfs:subClassOf transport:LinkSet ;
+    skos:broader transport:LinkSet ;
+    skos:definition "A collection of individual transport links that has a specific function or significance in a transport network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Transport Link Set"@en .
+
+transport:CarriagewayLink a owl:Class,
+        skos:Concept ;
+    rdfs:label "Carriageway Link"@en ;
+    ogc-ft:hasProperty transport-att:carriageWayWidth,
+        transport-att:functionalClass,
+        transport-att:numberOfLanes,
+        transport-att:numberOfLanesRoadServices,
+        transport-att:pavementWidth,
+        transport-att:roadClass,
+        transport-att:roadCondition,
+        transport-att:roadDirection,
+        transport-att:roadIntersection,
+        transport-att:typeOfSurface,
+        transport-att:verticalPosition ;
+    rdfs:subClassOf transport:TransportLink ;
+    skos:broader transport:TransportLink ;
+    skos:definition "A linear feature that describes the geometry and connectivity of a carriageway network between two points in the network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Carriageway Link"@en .
+
+transport:TransportLink a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transport Link"@en ;
+    ogc-ft:hasProperty transport-att:description,
+        transport-att:name,
+        transport-att:status,
+        transport-att:validFrom,
+        transport-att:validTo ;
+    rdfs:subClassOf transport:Link ;
+    skos:broader transport:Link ;
+    skos:definition "A line that describes the geometry and connectivity of a transport network between two points in the network."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Transport Link"@en .
+
+transport:TransportNode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transport Node"@en ;
+    ogc-ft:hasProperty transport-att:validFrom,
+        transport-att:validTo ;
+    rdfs:subClassOf transport:Node ;
+    skos:broader transport:Node ;
+    skos:definition "A point which is used for connectivity."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Transport Node"@en .
+
+transport:EngineeringStructure a owl:Class,
+        skos:Concept ;
+    rdfs:label "Engineering Structure"@en ;
+    ogc-ft:hasProperty transport-att:centerline,
+        transport-att:centerpoint,
+        transport-att:condition,
+        transport-att:description,
+        transport-att:envelope,
+        transport-att:groundComposition,
+        transport-att:height,
+        transport-att:length,
+        transport-att:name,
+        transport-att:status,
+        transport-att:width ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Abstract feature class used to describe common attributes for engineering structures e.g. tunnels, bridges, retaining walls."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Engineering Structure"@en .
+
+transport:RoadFurniture a owl:Class,
+        skos:Concept ;
+    rdfs:label "Road Furniture"@en ;
+    ogc-ft:hasProperty transport-att:height ;
+    rdfs:subClassOf transport:TransportProperty ;
+    skos:broader transport:TransportProperty ;
+    skos:definition "Road Furniture includes all fixtures in the road and road reserve. The term includes fixtures on the road, for example, signs, traffic lights or advertisementSign."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Road Furniture"@en .
+
 transport:AbstractTransportType a owl:Class,
         skos:Concept ;
     rdfs:label "Abstract Transport Type"@en ;
@@ -451,11 +2444,34 @@ transport:AbstractTransportType a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Abstract Transport Type"@en .
 
-transport:attribute a owl:Class,
+transport:TransportArea a owl:Class,
         skos:Concept ;
-    rdfs:label "Transport Foundation Theme attribute"@en ;
+    rdfs:label "Transport Area"@en ;
+    ogc-ft:hasProperty transport-att:description,
+        transport-att:name,
+        transport-att:status,
+        transport-att:validFrom,
+        transport-att:validTo ;
+    rdfs:subClassOf transport:NetworkArea ;
+    skos:broader transport:NetworkArea ;
+    skos:definition "Surface that represents the spatial extent of an element of a transport network."@en ;
     skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Transport Foundation Theme attribute"@en .
+    skos:prefLabel "Transport Area"@en .
+
+transport:TransportProperty a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transport Property"@en ;
+    ogc-ft:hasProperty transport-att:centerpoint,
+        transport-att:description,
+        transport-att:name,
+        transport-att:status,
+        transport-att:validFrom,
+        transport-att:validTo ;
+    rdfs:subClassOf transport:NetworkProperty ;
+    skos:broader transport:NetworkProperty ;
+    skos:definition "A reference to a property that falls upon the network. This property can apply to the whole of the network element it is associated with or - for lines - be described using linear referencing."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Transport Property"@en .
 
 transport:codeLists a owl:Class,
         skos:Concept ;
@@ -467,4 +2483,10 @@ ksa-ft:Transport a skos:ConceptScheme ;
     rdfs:label "Transport Foundation Theme"@en ;
     skos:definition "The Transport Foundation Theme is a suite of road, rail, air and maritime transportation networks and related infrastructure, including connections between the different networks."@en ;
     skos:prefLabel "Transport Foundation Theme"@en .
+
+transport:attribute a owl:Class,
+        skos:Concept ;
+    rdfs:label "Transport Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Transport Foundation Theme attribute"@en .
 

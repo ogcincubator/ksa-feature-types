@@ -36,6 +36,16 @@ buildings:BuildingUnit a owl:Class,
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "Building Unit"@en .
 
+buildings-att:area a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "area"@en ;
+    rdfs:domain buildings:SpatialUnit ;
+    rdfs:subClassOf buildings:attribute ;
+    skos:broader buildings:attribute ;
+    skos:definition "The area of the 2D spatial unit."@en ;
+    skos:inScheme ksa-ft:BuildingsTheme ;
+    skos:prefLabel "area"@en .
+
 buildings-att:floorNumber a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "floorNumber"@en ;
@@ -47,17 +57,62 @@ buildings-att:floorNumber a owl:DatatypeProperty,
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "floorNumber"@en .
 
-buildings:attribute a owl:Class,
+buildings-att:name a owl:DatatypeProperty,
         skos:Concept ;
-    rdfs:label "Buildings Theme attribute"@en ;
+    rdfs:label "name"@en ;
+    rdfs:domain buildings:SpatialUnit ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf buildings:attribute ;
+    skos:broader buildings:attribute ;
+    skos:definition "Short textual description of the spatial unit - parcel or building."@en ;
     skos:inScheme ksa-ft:BuildingsTheme ;
-    skos:prefLabel "Buildings Theme attribute"@en .
+    skos:prefLabel "name"@en .
+
+buildings-att:referencePoint a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "referencePoint"@en ;
+    rdfs:domain buildings:SpatialUnit ;
+    rdfs:subClassOf buildings:attribute ;
+    skos:broader buildings:attribute ;
+    skos:definition "The coordinates of a point inside the spatial unit."@en ;
+    skos:inScheme ksa-ft:BuildingsTheme ;
+    skos:prefLabel "referencePoint"@en .
+
+buildings-att:suId a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "suId"@en ;
+    rdfs:domain buildings:SpatialUnit ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf buildings:attribute ;
+    skos:broader buildings:attribute ;
+    skos:definition "Local identifier qualified by registration organization."@en ;
+    skos:inScheme ksa-ft:BuildingsTheme ;
+    skos:prefLabel "suId"@en .
 
 buildings:codeLists a owl:Class,
         skos:Concept ;
     rdfs:label "Buildings Theme code list or type"@en ;
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "Buildings Theme code list or type"@en .
+
+buildings:SpatialUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "Spatial Unit"@en ;
+    ogc-ft:hasProperty buildings-att:area,
+        buildings-att:name,
+        buildings-att:referencePoint,
+        buildings-att:suId ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Single area (or multiple areas) of land and/or water, or a single volume (or multiple volumes) of space."@en ;
+    skos:inScheme ksa-ft:BuildingsTheme ;
+    skos:prefLabel "Spatial Unit"@en .
+
+buildings:attribute a owl:Class,
+        skos:Concept ;
+    rdfs:label "Buildings Theme attribute"@en ;
+    skos:inScheme ksa-ft:BuildingsTheme ;
+    skos:prefLabel "Buildings Theme attribute"@en .
 
 ksa-ft:BuildingsTheme a skos:ConceptScheme ;
     rdfs:label "Buildings Theme"@en ;

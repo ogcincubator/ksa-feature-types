@@ -1,5 +1,6 @@
 @prefix elevation: <https://w3id.org/ksa/feature-types/Elevation/> .
 @prefix elevation-att: <https://w3id.org/ksa/feature-types/Elevation/attribute/> .
+@prefix geology: <https://w3id.org/ksa/feature-types/Geology/> .
 @prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
 @prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -16,41 +17,14 @@ elevation:BathymetricElevationGridCoverageAggregation a owl:Class,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Elevation Grid Coverage Aggregation"@en .
 
-elevation:BathymetricSpotElevationClassValue a owl:Class,
+elevation:LandElevationGridCoverage a owl:Class,
         skos:Concept ;
-    rdfs:label "BathymetricSpotElevationClassValue"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Possible classification values for bathymetric spot elevations based on Topo-Bathy LAS Domain Profile.
-
-NOTE These classes are proposed regardless of the acquisition method of the spot elevation. They correspond to the Topo-Bathy LAS Domain Profile point classes."""@en ;
+    rdfs:label "Land Elevation Grid Coverage"@en ;
+    rdfs:subClassOf elevation:ElevationGridCoverage ;
+    skos:broader elevation:ElevationGridCoverage ;
+    skos:definition "Elevation grid for land elevation.  The value of the grid cells is height which is measured upwards."@en ;
     skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "BathymetricSpotElevationClassValue"@en .
-
-elevation:BreakLineTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Break Line Type"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition "List of possible type values for break lines based on the physical characteristics of the break line [in the elevation surface]."@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Break Line Type"@en .
-
-elevation:ContourLineTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Contour Line Type"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition "List of possible categories of contour lines based on the equidistance parameter of the data set."@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Contour Line Type"@en .
-
-elevation:DepthMeasurementQualityValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Depth Mesurement Quality"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Quality of depth measurement conformant with IHO s-57. 
-
-NOTE S-57 acronym is QUASOU."""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Depth Mesurement Quality"@en .
+    skos:prefLabel "Land Elevation Grid Coverage"@en .
 
 elevation:LandElevationGridCoverageAggregation a owl:Class,
         skos:Concept ;
@@ -60,53 +34,14 @@ elevation:LandElevationGridCoverageAggregation a owl:Class,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Elevation Grid Coverage Aggregation"@en .
 
-elevation:LandSpotElevationClassValue a owl:Class,
+elevation:LandElevationTIN a owl:Class,
         skos:Concept ;
-    rdfs:label "Spot Elevation Class"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Possible classification values for land spot elevations based on the LAS specification maintained by the American Society for Photogrammetry and Remote Sensing (ASPRS).
-
-NOTE These classes are proposed regardless of the acquisition method of the spot elevation. They correspond to the ASPRS Standard LIDAR Point Classes."""@en ;
+    rdfs:label "Land Elevation TIN"@en ;
+    rdfs:subClassOf elevation:ElevationTIN ;
+    skos:broader elevation:ElevationTIN ;
+    skos:definition "Elevation TIN describing land elevation which depicts heights (measured upwards)."@en ;
     skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Spot Elevation Class"@en .
-
-elevation:SoundingExpositionValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Sounding Exposition Value"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Sounding exposition conformant with IHO s-57. 
-
-NOTE S-57 acronym is EXPSOU."""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Sounding Exposition Value"@en .
-
-elevation:SoundingStatusValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "SoundingStatus"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Sounding status conformant with IHO S-101. 
-
-NOTE S-57 acronym is STATUS."""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "SoundingStatus"@en .
-
-elevation:SpotElevationTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Spot Elevation Type"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition "Possible values for spot elevation points that describe a singularity of the surface."@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Spot Elevation Type"@en .
-
-elevation:SurfaceTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Surface Type"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Closed codeList type which determines the elevation surface with regard to its relative adherence to the Earth's bare surface.
-
-EXAMPLE DTM and DSM."""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Surface Type"@en .
+    skos:prefLabel "Land Elevation TIN"@en .
 
 elevation:SurveyTypeValue a owl:Class,
         skos:Concept ;
@@ -118,16 +53,6 @@ NOTE S-101 acronym is SURTYP."""@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Survey Type"@en .
 
-elevation:TechniqueOfSoundingMeasurementValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "TechniqueOfSoundingMeasurement"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Technique of sounding measurement corresponding to IHO s-57 and IHO S-101.
-
-NOTE S-57 and S-101 acronym is TECSOU."""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "TechniqueOfSoundingMeasurement"@en .
-
 elevation-att:CRS a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "CRS" ;
@@ -136,6 +61,35 @@ elevation-att:CRS a owl:ObjectProperty,
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:prefLabel "CRS" .
+
+elevation-att:object a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "object" ;
+    rdfs:domain elevation:BathymetricBreaklineCollection,
+        elevation:BathymetricElevationContourLineCollection,
+        elevation:BathymetricIsolatedAreaCollection,
+        elevation:BathymetricVoidAreaCollection,
+        elevation:DepthAreaCollection,
+        elevation:LandBreakLineCollection,
+        elevation:LandElevationContourLineCollection,
+        elevation:LandIsolatedAreaCollection,
+        elevation:LandSpotElevationCollection,
+        elevation:LandVoidAreaCollection,
+        elevation:SoundingCollection ;
+    rdfs:range elevation:BathymetricBreakLine,
+        elevation:BathymetricElevationContourLine,
+        elevation:BathymetricIsolatedArea,
+        elevation:BathymetricVoidArea,
+        elevation:DepthArea,
+        elevation:LandBreakLine,
+        elevation:LandElevationContourLine,
+        elevation:LandIsolatedArea,
+        elevation:LandSpotElevation,
+        elevation:LandVoidArea,
+        elevation:Sounding ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:prefLabel "object" .
 
 elevation:AcquisitionMethodValue a owl:Class,
         skos:Concept ;
@@ -156,6 +110,34 @@ elevation:BathymetricElevationGridCoverage a owl:Class,
     skos:definition "Elevation grid for bathymetric elevation.  The value of the grid cells is depth which is measured upwards."@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Bathymetric Elevation Grid Coverage"@en .
+
+elevation:BathymetricElevationTIN a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Elevation TIN"@en ;
+    ogc-ft:hasProperty elevation-att:localDepthDatum ;
+    rdfs:subClassOf elevation:ElevationTIN ;
+    skos:broader elevation:ElevationTIN ;
+    skos:definition "Elevation TIN describing bathymetric elevation which depicts depth (measured downwards)."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Elevation TIN"@en .
+
+elevation:BathymetricSpotElevationClassValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "BathymetricSpotElevationClassValue"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Possible classification values for bathymetric spot elevations based on Topo-Bathy LAS Domain Profile.
+
+NOTE These classes are proposed regardless of the acquisition method of the spot elevation. They correspond to the Topo-Bathy LAS Domain Profile point classes."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "BathymetricSpotElevationClassValue"@en .
+
+elevation:BreakLineTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Break Line Type"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition "List of possible type values for break lines based on the physical characteristics of the break line [in the elevation surface]."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Break Line Type"@en .
 
 elevation:CRS a owl:Class,
         skos:Concept ;
@@ -185,6 +167,14 @@ elevation:ChartDatum a owl:Class,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Chart Datum"@en .
 
+elevation:ContourLineTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Contour Line Type"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition "List of possible categories of contour lines based on the equidistance parameter of the data set."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Contour Line Type"@en .
+
 elevation:CoordinateComputationalData a owl:Class,
         skos:Concept ;
     rdfs:label "Coordinate Computational Data"@en ;
@@ -192,6 +182,16 @@ elevation:CoordinateComputationalData a owl:Class,
     skos:definition "Encapsulation of data used to compute points coordinates in specified Coordinate Reference System when points are given in raw form of integers only.  For further explanation see ASPRS LAS file specification 1.4 - R15."@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Coordinate Computational Data"@en .
+
+elevation:DepthMeasurementQualityValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Depth Mesurement Quality"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Quality of depth measurement conformant with IHO s-57. 
+
+NOTE S-57 acronym is QUASOU."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Depth Mesurement Quality"@en .
 
 elevation:DomainProfile a owl:Class,
         skos:Concept ;
@@ -245,6 +245,54 @@ SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/upload
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "LAS point Data Record Format"@en .
 
+elevation:LandSpotElevationClassValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Spot Elevation Class"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Possible classification values for land spot elevations based on the LAS specification maintained by the American Society for Photogrammetry and Remote Sensing (ASPRS).
+
+NOTE These classes are proposed regardless of the acquisition method of the spot elevation. They correspond to the ASPRS Standard LIDAR Point Classes."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Spot Elevation Class"@en .
+
+elevation:SoundingExpositionValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Sounding Exposition Value"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Sounding exposition conformant with IHO s-57. 
+
+NOTE S-57 acronym is EXPSOU."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Sounding Exposition Value"@en .
+
+elevation:SoundingStatusValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "SoundingStatus"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Sounding status conformant with IHO S-101. 
+
+NOTE S-57 acronym is STATUS."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "SoundingStatus"@en .
+
+elevation:SpotElevationTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Spot Elevation Type"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition "Possible values for spot elevation points that describe a singularity of the surface."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Spot Elevation Type"@en .
+
+elevation:SurfaceTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Surface Type"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Closed codeList type which determines the elevation surface with regard to its relative adherence to the Earth's bare surface.
+
+EXAMPLE DTM and DSM."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Surface Type"@en .
+
 elevation:SystemIdentifierValue a owl:Class,
         skos:Concept ;
     rdfs:label "SystemIdentifierValue"@en ;
@@ -256,6 +304,16 @@ NOTE 1 The version 1.0 specification assumed that LAS files are exclusively gene
 SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "SystemIdentifierValue"@en .
+
+elevation:TechniqueOfSoundingMeasurementValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "TechniqueOfSoundingMeasurement"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Technique of sounding measurement corresponding to IHO s-57 and IHO S-101.
+
+NOTE S-57 and S-101 acronym is TECSOU."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "TechniqueOfSoundingMeasurement"@en .
 
 elevation:WDPStorageTypeValue a owl:Class,
         skos:Concept ;
@@ -395,6 +453,19 @@ elevation-att:averageVerticalAccuracy a owl:ObjectProperty,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "averageVerticalAccuracy"@en .
 
+elevation-att:contourLineType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "contourLineType"@en ;
+    rdfs:domain elevation:GenericContourLine ;
+    rdfs:range elevation:ContourLineTypeValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """The type of contour line with regard to the normal contour vertical interval (if any).
+
+NOTE This attribute is often applicable to contour lines describing the relief of a land-based area. For depth contours describing the floor of a water body is not always applicable."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "contourLineType"@en .
+
 elevation-att:coordinateComputationalData a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "coordinateComputationalData"@en ;
@@ -418,6 +489,21 @@ elevation-att:domainProfile a owl:ObjectProperty,
     skos:definition "Domain profile of LAS file associated with this point cloud."@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "domainProfile"@en .
+
+elevation-att:downRight a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "downRight"@en ;
+    rdfs:domain elevation:GenericContourLine ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """Property indicating that the contour line spatial object is digitized in a way that the height of the elevation surface is lower at the right side of the line.
+
+NOTE 1 In the case of land contour lines, when the downRight attribute is 'true' this indicates that the height of the surface is lower at the right side of the line.
+
+NOTE 2 In the case of bathymetry contours, when the downRight attribute is 'true' this indicates that the depth of the surface is higher at the right side of the line."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "downRight"@en .
 
 elevation-att:extent a owl:ObjectProperty,
         skos:Concept ;
@@ -514,6 +600,16 @@ elevation-att:horizontalAccuracy a owl:ObjectProperty,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "horizontalAccuracy"@en .
 
+elevation-att:isoline a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "isoline"@en ;
+    rdfs:domain elevation:GenericContourLine ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Represents the geometric properties of the spatial object."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "isoline"@en .
+
 elevation-att:laserLateral a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "laserLateral"@en ;
@@ -566,20 +662,17 @@ Example 150 lps"""@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "lineScanningSpeed"@en .
 
-elevation-att:localDepthDatum a owl:ObjectProperty,
+elevation-att:maxDepth a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "localDepthDatum"@en ;
-    rdfs:domain elevation:BathymetricElevationGridCoverage ;
-    rdfs:range elevation:ChartDatum ;
+    rdfs:label "maxDepth"@en ;
+    rdfs:domain elevation:DepthArea ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
-    skos:definition """Identification of a local vertical coordinate reference system not included in a registry, which is used to refer depth measurements.
+    skos:definition """Value of the maximum depth of the depth area referred to a specific vertical coordinate reference system.
 
-NOTE This data type is applicable only to bathymetric vector objects.
-
-EXAMPLE Local datums for referring depths in lakes and navigable rivers."""@en ;
+NOTE Attributes "maxDepth" and "minDepth" sholud be expressed in common verical coordinate system."""@en ;
     skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "localDepthDatum"@en .
+    skos:prefLabel "maxDepth"@en .
 
 elevation-att:maxFlyingHeightMSL a owl:ObjectProperty,
         skos:Concept ;
@@ -590,6 +683,18 @@ elevation-att:maxFlyingHeightMSL a owl:ObjectProperty,
     skos:definition "Max flight height expressed in reference to mean sea level."@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "maxFlyingHeightMSL"@en .
+
+elevation-att:minDepth a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "minDepth"@en ;
+    rdfs:domain elevation:DepthArea ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """Value of the minimum depth of the depth area referred to a specific vertical coordinate reference system.
+
+NOTE Attributes "maxDepth" and "minDepth" sholud be expressed in common verical coordinate system."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "minDepth"@en .
 
 elevation-att:minFlyingHeightMSL a owl:ObjectProperty,
         skos:Concept ;
@@ -660,16 +765,26 @@ elevation-att:pointDensity a owl:DatatypeProperty,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "pointDensity"@en .
 
-elevation-att:surfaceType a owl:ObjectProperty,
+elevation-att:position a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "surfaceType"@en ;
-    rdfs:domain elevation:ElevationTIN ;
-    rdfs:range transport:SurfaceTypeValue ;
+    rdfs:label "position"@en ;
+    rdfs:domain elevation:GenericSpotElevation ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
-    skos:definition "Attribute indicating the type of elevation surface that the elevation TIN describes in relation to the Earth's bare surface."@en ;
+    skos:definition "Represents the geometric properties of the spatial object."@en ;
     skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "surfaceType"@en .
+    skos:prefLabel "position"@en .
+
+elevation-att:spotElevationType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "spotElevationType"@en ;
+    rdfs:domain elevation:GenericSpotElevation ;
+    rdfs:range elevation:SpotElevationTypeValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "The type of elevation spot."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "spotElevationType"@en .
 
 elevation-att:syntheticReturnNumbers a owl:DatatypeProperty,
         skos:Concept ;
@@ -740,6 +855,570 @@ SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/upload
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "waveformPacketDescriptor"@en .
 
+elevation:LandBreakLineCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Break Line Collection"@en ;
+    ogc-ft:hasProperty elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Land Break Lines."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Break Line Collection"@en .
+
+elevation:LandElevationContourLine a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Contour Line"@en ;
+    ogc-ft:hasProperty elevation-att:height ;
+    rdfs:subClassOf elevation:GenericContourLine ;
+    skos:broader elevation:GenericContourLine ;
+    skos:definition "A linear feature composed of a set of adjoining locations characterized by having the same height. It describes, together with other contour lines present in the area, the local morphology of the land surface."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Contour Line"@en .
+
+elevation:LandElevationContourLineCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Elevation Contour Line Collection"@en ;
+    ogc-ft:hasProperty elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Land Elevation Contour Lines."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Elevation Contour Line Collection"@en .
+
+elevation:LandIsolatedArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Isolated Area"@en ;
+    ogc-ft:hasProperty elevation-att:geographicalExtent ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "Delimitation of an area of the land surface where an isolated part of the elevation model exists; its outside surroundings have no elevation information.  It includes the delimitation of any island of elevation data which are isolated from the main DEM and may be included inside void areas.  Two Isolated areas can be useful as masks when calculating a more appropriate or accurate DEM."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Isolated Area"@en .
+
+elevation:LandIsolatedAreaCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Isolated Area Collection"@en ;
+    ogc-ft:hasProperty elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Land Isolated Areas."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Isolated Area Collection"@en .
+
+elevation:LandSpotElevationCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Spot Elevation Collection"@en ;
+    ogc-ft:hasProperty elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Land Spot Elevations."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Spot Elevation Collection"@en .
+
+elevation:LandVoidArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Void Area"@en ;
+    ogc-ft:hasProperty elevation-att:geographicalExtent ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "Area of the land surface where the elevation model is unknown because of missing input data. This area is excluded from a DEM. A void area may contain a number of isolated areas with elevation data which are considered as holes of the container void area. Void areas can be useful as masks when calculating a more appropriate or accurate DEM. Source: \"ObscureArea\" [GIS4EU D3.5]."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Void Area"@en .
+
+elevation:LandVoidAreaCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Void Area Collection"@en ;
+    ogc-ft:hasProperty elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Land Void Areas."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Void Area Collection"@en .
+
+elevation-att:breakLineType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "breakLineType"@en ;
+    rdfs:domain elevation:BathymetricBreakLine,
+        elevation:LandBreakLine ;
+    rdfs:range elevation:BreakLineTypeValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "The type of break line with regard the natural or man-made real world characteristic it represents, or the specific function it has in calculating a Digital Elevation Model (DEM)."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "breakLineType"@en .
+
+elevation-att:classification a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "classification"@en ;
+    rdfs:domain elevation:LandSpotElevation,
+        elevation:Sounding ;
+    rdfs:range elevation:BathymetricSpotElevationClassValue,
+        elevation:LandSpotElevationClassValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Class of sounding according to the LAS Domain Profile Description regarding Topo-Bathy Lidar specification of the American Society for Photogrammetry and Remote Sensing (ASPRS)."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "classification"@en .
+
+elevation-att:depth a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "depth"@en ;
+    rdfs:domain elevation:BathymetricElevationContourLine,
+        elevation:Sounding ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Value of the depth of the spatial object referred to a specific vertical coordinate reference system."@en,
+        "Value of the elevation property of the spatial object referred to a specific vertical coordinate reference system."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "depth"@en .
+
+elevation-att:domainExtent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "domainExtent"@en ;
+    rdfs:domain elevation:ElevationGridCoverage,
+        elevation:SoundingCollection ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """Extent of the spatiotemporal domain of the coverage.
+
+SOURCE [ISO 19123:2005].
+
+NOTE 1 The data type EX_Extent, is defined in ISO 19103.  Extents may be specified in both space and time. 
+
+NOTE 2 The domain extent shall be specified at least in space by using EX_BoundingPolygon, EX_GeographicBoundingBox or EX_GeographicDescription.  The whole geographic extent of the elevation coverage is affected, including areas where grid points hold nil reason values."""@en,
+        "The spatial extent of the domain of the SoundingCollection."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "domainExtent"@en .
+
+elevation-att:exposition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "exposition"@en ;
+    rdfs:domain elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range elevation:SoundingExpositionValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """Indicates objects with a ‘value of sounding’ not within the range of depth of the surrounding depth area. These objects could be a potential danger for navigation.
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "exposition"@en .
+
+elevation-att:geographicalName a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geographicalName"@en ;
+    rdfs:domain elevation:DepthArea,
+        elevation:GenericSpotElevation ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "A geographical name that is used to identify a named land or water body's floor location in the real world, which is represented by the spot elevation spatial object."@en,
+        "A geographical name that is used to identify a named land or water body's floor location in the real world, which is represented by this depth area."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "geographicalName"@en .
+
+elevation-att:height a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "height"@en ;
+    rdfs:domain elevation:LandElevationContourLine,
+        elevation:LandSpotElevation ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Value of the elevation property of the spatial object referred to a specific vertical coordinate reference system."@en,
+        "Value of the height of the spatial object referred to a specific vertical coordinate reference system."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "height"@en .
+
+elevation-att:manMadeBreak a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "manMadeBreak"@en ;
+    rdfs:domain elevation:BathymetricBreakLine,
+        elevation:LandBreakLine ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Line which represents an elevation break due to an artificial or man-made construction present on the terrain."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "manMadeBreak"@en .
+
+elevation-att:name a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "The individual name of an object in english and in national language."@en,
+        """The individual name of an object in english and in national language.
+
+NOTE This attribute comes from IHO S-57."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "name"@en .
+
+elevation-att:shape a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "shape"@en ;
+    rdfs:domain elevation:BathymetricBreakLine,
+        elevation:LandBreakLine ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Represents the geometric properties of the spatial object."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "shape"@en .
+
+elevation-att:status a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "status"@en ;
+    rdfs:domain elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range elevation:SoundingStatusValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Status of the sounding conformant with IHO S-57."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "status"@en .
+
+elevation-att:surfaceType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surfaceType"@en ;
+    rdfs:domain elevation:ElevationGridCoverage,
+        elevation:ElevationTIN ;
+    rdfs:range elevation:SurfaceTypeValue,
+        transport:SurfaceTypeValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Attribute indicating the type of elevation surface that the coverage describes in relation to the Earth's bare surface."@en,
+        "Attribute indicating the type of elevation surface that the elevation TIN describes in relation to the Earth's bare surface."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "surfaceType"@en .
+
+elevation-att:surveyAuthority a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surveyAuthority"@en ;
+    rdfs:domain elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """The authority which was responsible for the survey.
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "surveyAuthority"@en .
+
+elevation-att:surveyType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surveyType"@en ;
+    rdfs:domain elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range geology:SurveyTypeValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Type of the survey."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "surveyType"@en .
+
+elevation-att:techniqueOfSoundingMeasurement a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "techniqueOfSoundingMeasurement"@en ;
+    rdfs:domain elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range elevation:TechniqueOfSoundingMeasurementValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "The technique of sounding measurement corresponding to IHO S-57 and S-101."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "techniqueOfSoundingMeasurement"@en .
+
+elevation:BathymetricBreaklineCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Breakline Collection"@en ;
+    ogc-ft:hasProperty elevation-att:localDepthDatum,
+        elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Bathymetric Break Lines."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Breakline Collection"@en .
+
+elevation:BathymetricElevationContourLineCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Elevation Contour Line Collection"@en ;
+    ogc-ft:hasProperty elevation-att:localDepthDatum,
+        elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Bathymetric Elevation Contour Lines."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Elevation Contour Line Collection"@en .
+
+elevation:BathymetricIsolatedArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Isolated Area"@en ;
+    ogc-ft:hasProperty elevation-att:geographicalExtent,
+        elevation-att:localDepthDatum ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "A delineation of an area of the bathymetric surface where an isolated part of the elevation model exists. Its outside surroundings have no elevation information.  They may be included inside void areas. Isolated areas can be useful as masks when calculating a more appropriate or accurate DEM. Adapted from \"IslandArea\" [GIS4EU D3.5]."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Isolated Area"@en .
+
+elevation:BathymetricIsolatedAreaCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Isolated Area Collection"@en ;
+    ogc-ft:hasProperty elevation-att:localDepthDatum,
+        elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Bathymetric Isolated Areas."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Isolated Area Collection"@en .
+
+elevation:BathymetricVoidArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Void Area"@en ;
+    ogc-ft:hasProperty elevation-att:geographicalExtent,
+        elevation-att:localDepthDatum ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "Area of the bathymetric surface where the elevation model is unknown because of missing input data. This area shall be excluded from a DEM.  A void area may contain a number of isolated areas with elevation data, these are considered as holes of the container void area.  Void areas can be useful as masks when calculating a more appropriate or accurate DEM. Source: 'ObscureArea' [GIS4EU D3.5]."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Void Area"@en .
+
+elevation:BathymetricVoidAreaCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Void Area Collection"@en ;
+    ogc-ft:hasProperty elevation-att:localDepthDatum,
+        elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Bathymetric Void Areas."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Void Area Collection"@en .
+
+elevation:DepthAreaCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Depth Area Collection"@en ;
+    ogc-ft:hasProperty elevation-att:localDepthDatum,
+        elevation-att:phenomenonTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Depth Areas."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Depth Area Collection"@en .
+
+elevation:LandSpotElevation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Spot Elevation"@en ;
+    ogc-ft:hasProperty elevation-att:classification,
+        elevation-att:height ;
+    rdfs:subClassOf elevation:GenericSpotElevation ;
+    skos:broader elevation:GenericSpotElevation ;
+    skos:definition "A point feature which describes the elevation of an land Earth's surface at a specific location which provides a single elevation property value.  It often represents a singular point in the morphology of a land or water body's floor surface. The attribute propertyType is equal to 'height' in the case of spot heights or to 'depth' in the case of spot depths."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Spot Elevation"@en .
+
+elevation-att:measurementQuality a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "measurementQuality"@en ;
+    rdfs:domain elevation:DepthArea,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range elevation:DepthMeasurementQualityValue ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """The reliability of the value of sounding.
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "measurementQuality"@en .
+
+elevation:LandBreakLine a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Breakline"@en ;
+    ogc-ft:hasProperty elevation-att:breakLineType,
+        elevation-att:manMadeBreak,
+        elevation-att:shape ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "A line of a critical nature which describes the shape of an land elevation surface and indicates a discontinuity in the slope of the surface (i.e. an abrupt change in gradient).  Breaklines represent local ridges or depressions (streams or drainage lines) in the surface, man-made structures (e.g. roads) etc.  A breakline connects points with different elevation and therefore it is recommended that it is described using 2.5-D coordinates (using the 'geometry' attribute).  A triangle in a TIN may not cross a breakline (breakline segments are enforced as triangle edges), even if doing so violates the triangulation criterion.  All breaklines are located on the ground surface or on any of the artificial structures built on it. Breaklines are useful as input data for the generation of a more appropriate or accurate digital elevation model by using interpolation methods.  Adapted from [ISO 19107:2003]"@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Land Breakline"@en .
+
+elevation-att:description a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "description"@en ;
+    rdfs:domain elevation:BathymetricElevationContourLine,
+        elevation:DepthArea,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """Description.
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "description"@en .
+
+elevation-att:information a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "information"@en ;
+    rdfs:domain elevation:BathymetricElevationContourLine,
+        elevation:DepthArea,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """The information that is shown on paper charts by cautionary and explanatory notes.
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "information"@en .
+
+elevation-att:maxScale a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "maxScale"@en ;
+    rdfs:domain elevation:BathymetricElevationContourLine,
+        elevation:DepthArea,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """The maximum scale at which the object may be used e.g. for ECDIS presentation.
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "maxScale"@en .
+
+elevation-att:minScale a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "minScale"@en ;
+    rdfs:domain elevation:BathymetricElevationContourLine,
+        elevation:DepthArea,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """The minimum scale at which the object may be used e.g. for ECDIS presentation.
+
+SOURCE S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "minScale"@en .
+
+elevation-att:recordingIndictaion a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "recordingIndictaion"@en ;
+    rdfs:domain elevation:BathymetricElevationContourLine,
+        elevation:DepthArea,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """The procedure for the encoding and entering of data.
+
+NOTE 1 This attribute is to ensure S-57 compatibility.
+
+NOTE 2 Information to include: 
+- country (c2): Two letter code according to ISO 3166 (refer to Annex A to S-57 Appendix A) 
+- authority (c2): A string of two alphanumeric characters (refer to Annex A to S-57 Appendix A), e.g. German Bundesamt f&#252;r Seeschiffahrt und Hydrographie = DE; US National Imagery and Mapping Agency = U1.
+- procedure (c4): digitized = digi scanned = scan alpha/numeric input = alph
+
+NOTE 3 Format: c2,c2,c4 (mandatory)
+
+EXAMPLE DK,D1,digi
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "recordingIndictaion"@en .
+
+elevation-att:sourceDate a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "sourceDate"@en ;
+    rdfs:domain elevation:BathymetricElevationContourLine,
+        elevation:DepthArea,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """The production date of the source, e.g. the date of measurement.
+
+NOTE This attribute is to ensure S-57 compatibility.
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "sourceDate"@en .
+
+elevation-att:sourceIndication a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "sourceIndication"@en ;
+    rdfs:domain elevation:BathymetricElevationContourLine,
+        elevation:DepthArea,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """Information about the source of the object.
+
+NOTE 1 This attribute is to ensure S-57 compatibility.
+
+NOTE 2 Information to include: 
+- Country (c2): (mandatory) Two letter code from ISO 3166 (refer to Annex A to S-57 Appendix A)
+- Authority (c2): (mandatory) A string of two alphanumeric characters (refer to Annex A to S-57 Appendix A), e.g. German Bundesamt f&#252;r Seeschiffahrt und Hydrographie = DE; US National Imagery and Mapping Agency = U1.
+-Source (c5): Graphic e.g. plotting sheet, paper chart = graph Report e.g. wreck report = reprt
+- ID-Code (c...): e.g. Code of paper chart
+
+NOTE 3 Format: c2,c2,c5,c...
+
+EXAMPLE DK,D1,graph,chart196
+
+SOURCE IHO S-57"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "sourceIndication"@en .
+
+elevation:BathymetricBreakLine a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Breakline"@en ;
+    ogc-ft:hasProperty elevation-att:breakLineType,
+        elevation-att:localDepthDatum,
+        elevation-att:manMadeBreak,
+        elevation-att:shape ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "A line of a critical nature which describes the shape of an bathymetric elevation surface and indicates a discontinuity in the slope of the surface (i.e. an abrupt change in gradient).  Examples of breaklines include local ridges or depressions (streams or drainage lines) in the surface, man-made structures (e.g. roads), etc.  A breakline connects points with different elevation and therefore its description using 2.5 D coordinates (using the 'geometry' attribute) is recommended.  Triangles in TIN may not cross a breakline (i.e. breakline segments are enforced as triangle edges), even if doing so violates the triangulation criterion.  All breaklines are located on the ground surface or on any of the artificial structures built on it.  Breaklines are useful as input data for the generation of a more appropriate or accurate digital elevation model by using interpolation methods. Adapted from [ISO 19107:2003]."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Breakline"@en .
+
+elevation-att:geographicalExtent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geographicalExtent"@en ;
+    rdfs:domain elevation:BathymetricIsolatedArea,
+        elevation:BathymetricVoidArea,
+        elevation:DepthArea,
+        elevation:LandIsolatedArea,
+        elevation:LandVoidArea ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition "Geographic extent of the depth area."@en,
+        "Represents the geometric properties of the spatial object."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "geographicalExtent"@en .
+
+elevation:ElevationGridCoverage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Elevation Grid Coverage"@en ;
+    ogc-ft:hasProperty elevation-att:domainExtent,
+        elevation-att:phenomenonTime,
+        elevation-att:surfaceType ;
+    rdfs:subClassOf elevation:RectifiedGridCoverage ;
+    skos:broader elevation:RectifiedGridCoverage ;
+    skos:definition "Continuous coverage which uses a systematic tessellation based on a regular rectified quadrilateral grid to cover its domain, where the elevation height is usually known for each of the grid points forming this domain.  Adapted from [ISO 19123:2005]."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Elevation Grid Coverage"@en .
+
 elevation:ElevationTIN a owl:Class,
         skos:Concept ;
     rdfs:label "Elevation TIN"@en ;
@@ -752,31 +1431,145 @@ elevation:ElevationTIN a owl:Class,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Elevation TIN"@en .
 
-elevation:ElevationVectorObject a owl:Class,
+elevation:GenericContourLine a owl:Class,
         skos:Concept ;
-    rdfs:label "Elevation Vector Object"@en ;
-    ogc-ft:hasProperty elevation-att:horizontalAccuracy,
-        elevation-att:phenomenonTime,
-        elevation-att:verticalAccuracy ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
-    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
-    skos:definition "Elevation feature forming part of a vector data set, which participates in the description of the elevation property of a real world surface. It consists of an identity base for all vector objects which can be included as part of an elevation data set.  It is an abstract feature type which generically describes every possible type of elevation vector object. It includes common attributes, properties and constraints for such features."@en ;
+    rdfs:label "Generic Contour Line"@en ;
+    ogc-ft:hasProperty elevation-att:contourLineType,
+        elevation-att:downRight,
+        elevation-att:isoline ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "An abstract linear feature composed of a set of adjoining locations characterized by having the same elevation height or depth. It describes, together with other contour lines present in the area, the local morphology of the Earth's surface."@en ;
     skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Elevation Vector Object"@en .
+    skos:prefLabel "Generic Contour Line"@en .
+
+elevation:GenericSpotElevation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Generic Spot Elevation"@en ;
+    ogc-ft:hasProperty elevation-att:geographicalName,
+        elevation-att:position,
+        elevation-att:spotElevationType ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "A point feature which describes the elevation of an Earth's surface at a specific location. It provides a single elevation property value. The Generic Spot Elevation feature often represents a singular point in the morphology of a land or water body's floor surface. The attribute propertyType is equal to 'height' in the case of spot heights. It is equal to 'depth' in the case of spot depths."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Generic Spot Elevation"@en .
+
+elevation:BathymetricElevationContourLine a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Contour Line"@en ;
+    ogc-ft:hasProperty elevation-att:depth,
+        elevation-att:description,
+        elevation-att:information,
+        elevation-att:localDepthDatum,
+        elevation-att:maxScale,
+        elevation-att:minScale,
+        elevation-att:recordingIndictaion,
+        elevation-att:sourceDate,
+        elevation-att:sourceIndication ;
+    rdfs:subClassOf elevation:GenericContourLine ;
+    skos:broader elevation:GenericContourLine ;
+    skos:definition "A linear feature composed of a set of adjoining locations characterized by having the same elevation depth. It describes, together with other contour lines present in the area, the local morphology of the bathymetry surface."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Contour Line"@en .
+
+elevation:DepthArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Depth Area"@en ;
+    ogc-ft:hasProperty elevation-att:description,
+        elevation-att:geographicalExtent,
+        elevation-att:geographicalName,
+        elevation-att:information,
+        elevation-att:localDepthDatum,
+        elevation-att:maxDepth,
+        elevation-att:maxScale,
+        elevation-att:measurementQuality,
+        elevation-att:minDepth,
+        elevation-att:minScale,
+        elevation-att:recordingIndictaion,
+        elevation-att:sourceDate,
+        elevation-att:sourceIndication ;
+    rdfs:subClassOf elevation:ElevationVectorObject ;
+    skos:broader elevation:ElevationVectorObject ;
+    skos:definition "Bathymetric area with specified maximum and minimum depth."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Depth Area"@en .
+
+elevation-att:localDepthDatum a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "localDepthDatum"@en ;
+    rdfs:domain elevation:BathymetricBreakLine,
+        elevation:BathymetricBreaklineCollection,
+        elevation:BathymetricElevationContourLine,
+        elevation:BathymetricElevationContourLineCollection,
+        elevation:BathymetricElevationGridCoverage,
+        elevation:BathymetricElevationTIN,
+        elevation:BathymetricIsolatedArea,
+        elevation:BathymetricIsolatedAreaCollection,
+        elevation:BathymetricVoidArea,
+        elevation:BathymetricVoidAreaCollection,
+        elevation:DepthArea,
+        elevation:DepthAreaCollection,
+        elevation:Sounding,
+        elevation:SoundingCollection ;
+    rdfs:range elevation:ChartDatum ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:definition """Identification of a local vertical coordinate reference system not included in a registry, which is used to refer depth measurements.
+
+NOTE If local Depth datum is specified, the depth value refers to this depth datum not the CRS associated with the object.
+
+EXAMPLE Local datums for referring depths in lakes and navigable rivers."""@en,
+        """Identification of a local vertical coordinate reference system not included in a registry, which is used to refer depth measurements.
+
+NOTE If local Depth datum is specified, the depth value refers to this depth datum not the CRS associated with this object.
+
+EXAMPLE Local datums for referring depths in lakes and navigable rivers."""@en,
+        """Identification of a local vertical coordinate reference system not included in a registry, which is used to refer depth measurements.
+
+NOTE This data type is applicable only to bathymetric vector objects.
+
+EXAMPLE Local datums for referring depths in lakes and navigable rivers."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "localDepthDatum"@en .
 
 elevation-att:phenomenonTime a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "phenomenonTime"@en ;
-    rdfs:domain elevation:ElevationTIN,
+    rdfs:domain elevation:BathymetricBreaklineCollection,
+        elevation:BathymetricElevationContourLineCollection,
+        elevation:BathymetricIsolatedAreaCollection,
+        elevation:BathymetricVoidAreaCollection,
+        elevation:DepthAreaCollection,
+        elevation:ElevationGridCoverage,
+        elevation:ElevationTIN,
         elevation:ElevationVectorObject,
-        elevation:LASPointCloud ;
+        elevation:LASPointCloud,
+        elevation:LandBreakLineCollection,
+        elevation:LandElevationContourLineCollection,
+        elevation:LandIsolatedAreaCollection,
+        elevation:LandSpotElevationCollection,
+        elevation:LandVoidAreaCollection,
+        elevation:SoundingCollection ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
-    skos:definition """Temporal validity of terrain surface depicted by this TIN.
+    skos:definition """Temporal validity of terrain surface depicted by elements of this data set.
+
+NOTE This attribute carry information at what moment in time the terrain shape looked exactly like the elements of this data set show it.
+
+EXAMPLE 1 Breaklines in that data set were drawn 01 Jan 2016, and they were drawn based on set of points measured 02 Feb 2010. The phenomenon time is 02 Feb 2010 - 02 Feb 2010. 
+
+EXAMPLE 2 Contour lines were drawn 03 Mar 2013, and they were drawn based on DTM raster created 02 Feb 2012 that was generated based on LIDAR point cloud acquired between 01 Jan 2011 and 11 Jan 2011. The phenomenon time is 01 Jan 2011 - 11 Jan 2011"""@en,
+        """Temporal validity of terrain surface depicted by this TIN.
 
 NOTE This attribute carry information at what period in time this TIN depicts actual shape of the terrain.
 
 EXAMPLE TIN was generated 03 Mar 2013, and it was generated based on set of points measured between 01 Jan 2001 and 02 Feb 2002. The phenomenon time is  01 Jan 2001 - 02 Feb 2002."""@en,
+        """Temporal validity of terrain surface depicted by this coverage.
+
+NOTE This attribute carry information at what period in time this coverage depicts actual shape of the terrain.
+
+EXAMPLE Coverage was generated 03 Mar 2013, and it was generated based on set of points measured between 01 Jan 2001 and 02 Feb 2002. The phenomenon time is  01 Jan 2001 - 02 Feb 2002."""@en,
         """Temporal validity of terrain surface depicted by this object.
 
 NOTE This attribute carry information at what moment in time the terrain shape looked exactly like this object show it.
@@ -791,6 +1584,70 @@ EXAMPLE 1 If all points in the point cloud were measured via LIDAR between 01 Ja
 EXAMPLE 2 If some of the points in the point cloud were acquired from stereopair of images shot 05 May 2005 05:05:05 AM, and the rest of the points were measured via LIDAR between 06 Jun 2006 06:06:06 AM and 07 Jun 2006 07:07:07 PM then the range shall be 05 May 2005 05:05:05 AM - 07 Jun 2006 07:07:07 PM."""@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "phenomenonTime"@en .
+
+elevation:Sounding a owl:Class,
+        skos:Concept ;
+    rdfs:label "Sounding"@en ;
+    ogc-ft:hasProperty elevation-att:classification,
+        elevation-att:depth,
+        elevation-att:description,
+        elevation-att:exposition,
+        elevation-att:information,
+        elevation-att:localDepthDatum,
+        elevation-att:maxScale,
+        elevation-att:measurementQuality,
+        elevation-att:minScale,
+        elevation-att:name,
+        elevation-att:recordingIndictaion,
+        elevation-att:sourceDate,
+        elevation-att:sourceIndication,
+        elevation-att:status,
+        elevation-att:surveyAuthority,
+        elevation-att:surveyType,
+        elevation-att:techniqueOfSoundingMeasurement ;
+    rdfs:subClassOf elevation:GenericSpotElevation ;
+    skos:broader elevation:GenericSpotElevation ;
+    skos:definition "A point feature which describes the elevation of an bathymetric Earth's surface at a specific location. It often represents a singular point in the morphology of a land or water body's floor surface. The attribute propertyType is equal to 'height' in the case of spot heights or to 'depth' in the case of spot depths."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Sounding"@en .
+
+elevation:SoundingCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Sounding Collection"@en ;
+    ogc-ft:hasProperty elevation-att:description,
+        elevation-att:domainExtent,
+        elevation-att:exposition,
+        elevation-att:information,
+        elevation-att:localDepthDatum,
+        elevation-att:maxScale,
+        elevation-att:measurementQuality,
+        elevation-att:minScale,
+        elevation-att:name,
+        elevation-att:phenomenonTime,
+        elevation-att:recordingIndictaion,
+        elevation-att:sourceDate,
+        elevation-att:sourceIndication,
+        elevation-att:status,
+        elevation-att:surveyAuthority,
+        elevation-att:surveyType,
+        elevation-att:techniqueOfSoundingMeasurement ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/SpatialDataSet> ;
+    skos:definition "Collection of Soundings (bathymetric spot elevation points)."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Sounding Collection"@en .
+
+elevation:ElevationVectorObject a owl:Class,
+        skos:Concept ;
+    rdfs:label "Elevation Vector Object"@en ;
+    ogc-ft:hasProperty elevation-att:horizontalAccuracy,
+        elevation-att:phenomenonTime,
+        elevation-att:verticalAccuracy ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Elevation feature forming part of a vector data set, which participates in the description of the elevation property of a real world surface. It consists of an identity base for all vector objects which can be included as part of an elevation data set.  It is an abstract feature type which generically describes every possible type of elevation vector object. It includes common attributes, properties and constraints for such features."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Elevation Vector Object"@en .
 
 elevation:codeLists a owl:Class,
         skos:Concept ;

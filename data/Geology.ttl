@@ -5,6 +5,327 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+geology:CompositionPartRoleValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Composition Part Role"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Roles that a compositional part plays in a geological unit"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Composition Part Role"@en .
+
+geology:ExposureValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Exposure"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "The exposure property provides a term for the nature of the expression of the mapped feature at the earth's surface (e.g., exposed, concealed)."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Exposure"@en .
+
+geology:FAOHorizonMasterValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of FAO Horizon Master"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "A code list of the master part of the horizon designation. The allowed values for this code list comprise only the values specified in Guidelines for soil description, 4th edition, Food and Agriculture Organization of the United Nations, Rome, 2006, pp. 67-77"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of FAO Horizon Master"@en .
+
+geology:FAOHorizonSubordinateValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of FAO Horizon Subordinate"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "A code list of designations of subordinate distinctions and features within the master horizons and layers which are based on profile characteristics observable in the field and are applied during the description of the soil at the site. The allowed values for this code list comprise only the values specified in Guidelines for soil description, 4th edition, Food and Agriculture Organization of the United Nations, Rome, 2006, pp. 67-77"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of FAO Horizon Subordinate"@en .
+
+geology:FAOPrimeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of FAO Prime"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "A prime and double prime may be used to connotate the master horizon symbol of the lower of two (prime) or three (double prime) horizons having identical Arabic-numeral prefixes and letter combinations. The allowed values for this code list comprise only the values specified in Guidelines for soil description, 4th edition, Food and Agriculture Organization of the United Nations, Rome, 2006, pp. 67-77"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of FAO Prime"@en .
+
+geology:GeologicalUnitPartRoleValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Geological Unit Part Role"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "The GeologicalUnitPartRoleValue code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register: http://nsdi.sa/codelist/GeologicalUnitPartRoleValue"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Geological Unit Part Role"@en .
+
+geology:HazardCategoryValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Natural Hazard Category"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "A generic classification of types of natural hazards"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Natural Hazard Category"@en .
+
+geology:LithologyTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Lithology Type"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Terms describing the lithology"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Lithology Type"@en .
+
+geology:LithologyValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "LithologyValue"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition """-- Definition --
+Terms describing the lithology.
+
+-- Description --
+EXAMPLE: granite, sandstone, schist."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "LithologyValue"@en .
+
+geology:OtherHorizonNotationTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Other Horizon Notation Type"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "A classification of a soil horizon according to a specific classification system. The allowed values for this coded list alues defined by data providers"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Other Horizon Notation Type"@en .
+
+geology:QuantitativeLikelihood a owl:Class,
+        skos:Concept ;
+    rdfs:label "Quantitative Likelihood"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Measurable, objective data to quantify likelihood."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Quantitative Likelihood"@en .
+
+geology:SpecificHazardTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Specific Hazard Type"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "An additional classification of the natural hazard"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Specific Hazard Type"@en .
+
+geology:WRBQualifierGroupType a owl:Class,
+        skos:Concept ;
+    rdfs:label "Type Of WRB Qualifier Group"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "A data type to define the group of a qualifier and its possible specifier(s), its place and position with regard to the World Reference Base (WRB) Reference Soil Group (RSG) it belongs to according to World reference base for soil resources 2006, first update 2007, World Soil Resources Reports No. 103, Food and Agriculture Organization of the United Nations, Rome, 2007"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Type Of WRB Qualifier Group"@en .
+
+geology:WRBQualifierValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of WRB Qualifier"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "List of possible qualifiers (i.e. prefix and suffix qualifiers of the World Reference Base for Soil Resources). The allowed values for this code list comprise only the values specified in - World reference base for soil resources 2006, first update 2007"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of WRB Qualifier"@en .
+
+geology:WRBReferenceSoilGroupValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value Of WRB Reference Soil Group"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "List of possible reference soil groups (i.e. first level of classification of the World Reference Base for Soil Resources). The allowed values for this code list comprise only the values specified in ?World reference base for soil resources 2006, first update 2007"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value Of WRB Reference Soil Group"@en .
+
+geology:WRBSpecifierValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of WRB Specifier"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "List of possible specifiers. The allowed values for this code list comprise only the values specified in - World reference base for soil resources 2006, first update 2007?"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of WRB Specifier"@en .
+
+geology:WaterSalinityValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Water Salinity"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition """A code list indicating salinity classes in water
+NOTE:Salinity  is  the  saltiness  or  dissolved  salt  content  of  a  body  of  water. Generally,  it  is the  concentration  of  mineral  salts  dissolved  in  water.  Salinity  may  be  expressed  in terms  of  a  concentration  or  as  electrical  conductivity.  When  describing  salinity influenced  by  seawater  salinity  often  refers  to  the concentration  of  chlorides  in  the water. See also total dissolved solids"""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Water Salinity"@en .
+
+geology-att:aquiclude a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "aquiclude" ;
+    rdfs:domain geology:AquiferSystem ;
+    rdfs:range geology:Aquiclude ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "aquiclude" .
+
+geology-att:aquifer a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "aquifer" ;
+    rdfs:domain geology:AquiferSystem,
+        geology:Aquitard,
+        geology:HydrogeologicalObject ;
+    rdfs:range geology:Aquifer ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "aquifer" .
+
+geology-att:aquiferSystem a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "aquiferSystem" ;
+    rdfs:domain geology:Aquifer,
+        geology:Aquitard ;
+    rdfs:range geology:AquiferSystem ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "aquiferSystem" .
+
+geology-att:aquiferSysterm a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "aquiferSysterm" ;
+    rdfs:domain geology:GroundWaterBody ;
+    rdfs:range geology:AquiferSystem ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "aquiferSysterm" .
+
+geology-att:aquitard a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "aquitard" ;
+    rdfs:domain geology:Aquifer,
+        geology:AquiferSystem ;
+    rdfs:range geology:Aquitard ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "aquitard" .
+
+geology-att:borehole a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "borehole" ;
+    rdfs:domain geology:WaterWell ;
+    rdfs:range geology:Borehole ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "borehole" .
+
+geology-att:commodityDescription a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "commodityDescription" ;
+    rdfs:domain geology:EarthResource ;
+    rdfs:range geology:Commodity ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "commodityDescription" .
+
+geology-att:deposit a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "deposit" ;
+    rdfs:domain geology:MiningActivity ;
+    rdfs:range geology:EarthResource ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "deposit" .
+
+geology-att:geologicHistory a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geologicHistory" ;
+    rdfs:domain geology:GeologicalFeature ;
+    rdfs:range geology:GeologicalEvent ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "geologicHistory" .
+
+geology-att:groundWaterBody a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "groundWaterBody" ;
+    rdfs:domain geology:HydrogeologicalObjectNatural,
+        geology:WaterWell ;
+    rdfs:range geology:GroundWaterBody ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "groundWaterBody" .
+
+geology-att:hydrogeologicalObject a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "hydrogeologicalObject" ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:range geology:HydrogeologicalObject ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "hydrogeologicalObject" .
+
+geology-att:hydrogeologicalObjectManMade a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "hydrogeologicalObjectManMade" ;
+    rdfs:domain geology:GroundWaterBody ;
+    rdfs:range geology:HydrogeologicalObjectNatural ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "hydrogeologicalObjectManMade" .
+
+geology-att:locatedOn a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "locatedOn" ;
+    rdfs:domain geology:SoilPlot ;
+    rdfs:range geology:SoilSite ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "locatedOn" .
+
+geology-att:logElement a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "logElement" ;
+    rdfs:domain geology:Borehole ;
+    rdfs:range geology:MappedInterval ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "logElement" .
+
+geology-att:relatedFeature a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "relatedFeature" ;
+    rdfs:domain geology:GeologicalFeature ;
+    rdfs:range geology:GeologicalFeature ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "relatedFeature" .
+
+geology-att:resourceExtraction a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "resourceExtraction" ;
+    rdfs:domain geology:EarthResource ;
+    rdfs:range geology:MiningActivity ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "resourceExtraction" .
+
+geology-att:source a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "source" ;
+    rdfs:domain geology:Commodity,
+        geology:RiskZone ;
+    rdfs:range geology:EarthResource,
+        geology:HazardArea ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "source" .
+
+geology-att:waterWell a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "waterWell" ;
+    rdfs:domain geology:GroundWaterBody ;
+    rdfs:range geology:WaterWell ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:prefLabel "waterWell" .
+
+geology:AnthropogenicGeomorphologicalFeature a owl:Class,
+        skos:Concept ;
+    rdfs:label "Anthropogenic Geomorphological Feature"@en ;
+    ogc-ft:hasProperty geology-att:anthropogenicGeomorphologicalFeatureTypeTerm ;
+    rdfs:subClassOf geology:GeomorphologicalFeature ;
+    skos:broader geology:GeomorphologicalFeature ;
+    skos:definition "An anthropogenic geomorphological feature is a geomorphological feature (i.e., landform) which has been created by human activity.  For example, a dredged channel, midden, open pit or reclaimed land."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Anthropogenic Geomorphological Feature"@en .
 
 geology:AnthropogenicGeomorphologicalFeatureTypeValue a owl:Class,
         skos:Concept ;
@@ -13,6 +334,15 @@ geology:AnthropogenicGeomorphologicalFeatureTypeValue a owl:Class,
     skos:definition "The types of anthropogenic geomorphological feature"@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Anthropogenic Geomorphological Feature Type"@en .
+
+geology:Aquiclude a owl:Class,
+        skos:Concept ;
+    rdfs:label "Aquiclude"@en ;
+    rdfs:subClassOf geology:HydrogeologicalUnit ;
+    skos:broader geology:HydrogeologicalUnit ;
+    skos:definition "An impermeable body of rock or stratum of sediment that acts as a barrier to the flow of groundwater, which, although porous and capable of absorbing water slowly, will not transmit water fast enough to furnish an appreciable supply for a well or spring. Aquicludes are characterized by very low values of \"leakage\" (the ratio of vertical Hydraulic Conductivity to thickness), so that they transmit only minor inter-aquifer flow and also have very low rates of yield from compressible storage. Therefore, they constitute boundaries of aquifer flow systems."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Aquiclude"@en .
 
 geology:AquiferMediaTypeValue a owl:Class,
         skos:Concept ;
@@ -29,6 +359,14 @@ geology:AquiferTypeValue a owl:Class,
     skos:definition "Types of aquifers"@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Aquifer Type"@en .
+
+geology:BoreholePurposeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Borehole Purpose"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Purposes for which a borehole was drilled"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Borehole Purpose"@en .
 
 geology:CampaignTypeValue a owl:Class,
         skos:Concept ;
@@ -66,13 +404,14 @@ geology:CompositionPart a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Composition Part"@en .
 
-geology:CompositionPartRoleValue a owl:Class,
+geology:ConditionOfGroundwaterValue a owl:Class,
         skos:Concept ;
-    rdfs:label "Value of Composition Part Role"@en ;
+    rdfs:label "Value of Condition Of Groundwater"@en ;
     skos:broader geology:codeLists ;
-    skos:definition "Roles that a compositional part plays in a geological unit"@en ;
+    skos:definition """Values  indicating  the  approximate  degree  of  change  which  has  taken  place  on  the natural state of groundwater
+NOTE: The groundwater in a GroundWaterFlowSystem is in a variable condition, dependent on external factors, among which are diverse human activities"""@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Composition Part Role"@en .
+    skos:prefLabel "Value of Condition Of Groundwater"@en .
 
 geology:DescriptionPurposeValue a owl:Class,
         skos:Concept ;
@@ -99,22 +438,6 @@ Values indicating the end-use potential of the mineral."""@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "EndusePotentialValue"@en .
 
-geology:EventEnvironmentalValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Event Environmental"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Terms for the geologic environments within which geologic events take place"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Event Environmental"@en .
-
-geology:EventProcessValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Event Process"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Terms specifying the process or processes that occurred during an event"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Event Process"@en .
-
 geology:ExplorationResultValue a owl:Class,
         skos:Concept ;
     rdfs:label "ExplorationResultValue"@en ;
@@ -124,14 +447,6 @@ Values indicating the result of the exploration activity."""@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "ExplorationResultValue"@en .
 
-geology:ExposureValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Exposure"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "The exposure property provides a term for the nature of the expression of the mapped feature at the earth's surface (e.g., exposed, concealed)."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Exposure"@en .
-
 geology:ExpressionCategoryValue a owl:Class,
         skos:Concept ;
     rdfs:label "Value of Expression Category"@en ;
@@ -140,14 +455,6 @@ geology:ExpressionCategoryValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Expression Category"@en .
 
-geology:FAOHorizonMasterValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of FAO Horizon Master"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A code list of the master part of the horizon designation. The allowed values for this code list comprise only the values specified in Guidelines for soil description, 4th edition, Food and Agriculture Organization of the United Nations, Rome, 2006, pp. 67-77"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of FAO Horizon Master"@en .
-
 geology:FAOHorizonNotationType a owl:Class,
         skos:Concept ;
     rdfs:label "Type Of FAO Horizon Notation"@en ;
@@ -155,22 +462,6 @@ geology:FAOHorizonNotationType a owl:Class,
     skos:definition "A classification of a horizon according to the Horizon classification system specified in Guidelines for soil description, 4th edition, Food and Agriculture Organization of the United Nations, Rome, 2006."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Type Of FAO Horizon Notation"@en .
-
-geology:FAOHorizonSubordinateValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of FAO Horizon Subordinate"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A code list of designations of subordinate distinctions and features within the master horizons and layers which are based on profile characteristics observable in the field and are applied during the description of the soil at the site. The allowed values for this code list comprise only the values specified in Guidelines for soil description, 4th edition, Food and Agriculture Organization of the United Nations, Rome, 2006, pp. 67-77"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of FAO Horizon Subordinate"@en .
-
-geology:FAOPrimeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of FAO Prime"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A prime and double prime may be used to connotate the master horizon symbol of the lower of two (prime) or three (double prime) horizons having identical Arabic-numeral prefixes and letter combinations. The allowed values for this code list comprise only the values specified in Guidelines for soil description, 4th edition, Food and Agriculture Organization of the United Nations, Rome, 2006, pp. 67-77"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of FAO Prime"@en .
 
 geology:FaultTypeValue a owl:Class,
         skos:Concept ;
@@ -196,6 +487,16 @@ geology:FloodTypeClassValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "FloodTypeClassValue"@en .
 
+geology:Fold a owl:Class,
+        skos:Concept ;
+    rdfs:label "Fold"@en ;
+    ogc-ft:hasProperty geology-att:profileType ;
+    rdfs:subClassOf geology:GeologicalStructure ;
+    skos:broader geology:GeologicalStructure ;
+    skos:definition "A fold is formed by one or more systematically curved layers, surfaces, or lines in a rock body. A fold denotes a structure formed by the deformation of a geological structure, such as a contact which the original undeformed geometry is presumed, to form a structure that may be described by the translation of an abstract line (the fold axis) parallel to itself along some curvilinear path (the fold profile). Folds have a hinge zone (zone of maximum curvature along the surface) and limbs (parts of the deformed surface not in the hinge zone). Folds are described by an axial surface, hinge line, profile geometry, the solid angle between the limbs, and the relationships between adjacent folded surfaces if the folded structure is a Layering fabric."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Fold"@en .
+
 geology:FoldProfileTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Value of Fold Profile Type"@en ;
@@ -211,22 +512,6 @@ geology:FormCategoryValue a owl:Class,
     skos:definition "Refers to a vocabulary of terms specifying the orebody's typical and structural relationship to wallrocks and associated rocls."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Form Category"@en .
-
-geology:GeochronologicEraValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Geochronologic Era"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Terms specifying recognised geological time units"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Geochronologic Era"@en .
-
-geology:GeologicalUnitPartRoleValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Geological Unit Part Role"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "The GeologicalUnitPartRoleValue code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register: http://nsdi.sa/codelist/GeologicalUnitPartRoleValue"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Geological Unit Part Role"@en .
 
 geology:GeologicalUnitTypeValue a owl:Class,
         skos:Concept ;
@@ -244,13 +529,25 @@ geology:GeomorphologicalActivityValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Geomorphologic Activity"@en .
 
-geology:HazardCategoryValue a owl:Class,
+geology:GeophProfile a owl:Class,
         skos:Concept ;
-    rdfs:label "Value of Natural Hazard Category"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A generic classification of types of natural hazards"@en ;
+    rdfs:label "Geoph Profile"@en ;
+    ogc-ft:hasProperty geology-att:profileType ;
+    rdfs:subClassOf geology:GeophMeasurement ;
+    skos:broader geology:GeophMeasurement ;
+    skos:definition "Geophysical measurement spatially referenced to a line which is used to collect data along  the line. Examples include 2D seismic line (field measurement), borehole logging, airborne geophysical flight line."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Natural Hazard Category"@en .
+    skos:prefLabel "Geoph Profile"@en .
+
+geology:GeophSwath a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geoph Swath"@en ;
+    ogc-ft:hasProperty geology-att:swathType ;
+    rdfs:subClassOf geology:GeophMeasurement ;
+    skos:broader geology:GeophMeasurement ;
+    skos:definition "Geophysical measurement spatially referenced to a surface used to collect data over a surface, for example, a 3D seismic swath."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geoph Swath"@en .
 
 geology:HydroGeochemicalRockTypeValue a owl:Class,
         skos:Concept ;
@@ -280,33 +577,22 @@ geology:LayerGenesisProcessStateValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Layer Genesis Process State"@en .
 
-geology:LayerTypeValue a owl:Class,
+geology:LikelihoodOfOccurrence a owl:Class,
         skos:Concept ;
-    rdfs:label "Value of Layer Type"@en ;
+    rdfs:label "Likelihood Of Occurrence"@en ;
     skos:broader geology:codeLists ;
-    skos:definition "Classification of a layer according to the concept that fits the purpose"@en ;
+    skos:definition "A general concept relating to the chance of an event occurring. It generally expressed as a probability or a frequency."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Layer Type"@en .
+    skos:prefLabel "Likelihood Of Occurrence"@en .
 
-geology:LithologyTypeValue a owl:Class,
+geology:MappedInterval a owl:Class,
         skos:Concept ;
-    rdfs:label "Value of Lithology Type"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Terms describing the lithology"@en ;
+    rdfs:label "Mapped Interval"@en ;
+    rdfs:subClassOf geology:MappedFeature ;
+    skos:broader geology:MappedFeature ;
+    skos:definition "A special kind of mapped feature whose shape is a 1-D interval and which uses the SRS of the containing borehole"@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Lithology Type"@en .
-
-geology:LithologyValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "LithologyValue"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition """-- Definition --
-Terms describing the lithology.
-
--- Description --
-EXAMPLE: granite, sandstone, schist."""@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "LithologyValue"@en .
+    skos:prefLabel "Mapped Interval"@en .
 
 geology:MappingFrameValue a owl:Class,
         skos:Concept ;
@@ -356,12 +642,6 @@ geology:NetworkNameValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Network Name"@en .
 
-geology:ObservedEvent a owl:Class,
-        skos:Concept ;
-    rdfs:label "Observed Event"@en ;
-    skos:definition "Discrete features representing natural phenomenon relevant to the study of a natural hazard which has occurred, or is currently occurring, and which has been observed."@en ;
-    skos:prefLabel "Observed Event"@en .
-
 geology:OtherHorizonNotationType a owl:Class,
         skos:Concept ;
     rdfs:label "Type Of Other Horizon Notation"@en ;
@@ -370,14 +650,6 @@ geology:OtherHorizonNotationType a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Type Of Other Horizon Notation"@en .
 
-geology:OtherHorizonNotationTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Other Horizon Notation Type"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A classification of a soil horizon according to a specific classification system. The allowed values for this coded list alues defined by data providers"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Other Horizon Notation Type"@en .
-
 geology:OtherSoilNameTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Value of Other Soil Name Type"@en ;
@@ -385,6 +657,22 @@ geology:OtherSoilNameTypeValue a owl:Class,
     skos:definition "An identification of the soil profile according to a specific classification scheme. The allowed values for this coded list comprise the values defined by data providers"@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Other Soil Name Type"@en .
+
+geology:ParticleSizeFractionType a owl:Class,
+        skos:Concept ;
+    rdfs:label "Type Of Particle Size Fraction"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Share of the soil that is composed of mineral soil particles of the size within the size range specified."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Type Of Particle Size Fraction"@en .
+
+geology:PiezometricState a owl:Class,
+        skos:Concept ;
+    rdfs:label "State Of Piezometric"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "The piezometric state of a GroundWaterBody."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "State Of Piezometric"@en .
 
 geology:PlatformTypeValue a owl:Class,
         skos:Concept ;
@@ -410,21 +698,13 @@ geology:ProfileTypeValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Profile Type"@en .
 
-geology:QuantitativeLikelihood a owl:Class,
+geology:RangeType a owl:Class,
         skos:Concept ;
-    rdfs:label "Quantitative Likelihood"@en ;
+    rdfs:label "Type Of Range"@en ;
     skos:broader geology:codeLists ;
-    skos:definition "Measurable, objective data to quantify likelihood."@en ;
+    skos:definition "A range value defined by an upper limit and a lower limit"@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Quantitative Likelihood"@en .
-
-geology:QuantityValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value Of Quantity"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Data container with a single quantity or a range of quantity values."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value Of Quantity"@en .
+    skos:prefLabel "Type Of Range"@en .
 
 geology:ShapeCategoryValue a owl:Class,
         skos:Concept ;
@@ -433,6 +713,16 @@ geology:ShapeCategoryValue a owl:Class,
     skos:definition "Refers to a vocabulary of terms specifying the typical shape of the Earth Resource."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Shape Category"@en .
+
+geology:ShearDisplacementStructure a owl:Class,
+        skos:Concept ;
+    rdfs:label "Shear Displacement Structure"@en ;
+    ogc-ft:hasProperty geology-att:faultType ;
+    rdfs:subClassOf geology:GeologicalStructure ;
+    skos:broader geology:GeologicalStructure ;
+    skos:definition "A shear displacement structure includes all brittle to ductile style structures along which displacement has occurred, from a simple, single 'planar' brittle or ductile surface to a fault system comprised of tens of strands of both brittle and ductile nature. This structure may have some significant thickness (a deformation zone) and have an associated body of deformed rock that may be considered a deformation unit (for which the geologicalUnitType is 'DeformationUnit') which can be associated to the ShearDisplacementStructure using the GeologicalFeatureRelation from the GeoSciML Extension package."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Shear Displacement Structure"@en .
 
 geology:SoilInvestigationPurposeValue a owl:Class,
         skos:Concept ;
@@ -449,14 +739,6 @@ geology:SoilPlotTypeValue a owl:Class,
     skos:definition "List of possible values that give information on what kind of plot the observation of the soil is made"@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Soil Plot Type"@en .
-
-geology:SpecificHazardTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Specific Hazard Type"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "An additional classification of the natural hazard"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Specific Hazard Type"@en .
 
 geology:StationRankValue a owl:Class,
         skos:Concept ;
@@ -514,30 +796,6 @@ geology:ThematicClassificationValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Thematic Classification"@en .
 
-geology:WRBQualifierGroupType a owl:Class,
-        skos:Concept ;
-    rdfs:label "Type Of WRB Qualifier Group"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A data type to define the group of a qualifier and its possible specifier(s), its place and position with regard to the World Reference Base (WRB) Reference Soil Group (RSG) it belongs to according to World reference base for soil resources 2006, first update 2007, World Soil Resources Reports No. 103, Food and Agriculture Organization of the United Nations, Rome, 2007"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Type Of WRB Qualifier Group"@en .
-
-geology:WRBQualifierValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of WRB Qualifier"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "List of possible qualifiers (i.e. prefix and suffix qualifiers of the World Reference Base for Soil Resources). The allowed values for this code list comprise only the values specified in - World reference base for soil resources 2006, first update 2007"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of WRB Qualifier"@en .
-
-geology:WRBReferenceSoilGroupValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value Of WRB Reference Soil Group"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "List of possible reference soil groups (i.e. first level of classification of the World Reference Base for Soil Resources). The allowed values for this code list comprise only the values specified in ?World reference base for soil resources 2006, first update 2007"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value Of WRB Reference Soil Group"@en .
-
 geology:WRBSoilNameType a owl:Class,
         skos:Concept ;
     rdfs:label "Type Of WRB Soil Name"@en ;
@@ -545,14 +803,6 @@ geology:WRBSoilNameType a owl:Class,
     skos:definition "An identification of the soil profile according to the profile to according to World Reference Base for Soil Resources 2006, first update 2007, World Soil Resources Reports No. 103. FAO, Rome."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Type Of WRB Soil Name"@en .
-
-geology:WRBSpecifierValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of WRB Specifier"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "List of possible specifiers. The allowed values for this code list comprise only the values specified in - World reference base for soil resources 2006, first update 2007?"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of WRB Specifier"@en .
 
 geology:WaterPersistenceValue a owl:Class,
         skos:Concept ;
@@ -562,14 +812,13 @@ geology:WaterPersistenceValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Water Persistence"@en .
 
-geology:WaterSalinityValue a owl:Class,
+geology:WaterTypeValue a owl:Class,
         skos:Concept ;
-    rdfs:label "Value of Water Salinity"@en ;
+    rdfs:label "Value of Water Type"@en ;
     skos:broader geology:codeLists ;
-    skos:definition """A code list indicating salinity classes in water
-NOTE:Salinity  is  the  saltiness  or  dissolved  salt  content  of  a  body  of  water. Generally,  it  is the  concentration  of  mineral  salts  dissolved  in  water.  Salinity  may  be  expressed  in terms  of  a  concentration  or  as  electrical  conductivity.  When  describing  salinity influenced  by  seawater  salinity  often  refers  to  the concentration  of  chlorides  in  the water. See also total dissolved solids"""@en ;
+    skos:definition "Classification of water types"@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Water Salinity"@en .
+    skos:prefLabel "Value of Water Type"@en .
 
 geology:WaterWellTypeValue a owl:Class,
         skos:Concept ;
@@ -579,138 +828,76 @@ geology:WaterWellTypeValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of AcitveWell Type"@en .
 
-geology-att:aquiferSysterm a owl:ObjectProperty,
+geology-att:FAOHorizonNotation a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "aquiferSysterm" ;
-    rdfs:domain geology:GroundWaterBody ;
-    rdfs:range geology:AquiferSystem ;
+    rdfs:label "FAOHorizonNotation"@en ;
+    rdfs:domain geology:SoilHorizon ;
+    rdfs:range geology:FAOHorizonNotationType ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:prefLabel "aquiferSysterm" .
+    skos:definition """Designation of the soil horizon.
+NOTE: The FAO horizon notation is a code system characterizing horizons regarding the dominant soil forming processes that have been active during the horizon formation. This code summarizes many observations of the soil description and gives an impression about the genetic processes that have formed the soil under observation. 
+The horizon notation is a combination of several letter, number and symbols.
+SOURCE Guidelines for soil description, 4<sup>th</sup> edition, Food and Agricultural Organization of the United Nations, Rome, 2006
+EXAMPLE Bw: meaning B horizon with a development of colour and/or structure."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "FAOHorizonNotation"@en .
 
-geology-att:hydrogeologicalObjectManMade a owl:ObjectProperty,
+geology-att:FAOSoilName a owl:DatatypeProperty,
         skos:Concept ;
-    rdfs:label "hydrogeologicalObjectManMade" ;
-    rdfs:domain geology:GroundWaterBody ;
-    rdfs:range geology:HydrogeologicalObjectNatural ;
+    rdfs:label "FAOSoilName"@en ;
+    rdfs:domain geology:SoilProfile ;
+    rdfs:range xsd:string ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:prefLabel "hydrogeologicalObjectManMade" .
+    skos:definition "Identification of the soil profile according to a FAO classification scheme."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "FAOSoilName"@en .
 
-geology-att:logElement a owl:ObjectProperty,
+geology-att:WRBSoilName a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "logElement" ;
-    rdfs:domain geology:Borehole ;
-    rdfs:range geology:MappedInterval ;
+    rdfs:label "WRBSoilName"@en ;
+    rdfs:domain geology:SoilProfile ;
+    rdfs:range geology:WRBSoilNameType ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:prefLabel "logElement" .
+    skos:definition """identification of the soil profile.
+NOTE: The structure of the WRBSoilNameType was based on the World reference base for soil resources 2006, first update 2007. World Soil Resources Reports no 103. Food and Agriculture Organization of the United Nations, Rome 2007.
+EXAMPLE Lixic Vertic Ferralsol (Ferric, Rhodic); WRB version 2006 (update 2007) or 2010."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "WRBSoilName"@en .
 
-geology-att:waterWell a owl:ObjectProperty,
+geology-att:activity a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "waterWell" ;
-    rdfs:domain geology:GroundWaterBody ;
-    rdfs:range geology:WaterWell ;
+    rdfs:label "activity"@en ;
+    rdfs:domain geology:NaturalGeomorphologicalFeature ;
+    rdfs:range geology:GeomorphologicalActivityValue ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:prefLabel "waterWell" .
-
-geology:AquiferSystem a owl:Class,
-        skos:Concept ;
-    rdfs:label "Aquifer System"@en ;
-    skos:definition "A collection of aquifers and aquitards, which together constitute the environment of groundwater - \"communicating vessels\" - that are filled, or can be filled, with water. Attributes of Aquifer System and its components determine the feasibility of water collection, its movement, as well as the impact on its chemical state. The Aquifer System components and their attributes (including geometry) are relatively stable over time except in special cases."@en ;
-    skos:prefLabel "Aquifer System"@en .
-
-geology:BoreholePurposeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Borehole Purpose"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Purposes for which a borehole was drilled"@en ;
+    skos:definition "The activity property (SWE::Category) contains a category term from a controlled vocabulary describing the current activity status of the geomorphological feature (e.g., currently active, dormant, inactive, reactivated, etc.)."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Borehole Purpose"@en .
+    skos:prefLabel "activity"@en .
 
-geology:ConditionOfGroundwaterValue a owl:Class,
+geology-att:anthropogenicGeomorphologicalFeatureTypeTerm a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Value of Condition Of Groundwater"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition """Values  indicating  the  approximate  degree  of  change  which  has  taken  place  on  the natural state of groundwater
-NOTE: The groundwater in a GroundWaterFlowSystem is in a variable condition, dependent on external factors, among which are diverse human activities"""@en ;
+    rdfs:label "anthropogenicGeomorphologicalFeatureTypeTerm"@en ;
+    rdfs:domain geology:AnthropogenicGeomorphologicalFeature ;
+    rdfs:range geology:AnthropogenicGeomorphologicalFeatureTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The anthropogenicGeomorphologicalFeatureType: AnthropogenicGeomorphologicalFeatureTypeTerm is a reference from a controlled vocabulary describing the type of geomorphologic feature."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Condition Of Groundwater"@en .
+    skos:prefLabel "anthropogenicGeomorphologicalFeatureTypeTerm"@en .
 
-geology:HazardClassification a owl:Class,
+geology-att:approximateDepth a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Classification of Natural Hazard"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Information about the nature of the natural hazard as well as the type of hazard which is the source of risk."@en ;
+    rdfs:label "approximateDepth"@en ;
+    rdfs:domain geology:HydrogeologicalUnit ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The approximate depth of the HydrogeologicalUnit occurrence."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Classification of Natural Hazard"@en .
-
-geology:HydrogeologicalObjectNatural a owl:Class,
-        skos:Concept ;
-    rdfs:label "Hydrogeological Object Natural"@en ;
-    skos:definition "HydrogeologicalObject which was created by natural processes. Example of natural hydrogeological objects include a source, vanishing point and geyser."@en ;
-    skos:prefLabel "Hydrogeological Object Natural"@en .
-
-geology:LevelOrIntensity a owl:Class,
-        skos:Concept ;
-    rdfs:label "Level Or Intensity"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Quantitative or qualitative assessment of either risk, hazard or vulnerability. This is a common concept for assessing the level of risk, or the level of hazard, or the level of vulnerability."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Level Or Intensity"@en .
-
-geology:LikelihoodOfOccurrence a owl:Class,
-        skos:Concept ;
-    rdfs:label "Likelihood Of Occurrence"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A general concept relating to the chance of an event occurring. It generally expressed as a probability or a frequency."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Likelihood Of Occurrence"@en .
-
-geology:MappedInterval a owl:Class,
-        skos:Concept ;
-    rdfs:label "Mapped Interval"@en ;
-    skos:definition "A special kind of mapped feature whose shape is a 1-D interval and which uses the SRS of the containing borehole"@en ;
-    skos:prefLabel "Mapped Interval"@en .
-
-geology:ParticleSizeFractionType a owl:Class,
-        skos:Concept ;
-    rdfs:label "Type Of Particle Size Fraction"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Share of the soil that is composed of mineral soil particles of the size within the size range specified."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Type Of Particle Size Fraction"@en .
-
-geology:PiezometricState a owl:Class,
-        skos:Concept ;
-    rdfs:label "State Of Piezometric"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "The piezometric state of a GroundWaterBody."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "State Of Piezometric"@en .
-
-geology:RangeType a owl:Class,
-        skos:Concept ;
-    rdfs:label "Type Of Range"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A range value defined by an upper limit and a lower limit"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Type Of Range"@en .
-
-geology:WaterTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Water Type"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Classification of water types"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Water Type"@en .
-
-geology:WaterWell a owl:Class,
-        skos:Concept ;
-    rdfs:label "Water Well"@en ;
-    skos:definition "A well influencing the groundwater resources of the aquifer. The most common examples of Water Well are: extracting, artificial recharging, or dewatering wells. By extracting, recharging or dewatering influences and Active Wells changes the state of groundwater resources."@en ;
-    skos:prefLabel "Water Well"@en .
+    skos:prefLabel "approximateDepth"@en .
 
 geology-att:approximateHorizontalExtend a owl:ObjectProperty,
         skos:Concept ;
@@ -722,6 +909,61 @@ geology-att:approximateHorizontalExtend a owl:ObjectProperty,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "approximateHorizontalExtend"@en .
 
+geology-att:approximatePermeabilityCoefficient a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "approximatePermeabilityCoefficient"@en ;
+    rdfs:domain geology:Aquitard ;
+    rdfs:range geology:QuantityValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The volume of an incompressible fluid that will flow in unit time through a unit cube of a porous substance across which a unit pressure difference is maintained."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "approximatePermeabilityCoefficient"@en .
+
+geology-att:approximateQuantityOfFlow a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "approximateQuantityOfFlow"@en ;
+    rdfs:domain geology:HydrogeologicalObjectNatural ;
+    rdfs:range geology:QuantityValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """An approximate value defining the water yield in a natural hydrogeological object
+NOTE: The discharge of water flow for a certain cross-section per time unit"""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "approximateQuantityOfFlow"@en .
+
+geology-att:approximateStorativityCoefficient a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "approximateStorativityCoefficient"@en ;
+    rdfs:domain geology:Aquitard ;
+    rdfs:range geology:QuantityValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The ability of an aquifer to store water."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "approximateStorativityCoefficient"@en .
+
+geology-att:approximateThickness a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "approximateThickness"@en ;
+    rdfs:domain geology:HydrogeologicalUnit ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The approximate thickness of the HydrogeologicalUnit"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "approximateThickness"@en .
+
+geology-att:aquiferType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "aquiferType"@en ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:range geology:AquiferTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The type of aquifer"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "aquiferType"@en .
+
 geology-att:boreholeLength a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "boreholeLength"@en ;
@@ -732,16 +974,84 @@ geology-att:boreholeLength a owl:ObjectProperty,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "boreholeLength"@en .
 
-geology-att:citation a owl:ObjectProperty,
+geology-att:campaignType a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "citation"@en ;
-    rdfs:domain geology:GeophObject ;
-    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/DocumentCitation> ;
+    rdfs:label "campaignType"@en ;
+    rdfs:domain geology:Campaign ;
+    rdfs:range geology:CampaignTypeValue ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition "Citation of geophysical documentation"@en ;
+    skos:definition "Type of activity to produce data"@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "citation"@en .
+    skos:prefLabel "campaignType"@en .
+
+geology-att:client a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "client"@en ;
+    rdfs:domain geology:Campaign ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/RelatedOrganization> ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Client for which data was created."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "client"@en .
+
+geology-att:collectionType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "collectionType"@en ;
+    rdfs:domain geology:GeologicalCollection ;
+    rdfs:range geology:CollectionTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The type of the collection."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "collectionType"@en .
+
+geology-att:commodity a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "commodity"@en ;
+    rdfs:domain geology:Commodity ;
+    rdfs:range geology:CommodityCodeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The earth resource commodity (eg Cu, Au, Dimension Stone)."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "commodity"@en .
+
+geology-att:commodityImportance a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "commodityImportance"@en ;
+    rdfs:domain geology:Commodity ;
+    rdfs:range geology:ImportanceValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """The importance of the deposit for the commodity.
+NOTE: Several commodities may be of interest inside a deposit. A deposit may be a very large deposit for one commodity (this commodity is the main one) and only a medium-sized deposit for some other commodities. Such a ranking is based on a statistical study of a large set of deposits throughout the world to ensure that it is valid. It is made using histograms allowing for each commodity to define class boundaries and what is a super large, a large, a medium-sized etc deposit for this commodity. This classification is based on the potential or endowment: reserves + resources."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "commodityImportance"@en .
+
+geology-att:commodityRank a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "commodityRank"@en ;
+    rdfs:domain geology:Commodity ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """The rank of the commodity.
+NOTE: Commodity rank is based on endowment, i.e. (cumulated) past production + reserves (not including past production) + resources, or if the deposit has never been exploited, reserves + resources. A statistical comparison with a large set of deposits throughout the world enables the determination of the deposit as class A (very large), B (large), or C (medium-sized) for a particular commodity, and also which commodity is the main one, the 2nd one, etc. The rank of a commodity is thus not based on political or economic considerations."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "commodityRank"@en .
+
+geology-att:composition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "composition"@en ;
+    rdfs:domain geology:GeologicalUnit ;
+    rdfs:range geology:CompositionPart ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "CompositionPart represents the composition of a geological unit in terms of earth material constituents (CompoundMaterial)."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "composition"@en .
 
 geology-att:conditionOfGroundWaterBody a owl:ObjectProperty,
         skos:Concept ;
@@ -754,6 +1064,17 @@ geology-att:conditionOfGroundWaterBody a owl:ObjectProperty,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "conditionOfGroundWaterBody"@en .
 
+geology-att:contractor a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "contractor"@en ;
+    rdfs:domain geology:Campaign ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/RelatedOrganization> ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Party by which data was created"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "contractor"@en .
+
 geology-att:determinationMethod a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "determinationMethod"@en ;
@@ -764,15 +1085,16 @@ geology-att:determinationMethod a owl:ObjectProperty,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "determinationMethod"@en .
 
-geology-att:distributionInfo a owl:ObjectProperty,
+geology-att:dimention a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "distributionInfo"@en ;
-    rdfs:domain geology:GeophObject ;
+    rdfs:label "dimention"@en ;
+    rdfs:domain geology:EarthResource ;
+    rdfs:range geology:EarthResourceDimension ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition "Distribution metadata"@en ;
+    skos:definition "The size/volume of the earth resource"@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "distributionInfo"@en .
+    skos:prefLabel "dimention"@en .
 
 geology-att:downholeShape a owl:ObjectProperty,
         skos:Concept ;
@@ -794,26 +1116,249 @@ geology-att:elevation a owl:ObjectProperty,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "elevation"@en .
 
-geology-att:hazardSource a owl:ObjectProperty,
+geology-att:endusePotential a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "hazardSource"@en ;
-    rdfs:domain geology:HazardArea ;
+    rdfs:label "endusePotential"@en ;
+    rdfs:domain geology:MineralOccurrence ;
+    rdfs:range geology:EndusePotentialValue ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition "Reason of hazard"@en ;
+    skos:definition """The end-use potential of the mineral.
+EXAMPLE:  for energy, fertilizer, building raw material."""@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "hazardSource"@en .
+    skos:prefLabel "endusePotential"@en .
 
-geology-att:largerWork a owl:ObjectProperty,
+geology-att:eventEnvironmentalValue a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "largerWork"@en ;
-    rdfs:domain geology:GeophObject ;
-    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:label "eventEnvironmentalValue"@en ;
+    rdfs:domain geology:GeologicalEvent ;
+    rdfs:range geology:EventEnvironmentalValue ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition "Identifier of a larger work dataset, typically a campaign or project"@en ;
+    skos:definition "The physical setting within which the geologic event takes place."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "largerWork"@en .
+    skos:prefLabel "eventEnvironmentalValue"@en .
+
+geology-att:eventProcess a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "eventProcess"@en ;
+    rdfs:domain geology:GeologicalEvent ;
+    rdfs:range geology:EventProcessValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The process or processes that occurred during the geological event."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "eventProcess"@en .
+
+geology-att:explorationResult a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "explorationResult"@en ;
+    rdfs:domain geology:ExplorationActivity ;
+    rdfs:range geology:ExplorationResultValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The result of the exploration activity."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "explorationResult"@en .
+
+geology-att:expression a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "expression"@en ;
+    rdfs:domain geology:EarthResource ;
+    rdfs:range geology:ExpressionCategoryValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "An indicator of whether an EarthResource appears on the surface or has been detected under cover rocks."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "expression"@en .
+
+geology-att:faultType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "faultType"@en ;
+    rdfs:domain geology:ShearDisplacementStructure ;
+    rdfs:range geology:FaultTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The faultType:FaultTypeTerm property contains a term from a controlled vocabulary describing the type of shear displacement structure (e.g., thrust fault, normal fault or wrench fault)."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "faultType"@en .
+
+geology-att:floodCause a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "floodCause"@en ;
+    rdfs:domain geology:FloodRiskZone ;
+    rdfs:range geology:FloodCauseClassValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The classification of flood causes."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "floodCause"@en .
+
+geology-att:floodType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "floodType"@en ;
+    rdfs:domain geology:FloodRiskZone ;
+    rdfs:range geology:FloodTypeClassValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The classification of flood types."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "floodType"@en .
+
+geology-att:form a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "form"@en ;
+    rdfs:domain geology:EarthResource ;
+    rdfs:range geology:FormCategoryValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The orebodies typical physical and structural relationship to wallrocks and associated rocks."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "form"@en .
+
+geology-att:geologicalUnitType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geologicalUnitType"@en ;
+    rdfs:domain geology:GeologicalUnit ;
+    rdfs:range geology:GeologicalUnitTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """The type of the geological unit. 
+NOTE: Logical constraints of definition of unit and valid property cardinalities should be contained in the definition."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "geologicalUnitType"@en .
+
+geology-att:horizontalExtent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "horizontalExtent"@en ;
+    rdfs:domain geology:GeologicalUnit ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Horizontal extend of the geological unit"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "horizontalExtent"@en .
+
+geology-att:hydroGeochemicalRockType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "hydroGeochemicalRockType"@en ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:range geology:HydroGeochemicalRockTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The rock type with respect to the soluble rock components and their hydrogeochemical influence of groundwater."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "hydroGeochemicalRockType"@en .
+
+geology-att:hydroName a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "hydroName"@en ;
+    rdfs:domain geology:HydrogeologicalUnit ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Name in English and/or Arabic"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "hydroName"@en .
+
+geology-att:isExploited a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "isExploited"@en ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Indicates if groundwater from aquifer is exploited by wells or intakes"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "isExploited"@en .
+
+geology-att:isLayered a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "isLayered"@en ;
+    rdfs:domain geology:AquiferSystem ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Indicates if the AquiferSystem consists of more than one layer."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "isLayered"@en .
+
+geology-att:isMainInSystem a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "isMainInSystem"@en ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Indicates if aquifer is the main useful aquifer in the aquifer system"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "isMainInSystem"@en .
+
+geology-att:layerGenesisEnvironment a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "layerGenesisEnvironment"@en ;
+    rdfs:domain geology:SoilLayer ;
+    rdfs:range geology:EventEnvironmentalValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Setting in which the last non-pedogenic process (geologic or anthropogenic) that coined the material composition and internal structure of the layer took place.
+NOTE: The material in which a soil develops is influenced by the environmental situation in which the processes of its formation took place, e.g. sedimentation from water results in quite differently structured layers when it has been deposited in running water than in a lake."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "layerGenesisEnvironment"@en .
+
+geology-att:layerGenesisProcess a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "layerGenesisProcess"@en ;
+    rdfs:domain geology:SoilLayer ;
+    rdfs:range geology:EventProcessValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Last non-pedogenic process (geologic or anthropogenic) that coined the material composition and internal structure of the layer."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "layerGenesisProcess"@en .
+
+geology-att:layerGenesisProcessState a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "layerGenesisProcessState"@en ;
+    rdfs:domain geology:SoilLayer ;
+    rdfs:range geology:LayerGenesisProcessStateValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Indication whether the process specified in layerGenesisProcess is on-going or seized in the past.
+NOTE: Process state gives an idea whether current non-pedogenic processes affect the soil or not. E.g. on current floodplains, input of sediments during seasonal flooding events is received, with comparatively young soil development in it, while in older fluvial sediments that are no longer under a regime of seasonal or irregular flooding, soil development might be more advanced."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "layerGenesisProcessState"@en .
+
+geology-att:layerRockType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "layerRockType"@en ;
+    rdfs:domain geology:SoilLayer ;
+    rdfs:range geology:LayerTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Type of the material in which the layer developed.
+NOTE: simplified list of  terms to “classify” geologic units"""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "layerRockType"@en .
+
+geology-att:layerType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "layerType"@en ;
+    rdfs:domain geology:SoilLayer ;
+    rdfs:range geology:LayerTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Assignation of a layer according to the concept that fits its kind.
+EXAMPLE Topsoil: meaning the upper part of the natural mineral soil that is generally dark coloured and has a higher content of organic matter and nutrients when compared to the mineral horizons below."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "layerType"@en .
+
+geology-att:levelOfRisk a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "levelOfRisk"@en ;
+    rdfs:domain geology:RiskZone ;
+    rdfs:range geology:LevelOrIntensity ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The level of risk is an assessment of the combination of the consequences of an event (hazard) and the associated probability/likelihood of the occurrence of the event."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "levelOfRisk"@en .
 
 geology-att:likelihoodOfOccurrence a owl:ObjectProperty,
         skos:Concept ;
@@ -826,17 +1371,37 @@ geology-att:likelihoodOfOccurrence a owl:ObjectProperty,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "likelihoodOfOccurrence"@en .
 
-geology-att:magnitudeOrIntensity a owl:ObjectProperty,
+geology-att:linearOrientation a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "magnitudeOrIntensity"@en ;
-    rdfs:domain geology:HazardArea ;
-    rdfs:range geology:LevelOrIntensity ;
+    rdfs:label "linearOrientation"@en ;
+    rdfs:domain geology:EarthResource ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition """An expression of the magnitude or the intensity of a phenomenon.
-NOTE: It may address a value within the Richter scale, or a description of the european macro-seismic scale, or a flood flow, etc..."""@en ;
+    skos:definition "The linear orientation of the Earth Resource."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "magnitudeOrIntensity"@en .
+    skos:prefLabel "linearOrientation"@en .
+
+geology-att:mappingFrame a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "mappingFrame"@en ;
+    rdfs:domain geology:MappedFeature ;
+    rdfs:range geology:MappingFrameValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The mappingFrame:MappingFrameTerm provides a term from a vocabulary indicating the geometric frame on which the MappedFeature is projected.  In most situations, mapped features are projected on the earth surface, but there are other contexts, such as a bedrock surface beneath surficial cover materials, a mine level, or a cross section."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "mappingFrame"@en .
+
+geology-att:mediaType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "mediaType"@en ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:range geology:AquiferMediaTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The classification of the medium in which the groundwater flow occurs"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "mediaType"@en .
 
 geology-att:mineralization a owl:ObjectProperty,
         skos:Concept ;
@@ -848,6 +1413,83 @@ geology-att:mineralization a owl:ObjectProperty,
     skos:definition "One of the main chemical characteristics of water. A value is a sum of all water chemical concentration components."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "mineralization"@en .
+
+geology-att:nameOfEvent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "nameOfEvent"@en ;
+    rdfs:domain geology:ObservedEvent ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Common name of the observed event."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "nameOfEvent"@en .
+
+geology-att:naturalGeomorphologicalFeatureType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "naturalGeomorphologicalFeatureType"@en ;
+    rdfs:domain geology:NaturalGeomorphologicalFeature ;
+    rdfs:range geology:NaturalGeomorphologicalFeatureTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The property naturalGeomorphologicalFeatureType: NaturalGeomorphologicalFeatureTypeTerm is a reference from a controlled vocabulary describing the type of geomorphological feature."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "naturalGeomorphologicalFeatureType"@en .
+
+geology-att:naturalObjectType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "naturalObjectType"@en ;
+    rdfs:domain geology:HydrogeologicalObjectNatural ;
+    rdfs:range geology:NaturalObjectTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The type of natural hydrogeological object."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "naturalObjectType"@en .
+
+geology-att:olderNameAge a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "olderNameAge"@en ;
+    rdfs:domain geology:GeologicalEvent ;
+    rdfs:range geology:GeochronologicEraValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Older boundary of the age of the event."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "olderNameAge"@en .
+
+geology-att:oreProcessed a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "oreProcessed"@en ;
+    rdfs:domain geology:MiningActivity ;
+    rdfs:range xsd:integer ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The amount of ore processed by the activity. The value should be given as a percentage."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "oreProcessed"@en .
+
+geology-att:otherHorizonNotation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "otherHorizonNotation"@en ;
+    rdfs:domain geology:SoilHorizon ;
+    rdfs:range geology:OtherHorizonNotationType ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Designation of the soil horizon according to a specific classification system.
+NOTE: A code system characterizing horizons regarding the dominant soil forming processes that have been active during the horizon formation. This code summarizes many observations of the soil description and gives information about the genetic processes that have formed the soil under observation."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "otherHorizonNotation"@en .
+
+geology-att:otherSoilName a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "otherSoilName"@en ;
+    rdfs:domain geology:SoilProfile ;
+    rdfs:range geology:OtherSoilNameTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Identification of the soil profile according to a specific classification scheme."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "otherSoilName"@en .
 
 geology-att:particleSizeFraction a owl:ObjectProperty,
         skos:Concept ;
@@ -861,6 +1503,16 @@ NOTE: SOURCE NRCS Natural Resources Conservation Service, Soil survey laboratory
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "particleSizeFraction"@en .
 
+geology-att:permeabilityCoefficien a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "permeabilityCoefficien"@en ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The volume of an incompressible fluid that will flow in unit time through a unit cube of a porous substance across which a unit pressure difference is maintained."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "permeabilityCoefficien"@en .
+
 geology-att:piezometricState a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "piezometricState"@en ;
@@ -871,6 +1523,48 @@ geology-att:piezometricState a owl:ObjectProperty,
     skos:definition "Specifies the piezometric state of the GroundwaterBody water table"@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "piezometricState"@en .
+
+geology-att:planarOrientation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "planarOrientation"@en ;
+    rdfs:domain geology:EarthResource ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The planar orientation of the Earth Resource."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "planarOrientation"@en .
+
+geology-att:platformType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "platformType"@en ;
+    rdfs:domain geology:GeophMeasurement ;
+    rdfs:range geology:PlatformTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Platform from which the measurement was carried out"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "platformType"@en .
+
+geology-att:position a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "position"@en ;
+    rdfs:domain geology:HydrogeologicalObject ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The geometry defining the spatial location of the HydrogeologicalObject."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "position"@en .
+
+geology-att:processingType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "processingType"@en ;
+    rdfs:domain geology:MiningActivity ;
+    rdfs:range geology:ProcessingActivityTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The type of processing carried out during the mining activity."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "processingType"@en .
 
 geology-att:profileElementDepthRange a owl:ObjectProperty,
         skos:Concept ;
@@ -893,48 +1587,188 @@ e) if only lowerValue is indicated: it is assumed that the upperValue equals 0, 
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "profileElementDepthRange"@en .
 
-geology-att:projectedShape a owl:ObjectProperty,
+geology-att:reference a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "projectedShape"@en ;
-    rdfs:domain geology:GeophObject ;
+    rdfs:label "reference"@en ;
+    rdfs:domain geology:GeologicalCollection ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/DocumentCitation> ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition "2D projection of the feature to the ground surface (as a representative point, curve or bounding polygon) to be used by an INSPIRE view service to display the spatial object location on a map."@en ;
+    skos:definition "A reference for the collection."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "projectedShape"@en .
+    skos:prefLabel "reference"@en .
 
-geology-att:purpose a owl:ObjectProperty,
+geology-att:relatedModel a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "purpose"@en ;
-    rdfs:domain geology:Borehole ;
-    rdfs:range geology:BoreholePurposeValue ;
+    rdfs:label "relatedModel"@en ;
+    rdfs:domain geology:GeophMeasurement ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition "The purpose for which the borehole was drilled."@en ;
+    skos:definition "Identifier of the geophysical model that was created from the measurement"@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "purpose"@en .
+    skos:prefLabel "relatedModel"@en .
 
-geology-att:typeOfHazard a owl:ObjectProperty,
+geology-att:relatedNetwork a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "typeOfHazard"@en ;
-    rdfs:domain geology:HazardArea ;
+    rdfs:label "relatedNetwork"@en ;
+    rdfs:domain geology:GeophMeasurement ;
+    rdfs:range geology:NetworkNameValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Name of a national or international observation network to which the facility belongs, or to which measured data is reported."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "relatedNetwork"@en .
+
+geology-att:soilBodyLabel a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "soilBodyLabel"@en ;
+    rdfs:domain geology:SoilBody ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Label to identify the soil body according to the specified reference framework (metadata).
+NOTE: in traditional soil maps, this is the identifier for the explanatory text of the mapping unit of the legend."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "soilBodyLabel"@en .
+
+geology-att:soilInvestigationPurpose a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "soilInvestigationPurpose"@en ;
+    rdfs:domain geology:SoilSite ;
+    rdfs:range geology:SoilInvestigationPurposeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """indication why a survey was conducted.
+NOTE: For soil two main purposes are identified to carry out soil surveys. One is to classify the soil as a result of soil forming processes (generalSurvey) and the other one is to investigate soil for a specific reason (specificSurvey) like a possible contamination as a result of contaminating activities. This information gives the data user an idea about possible bias in the selection of the site and therefore representativeness of the data that were obtained for a special purpose."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "soilInvestigationPurpose"@en .
+
+geology-att:soilPlotType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "soilPlotType"@en ;
+    rdfs:domain geology:SoilPlot ;
+    rdfs:range geology:SoilPlotTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Gives information on what kind of plot the observation of the soil is made on.
+NOTE: NOTE Trial pits, boreholes or samples can be seen as types of soil plots."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "soilPlotType"@en .
+
+geology-att:sourceOfRisk a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "sourceOfRisk"@en ;
+    rdfs:domain geology:RiskZone ;
     rdfs:range geology:HazardClassification ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition "A generic classification and a specific classification of the type of natural hazard."@en ;
+    skos:definition "A generic classification and a specific classification of the type of hazard which is the source of risk."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "typeOfHazard"@en .
+    skos:prefLabel "sourceOfRisk"@en .
 
-geology-att:validityPeriod a owl:ObjectProperty,
+geology-att:stationRank a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "validityPeriod"@en ;
-    rdfs:domain geology:HazardArea ;
+    rdfs:label "stationRank"@en ;
+    rdfs:domain geology:GeophStation ;
+    rdfs:range geology:StationRankValue ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
-    skos:definition """Future finite time frame where the hazard applies.
-NOTE: It is an interval of dates, or the expression of a time frame for which the estimates are meant (eg: until 2090; summer of 2011; winter seasons until 2015)."""@en ;
+    skos:definition "Geophysical stations may be part of a hierarchical system. Rank is proportional to the importance of a station"@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "validityPeriod"@en .
+    skos:prefLabel "stationRank"@en .
+
+geology-att:stationType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "stationType"@en ;
+    rdfs:domain geology:GeophStation ;
+    rdfs:range geology:StationTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Type of geophysical station"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "stationType"@en .
+
+geology-att:statusCode a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "statusCode"@en ;
+    rdfs:domain geology:HydrogeologicalObjectManMade ;
+    rdfs:range geology:StatusCodeTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "A code defining the formal status of a man-made hydrogeological object."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "statusCode"@en .
+
+geology-att:storativityCoefficien a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "storativityCoefficien"@en ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:range geology:QuantityValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The ability of an aquifer to store water."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "storativityCoefficien"@en .
+
+geology-att:surveyType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surveyType"@en ;
+    rdfs:domain geology:Campaign ;
+    rdfs:range geology:SurveyTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Type of geophysical survey"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "surveyType"@en .
+
+geology-att:swathType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "swathType"@en ;
+    rdfs:domain geology:GeophSwath ;
+    rdfs:range geology:SwathTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Type of geophysical swath"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "swathType"@en .
+
+geology-att:themeClass a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "themeClass",
+        "themeClass"@en ;
+    rdfs:domain geology:GeologicalFeature,
+        geology:ThematicClass ;
+    rdfs:range geology:ThematicClass,
+        geology:ThematicClassValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The value of the thematic class."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "themeClass",
+        "themeClass"@en .
+
+geology-att:themeClassification a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "themeClassification"@en ;
+    rdfs:domain geology:ThematicClass ;
+    rdfs:range geology:ThematicClassificationValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The used classification."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "themeClassification"@en .
+
+geology-att:type a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "type"@en ;
+    rdfs:domain geology:MineralOccurrence ;
+    rdfs:range geology:MineralOccurrenceTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """The type of mineral occurrence.
+EXAMPLE: prospect, occurrence, mineral deposit, ore deposit."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "type"@en .
 
 geology-att:varticalExtent a owl:ObjectProperty,
         skos:Concept ;
@@ -945,6 +1779,639 @@ geology-att:varticalExtent a owl:ObjectProperty,
     skos:definition "Vertical extent of the range of interest."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "varticalExtent"@en .
+
+geology-att:verticalExtend a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "verticalExtend"@en ;
+    rdfs:domain geology:GeophObjectSet ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Vertical extent of the range of interest."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "verticalExtend"@en .
+
+geology-att:vulnerabilityToPollution a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "vulnerabilityToPollution"@en ;
+    rdfs:domain geology:Aquifer ;
+    rdfs:range geology:QuantityValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "An index value or interval of values determining the potential degree of aquifer risk arising from the geological structure, hydrogeological conditions and the existence of real or potential source of contamination."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "vulnerabilityToPollution"@en .
+
+geology-att:waterPresistance a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "waterPresistance"@en ;
+    rdfs:domain geology:HydrogeologicalObjectNatural ;
+    rdfs:range geology:WaterPersistenceValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The degree of persistence of water flow."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "waterPresistance"@en .
+
+geology-att:youngerNameAge a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "youngerNameAge"@en ;
+    rdfs:domain geology:GeologicalEvent ;
+    rdfs:range geology:GeochronologicEraValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Younger boundary of the age of the event."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "youngerNameAge"@en .
+
+geology:EventEnvironmentalValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Event Environmental"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Terms for the geologic environments within which geologic events take place"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Event Environmental"@en .
+
+geology:EventProcessValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Event Process"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Terms specifying the process or processes that occurred during an event"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Event Process"@en .
+
+geology:FloodRiskZone a owl:Class,
+        skos:Concept ;
+    rdfs:label "Flood Risk Zone"@en ;
+    ogc-ft:hasProperty geology-att:floodCause,
+        geology-att:floodType ;
+    rdfs:subClassOf geology:RiskZone ;
+    skos:broader geology:RiskZone ;
+    skos:definition "Spatial object representing the flood risk area extent ."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Flood Risk Zone"@en .
+
+geology:GeochronologicEraValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Geochronologic Era"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Terms specifying recognised geological time units"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Geochronologic Era"@en .
+
+geology:GeophStation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geoph Station"@en ;
+    ogc-ft:hasProperty geology-att:stationRank,
+        geology-att:stationType ;
+    rdfs:subClassOf geology:GeophMeasurement ;
+    skos:broader geology:GeophMeasurement ;
+    skos:definition "Geophysical measurement spatially referenced to a single point location. The source-sensor setup may be elongated or two dimensional, but the collected data is spatially referenced to a single point, for example, Gravity station, Magnetic station."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geoph Station"@en .
+
+geology:HazardClassification a owl:Class,
+        skos:Concept ;
+    rdfs:label "Classification of Natural Hazard"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Information about the nature of the natural hazard as well as the type of hazard which is the source of risk."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Classification of Natural Hazard"@en .
+
+geology:LayerTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Layer Type"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Classification of a layer according to the concept that fits the purpose"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Layer Type"@en .
+
+geology:LevelOrIntensity a owl:Class,
+        skos:Concept ;
+    rdfs:label "Level Or Intensity"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Quantitative or qualitative assessment of either risk, hazard or vulnerability. This is a common concept for assessing the level of risk, or the level of hazard, or the level of vulnerability."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Level Or Intensity"@en .
+
+geology:MineralOccurrence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Mineral Occurrence"@en ;
+    ogc-ft:hasProperty geology-att:endusePotential,
+        geology-att:type ;
+    rdfs:subClassOf geology:EarthResource ;
+    skos:broader geology:EarthResource ;
+    skos:definition "A mineral accumulation in the lithosphere."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Mineral Occurrence"@en .
+
+geology:NaturalGeomorphologicalFeature a owl:Class,
+        skos:Concept ;
+    rdfs:label "Natural Geomorphological Feature"@en ;
+    ogc-ft:hasProperty geology-att:activity,
+        geology-att:naturalGeomorphologicalFeatureType ;
+    rdfs:subClassOf geology:GeomorphologicalFeature ;
+    skos:broader geology:GeomorphologicalFeature ;
+    skos:definition "A geomorphological feature (landform) that has been created by natural Earth processes, for example; river channel, beach ridge, caldera, canyon, moraine or mud flat."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Natural Geomorphological Feature"@en .
+
+geology:SoilBody a owl:Class,
+        skos:Concept ;
+    rdfs:label "Soil Body"@en ;
+    ogc-ft:hasProperty geology-att:extent,
+        geology-att:soilBodyLabel ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Part of the soil cover that is delineated and homogeneous with regard to certain soil properties and/or spatial patterns.  The soils present in the soil body are characterized by one or more derived soil profiles that are found together in the area specified by the geometry attribute of the SoilBody. If several derived soil profiles are used to describe the soil body, the spatial distribution of the soil they describe within the soil body is not defined, but their presence is indicated by a range percentage of area. The underlying reason behind the fact of not delineating the different soils within a soil body is the target scale of the map or spatial dataset. This means that geographical accuracy and preciseness of soil characterization depend on and vary with the target scale, i.e. the soil body can be delineated differently among scales.  The concept of soil body is a correlate of the concept soil mapping unit, and the soils of a soilbody might form e.g. a soil association, a soil complex, etc."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Soil Body"@en .
+
+geology:SoilHorizon a owl:Class,
+        skos:Concept ;
+    rdfs:label "Soil Horizon"@en ;
+    ogc-ft:hasProperty geology-att:FAOHorizonNotation,
+        geology-att:otherHorizonNotation ;
+    rdfs:subClassOf geology:AbstractProfileElementType ;
+    skos:broader geology:AbstractProfileElementType ;
+    skos:definition "Domain of a soil with a certain vertical extension, more or less parallel to the surface and homogeneous for most morphological and analytical characteristics, developed in a parent material layer through pedogenic processes or made up of in-situ sedimented organic residues of up-growing plants (peat). Horizons may be part of a layer.  Modified:  ISO/WD 28258, modified"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Soil Horizon"@en .
+
+geology-att:activityDuration a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "activityDuration"@en ;
+    rdfs:domain geology:ExplorationActivity,
+        geology:MiningActivity ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Period, or extent in time, of  the exploration activity.
+NOTE: The beginning of the activity links the TM_Period to the TM_Instant at which it starts. The ending links the TM_Period to the TM_Instant at which it ends. For a variety of reasons the position of the TM_Instant designated by 'begin' or 'end' may be indeterminate."""@en,
+        """Period, or extent in time, of  the mining activity.
+NOTE: The beginning of the activity links the TM_Period to the TM_Instant at which it starts.  The ending links the TM_Period to the TM_Instant at which it ends.  For a variety of reasons, the position of the TM_Instant designated by 'begin' or 'end' may be inderterminate."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "activityDuration"@en .
+
+geology-att:citation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "citation"@en ;
+    rdfs:domain geology:GeophObject,
+        geology:GeophObjectSet ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/DocumentCitation> ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Citation of geophysical documentation"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "citation"@en .
+
+geology-att:description a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "description"@en ;
+    rdfs:domain geology:HydrogeologicalObject,
+        geology:HydrogeologicalUnit ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "General text description of the location (in English and/or Arabic)"@en,
+        "The description of the HydrogeologicalObject."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "description"@en .
+
+geology-att:distributionInfo a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "distributionInfo"@en ;
+    rdfs:domain geology:GeophObject,
+        geology:GeophObjectSet ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Distribution metadata"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "distributionInfo"@en .
+
+geology-att:largerWork a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "largerWork"@en ;
+    rdfs:domain geology:GeophObject,
+        geology:GeophObjectSet ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Identifier of a larger work dataset"@en,
+        "Identifier of a larger work dataset, typically a campaign or project"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "largerWork"@en .
+
+geology-att:magnitudeOrIntensity a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "magnitudeOrIntensity"@en ;
+    rdfs:domain geology:HazardArea,
+        geology:ObservedEvent ;
+    rdfs:range geology:LevelOrIntensity ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "An expression of the magnitude or the intensity of a phenomenon."@en,
+        """An expression of the magnitude or the intensity of a phenomenon.
+NOTE: It may address a value within the Richter scale, or a description of the european macro-seismic scale, or a flood flow, etc..."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "magnitudeOrIntensity"@en .
+
+geology-att:profileType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "profileType"@en ;
+    rdfs:domain geology:Fold,
+        geology:GeophProfile ;
+    rdfs:range geology:FoldProfileTypeValue,
+        geology:ProfileTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The property profileType:FoldProfileTypeTerm contains a term from a controlled vocabulary specifying the concave/convex geometry of fold relative to earth surface, and relationship to younging direction in folded strata if known. (e.g., antiform, synform, neutral, anticline, syncline, monocline, ptygmatic)."@en,
+        "Type of geophysical profile"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "profileType"@en .
+
+geology-att:projectedShape a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "projectedShape"@en ;
+    rdfs:domain geology:GeophObject,
+        geology:GeophObjectSet ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "2D projection of the feature to the ground surface (as a representative point, curve or bounding polygon) to be used by an INSPIRE view service to display the spatial object location on a map."@en,
+        "2D projection of the feature to the ground surface (as a representative point, curve or bounding polygon) to be used by an INSPIRE view service to display the spatial object on a map.."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "projectedShape"@en .
+
+geology-att:purpose a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "purpose"@en ;
+    rdfs:domain geology:Borehole,
+        geology:GeologicalFeature ;
+    rdfs:range geology:BoreholePurposeValue,
+        geology:DescriptionPurposeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The property purpose specifies the intended purpose/level of abstraction for a given feature or object instance.  The possible values are: instance, typicalNorm, and definingNorm."@en,
+        "The purpose for which the borehole was drilled."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "purpose"@en .
+
+geology-att:shape a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "shape"@en ;
+    rdfs:domain geology:EarthResource,
+        geology:MappedFeature ;
+    rdfs:range geology:ShapeCategoryValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The shape:GM_Object property contains the geometry delimiting the mapped feature.  Note that while in most cases, the geometry will be a 2D polygon, it is not restricted to any dimension.  For instance, a lithological log can be represented using of 1D geometries (expressed linearly from the borehole origin), or a geologic unit can be represented using a 3D volume."@en,
+        "The typical geometrical shape of the Earth Resource."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "shape"@en .
+
+geology-att:typeOfHazard a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "typeOfHazard"@en ;
+    rdfs:domain geology:HazardArea,
+        geology:ObservedEvent ;
+    rdfs:range geology:HazardClassification ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "A generic classification and a specific classification of the type of hazard."@en,
+        "A generic classification and a specific classification of the type of natural hazard."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "typeOfHazard"@en .
+
+geology-att:validFrom a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validFrom"@en ;
+    rdfs:domain geology:HydrogeologicalObjectManMade,
+        geology:ObservedEvent ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Official date and time the hydrogeological object was/will be legally established."@en,
+        "The time when the observed event started to exist in the real world."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "validFrom"@en .
+
+geology-att:validTo a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validTo"@en ;
+    rdfs:domain geology:HydrogeologicalObjectManMade,
+        geology:ObservedEvent ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Date and time at which the hydrogeological object legally ceased/will cease to be used."@en,
+        "The time from which the observed event no longer exists in the real world."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "validTo"@en .
+
+geology-att:validityPeriod a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "validityPeriod"@en ;
+    rdfs:domain geology:HazardArea,
+        geology:RiskZone ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Future finite time frame where the hazard applies.
+NOTE: It is an interval of dates, or the expression of a time frame for which the estimates are meant (eg: until 2090; summer of 2011; winter seasons until 2015)."""@en,
+        """Future finite time frame where the model applies.
+NOTE: It is an interval of dates, or the expression of a time frame for which the estimates are meant (eg: until 2090; summer of 2011; winter seasons until 2015)."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "validityPeriod"@en .
+
+geology:ExplorationActivity a owl:Class,
+        skos:Concept ;
+    rdfs:label "Exploration Activity"@en ;
+    ogc-ft:hasProperty geology-att:activityDuration,
+        geology-att:activityType,
+        geology-att:explorationResult ;
+    skos:definition "A period of exploration activity."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Exploration Activity"@en .
+
+geology:GeologicalCollection a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geological Collection"@en ;
+    ogc-ft:hasProperty geology-att:collectionType,
+        geology-att:name,
+        geology-att:reference ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Geological  objects  are  commonly  grouped  into  collections  such  as geological maps, thematic maps, or the required input to a geological model."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geological Collection"@en .
+
+geology:SoilPlot a owl:Class,
+        skos:Concept ;
+    rdfs:label "Soil Plot"@en ;
+    ogc-ft:hasProperty geology-att:extent,
+        geology-att:soilPlotType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A spot where a specific soil investigation is carried out. For observed soil profiles, a spot location is defined which is the place on which the observation is made. The profile is an observation made on the plot. All types of plots only provide locality, but no soil information itself. For example,  a borehole is the location where the profile information is obtained from. Source: GS Soil"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Soil Plot"@en .
+
+geology:SoilProfile a owl:Class,
+        skos:Concept ;
+    rdfs:label "Soil Profile"@en ;
+    ogc-ft:hasProperty geology-att:FAOSoilName,
+        geology-att:WRBSoilName,
+        geology-att:otherSoilName ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Description of the soil that is characterized by a vertical succession of profile elements.  The soil profile is abstracted from observations in a trial pit or a boring, or derived from expert knowledge using other soil profiles."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Soil Profile"@en .
+
+geology:SoilSite a owl:Class,
+        skos:Concept ;
+    rdfs:label "Soil Site"@en ;
+    ogc-ft:hasProperty geology-att:extent,
+        geology-att:soilInvestigationPurpose ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Area within a larger survey, study or monitored area, where a specific soil investigation is carried out. A soil site describes the following; a - the surroundings of the plot  and/or b - the larger piece of land that is directly linked to and described by all soil investigations on its one or more spots (SoilPlots). It thus provides the object to which soil data of different kind (or the same kind, but at different points in time, e.g. in soil monitoring) obtained on different plots is related as if it would have been collected at the very same place. This allows for; 1 - combination of data that cannot be obtained on the same place, for example, a soil pit and investigations on earthworm abundance cannot be done in the same place, but possibly some meters apart from each other. Nonetheless shall the results of both investigations be combined to inform about the soil state., or 2 -  comparison of soil condition after some time has elapsed, for example, organic carbon stock has been investigated using data from two monitoring periods that had to be conducted on spatially slightly separated places because the sampling is destructive. Nonetheless are the results of both periods regarded as giving an idea how organic carbon stock has changed over the years at the same place.  The site is also the object to state the date and time information on validity, etc.  The soil site might have delineation, but can be located with a center or reference point location only. Delineated soil sites - possibly in the form of cadastral parcels - are especially used in the inventory of contaminated areas.  A Soil Plot can be linked to one specific site only, but there may be several plots in one site.  Modified from : GS Soil"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Soil Site"@en .
+
+geology:ThematicClass a owl:Class,
+        skos:Concept ;
+    rdfs:label "Thematic Class"@en ;
+    ogc-ft:hasProperty geology-att:themeClass,
+        geology-att:themeClassification ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A generic thematic classifier to enable the reclassification of Geologic Feature with user-defined classes appropriate to thematic maps"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Thematic Class"@en .
+
+geology-att:activityType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "activityType"@en ;
+    rdfs:domain geology:ExplorationActivity,
+        geology:MiningActivity,
+        geology:WaterWell ;
+    rdfs:range geology:MiningActivityTypeValue,
+        geology:WaterWellTypeValue ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The type of activity carried out by the well."@en,
+        """The type of exploration activity.
+EXAMPLE: geological mapping, drilling, geophysical surveys, geochemical mapping etc."""@en,
+        """The type of mining activity.
+EXAMPLE: Open Cut, Underground Mine, multiple, unspecified, processing activity (eg Ore Processing) or production.  Using activity to distinguish between the extraction, processing and production activities allows distinguishing between ore mined/grade/recovery, ore treated/grade/recovery and produced payable/plant recovery."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "activityType"@en .
+
+geology-att:extent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extent"@en ;
+    rdfs:domain geology:SoilBody,
+        geology:SoilPlot,
+        geology:SoilSite ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "The geometry defining the boundary of the Soil Body."@en,
+        """The geometry defining the soil site.
+NOTE: This can be a polygon defining an area in which the survey was conducted, but it can also be a point location which is used as reference point according to which the soil plots are determined."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "extent"@en .
+
+geology-att:hazardSource a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "hazardSource"@en ;
+    rdfs:domain geology:HazardArea,
+        geology:ObservedEvent,
+        geology:RiskZone ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Reason of hazard"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "hazardSource"@en .
+
+geology-att:nsdiId a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "nsdiId"@en ;
+    rdfs:domain geology:Borehole,
+        geology:GeophObject,
+        geology:GeophObjectSet ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """Generic class for collections of geophysical objects
+NOTE: It  is  a  set  of  geophysical  objects  that  are  grouped  by  some common property. p.e:  created  in  the  same  measuring  campaign. GeophObjectSets are  used  for spatial  sampling  either  by  means  of data  acquisition  or  data processing.  The produced result of a geophObjectSet is always collective, e.g. a map constructed from the results of the individual member objects"""@en,
+        """Globally unique object identifier of the feature.
+
+NOTE The nsdiId object identifier is a Globally Unique Identifier (GUID) published by the responsible body, which may be used by external applications to reference the feature. The identifier is an identifier of the feature instance, not an identifier of the feature type, i.e. real-world phenomenon."""@en,
+        """Globally unique object identifier of the feature.
+NOTE The nsdiId object identifier is a Globally Unique Identifier (GUID) published by the responsible body, which may be used by external applications to reference the feature. The identifier is an identifier of the feature instance, not an identifier of the feature type, i.e. real-world phenomenon."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "nsdiId"@en .
+
+geology:Campaign a owl:Class,
+        skos:Concept ;
+    rdfs:label "Campaign"@en ;
+    ogc-ft:hasProperty geology-att:campaignType,
+        geology-att:client,
+        geology-att:contractor,
+        geology-att:surveyType ;
+    rdfs:subClassOf geology:GeophObjectSet ;
+    skos:broader geology:GeophObjectSet ;
+    skos:definition "Geophysical activity extending over a limited time range and limited area for producing similar geophysical measurements, processing results or models. Campaigns can be considered as parents of geophysical measurements or models. Children may refer to parent campaigns through the largerWork."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Campaign"@en .
+
+geology:GeologicalStructure a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geological Structure"@en ;
+    rdfs:subClassOf geology:GeologicalFeature ;
+    skos:broader geology:GeologicalFeature ;
+    skos:definition "A geological structure is a configuration of matter in the Earth based on describable inhomogeneity, pattern, or fracture in an earth material.  The identity of a GeologicalStructure is independent of the material that is the substrate for the structure. The general GeologicalFeatureRelation (available in the Extension package) is used to associate penetrative GeologicalStructures with GeologicalUnits.  GeoSciML Basic only provides a limited set of core structures (Contact, Fold, ShearDisplacementStructure and Foliation) with a single property to categorize them.  Supplemental properties and geologic structure types are available from the Extension package."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geological Structure"@en .
+
+geology:GeomorphologicalFeature a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geomorphological Feature"@en ;
+    rdfs:subClassOf geology:GeologicalFeature ;
+    skos:broader geology:GeologicalFeature ;
+    skos:definition "A geomorphologic feature is a kind of GeologicFeature describing the shape and nature of the Earth's land surface. These landforms may be created by natural Earth processes (e.g., river channel, beach, moraine or mountain) or through human (anthropogenic) activity (e.g., dredged channel, reclaimed land, mine waste dumps).  In GeoSciML, the geomorphologic feature is modelled as a feature related (through unitDescription property) to a GeologicUnit that composes the form."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geomorphological Feature"@en .
+
+geology:MappedFeature a owl:Class,
+        skos:Concept ;
+    rdfs:label "Mapped Feature"@en ;
+    ogc-ft:hasProperty geology-att:mappingFrame,
+        geology-att:shape ;
+    skos:definition "A MappedFeature is part of a geological interpretation. It provides a link between a notional feature (description package) and one spatial representation of it, or part of it (exposures, surface traces and intercepts, etc.).  The mapped features are the elements that compose a map, a cross-section, a borehole log, or any other representation.  The mappingFrame identifies the domain being mapped by the geometries.  For typical geological maps, the mapping frame is the surface of the earth (the 2.5D interface between the surface of the bedrock and whatever sits on it; atmosphere or overburden material for bedrock maps). It can also be abstract frames, such as the arbitrary plane that forms a mine level or a cross-section, the 3D volume enclosing an ore body or the line that approximate the path of a borehole."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Mapped Feature"@en .
+
+geology:WaterWell a owl:Class,
+        skos:Concept ;
+    rdfs:label "Water Well"@en ;
+    ogc-ft:hasProperty geology-att:activityType ;
+    rdfs:subClassOf geology:HydrogeologicalObjectManMade ;
+    skos:broader geology:HydrogeologicalObjectManMade ;
+    skos:definition "A well influencing the groundwater resources of the aquifer. The most common examples of Water Well are: extracting, artificial recharging, or dewatering wells. By extracting, recharging or dewatering influences and Active Wells changes the state of groundwater resources."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Water Well"@en .
+
+geology-att:location a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "location"@en ;
+    rdfs:domain geology:Borehole,
+        geology:HazardArea,
+        geology:ObservedEvent,
+        geology:RiskZone ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition "Geometric representation of spatial extent covered by the hazard area."@en,
+        "Geometric representation of spatial extent covered by this risk zone."@en,
+        "Geometric representation of the spatial extent covered by the observed event."@en,
+        "The location of the borehole collar."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "location"@en .
+
+geology-att:name a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain geology:GeologicalCollection,
+        geology:GeologicalEvent,
+        geology:GeologicalFeature,
+        geology:HydrogeologicalObject ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf geology:attribute ;
+    skos:broader geology:attribute ;
+    skos:definition """The name of the Geological Event.
+NOTE: Only major Geological Events, such as orogenies, are likely to have name."""@en,
+        "The name of the collection."@en,
+        "The name of the geological feature."@en,
+        "The name or code of the HydrogeologicalObject."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "name"@en .
+
+geology:Aquitard a owl:Class,
+        skos:Concept ;
+    rdfs:label "Aquitard"@en ;
+    ogc-ft:hasProperty geology-att:approximatePermeabilityCoefficient,
+        geology-att:approximateStorativityCoefficient ;
+    rdfs:subClassOf geology:HydrogeologicalUnit ;
+    skos:broader geology:HydrogeologicalUnit ;
+    skos:definition "A saturated, but poorly permeable bed that impedes groundwater movement.  It does not yield water freely to wells, but may transmit appreciable water to or from adjacent aquifers and, where sufficiently thick, may constitute an important ground-water storage unit. Aquitards are characterized by values of leakance that may range from relatively low to relatively high. A really extensive aquitard of relatively low leakance may function regionally as boundaries of aquiferflow systems."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Aquitard"@en .
+
+geology:Commodity a owl:Class,
+        skos:Concept ;
+    rdfs:label "Commodity"@en ;
+    ogc-ft:hasProperty geology-att:commodity,
+        geology-att:commodityImportance,
+        geology-att:commodityRank ;
+    skos:definition "The material of economic interest in the EarthResource. The value should be given as a percentage."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Commodity"@en .
+
+geology:GeologicalUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geological Unit"@en ;
+    ogc-ft:hasProperty geology-att:composition,
+        geology-att:geologicalUnitType,
+        geology-att:horizontalExtent ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Conceptually, a GeologicalUnit may represent a body of material in the Earth whose complete and precise extent is inferred to exist (e.g., North American Data Model GeologicalUnit, Stratigraphic unit in the sense of NACSN, or International Stratigraphic Code ), or a classifier used to characterize parts of the Earth (e.g. lithologic map unit like 'granitic rock' or 'alluvial deposit', surficial units like 'till' or 'old alluvium'). It includes both formal units (i.e. formally adopted and named in an official lexicon) and informal units (i.e. named but not promoted to a lexicon) and unnamed units (i.e., recognizable, described and delineable in the field but not otherwise formalized).  In simpler terms, a geologic unit is a package of earth material (generally rock)."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geological Unit"@en .
+
+geology:HydrogeologicalObjectManMade a owl:Class,
+        skos:Concept ;
+    rdfs:label "Hydrogeological Object Man Made"@en ;
+    ogc-ft:hasProperty geology-att:statusCode,
+        geology-att:validFrom,
+        geology-att:validTo ;
+    rdfs:subClassOf geology:HydrogeologicalObject ;
+    skos:broader geology:HydrogeologicalObject ;
+    skos:definition "A man-made hydrogeological object. Examples of man-made hydrogeological objects include well, groundwater intake, groundwater monitoring station and monitoring well."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Hydrogeological Object Man Made"@en .
+
+geology:HydrogeologicalObjectNatural a owl:Class,
+        skos:Concept ;
+    rdfs:label "Hydrogeological Object Natural"@en ;
+    ogc-ft:hasProperty geology-att:approximateQuantityOfFlow,
+        geology-att:naturalObjectType,
+        geology-att:waterPresistance ;
+    rdfs:subClassOf geology:HydrogeologicalObject ;
+    skos:broader geology:HydrogeologicalObject ;
+    skos:definition "HydrogeologicalObject which was created by natural processes. Example of natural hydrogeological objects include a source, vanishing point and geyser."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Hydrogeological Object Natural"@en .
+
+geology:QuantityValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value Of Quantity"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Data container with a single quantity or a range of quantity values."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value Of Quantity"@en .
+
+geology:SoilLayer a owl:Class,
+        skos:Concept ;
+    rdfs:label "Soil Layer"@en ;
+    ogc-ft:hasProperty geology-att:layerGenesisEnvironment,
+        geology-att:layerGenesisProcess,
+        geology-att:layerGenesisProcessState,
+        geology-att:layerRockType,
+        geology-att:layerType ;
+    rdfs:subClassOf geology:AbstractProfileElementType ;
+    skos:broader geology:AbstractProfileElementType ;
+    skos:definition "Domain of a soil with a certain vertical extension developed through non-pedogenic processes, displaying a change in structure and/or composition to possibly over- or underlying adjacent domains, or a grouping of soil horizons or other sub-domains with a special purpose. Different kinds of layer concepts are covered by this definition. Example 1: Geogenic layers: These are domains, resulting from e.g. sedimentation (as non-pedogenic) processes, that display an unconformity to possibly over- or underlying adjacent domains. Example 2: Topsoil and Subsoil: These can be domains that group different soil horizon types (e.g. A vs B horizons), or a special case of fixed depths with only two depth ranges (e.g. 0-15 cm: topsoil and, 15-75 cm: subsoil). Example 3 Depth intervals: They are often used in soil monitoring, sampling of contaminated sites and in modelling and include: (i) depth increments (also called fixed depths) that are often used for sampling, e.g. 0-30cm, 30-60cm, and so on, (ii) a single depth range in which a soil sample (specimen) is taken and for which the analytical result is valid, and (iii) soil slicing, that is, profile segmentation according to a specified vector, for instance, either regularly spaced intervals (1cm), or a user-defined vector of segment boundaries (i.e. 0-10, 10-25, 25-50, 50-100). Slicing is used in modelling to generate continuous depth functions for soil properties. Example 4: In the framework of soils deeply modified by human activity, artificial layers may be due to different kinds of deposits (concrete, bricks). Modified from WD ISO28258"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Soil Layer"@en .
 
 geology:AbstractProfileElementType a owl:Class,
         skos:Concept ;
@@ -957,33 +2424,69 @@ geology:AbstractProfileElementType a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Abstract Profile Element Type"@en .
 
-geology-att:location a owl:ObjectProperty,
+geology:AquiferSystem a owl:Class,
         skos:Concept ;
-    rdfs:label "location"@en ;
-    rdfs:domain geology:Borehole,
-        geology:HazardArea ;
-    rdfs:subClassOf geology:attribute ;
-    skos:broader geology:attribute ;
-    skos:definition "Geometric representation of spatial extent covered by the hazard area."@en,
-        "The location of the borehole collar."@en ;
+    rdfs:label "Aquifer System"@en ;
+    ogc-ft:hasProperty geology-att:isLayered ;
+    rdfs:subClassOf geology:HydrogeologicalUnit ;
+    skos:broader geology:HydrogeologicalUnit ;
+    skos:definition "A collection of aquifers and aquitards, which together constitute the environment of groundwater - \"communicating vessels\" - that are filled, or can be filled, with water. Attributes of Aquifer System and its components determine the feasibility of water collection, its movement, as well as the impact on its chemical state. The Aquifer System components and their attributes (including geometry) are relatively stable over time except in special cases."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "location"@en .
+    skos:prefLabel "Aquifer System"@en .
 
-geology-att:nsdiId a owl:ObjectProperty,
+geology:GeologicalEvent a owl:Class,
         skos:Concept ;
-    rdfs:label "nsdiId"@en ;
-    rdfs:domain geology:Borehole,
-        geology:GeophObject ;
-    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
-    rdfs:subClassOf geology:attribute ;
-    skos:broader geology:attribute ;
-    skos:definition """Generic class for collections of geophysical objects
-NOTE: It  is  a  set  of  geophysical  objects  that  are  grouped  by  some common property. p.e:  created  in  the  same  measuring  campaign. GeophObjectSets are  used  for spatial  sampling  either  by  means  of data  acquisition  or  data processing.  The produced result of a geophObjectSet is always collective, e.g. a map constructed from the results of the individual member objects"""@en,
-        """Globally unique object identifier of the feature.
-
-NOTE The nsdiId object identifier is a Globally Unique Identifier (GUID) published by the responsible body, which may be used by external applications to reference the feature. The identifier is an identifier of the feature instance, not an identifier of the feature type, i.e. real-world phenomenon."""@en ;
+    rdfs:label "Geological Event"@en ;
+    ogc-ft:hasProperty geology-att:eventEnvironmentalValue,
+        geology-att:eventProcess,
+        geology-att:name,
+        geology-att:olderNameAge,
+        geology-att:youngerNameAge ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "A GeologicalEvent is an identifiable event during which one or more geological processes act to modify geological entities. It may have a specified geologic age (numeric age or GeochologicEraTerm) and may have specified environments and processes. An example might be a cratonic uplift event during which erosion, sedimentation, and volcanism all take place."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "nsdiId"@en .
+    skos:prefLabel "Geological Event"@en .
+
+geology:MiningActivity a owl:Class,
+        skos:Concept ;
+    rdfs:label "Mining Activity"@en ;
+    ogc-ft:hasProperty geology-att:activityDuration,
+        geology-att:activityType,
+        geology-att:oreProcessed,
+        geology-att:processingType ;
+    skos:definition "The process of extracting metallic or non-metallic mineral deposits from the Earth. The term may also include preliminary treatment, for example, cleaning or sizing."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Mining Activity"@en .
+
+geology:ObservedEvent a owl:Class,
+        skos:Concept ;
+    rdfs:label "Observed Event"@en ;
+    ogc-ft:hasProperty geology-att:hazardSource,
+        geology-att:location,
+        geology-att:magnitudeOrIntensity,
+        geology-att:nameOfEvent,
+        geology-att:typeOfHazard,
+        geology-att:validFrom,
+        geology-att:validTo ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Discrete features representing natural phenomenon relevant to the study of a natural hazard which has occurred, or is currently occurring, and which has been observed."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Observed Event"@en .
+
+geology:Borehole a owl:Class,
+        skos:Concept ;
+    rdfs:label "Borehole"@en ;
+    ogc-ft:hasProperty geology-att:boreholeLength,
+        geology-att:downholeShape,
+        geology-att:elevation,
+        geology-att:location,
+        geology-att:nsdiId,
+        geology-att:purpose ;
+    skos:definition "A borehole is the generalized term for any narrow shaft drilled in the ground"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Borehole"@en .
 
 geology:GeophObject a owl:Class,
         skos:Concept ;
@@ -998,18 +2501,18 @@ geology:GeophObject a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Geoph Object"@en .
 
-geology:Borehole a owl:Class,
+geology:GeophObjectSet a owl:Class,
         skos:Concept ;
-    rdfs:label "Borehole"@en ;
-    ogc-ft:hasProperty geology-att:boreholeLength,
-        geology-att:downholeShape,
-        geology-att:elevation,
-        geology-att:location,
+    rdfs:label "Geoph Object Set"@en ;
+    ogc-ft:hasProperty geology-att:citation,
+        geology-att:distributionInfo,
+        geology-att:largerWork,
         geology-att:nsdiId,
-        geology-att:purpose ;
-    skos:definition "A borehole is the generalized term for any narrow shaft drilled in the ground"@en ;
+        geology-att:projectedShape,
+        geology-att:verticalExtend ;
+    skos:definition "Generic class for collections of geophysical objects grouped by some common property. p.e: created in the same measuring campaign. GeophObjectSets are used for spatial sampling either by means of data acquisition or data processing. The produced result of a geophObjectSet is always collective, e.g. a map constructed from the results of the individual member objects."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Borehole"@en .
+    skos:prefLabel "Geoph Object Set"@en .
 
 geology:GroundWaterBody a owl:Class,
         skos:Concept ;
@@ -1040,11 +2543,101 @@ geology:HazardArea a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Hazard Area"@en .
 
-geology:attribute a owl:Class,
+geology:RiskZone a owl:Class,
         skos:Concept ;
-    rdfs:label "Geology Foundation Theme attribute"@en ;
+    rdfs:label "Risk Zone"@en ;
+    ogc-ft:hasProperty geology-att:hazardSource,
+        geology-att:levelOfRisk,
+        geology-att:location,
+        geology-att:sourceOfRisk,
+        geology-att:validityPeriod ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Discrete spatial objects representing the spatial extent of a combination of the consequences of an event (hazard) and the associated probability/likelihood of its occurrence."@en ;
     skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Geology Foundation Theme attribute"@en .
+    skos:prefLabel "Risk Zone"@en .
+
+geology:GeophMeasurement a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geoph Measurement"@en ;
+    ogc-ft:hasProperty geology-att:platformType,
+        geology-att:relatedModel,
+        geology-att:relatedNetwork ;
+    rdfs:subClassOf geology:GeophObject ;
+    skos:broader geology:GeophObject ;
+    skos:definition "Generic feature type for geophysical measurements. Geophysical measurements collect data outside or on the boundary of the observed spatial domain"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geoph Measurement"@en .
+
+geology:HydrogeologicalObject a owl:Class,
+        skos:Concept ;
+    rdfs:label "Hydrogeological Object"@en ;
+    ogc-ft:hasProperty geology-att:description,
+        geology-att:name,
+        geology-att:position ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "An abstract class for man-made facilities or natural features that have an interaction with the hydrogeological system. Hydrogeological objects may be natural (e.g. spring) or man-made (e.g. wells). The vast majority of hydrogeological objects are man-made."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Hydrogeological Object"@en .
+
+geology:Aquifer a owl:Class,
+        skos:Concept ;
+    rdfs:label "Aquifer"@en ;
+    ogc-ft:hasProperty geology-att:aquiferType,
+        geology-att:hydroGeochemicalRockType,
+        geology-att:isExploited,
+        geology-att:isMainInSystem,
+        geology-att:mediaType,
+        geology-att:permeabilityCoefficien,
+        geology-att:storativityCoefficien,
+        geology-att:vulnerabilityToPollution ;
+    rdfs:subClassOf geology:HydrogeologicalUnit ;
+    skos:broader geology:HydrogeologicalUnit ;
+    skos:definition """A wet underground layer of water-bearing permeable rock or unconsolidated materials (gravel, sand, silt, or clay) from which groundwater can be usefully extracted using a water well.
+Note: An underground geological formation able to store and yield water."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Aquifer"@en .
+
+geology:EarthResource a owl:Class,
+        skos:Concept ;
+    rdfs:label "Earth Resource"@en ;
+    ogc-ft:hasProperty geology-att:dimention,
+        geology-att:expression,
+        geology-att:form,
+        geology-att:linearOrientation,
+        geology-att:planarOrientation,
+        geology-att:shape ;
+    rdfs:subClassOf geology:GeologicalFeature ;
+    skos:broader geology:GeologicalFeature ;
+    skos:definition "The kinds of observable or inferred phenomena required to classify economic and non-economic earth resources. EarthResource is generalized from GeoSciML GeologicFeature."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Earth Resource"@en .
+
+geology:GeologicalFeature a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geological Feature"@en ;
+    ogc-ft:hasProperty geology-att:name,
+        geology-att:purpose ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition """The abstract GeologicalFeature class represents a conceptual feature that is hypothesized to exist coherently in the world. It corresponds with a "legend item" from a traditional geologic map and its instance acts as the "description package".  The description package is classified according to its intended purpose as a typicalNorm, definingNorm or instance. GeologicalFeature can be used outside the context of a map (it can lack a MappedFeature), for example when describing typical norms (describing expected property from a feature) or defining norms (describing properties required from a feature to be classifying in a group, such as given geologic unit).  A GeologicalFeature appearing on a map is considered as an instance.
+."""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geological Feature"@en .
+
+geology:HydrogeologicalUnit a owl:Class,
+        skos:Concept ;
+    rdfs:label "Hydrogeological Unit"@en ;
+    ogc-ft:hasProperty geology-att:approximateDepth,
+        geology-att:approximateThickness,
+        geology-att:description,
+        geology-att:hydroName ;
+    rdfs:subClassOf geology:GeologicalUnit ;
+    skos:broader geology:GeologicalUnit ;
+    skos:definition "A part of the lithosphere with distinctive parameters for water storage and conduction."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Hydrogeological Unit"@en .
 
 geology:codeLists a owl:Class,
         skos:Concept ;
@@ -1056,4 +2649,10 @@ ksa-ft:Geology a skos:ConceptScheme ;
     rdfs:label "Geology Foundation Theme"@en ;
     skos:definition "The Geology Foundation Theme includes geological formations, geological structures and tectonics, geological strata, geomorphological features, geophysics and geochemistry, coastal and marine geology, hydrogeology, environmental geology and the distribution of rocks, minerals and groundwater. The Foundation Theme also includes sediment, rock and soil types and their properties. Additionally, seismic activities including earthquake and volcanic zones, man-made hazards, and information on the geological history and depositional environments, are included in the Geology Foundation Theme."@en ;
     skos:prefLabel "Geology Foundation Theme"@en .
+
+geology:attribute a owl:Class,
+        skos:Concept ;
+    rdfs:label "Geology Foundation Theme attribute"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Geology Foundation Theme attribute"@en .
 

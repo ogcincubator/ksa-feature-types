@@ -3,8 +3,118 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix transport: <https://w3id.org/ksa/feature-types/Transport/> .
 @prefix water: <https://w3id.org/ksa/feature-types/Water/> .
 @prefix water-att: <https://w3id.org/ksa/feature-types/Water/attribute/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+water:Embankment a owl:Class,
+        skos:Concept ;
+    rdfs:label "Embankment"@en ;
+    rdfs:subClassOf water:AbstractManMadeObject ;
+    skos:broader water:AbstractManMadeObject ;
+    skos:definition "A man-made raised long mound of earth or other material."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Embankment"@en .
+
+water:Ford a owl:Class,
+        skos:Concept ;
+    rdfs:label "Ford"@en ;
+    rdfs:subClassOf water:AbstractManMadeObject ;
+    skos:broader water:AbstractManMadeObject ;
+    skos:definition "A shallow part of a watercourse used as a road crossing."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Ford"@en .
+
+water:Lock a owl:Class,
+        skos:Concept ;
+    rdfs:label "Lock"@en ;
+    rdfs:subClassOf water:AbstractManMadeObject ;
+    skos:broader water:AbstractManMadeObject ;
+    skos:definition "An enclosure with a pair or series of gates used for raising or lowering vessels as they pass from one water level to another."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Lock"@en .
+
+water:Rapids a owl:Class,
+        skos:Concept ;
+    rdfs:label "Rapids"@en ;
+    rdfs:subClassOf water:FluvialPoint ;
+    skos:broader water:FluvialPoint ;
+    skos:definition "Portions of a stream with accelerated current where it descends rapidly but without a break in the slope of the bed sufficient to form a waterfall."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Rapids"@en .
+
+water:RiverBasin a owl:Class,
+        skos:Concept ;
+    rdfs:label "River Basin"@en ;
+    rdfs:subClassOf water:DrainageBasin ;
+    skos:broader water:DrainageBasin ;
+    skos:definition "The  area  of  land  from  which  all  surface  run-off flows  through  a  sequence  of streams, rivers and, possibly, lakes into the sea at a single river mouth, estuary or delta."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "River Basin"@en .
+
+water:ShorelineConstruction a owl:Class,
+        skos:Concept ;
+    rdfs:label "Shoreline Construction"@en ;
+    rdfs:subClassOf water:AbstractManMadeObject ;
+    skos:broader water:AbstractManMadeObject ;
+    skos:definition "An artificial structure attached to land bordering a body of water and fixed in position."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Shoreline Construction"@en .
+
+water:Sluice a owl:Class,
+        skos:Concept ;
+    rdfs:label "Sluice"@en ;
+    rdfs:subClassOf water:AbstractManMadeObject ;
+    skos:broader water:AbstractManMadeObject ;
+    skos:definition "An open, inclined conduit fitted with a gate for regulating water flow."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Sluice"@en .
+
+water-att:bank a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "bank" ;
+    rdfs:domain water:AbstractSurfaceWater ;
+    rdfs:range water:Shore ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:prefLabel "bank" .
+
+water-att:containsBasin a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "containsBasin" ;
+    rdfs:domain water:DrainageBasin ;
+    rdfs:range water:DrainageBasin ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:prefLabel "containsBasin" .
+
+water-att:drainsBasin a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "drainsBasin" ;
+    rdfs:domain water:AbstractSurfaceWater ;
+    rdfs:range water:DrainageBasin ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:prefLabel "drainsBasin" .
+
+water-att:relatedRepresentation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "relatedRepresentation" ;
+    rdfs:domain water:AbstractHydroFeature ;
+    rdfs:range water:AbstractHydroFeature ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:prefLabel "relatedRepresentation" .
+
+water-att:segment a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "segment" ;
+    rdfs:domain water:Shoreline ;
+    rdfs:range water:ShoreSegment ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:prefLabel "segment" .
 
 water:DitchTypeValue a owl:Class,
         skos:Concept ;
@@ -14,6 +124,16 @@ water:DitchTypeValue a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Ditch Type Value"@en .
 
+water:Falls a owl:Class,
+        skos:Concept ;
+    rdfs:label "Falls"@en ;
+    ogc-ft:hasProperty water-att:height ;
+    rdfs:subClassOf water:FluvialPoint ;
+    skos:broader water:FluvialPoint ;
+    skos:definition "A vertically descending part of a watercourse where it falls from a height."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Falls"@en .
+
 water:HydroNodeCategoryValue a owl:Class,
         skos:Concept ;
     rdfs:label "Hydro Node Category Value"@en ;
@@ -21,14 +141,6 @@ water:HydroNodeCategoryValue a owl:Class,
     skos:definition "Defines categories for different types of hydrographic network nodes."@en ;
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Hydro Node Category Value"@en .
-
-water:HydroOrderCode a owl:Class,
-        skos:Concept ;
-    rdfs:label "Hydro Order Code"@en ;
-    skos:broader water:codeLists ;
-    skos:definition "A hydrologically meaningful 'order code' for ordering hierarchies of watercourses and drainage basins."@en ;
-    skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "Hydro Order Code"@en .
 
 water:HydrologicalPersistenceValue a owl:Class,
         skos:Concept ;
@@ -38,6 +150,24 @@ water:HydrologicalPersistenceValue a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Hydrological Persistence Value"@en .
 
+water:MarineCirculationZone a owl:Class,
+        skos:Concept ;
+    rdfs:label "Marine Circulation Zone"@en ;
+    ogc-ft:hasProperty water-att:zoneType ;
+    rdfs:subClassOf water:SeaArea ;
+    skos:broader water:SeaArea ;
+    skos:definition "A sea area defined by its physical and chemical circulation patterns."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Marine Circulation Zone"@en .
+
+water:OriginValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Origin Value"@en ;
+    skos:broader water:codeLists ;
+    skos:definition "An enumeration type specifying a set of hydrographic 'origin' categories (natural, man-made) for various hydrographic objects."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Origin Value"@en .
+
 water:SeaAreaTypeClassificationValue a owl:Class,
         skos:Concept ;
     rdfs:label "Sea Area Type Classification Value"@en ;
@@ -46,6 +176,16 @@ water:SeaAreaTypeClassificationValue a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Sea Area Type Classification Value"@en .
 
+water:SeaSurfaceArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Sea Surface Area"@en ;
+    ogc-ft:hasProperty water-att:surfaceType ;
+    rdfs:subClassOf water:AbstractMarineLayer ;
+    skos:broader water:AbstractMarineLayer ;
+    skos:definition "An area of the sea surface with some type of cover."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Sea Surface Area"@en .
+
 water:SeaSurfaceClassificationValue a owl:Class,
         skos:Concept ;
     rdfs:label "Sea Surface Classification Value"@en ;
@@ -53,6 +193,16 @@ water:SeaSurfaceClassificationValue a owl:Class,
     skos:definition "Types of sea surface layers found on sea surfaces."@en ;
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Sea Surface Classification Value"@en .
+
+water:SeabedArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Seabed Area"@en ;
+    ogc-ft:hasProperty water-att:surfaceType ;
+    rdfs:subClassOf water:AbstractMarineLayer ;
+    skos:broader water:AbstractMarineLayer ;
+    skos:definition "An area of the sea bed with some identified type of cover, for example, an area of vegetation or sediment type."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Seabed Area"@en .
 
 water:SeabedCoverValue a owl:Class,
         skos:Concept ;
@@ -94,60 +244,161 @@ water:ZoneTypeValue a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Zone Type Value"@en .
 
-water-att:relatedRepresentation a owl:ObjectProperty,
+water-att:basinOrder a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "relatedRepresentation" ;
-    rdfs:domain water:AbstractHydroFeature ;
-    rdfs:range water:AbstractHydroFeature ;
+    rdfs:label "basinOrder"@en ;
+    rdfs:domain water:DrainageBasin ;
+    rdfs:range water:HydroOrderCode ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
-    skos:prefLabel "relatedRepresentation" .
-
-water:OriginValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Origin Value"@en ;
-    skos:broader water:codeLists ;
-    skos:definition "An enumeration type specifying a set of hydrographic 'origin' categories (natural, man-made) for various hydrographic objects."@en ;
+    skos:definition "Number (or code) expressing the degree of branching/dividing in a drainage basin system."@en ;
     skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "Origin Value"@en .
+    skos:prefLabel "basinOrder"@en .
 
-water:WaterLevelValue a owl:Class,
+water-att:capacity a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Water Level Value"@en ;
-    skos:broader water:codeLists ;
-    skos:definition "The tidal datum / waterlevel to which depths and heights are referenced."@en ;
-    skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "Water Level Value"@en .
-
-water-att:centerline a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "centerline"@en ;
-    rdfs:domain water:LandWaterBoundary ;
+    rdfs:label "capacity"@en ;
+    rdfs:domain water:Dam ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
-    skos:definition "The geometry of the land-water boundary, as a curve."@en ;
+    skos:definition "The amount of water that the dam can release (m3/sec)."@en ;
     skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "centerline"@en .
+    skos:prefLabel "capacity"@en .
 
-water-att:extent a owl:ObjectProperty,
+water-att:centerlineCaptureScale a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "extent"@en ;
-    rdfs:domain water:AbstractMarineLayer ;
+    rdfs:label "centerlineCaptureScale"@en ;
+    rdfs:domain water:Watercourse ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
-    skos:definition "Geometry of the marine layer."@en ;
+    skos:definition "Capture spatial resolution, expressed as the inverse of an indicative scale or a ground distance, for centerline geometry."@en ;
     skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "extent"@en .
+    skos:prefLabel "centerlineCaptureScale"@en .
 
-water-att:geographicalName a owl:ObjectProperty,
+water-att:centerpoint a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "geographicalName"@en ;
-    rdfs:domain water:WatercourseSeparatedCrossing ;
+    rdfs:label "centerpoint"@en ;
+    rdfs:domain water:StandingWater ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
-    skos:definition "A geographical name that is used to identify a water course separated crossing."@en ;
     skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "geographicalName"@en .
+    skos:prefLabel "centerpoint"@en .
+
+water-att:centerpointCaptureScale a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "centerpointCaptureScale"@en ;
+    rdfs:domain water:StandingWater ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Capture spatial resolution, expressed as the inverse of an indicative scale or a ground distance, for centerpoint geometry."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "centerpointCaptureScale"@en .
+
+water-att:composition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "composition"@en ;
+    rdfs:domain water:Shore ;
+    rdfs:range water:ShoreTypeValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The primary type(s) of material composing a spatial object, exclusive of the surface."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "composition"@en .
+
+water-att:elevation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "elevation"@en ;
+    rdfs:domain water:StandingWater ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Elevation above mean sea level."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "elevation"@en .
+
+water-att:extentCaptureScale a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extentCaptureScale"@en ;
+    rdfs:domain water:AbstractSurfaceWater ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Capture spatial resolution, expressed as the inverse of an indicative scale or a ground distance, for extent geometry."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "extentCaptureScale"@en .
+
+water-att:flowDirection a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "flowDirection"@en ;
+    rdfs:domain water:WatercourseLink ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Direction of water flow in the segment relative to digitisation of segment geometry."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "flowDirection"@en .
+
+water-att:groundComposition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "groundComposition"@en ;
+    rdfs:domain water:Ditch ;
+    rdfs:range transport:GroundCompositionTypeValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Type of the ground composition for the ditch."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "groundComposition"@en .
+
+water-att:highWaterLevel a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "highWaterLevel"@en ;
+    rdfs:domain water:InterTidalArea ;
+    rdfs:range water:WaterLevelValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The high water level which was used to define the upper limit of the Intertidal Area, e.g. 'meanHighWater'."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "highWaterLevel"@en .
+
+water-att:hydroNodeCategory a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "hydroNodeCategory"@en ;
+    rdfs:domain water:HydroNode ;
+    rdfs:range water:HydroNodeCategoryValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Nature of the hydro node."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "hydroNodeCategory"@en .
+
+water-att:level a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "level"@en ;
+    rdfs:domain water:Watercourse ;
+    rdfs:range transport:VerticalPositionTypeValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Vertical location of watercourse relative to ground."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "level"@en .
+
+water-att:localType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "localType"@en ;
+    rdfs:domain water:Wetland ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Provides 'local' name for the type of wetland."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "localType"@en .
+
+water-att:lowWaterLevel a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "lowWaterLevel"@en ;
+    rdfs:domain water:InterTidalArea ;
+    rdfs:range water:WaterLevelValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The low water level which was used to define the lower limit of the Intertidal Area, e.g. 'meanLowWater'."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "lowWaterLevel"@en .
 
 water-att:name a owl:ObjectProperty,
         skos:Concept ;
@@ -159,16 +410,70 @@ water-att:name a owl:ObjectProperty,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "name"@en .
 
-water-att:origin a owl:ObjectProperty,
+water-att:seaAreaType a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "origin"@en ;
-    rdfs:domain water:LandWaterBoundary ;
-    rdfs:range water:OriginValue ;
+    rdfs:label "seaAreaType"@en ;
+    rdfs:domain water:SeaArea ;
+    rdfs:range water:SeaAreaTypeClassificationValue ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
-    skos:definition "Origin of the land-water boundary."@en ;
+    skos:definition "Type of the sea area according to the classifications in the SeaAreaTypeClassificationValue codelist (e.g. estuary, open ocean)."@en ;
     skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "origin"@en .
+    skos:prefLabel "seaAreaType"@en .
+
+water-att:shoreClassification a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "shoreClassification"@en ;
+    rdfs:domain water:ShoreSegment ;
+    rdfs:range water:ShoreTypeClassificationValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The primary type of the shore segment, taken from the ShoreTypeClassification codelist."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "shoreClassification"@en .
+
+water-att:shoreStability a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "shoreStability"@en ;
+    rdfs:domain water:ShoreSegment ;
+    rdfs:range water:ShoreStabilityValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The primary stability type of the shore segment, taken from the ShoreStability codelist."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "shoreStability"@en .
+
+water-att:streamOrder a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "streamOrder"@en ;
+    rdfs:domain water:Watercourse ;
+    rdfs:range water:HydroOrderCode ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Number (or code) expressing the degree of branching in a stream system."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "streamOrder"@en .
+
+water-att:surfaceArea a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surfaceArea"@en ;
+    rdfs:domain water:StandingWater ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Surface area of the body of water."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "surfaceArea"@en .
+
+water-att:type a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "type"@en ;
+    rdfs:domain water:Ditch ;
+    rdfs:range water:DitchTypeValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Manual or man made type of the ditch."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "type"@en .
 
 water-att:validTime a owl:ObjectProperty,
         skos:Concept ;
@@ -191,16 +496,76 @@ water-att:waterLevelCategory a owl:ObjectProperty,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "waterLevelCategory"@en .
 
-water:AbstractMarineLayer a owl:Class,
+water-att:widthLower a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "Abstract Marine Layer"@en ;
-    ogc-ft:hasProperty water-att:extent,
-        water-att:validTime ;
+    rdfs:label "widthLower"@en ;
+    rdfs:domain water:Watercourse ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Lower bound of watercourse width."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "widthLower"@en .
+
+water-att:widthUpper a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "widthUpper"@en ;
+    rdfs:domain water:Watercourse ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Upper bound of watercourse width."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "widthUpper"@en .
+
+water-att:zoneType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "zoneType"@en ;
+    rdfs:domain water:MarineCirculationZone ;
+    rdfs:range water:ZoneTypeValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The type of the Marine Circulation Zone, e.g. sedimentCell."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "zoneType"@en .
+
+water:HydroOrderCode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Hydro Order Code"@en ;
+    skos:broader water:codeLists ;
+    skos:definition "A hydrologically meaningful 'order code' for ordering hierarchies of watercourses and drainage basins."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Hydro Order Code"@en .
+
+water:InterTidalArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Inter Tidal Area"@en ;
+    ogc-ft:hasProperty water-att:highWaterLevel,
+        water-att:lowWaterLevel ;
+    rdfs:subClassOf water:Shore ;
+    skos:broader water:Shore ;
+    skos:definition "The part of the marine environment that is exposed (not covered in water) during a normal tidal cycle; defined as the difference between any high and any low water level."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Inter Tidal Area"@en .
+
+water:Shoreline a owl:Class,
+        skos:Concept ;
+    rdfs:label "Shoreline"@en ;
+    ogc-ft:hasProperty water-att:waterLevel ;
     rdfs:subClassOf water:AbstractHydroFeature ;
     skos:broader water:AbstractHydroFeature ;
-    skos:definition "A layer that may cover any part of a sea surface or sea bottom, represented as either a surface or point. The point representation reflects the reality that many Marine Layers are identified by point observations."@en ;
+    skos:definition "A Boundary between a Sea Area and land."@en ;
     skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "Abstract Marine Layer"@en .
+    skos:prefLabel "Shoreline"@en .
+
+water:WatercourseLinkSequence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Watercourse Link Sequence"@en ;
+    ogc-ft:hasProperty water-att:geographicalName,
+        water-att:hydroID ;
+    rdfs:subClassOf water:LinkSequence ;
+    skos:broader water:LinkSequence ;
+    skos:definition "A sequence of watercourse links representing a non-branching path through a hydrographic network."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Watercourse Link Sequence"@en .
 
 water:WatercourseSeparatedCrossing a owl:Class,
         skos:Concept ;
@@ -213,17 +578,177 @@ water:WatercourseSeparatedCrossing a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Watercourse Separated Crossing"@en .
 
-water-att:hydroID a owl:ObjectProperty,
+water-att:area a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "hydroID"@en ;
-    rdfs:domain water:AbstractHydroFeature,
-        water:WatercourseSeparatedCrossing ;
-    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:label "area"@en ;
+    rdfs:domain water:DrainageBasin,
+        water:SeaArea ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
-    skos:definition "A hydrographic thematic identifier, for example, a Data Owner internal identifier."@en ;
+    skos:definition "Area of the sea extent or many extents."@en,
+        "Size of the drainage basin area."@en ;
     skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "hydroID"@en .
+    skos:prefLabel "area"@en .
+
+water-att:condition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "condition"@en ;
+    rdfs:domain water:AbstractManMadeObject,
+        water:Watercourse ;
+    rdfs:range transport:StatusTypeValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The state of planning, construction, repair, and/or maintenance of a watercourse."@en,
+        "The state of planning, construction, repair, and/or maintenance of the structures and/or equipment comprising a facility and/or located at a site, as a whole."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "condition"@en .
+
+water-att:delineationKnown a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "delineationKnown"@en ;
+    rdfs:domain water:Shore,
+        water:Watercourse ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "An indication that the delineation (for example: limits and information) of a spatial object is known."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "delineationKnown"@en .
+
+water-att:height a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "height"@en ;
+    rdfs:domain water:Dam,
+        water:Falls ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Distance measured from the lowest point of the base at ground or water level (downhill side/downstream side) to the tallest point of the spatial object."@en,
+        "Height of the dam."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "height"@en .
+
+water-att:length a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "length"@en ;
+    rdfs:domain water:Watercourse,
+        water:WatercourseLink ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Length of network segment."@en,
+        "Length of the watercourse."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "length"@en .
+
+water-att:levelOfDetail a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "levelOfDetail"@en ;
+    rdfs:domain water:AbstractHydroPointOfInterest,
+        water:AbstractManMadeObject ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Resolution, expressed as the inverse of an indicative scale or a ground distance."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "levelOfDetail"@en .
+
+water-att:meanDepth a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "meanDepth"@en ;
+    rdfs:domain water:AbstractSurfaceWater,
+        water:Ditch ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Average depth of the body of water."@en,
+        "Average depth of the ditch."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "meanDepth"@en .
+
+water-att:persistence a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "persistence"@en ;
+    rdfs:domain water:AbstractSurfaceWater,
+        water:FluvialPoint ;
+    rdfs:range water:HydrologicalPersistenceValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The degree of persistence of water."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "persistence"@en .
+
+water-att:surfaceType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "surfaceType"@en ;
+    rdfs:domain water:SeaSurfaceArea,
+        water:SeabedArea ;
+    rdfs:range water:SeaSurfaceClassificationValue,
+        water:SeabedCoverValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Surface type of sea area."@en,
+        "Surface type of sea bed."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "surfaceType"@en .
+
+water-att:tidal a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "tidal"@en ;
+    rdfs:domain water:AbstractSurfaceWater,
+        water:Wetland ;
+    rdfs:range xsd:boolean ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Identifies whether the surface water is affected by tidal water."@en,
+        "Identifies whether the wetland is affected by tidal water."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "tidal"@en .
+
+water-att:waterLevel a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "waterLevel"@en ;
+    rdfs:domain water:MarineExtent,
+        water:Shoreline ;
+    rdfs:range water:WaterLevelValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The water level used when defining this shoreline, e.g. meanHighWater."@en,
+        "Water level at which the extent is valid."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "waterLevel"@en .
+
+water-att:width a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "width"@en ;
+    rdfs:domain water:Dam,
+        water:Ditch ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Width of ditch along its length."@en,
+        "Width of the dam."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "width"@en .
+
+water:Dam a owl:Class,
+        skos:Concept ;
+    rdfs:label "Dam"@en ;
+    ogc-ft:hasProperty water-att:capacity,
+        water-att:height,
+        water-att:width ;
+    rdfs:subClassOf water:AbstractManMadeObject ;
+    skos:broader water:AbstractManMadeObject ;
+    skos:definition "A permanent barrier across a watercourse used to impound water or to control its flow."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Dam"@en .
+
+water:HydroNode a owl:Class,
+        skos:Concept ;
+    rdfs:label "Hydro Node"@en ;
+    ogc-ft:hasProperty water-att:geographicalName,
+        water-att:hydroID,
+        water-att:hydroNodeCategory ;
+    rdfs:subClassOf water:Node ;
+    skos:broader water:Node ;
+    skos:definition "A node within the hydrographic network."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Hydro Node"@en .
 
 water:LandWaterBoundary a owl:Class,
         skos:Concept ;
@@ -237,6 +762,294 @@ water:LandWaterBoundary a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Land Water Boundary"@en .
 
+water:MarineExtent a owl:Class,
+        skos:Concept ;
+    rdfs:label "Marine Extent"@en ;
+    ogc-ft:hasProperty water-att:extent,
+        water-att:waterLevel ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "The extent of a sea area for a given tidal state."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Marine Extent"@en .
+
+water:Wetland a owl:Class,
+        skos:Concept ;
+    rdfs:label "Wetland"@en ;
+    ogc-ft:hasProperty water-att:extent,
+        water-att:localType,
+        water-att:tidal ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "A poorly drained or periodically flooded area where the soil is saturated with water, and vegetation is supported."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Wetland"@en .
+
+water-att:centerline a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "centerline"@en ;
+    rdfs:domain water:LandWaterBoundary,
+        water:ShoreSegment,
+        water:Watercourse ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "The geometry of the ShoreSegment."@en,
+        "The geometry of the land-water boundary, as a curve."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "centerline"@en .
+
+water-att:origin a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "origin"@en ;
+    rdfs:domain water:AbstractSurfaceWater,
+        water:DrainageBasin,
+        water:LandWaterBoundary ;
+    rdfs:range water:OriginValue ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Origin of the drainage basin."@en,
+        "Origin of the land-water boundary."@en,
+        "Origin of the surface water."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "origin"@en .
+
+water:AbstractHydroPointOfInterest a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Hydro Point Of Interest"@en ;
+    ogc-ft:hasProperty water-att:extent,
+        water-att:levelOfDetail ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "A natural place where water appears, disappears or changes its flow."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Abstract Hydro Point Of Interest"@en .
+
+water:Ditch a owl:Class,
+        skos:Concept ;
+    rdfs:label "Ditch"@en ;
+    ogc-ft:hasProperty water-att:groundComposition,
+        water-att:meanDepth,
+        water-att:type,
+        water-att:width ;
+    rdfs:subClassOf water:AbstractManMadeObject ;
+    skos:broader water:AbstractManMadeObject ;
+    skos:definition "A typically narrow artificial waterway created to contain water."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Ditch"@en .
+
+water:ShoreSegment a owl:Class,
+        skos:Concept ;
+    rdfs:label "Shore Segment"@en ;
+    ogc-ft:hasProperty water-att:centerline,
+        water-att:shoreClassification,
+        water-att:shoreStability ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "A section of shore line."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Shore Segment"@en .
+
+water:StandingWater a owl:Class,
+        skos:Concept ;
+    rdfs:label "Standing Water"@en ;
+    ogc-ft:hasProperty water-att:centerpoint,
+        water-att:centerpointCaptureScale,
+        water-att:elevation,
+        water-att:surfaceArea ;
+    rdfs:subClassOf water:AbstractSurfaceWater ;
+    skos:broader water:AbstractSurfaceWater ;
+    skos:definition "A body of water that is entirely surrounded by land."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Standing Water"@en .
+
+water:WaterLevelValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Water Level Value"@en ;
+    skos:broader water:codeLists ;
+    skos:definition "The tidal datum / waterlevel to which depths and heights are referenced."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Water Level Value"@en .
+
+water:WatercourseLink a owl:Class,
+        skos:Concept ;
+    rdfs:label "Watercourse Link"@en ;
+    ogc-ft:hasProperty water-att:flowDirection,
+        water-att:geographicalName,
+        water-att:hydroID,
+        water-att:length ;
+    rdfs:subClassOf transport:Link ;
+    skos:broader transport:Link ;
+    skos:definition "A segment of a watercourse within a hydrographic network."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Watercourse Link"@en .
+
+water-att:geographicalName a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "geographicalName"@en ;
+    rdfs:domain water:HydroNode,
+        water:WatercourseLink,
+        water:WatercourseLinkSequence,
+        water:WatercourseSeparatedCrossing ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "A geographical name that is used to identify a hydro node."@en,
+        "A geographical name that is used to identify a water course separated crossing."@en,
+        "A geographical name that is used to identify a watercourse link sequence."@en,
+        "A geographical name that is used to identify a watercourse link."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "geographicalName"@en .
+
+water:FluvialPoint a owl:Class,
+        skos:Concept ;
+    rdfs:label "Fluvial Point"@en ;
+    ogc-ft:hasProperty water-att:persistence ;
+    rdfs:subClassOf water:AbstractHydroPointOfInterest ;
+    skos:broader water:AbstractHydroPointOfInterest ;
+    skos:definition "A vertically descending part of a watercourse where it falls from a height."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Fluvial Point"@en .
+
+water:SeaArea a owl:Class,
+        skos:Concept ;
+    rdfs:label "Sea Area"@en ;
+    ogc-ft:hasProperty water-att:area,
+        water-att:seaAreaType ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "An area of sea defined according to its physical and chemical characteristics. It may have multiple geometries (extents) to represent different tidal states."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Sea Area"@en .
+
+water-att:hydroID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "hydroID"@en ;
+    rdfs:domain water:AbstractHydroFeature,
+        water:HydroNode,
+        water:WatercourseLink,
+        water:WatercourseLinkSequence,
+        water:WatercourseSeparatedCrossing ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "A hydrographic thematic identifier, for example, a Data Owner internal identifier."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "hydroID"@en .
+
+water:AbstractMarineLayer a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Marine Layer"@en ;
+    ogc-ft:hasProperty water-att:extent,
+        water-att:validTime ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "A layer that may cover any part of a sea surface or sea bottom, represented as either a surface or point. The point representation reflects the reality that many Marine Layers are identified by point observations."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Abstract Marine Layer"@en .
+
+water:Shore a owl:Class,
+        skos:Concept ;
+    rdfs:label "Shore"@en ;
+    ogc-ft:hasProperty water-att:composition,
+        water-att:delineationKnown,
+        water-att:extent ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "The narrow strip of land in immediate contact with any body of water including the area between high and low water lines."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Shore"@en .
+
+water-att:extent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extent",
+        "extent"@en ;
+    rdfs:domain water:AbstractHydroPointOfInterest,
+        water:AbstractManMadeObject,
+        water:AbstractMarineLayer,
+        water:AbstractSurfaceWater,
+        water:DrainageBasin,
+        water:MarineExtent,
+        water:SeaArea,
+        water:Shore,
+        water:Wetland ;
+    rdfs:range water:MarineExtent ;
+    rdfs:subClassOf water:attribute ;
+    skos:broader water:attribute ;
+    skos:definition "Geometry of the marine layer."@en,
+        "The geometry of the Marine Extent."@en,
+        "The geometry of the drainage basin, as a surface."@en,
+        "The geometry of the hydro point of interest, as a point, curve or surface."@en,
+        "The geometry of the man-made object, as a point, curve or surface."@en,
+        "The geometry of the shore."@en,
+        "The geometry of the surface water: - either a curve or surface for a watercourse; - either a point or surface for a standing water."@en,
+        "The geometry of the wetland, as a surface."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "extent",
+        "extent"@en .
+
+water:DrainageBasin a owl:Class,
+        skos:Concept ;
+    rdfs:label "Drainage Basin"@en ;
+    ogc-ft:hasProperty water-att:area,
+        water-att:basinOrder,
+        water-att:extent,
+        water-att:origin ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "Area having a common outlet for its surface runoff."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Drainage Basin"@en .
+
+water:Watercourse a owl:Class,
+        skos:Concept ;
+    rdfs:label "Watercourse"@en ;
+    ogc-ft:hasProperty water-att:centerline,
+        water-att:centerlineCaptureScale,
+        water-att:condition,
+        water-att:delineationKnown,
+        water-att:length,
+        water-att:level,
+        water-att:streamOrder,
+        water-att:widthLower,
+        water-att:widthUpper ;
+    rdfs:subClassOf water:AbstractSurfaceWater ;
+    skos:broader water:AbstractSurfaceWater ;
+    skos:definition "A natural or man-made flowing watercourse or stream."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Watercourse"@en .
+
+water:AbstractSurfaceWater a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Surface Water"@en ;
+    ogc-ft:hasProperty water-att:extent,
+        water-att:extentCaptureScale,
+        water-att:meanDepth,
+        water-att:origin,
+        water-att:persistence,
+        water-att:tidal ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "Any known inland waterway body."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Abstract Surface Water"@en .
+
+water:codeLists a owl:Class,
+        skos:Concept ;
+    rdfs:label "Water Foundation Theme code list or type"@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Water Foundation Theme code list or type"@en .
+
+water:AbstractManMadeObject a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Man Made Object"@en ;
+    ogc-ft:hasProperty water-att:condition,
+        water-att:extent,
+        water-att:levelOfDetail ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
+    skos:definition "A man-made object allowing the passage of water above or below an obstacle."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Abstract Man Made Object"@en .
+
 water:AbstractHydroFeature a owl:Class,
         skos:Concept ;
     rdfs:label "Abstract Hydro Feature"@en ;
@@ -248,20 +1061,14 @@ water:AbstractHydroFeature a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Abstract Hydro Feature"@en .
 
-water:codeLists a owl:Class,
-        skos:Concept ;
-    rdfs:label "Water Foundation Theme code list or type"@en ;
-    skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "Water Foundation Theme code list or type"@en .
+ksa-ft:Water a skos:ConceptScheme ;
+    rdfs:label "Water Foundation Theme"@en ;
+    skos:definition "The Water Foundation Theme depicts and specifies all surface water types and water resources including perpetual and transient water courses, artificial surface water bodies, and sea water. While it includes all water features that are intrinsic to (part of) a surface water hydrological network, it excludes ultimate uses of water such as irrigation and waterborne transport."@en ;
+    skos:prefLabel "Water Foundation Theme"@en .
 
 water:attribute a owl:Class,
         skos:Concept ;
     rdfs:label "Water Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Water Foundation Theme attribute"@en .
-
-ksa-ft:Water a skos:ConceptScheme ;
-    rdfs:label "Water Foundation Theme"@en ;
-    skos:definition "The Water Foundation Theme depicts and specifies all surface water types and water resources including perpetual and transient water courses, artificial surface water bodies, and sea water. While it includes all water features that are intrinsic to (part of) a surface water hydrological network, it excludes ultimate uses of water such as irrigation and waterborne transport."@en ;
-    skos:prefLabel "Water Foundation Theme"@en .
 
