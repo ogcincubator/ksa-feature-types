@@ -30,14 +30,6 @@ geology:AquiferTypeValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Aquifer Type"@en .
 
-geology:BoreholePurposeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Borehole Purpose"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Purposes for which a borehole was drilled"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Borehole Purpose"@en .
-
 geology:CampaignTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Value of Campaign Type"@en ;
@@ -81,15 +73,6 @@ geology:CompositionPartRoleValue a owl:Class,
     skos:definition "Roles that a compositional part plays in a geological unit"@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Composition Part Role"@en .
-
-geology:ConditionOfGroundwaterValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Condition Of Groundwater"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition """Values  indicating  the  approximate  degree  of  change  which  has  taken  place  on  the natural state of groundwater
-NOTE: The groundwater in a GroundWaterFlowSystem is in a variable condition, dependent on external factors, among which are diverse human activities"""@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Condition Of Groundwater"@en .
 
 geology:DescriptionPurposeValue a owl:Class,
         skos:Concept ;
@@ -269,14 +252,6 @@ geology:HazardCategoryValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Natural Hazard Category"@en .
 
-geology:HazardClassification a owl:Class,
-        skos:Concept ;
-    rdfs:label "Classification of Natural Hazard"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Information about the nature of the natural hazard as well as the type of hazard which is the source of risk."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Classification of Natural Hazard"@en .
-
 geology:HydroGeochemicalRockTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Value of HydroGeochemical Rock Type"@en ;
@@ -312,22 +287,6 @@ geology:LayerTypeValue a owl:Class,
     skos:definition "Classification of a layer according to the concept that fits the purpose"@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Layer Type"@en .
-
-geology:LevelOrIntensity a owl:Class,
-        skos:Concept ;
-    rdfs:label "Level Or Intensity"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Quantitative or qualitative assessment of either risk, hazard or vulnerability. This is a common concept for assessing the level of risk, or the level of hazard, or the level of vulnerability."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Level Or Intensity"@en .
-
-geology:LikelihoodOfOccurrence a owl:Class,
-        skos:Concept ;
-    rdfs:label "Likelihood Of Occurrence"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A general concept relating to the chance of an event occurring. It generally expressed as a probability or a frequency."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Likelihood Of Occurrence"@en .
 
 geology:LithologyTypeValue a owl:Class,
         skos:Concept ;
@@ -427,22 +386,6 @@ geology:OtherSoilNameTypeValue a owl:Class,
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Other Soil Name Type"@en .
 
-geology:ParticleSizeFractionType a owl:Class,
-        skos:Concept ;
-    rdfs:label "Type Of Particle Size Fraction"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Share of the soil that is composed of mineral soil particles of the size within the size range specified."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Type Of Particle Size Fraction"@en .
-
-geology:PiezometricState a owl:Class,
-        skos:Concept ;
-    rdfs:label "State Of Piezometric"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "The piezometric state of a GroundWaterBody."@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "State Of Piezometric"@en .
-
 geology:PlatformTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Value of Platform Type"@en ;
@@ -482,14 +425,6 @@ geology:QuantityValue a owl:Class,
     skos:definition "Data container with a single quantity or a range of quantity values."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value Of Quantity"@en .
-
-geology:RangeType a owl:Class,
-        skos:Concept ;
-    rdfs:label "Type Of Range"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "A range value defined by an upper limit and a lower limit"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Type Of Range"@en .
 
 geology:ShapeCategoryValue a owl:Class,
         skos:Concept ;
@@ -636,14 +571,6 @@ NOTE:Salinity  is  the  saltiness  or  dissolved  salt  content  of  a  body  of
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Value of Water Salinity"@en .
 
-geology:WaterTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Value of Water Type"@en ;
-    skos:broader geology:codeLists ;
-    skos:definition "Classification of water types"@en ;
-    skos:inScheme ksa-ft:Geology ;
-    skos:prefLabel "Value of Water Type"@en .
-
 geology:WaterWellTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Value of AcitveWell Type"@en ;
@@ -694,17 +621,90 @@ geology:AquiferSystem a owl:Class,
     skos:definition "A collection of aquifers and aquitards, which together constitute the environment of groundwater - \"communicating vessels\" - that are filled, or can be filled, with water. Attributes of Aquifer System and its components determine the feasibility of water collection, its movement, as well as the impact on its chemical state. The Aquifer System components and their attributes (including geometry) are relatively stable over time except in special cases."@en ;
     skos:prefLabel "Aquifer System"@en .
 
+geology:BoreholePurposeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Borehole Purpose"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Purposes for which a borehole was drilled"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Borehole Purpose"@en .
+
+geology:ConditionOfGroundwaterValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Condition Of Groundwater"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition """Values  indicating  the  approximate  degree  of  change  which  has  taken  place  on  the natural state of groundwater
+NOTE: The groundwater in a GroundWaterFlowSystem is in a variable condition, dependent on external factors, among which are diverse human activities"""@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Condition Of Groundwater"@en .
+
+geology:HazardClassification a owl:Class,
+        skos:Concept ;
+    rdfs:label "Classification of Natural Hazard"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Information about the nature of the natural hazard as well as the type of hazard which is the source of risk."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Classification of Natural Hazard"@en .
+
 geology:HydrogeologicalObjectNatural a owl:Class,
         skos:Concept ;
     rdfs:label "Hydrogeological Object Natural"@en ;
     skos:definition "HydrogeologicalObject which was created by natural processes. Example of natural hydrogeological objects include a source, vanishing point and geyser."@en ;
     skos:prefLabel "Hydrogeological Object Natural"@en .
 
+geology:LevelOrIntensity a owl:Class,
+        skos:Concept ;
+    rdfs:label "Level Or Intensity"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Quantitative or qualitative assessment of either risk, hazard or vulnerability. This is a common concept for assessing the level of risk, or the level of hazard, or the level of vulnerability."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Level Or Intensity"@en .
+
+geology:LikelihoodOfOccurrence a owl:Class,
+        skos:Concept ;
+    rdfs:label "Likelihood Of Occurrence"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "A general concept relating to the chance of an event occurring. It generally expressed as a probability or a frequency."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Likelihood Of Occurrence"@en .
+
 geology:MappedInterval a owl:Class,
         skos:Concept ;
     rdfs:label "Mapped Interval"@en ;
     skos:definition "A special kind of mapped feature whose shape is a 1-D interval and which uses the SRS of the containing borehole"@en ;
     skos:prefLabel "Mapped Interval"@en .
+
+geology:ParticleSizeFractionType a owl:Class,
+        skos:Concept ;
+    rdfs:label "Type Of Particle Size Fraction"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Share of the soil that is composed of mineral soil particles of the size within the size range specified."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Type Of Particle Size Fraction"@en .
+
+geology:PiezometricState a owl:Class,
+        skos:Concept ;
+    rdfs:label "State Of Piezometric"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "The piezometric state of a GroundWaterBody."@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "State Of Piezometric"@en .
+
+geology:RangeType a owl:Class,
+        skos:Concept ;
+    rdfs:label "Type Of Range"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "A range value defined by an upper limit and a lower limit"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Type Of Range"@en .
+
+geology:WaterTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Value of Water Type"@en ;
+    skos:broader geology:codeLists ;
+    skos:definition "Classification of water types"@en ;
+    skos:inScheme ksa-ft:Geology ;
+    skos:prefLabel "Value of Water Type"@en .
 
 geology:WaterWell a owl:Class,
         skos:Concept ;
@@ -736,6 +736,7 @@ geology-att:citation a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "citation"@en ;
     rdfs:domain geology:GeophObject ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/DocumentCitation> ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition "Citation of geophysical documentation"@en ;
@@ -746,6 +747,7 @@ geology-att:conditionOfGroundWaterBody a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "conditionOfGroundWaterBody"@en ;
     rdfs:domain geology:GroundWaterBody ;
+    rdfs:range geology:ConditionOfGroundwaterValue ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition "The approximate degree of change to groundwater as a result of human activity."@en ;
@@ -806,6 +808,7 @@ geology-att:largerWork a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "largerWork"@en ;
     rdfs:domain geology:GeophObject ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition "Identifier of a larger work dataset, typically a campaign or project"@en ;
@@ -816,6 +819,7 @@ geology-att:likelihoodOfOccurrence a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "likelihoodOfOccurrence"@en ;
     rdfs:domain geology:HazardArea ;
+    rdfs:range geology:LikelihoodOfOccurrence ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition "Likelihood is a general concept relating to the chance of an event occurring."@en ;
@@ -826,6 +830,7 @@ geology-att:magnitudeOrIntensity a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "magnitudeOrIntensity"@en ;
     rdfs:domain geology:HazardArea ;
+    rdfs:range geology:LevelOrIntensity ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition """An expression of the magnitude or the intensity of a phenomenon.
@@ -837,6 +842,7 @@ geology-att:mineralization a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "mineralization"@en ;
     rdfs:domain geology:GroundWaterBody ;
+    rdfs:range geology:WaterTypeValue ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition "One of the main chemical characteristics of water. A value is a sum of all water chemical concentration components."@en ;
@@ -847,6 +853,7 @@ geology-att:particleSizeFraction a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "particleSizeFraction"@en ;
     rdfs:domain geology:AbstractProfileElementType ;
+    rdfs:range geology:ParticleSizeFractionType ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition """Mineral part of the soil, fractioned on the basis of size (diameter), limits of the particles. It indicates how much of the mineral soil material is composed of soil particles of the specified size range.
@@ -858,6 +865,7 @@ geology-att:piezometricState a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "piezometricState"@en ;
     rdfs:domain geology:GroundWaterBody ;
+    rdfs:range geology:PiezometricState ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition "Specifies the piezometric state of the GroundwaterBody water table"@en ;
@@ -868,6 +876,7 @@ geology-att:profileElementDepthRange a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "profileElementDepthRange"@en ;
     rdfs:domain geology:AbstractProfileElementType ;
+    rdfs:range geology:RangeType ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition """Upper and lower depth of the profile element (layer or horizon) measured from the surface (0 cm) of a soil profile (in cm).
@@ -898,6 +907,7 @@ geology-att:purpose a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "purpose"@en ;
     rdfs:domain geology:Borehole ;
+    rdfs:range geology:BoreholePurposeValue ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition "The purpose for which the borehole was drilled."@en ;
@@ -908,6 +918,7 @@ geology-att:typeOfHazard a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "typeOfHazard"@en ;
     rdfs:domain geology:HazardArea ;
+    rdfs:range geology:HazardClassification ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition "A generic classification and a specific classification of the type of natural hazard."@en ;
@@ -940,8 +951,8 @@ geology:AbstractProfileElementType a owl:Class,
     rdfs:label "Abstract Profile Element Type"@en ;
     ogc-ft:hasProperty geology-att:particleSizeFraction,
         geology-att:profileElementDepthRange ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "An abstract spatial object type grouping soil layers and / or horizons for functional/operational aims. A profile element is the general term for both horizons and layers."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Abstract Profile Element Type"@en .
@@ -963,6 +974,7 @@ geology-att:nsdiId a owl:ObjectProperty,
     rdfs:label "nsdiId"@en ;
     rdfs:domain geology:Borehole,
         geology:GeophObject ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
     rdfs:subClassOf geology:attribute ;
     skos:broader geology:attribute ;
     skos:definition """Generic class for collections of geophysical objects
@@ -1006,8 +1018,8 @@ geology:GroundWaterBody a owl:Class,
         geology-att:conditionOfGroundWaterBody,
         geology-att:mineralization,
         geology-att:piezometricState ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "A distinct volume of groundwater within an aquifer or system of aquifers, which is hydraulically isolated from nearby groundwater bodies. They should be hydraulically continuous entities, and must be defined on the basis of flow or abstraction, and are inextricably linked to surface water bodies"@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Ground Water Body"@en .
@@ -1022,8 +1034,8 @@ geology:HazardArea a owl:Class,
         geology-att:magnitudeOrIntensity,
         geology-att:typeOfHazard,
         geology-att:validityPeriod ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "Discrete spatial objects representing a natural hazard."@en ;
     skos:inScheme ksa-ft:Geology ;
     skos:prefLabel "Hazard Area"@en .

@@ -1,0 +1,166 @@
+@prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/Contact> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Contact"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "Communication channels by which it is possible to gain access to someone or something."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Contact"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/DocumentCitation> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Document Citation"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "Citation for the purposes of unambiguously referencing a document."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Document Citation"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/LegislationCitation> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Legislation Citation"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "Citation for the purposes of unambiguously referencing a legal act or a specific part of a legal act."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Legislation Citation"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/LegislationLevelValue> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Legislation Level Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "The level at which a legal act or convention has been adopted."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Legislation Level Value"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/LocalizedName> a owl:Class,
+        skos:Concept ;
+    rdfs:label "LocalizedName"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "LocalizedName"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/OfficialJournalInformation> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Official Journal Information"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "Full citation of the location of the legislative instrument within the official journal."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Official Journal Information"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/RelatedOrganization> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Related Organisation"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "An organization or a person with a role related to a resource.  (A party, typically an individual person, acting as a general point of contact for a resource can be specified without providing any particular role.)"@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Related Organisation"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/RelatedOrganizationRoleValue> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Related Organisation Role Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "Classification of related party roles."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Related Organisation Role Value"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Thematic Identifier"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "Thematic identifier to uniquely identify the feature.  Some features may be assigned multiple unique identifiers. These may have been established to meet data exchange requirements of different reporting obligations national levels and/or internal data maintenance requirements."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Thematic Identifier"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/VoidReasonValue> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Void Reason Value"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The code list values represent reasons for void values are officially maintained in the following code list register: http://nsdi.sa/codelist/VoidReasonValue"@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Void Reason Value"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/Identifier> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Identifier"@en ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/codeLists> ;
+    skos:definition "External unique object identifier published by the responsible body, which may be used by external applications to reference the feature.  External object identifiers are distinct from thematic object identifiers and the globally unique id. The voidable version identifier attribute is not part of the unique identifier of a feature and may be used to distinguish two versions of the same feature. The unique identifier will not change during the life-time of a feature."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Identifier"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/attribute/beginLifespanVersion> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "beginLifespanVersion"@en ;
+    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:definition "Date and time at which this version of the feature was inserted or changed."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "beginLifespanVersion"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/attribute/endLifespanVersion> a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "endLifespanVersion"@en ;
+    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:definition "Date and time at which this version of the feature was superseded or retired."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "endLifespanVersion"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/attribute/metadata> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "metadata"@en ;
+    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:definition "Feature-level metadata that conforms to the KSA Metadata Profile"@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "metadata"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/attribute/nsdiId> a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "nsdiId"@en ;
+    rdfs:domain <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/Identifier> ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/attribute> ;
+    skos:definition """Globally unique object identifier of the feature.
+
+NOTE The nsdiId object identifier is a Globally Unique Identifier (GUID) published by the responsible body, which may be used by external applications to reference the feature. The identifier is an identifier of the feature instance, not an identifier of the feature type, i.e. real-world phenomenon."""@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "nsdiId"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Feature Type"@en ;
+    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/BaseTypes/attribute/beginLifespanVersion>,
+        <https://w3id.org/ksa/feature-types/BaseTypes/attribute/endLifespanVersion>,
+        <https://w3id.org/ksa/feature-types/BaseTypes/attribute/metadata>,
+        <https://w3id.org/ksa/feature-types/BaseTypes/attribute/nsdiId> ;
+    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "Abstract Feature Type"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/attribute> a owl:Class,
+        skos:Concept ;
+    rdfs:label "BaseTypes attribute"@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "BaseTypes attribute"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/codeLists> a owl:Class,
+        skos:Concept ;
+    rdfs:label "BaseTypes code list or type"@en ;
+    skos:inScheme ksa-ft:BaseTypes ;
+    skos:prefLabel "BaseTypes code list or type"@en .
+
+ksa-ft:BaseTypes a skos:ConceptScheme ;
+    rdfs:label "BaseTypes"@en ;
+    skos:prefLabel "BaseTypes"@en .
+

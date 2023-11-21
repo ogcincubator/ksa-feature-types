@@ -102,8 +102,8 @@ landCover:LandCoverCollection a owl:Class,
         landCover-att:name,
         landCover-att:validFrom,
         landCover-att:validTo ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "A Land Cover Collection is a collection of units (areas or locations) for which information on observed (bio)physical cover on the Earth's surface is provided. A land cover information were captured in the same methodology and classification.  This representation allows Land Cover data being supported by a vector geometry."@en ;
     skos:inScheme ksa-ft:LandCover ;
     skos:prefLabel "Land Cover Collection"@en .

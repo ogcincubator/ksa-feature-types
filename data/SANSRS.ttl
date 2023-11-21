@@ -7,22 +7,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-sansrs:AbsoluteGravity a owl:Class,
-        skos:Concept ;
-    rdfs:label "Absolute Gravity"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "Absolute gravity measure. The units (e.g. mGal, Gal) must be specified in the unit of measurement attribute."@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "Absolute Gravity"@en .
-
-sansrs:AbsoluteGravityCalibrationLineTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "AbsoluteGravityCalibrationLineTypeValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AboluteGravityCalibrationLineTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "AbsoluteGravityCalibrationLineTypeValue"@en .
-
 sansrs:AbsoluteGravityTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "AbsoluteGravityTypeValue"@en ;
@@ -85,30 +69,6 @@ sansrs:HeightTypeValue a owl:Class,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "HeightTypeValue"@en .
 
-sansrs:MaintenanceUnitValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "MaintenanceUnitValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MaintenanceUnitValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "MaintenanceUnitValue"@en .
-
-sansrs:MonumentConditionTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "MonumentConditionTypeValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MonumentConditionTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "MonumentConditionTypeValue"@en .
-
-sansrs:MonumentTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "MonumentTypeValue"@en ;
-    skos:broader sansrs:codeLists ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MonumentTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "MonumentTypeValue"@en .
-
 sansrs:NetworkOwnerValue a owl:Class,
         skos:Concept ;
     rdfs:label "NetworkOwnerValue"@en ;
@@ -133,18 +93,51 @@ sansrs:SatelliteSystemTypeValue a owl:Class,
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "SatelliteSystemTypeValue"@en .
 
-sansrs:VerticalHeight a owl:Class,
+sansrs:AbsoluteGravity a owl:Class,
         skos:Concept ;
-    rdfs:label "Vertical Height"@en ;
+    rdfs:label "Absolute Gravity"@en ;
     skos:broader sansrs:codeLists ;
-    skos:definition "Height value for the vertical datum."@en ;
+    skos:definition "Absolute gravity measure. The units (e.g. mGal, Gal) must be specified in the unit of measurement attribute."@en ;
     skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "Vertical Height"@en .
+    skos:prefLabel "Absolute Gravity"@en .
+
+sansrs:AbsoluteGravityCalibrationLineTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "AbsoluteGravityCalibrationLineTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AboluteGravityCalibrationLineTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "AbsoluteGravityCalibrationLineTypeValue"@en .
+
+sansrs:MaintenanceUnitValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "MaintenanceUnitValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MaintenanceUnitValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "MaintenanceUnitValue"@en .
+
+sansrs:MonumentConditionTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "MonumentConditionTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MonumentConditionTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "MonumentConditionTypeValue"@en .
+
+sansrs:MonumentTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "MonumentTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MonumentTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "MonumentTypeValue"@en .
 
 sansrs-att:absoluteGravity a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "absoluteGravity"@en ;
     rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range sansrs:AbsoluteGravity ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:definition "Value of absolute gravity, calculated based on the absolute gravity measure. The units (e.g. mGal,&#181;Gal) must be specified in the uom attribute."@en ;
@@ -175,6 +168,7 @@ sansrs-att:ellipsoidalHeight a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "ellipsoidalHeight"@en ;
     rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range sansrs:VerticalHeight ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:definition "Height measured along the perpendicular from the surface of the GRS80 ellipsoid. The units (e.g. meters, feet) must be specified in the uom attribute."@en ;
@@ -196,6 +190,7 @@ sansrs-att:maintenanceUnit a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "maintenanceUnit"@en ;
     rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range sansrs:MaintenanceUnitValue ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:definition "Code value of the organizational unit responsible for the maintenance. If there are more than one maintenance units listed, then the GCS Organizational unit is responsible for maintenance."@en ;
@@ -206,6 +201,7 @@ sansrs-att:monumentCondition a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "monumentCondition"@en ;
     rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range sansrs:MonumentConditionTypeValue ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:definition "The monument condition code, example values are: good, damaged, missing."@en ;
@@ -227,6 +223,7 @@ sansrs-att:monumentType a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "monumentType"@en ;
     rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range sansrs:MonumentTypeValue ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:definition "The monument type code (e.g. type 1, type 2)"@en ;
@@ -247,6 +244,7 @@ sansrs-att:orthometricHeight a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "orthometricHeight"@en ;
     rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range sansrs:VerticalHeight ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:definition "Height measured along the plumb line (gravity directed) to the KSA GEOID 2017. The units (e.g. meters, feet) must be specified in the uom attribute."@en ;
@@ -285,10 +283,19 @@ sansrs-att:type a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "type"@en ;
     rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range sansrs:AbsoluteGravityCalibrationLineTypeValue ;
     rdfs:subClassOf sansrs:attribute ;
     skos:broader sansrs:attribute ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "type"@en .
+
+sansrs:VerticalHeight a owl:Class,
+        skos:Concept ;
+    rdfs:label "Vertical Height"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "Height value for the vertical datum."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "Vertical Height"@en .
 
 sansrs:AbsoluteGravityCalibrationLinePoint a owl:Class,
         skos:Concept ;
@@ -308,8 +315,8 @@ sansrs:AbsoluteGravityCalibrationLinePoint a owl:Class,
         sansrs-att:siteLog,
         sansrs-att:sitePicture,
         sansrs-att:type ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "A point on the earth's surface where the acceleration of gravity has been measured relative to other points in a sequence or 'calibration line'."@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "Absolute Gravity Calibration Line Point"@en .

@@ -10,16 +10,16 @@
 physInfra:CopperCable a owl:Class,
         skos:Concept ;
     rdfs:label "CopperCable"@en ;
-    rdfs:subClassOf ksa-ft:Cable ;
-    skos:broader ksa-ft:Cable ;
+    rdfs:subClassOf physInfra:Cable ;
+    skos:broader physInfra:Cable ;
     skos:inScheme ksa-ft:PhysicalInfrastructureTheme ;
     skos:prefLabel "CopperCable"@en .
 
 physInfra:DataCenter a owl:Class,
         skos:Concept ;
     rdfs:label "Communications Building"@en ;
-    rdfs:subClassOf ksa-ft:CommsBuilding ;
-    skos:broader ksa-ft:CommsBuilding ;
+    rdfs:subClassOf physInfra:CommsBuilding ;
+    skos:broader physInfra:CommsBuilding ;
     skos:inScheme ksa-ft:PhysicalInfrastructureTheme ;
     skos:prefLabel "Communications Building"@en .
 
@@ -183,15 +183,6 @@ physInfra:codeLists a owl:Class,
     skos:inScheme ksa-ft:PhysicalInfrastructureTheme ;
     skos:prefLabel "Physical Infrastructure Theme code list or type"@en .
 
-physInfra:Cable a owl:Class,
-        skos:Concept ;
-    rdfs:label "Cable"@en ;
-    ogc-ft:hasProperty physInfra-att:geometry,
-        physInfra-att:voltageClass ;
-    skos:definition "A named Entity that may link a single pathway between one or more network nodes in a defined sequence."@en ;
-    skos:inScheme ksa-ft:PhysicalInfrastructureTheme ;
-    skos:prefLabel "Cable"@en .
-
 physInfra-att:geometry a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "geometry"@en ;
@@ -202,6 +193,15 @@ physInfra-att:geometry a owl:ObjectProperty,
     skos:broader physInfra:attribute ;
     skos:inScheme ksa-ft:PhysicalInfrastructureTheme ;
     skos:prefLabel "geometry"@en .
+
+physInfra:Cable a owl:Class,
+        skos:Concept ;
+    rdfs:label "Cable"@en ;
+    ogc-ft:hasProperty physInfra-att:geometry,
+        physInfra-att:voltageClass ;
+    skos:definition "A named Entity that may link a single pathway between one or more network nodes in a defined sequence."@en ;
+    skos:inScheme ksa-ft:PhysicalInfrastructureTheme ;
+    skos:prefLabel "Cable"@en .
 
 physInfra:Antenna a owl:Class,
         skos:Concept ;

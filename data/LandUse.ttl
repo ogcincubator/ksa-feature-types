@@ -223,8 +223,8 @@ landUse:ExistingLandUseCollection a owl:Class,
         landUse-att:name,
         landUse-att:validFrom,
         landUse-att:validTo ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "A collection of units (areas or locations) for which information on existing land use is provided as a polygon."@en ;
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "Existing Land Use Collection"@en .
@@ -240,8 +240,8 @@ landUse:MapDocument a owl:Class,
         landUse-att:title,
         landUse-att:validFrom,
         landUse-att:validTo ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "The scanned plan and structural drawing which may geo-referenced e.g. raster images, vector drawings."@en ;
     skos:inScheme ksa-ft:LandUse ;
     skos:prefLabel "Map Document"@en .

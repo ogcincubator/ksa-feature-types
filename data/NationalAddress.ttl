@@ -7,14 +7,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-nationalAddress:AddressLifeCycleStageValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "AddressLifeCycleStageValue"@en ;
-    skos:broader nationalAddress:codeLists ;
-    skos:definition "The list defining the stage of the address life."@en ;
-    skos:inScheme ksa-ft:NationalAddress ;
-    skos:prefLabel "AddressLifeCycleStageValue"@en .
-
 nationalAddress:AddressRepresentation a owl:Class,
         skos:Concept ;
     rdfs:label "Address Representation"@en ;
@@ -63,6 +55,14 @@ nationalAddress-att:postalQuarter a owl:ObjectProperty,
     skos:broader nationalAddress:attribute ;
     skos:prefLabel "postalQuarter" .
 
+nationalAddress:AddressLifeCycleStageValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "AddressLifeCycleStageValue"@en ;
+    skos:broader nationalAddress:codeLists ;
+    skos:definition "The list defining the stage of the address life."@en ;
+    skos:inScheme ksa-ft:NationalAddress ;
+    skos:prefLabel "AddressLifeCycleStageValue"@en .
+
 nationalAddress:ZipCodeUnit a owl:Class,
         skos:Concept ;
     rdfs:label "Zip Code Unit"@en ;
@@ -84,6 +84,7 @@ nationalAddress-att:alternativeId a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "alternativeId"@en ;
     rdfs:domain nationalAddress:Address ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
     rdfs:subClassOf nationalAddress:attribute ;
     skos:broader nationalAddress:attribute ;
     skos:definition """External, thematic identifier of the address spatial object, which enables interoperability with existing legacy systems or applications.
@@ -107,6 +108,7 @@ nationalAddress-att:lifeCycleStage a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "lifeCycleStage"@en ;
     rdfs:domain nationalAddress:Address ;
+    rdfs:range nationalAddress:AddressLifeCycleStageValue ;
     rdfs:subClassOf nationalAddress:attribute ;
     skos:broader nationalAddress:attribute ;
     skos:definition "Represents the different stages of an address such as planned, under construction, exisiting demolished etc."@en ;
@@ -185,8 +187,8 @@ nationalAddress:Address a owl:Class,
         nationalAddress-att:validFrom,
         nationalAddress-att:validTo,
         nationalAddress-att:zipCode ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "An identification of the fixed location of property by means of a structured composition of geographic names and identifiers."@en ;
     skos:inScheme ksa-ft:NationalAddress ;
     skos:prefLabel "Address"@en .

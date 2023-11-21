@@ -5,17 +5,8 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix transport: <https://w3id.org/ksa/feature-types/Transport/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-elevation:AcquisitionMethodValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Acquisition Method"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """List of methods of acquisition of the points in the point cloud.
-
-SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Acquisition Method"@en .
 
 elevation:BathymetricElevationGridCoverageAggregation a owl:Class,
         skos:Concept ;
@@ -43,28 +34,6 @@ elevation:BreakLineTypeValue a owl:Class,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Break Line Type"@en .
 
-elevation:CRSRepresentationInLASFileValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "CRS Representation In LAS File"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Representation of the Coordinate Reference System as it is in the LAS file.
-
-NOTE 1 In LAS files versions 1.0-1.3 the CRS was represented as GeoTIFF. In version 1.4 the CRS can be represent as GeoTIFF or WKT (Well Known Text).
-
-NOTE 2 Point Record Formats 0-5 can use either GeoTIFF of WKT. Point Record Formats 6-10 must use WKT.
-
-SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "CRS Representation In LAS File"@en .
-
-elevation:ChartDatum a owl:Class,
-        skos:Concept ;
-    rdfs:label "Chart Datum"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition "Local vertical coordinate reference system (Coordinate Reference System) which is used to refer and portray depth measurements as property values. This data type is intended to describe the main characteristics of a vertical Coordinate Reference System for measurement of depths in cases where this information is rarely or not available through a Coordinate Reference System registry (for example, like EPSG). Examples of a local vertical Coordinate Reference System include local datums for referring depths in lakes and navigable rivers."@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Chart Datum"@en .
-
 elevation:ContourLineTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Contour Line Type"@en ;
@@ -72,14 +41,6 @@ elevation:ContourLineTypeValue a owl:Class,
     skos:definition "List of possible categories of contour lines based on the equidistance parameter of the data set."@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Contour Line Type"@en .
-
-elevation:CoordinateComputationalData a owl:Class,
-        skos:Concept ;
-    rdfs:label "Coordinate Computational Data"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition "Encapsulation of data used to compute points coordinates in specified Coordinate Reference System when points are given in raw form of integers only.  For further explanation see ASPRS LAS file specification 1.4 - R15."@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Coordinate Computational Data"@en .
 
 elevation:DepthMeasurementQualityValue a owl:Class,
         skos:Concept ;
@@ -90,58 +51,6 @@ elevation:DepthMeasurementQualityValue a owl:Class,
 NOTE S-57 acronym is QUASOU."""@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Depth Mesurement Quality"@en .
-
-elevation:DomainProfile a owl:Class,
-        skos:Concept ;
-    rdfs:label "Domain Profile"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition "Domain profile of LAS file."@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Domain Profile"@en .
-
-elevation:ExtremalUnscaledCoordinates a owl:Class,
-        skos:Concept ;
-    rdfs:label "Extremal Unscaled Coordinates"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition "The maximum and minimum data fields are the actual unscaled extents of the LAS point file data, specified in the coordinate system of the LAS data.  SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Extremal Unscaled Coordinates"@en .
-
-elevation:GPSTimeTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "GPS Time Type"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Type of the GPS time used in the point records.
-
-NOTE Available values hall be conformant with ASPRS LAS file specification.
-
-SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "GPS Time Type"@en .
-
-elevation:GeneratingSoftwareValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Generating Software Value"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Specification which generating software package and version was used during LAS file creation.
-
-SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Generating Software Value"@en .
-
-elevation:LASPointDataRecordFormatValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "LAS point Data Record Format"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Record format associated with points within this point cloud. 
-
-NOTE 1 Point Data Record Format specifies set of attributes that single point holds. The list of available formats is maintained by American Society for Photogrammetry and Remote Sensing in the LAS Specification document.
-
-NOTE 2 In the LAS Specification 1.4 document Point Data Record Formats are indexed for 0 (zero) to 10. In the newer versions of LAS Specification this range can change.
-
-SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "LAS point Data Record Format"@en .
 
 elevation:LandElevationGridCoverageAggregation a owl:Class,
         skos:Concept ;
@@ -209,6 +118,133 @@ NOTE S-101 acronym is SURTYP."""@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Survey Type"@en .
 
+elevation:TechniqueOfSoundingMeasurementValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "TechniqueOfSoundingMeasurement"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Technique of sounding measurement corresponding to IHO s-57 and IHO S-101.
+
+NOTE S-57 and S-101 acronym is TECSOU."""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "TechniqueOfSoundingMeasurement"@en .
+
+elevation-att:CRS a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "CRS" ;
+    rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:CRS ;
+    rdfs:subClassOf elevation:attribute ;
+    skos:broader elevation:attribute ;
+    skos:prefLabel "CRS" .
+
+elevation:AcquisitionMethodValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Acquisition Method"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """List of methods of acquisition of the points in the point cloud.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Acquisition Method"@en .
+
+elevation:BathymetricElevationGridCoverage a owl:Class,
+        skos:Concept ;
+    rdfs:label "Bathymetric Elevation Grid Coverage"@en ;
+    ogc-ft:hasProperty elevation-att:localDepthDatum ;
+    rdfs:subClassOf elevation:ElevationGridCoverage ;
+    skos:broader elevation:ElevationGridCoverage ;
+    skos:definition "Elevation grid for bathymetric elevation.  The value of the grid cells is depth which is measured upwards."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Bathymetric Elevation Grid Coverage"@en .
+
+elevation:CRS a owl:Class,
+        skos:Concept ;
+    rdfs:label "CRS"@en ;
+    skos:definition "coordinate reference system which is usually single but may be compound"@en ;
+    skos:prefLabel "CRS"@en .
+
+elevation:CRSRepresentationInLASFileValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "CRS Representation In LAS File"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Representation of the Coordinate Reference System as it is in the LAS file.
+
+NOTE 1 In LAS files versions 1.0-1.3 the CRS was represented as GeoTIFF. In version 1.4 the CRS can be represent as GeoTIFF or WKT (Well Known Text).
+
+NOTE 2 Point Record Formats 0-5 can use either GeoTIFF of WKT. Point Record Formats 6-10 must use WKT.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "CRS Representation In LAS File"@en .
+
+elevation:ChartDatum a owl:Class,
+        skos:Concept ;
+    rdfs:label "Chart Datum"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition "Local vertical coordinate reference system (Coordinate Reference System) which is used to refer and portray depth measurements as property values. This data type is intended to describe the main characteristics of a vertical Coordinate Reference System for measurement of depths in cases where this information is rarely or not available through a Coordinate Reference System registry (for example, like EPSG). Examples of a local vertical Coordinate Reference System include local datums for referring depths in lakes and navigable rivers."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Chart Datum"@en .
+
+elevation:CoordinateComputationalData a owl:Class,
+        skos:Concept ;
+    rdfs:label "Coordinate Computational Data"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition "Encapsulation of data used to compute points coordinates in specified Coordinate Reference System when points are given in raw form of integers only.  For further explanation see ASPRS LAS file specification 1.4 - R15."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Coordinate Computational Data"@en .
+
+elevation:DomainProfile a owl:Class,
+        skos:Concept ;
+    rdfs:label "Domain Profile"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition "Domain profile of LAS file."@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Domain Profile"@en .
+
+elevation:ExtremalUnscaledCoordinates a owl:Class,
+        skos:Concept ;
+    rdfs:label "Extremal Unscaled Coordinates"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition "The maximum and minimum data fields are the actual unscaled extents of the LAS point file data, specified in the coordinate system of the LAS data.  SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Extremal Unscaled Coordinates"@en .
+
+elevation:GPSTimeTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "GPS Time Type"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Type of the GPS time used in the point records.
+
+NOTE Available values hall be conformant with ASPRS LAS file specification.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "GPS Time Type"@en .
+
+elevation:GeneratingSoftwareValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Generating Software Value"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Specification which generating software package and version was used during LAS file creation.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "Generating Software Value"@en .
+
+elevation:LASPointDataRecordFormatValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "LAS point Data Record Format"@en ;
+    skos:broader elevation:codeLists ;
+    skos:definition """Record format associated with points within this point cloud. 
+
+NOTE 1 Point Data Record Format specifies set of attributes that single point holds. The list of available formats is maintained by American Society for Photogrammetry and Remote Sensing in the LAS Specification document.
+
+NOTE 2 In the LAS Specification 1.4 document Point Data Record Formats are indexed for 0 (zero) to 10. In the newer versions of LAS Specification this range can change.
+
+SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
+    skos:inScheme ksa-ft:Elevation ;
+    skos:prefLabel "LAS point Data Record Format"@en .
+
 elevation:SystemIdentifierValue a owl:Class,
         skos:Concept ;
     rdfs:label "SystemIdentifierValue"@en ;
@@ -220,16 +256,6 @@ NOTE 1 The version 1.0 specification assumed that LAS files are exclusively gene
 SOURCE ASPRS LAS Specification 1.4 - R15 (http://www.asprs.org/wp-content/uploads/2019/07/LAS_1_4_r15.pdf)"""@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "SystemIdentifierValue"@en .
-
-elevation:TechniqueOfSoundingMeasurementValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "TechniqueOfSoundingMeasurement"@en ;
-    skos:broader elevation:codeLists ;
-    skos:definition """Technique of sounding measurement corresponding to IHO s-57 and IHO S-101.
-
-NOTE S-57 and S-101 acronym is TECSOU."""@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "TechniqueOfSoundingMeasurement"@en .
 
 elevation:WDPStorageTypeValue a owl:Class,
         skos:Concept ;
@@ -253,35 +279,11 @@ elevation:WaveformPacketDescriptor a owl:Class,
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Waveform Packet Descriptor"@en .
 
-elevation-att:CRS a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "CRS" ;
-    rdfs:domain elevation:LASPointCloud ;
-    rdfs:range elevation:CRS ;
-    rdfs:subClassOf elevation:attribute ;
-    skos:broader elevation:attribute ;
-    skos:prefLabel "CRS" .
-
-elevation:BathymetricElevationGridCoverage a owl:Class,
-        skos:Concept ;
-    rdfs:label "Bathymetric Elevation Grid Coverage"@en ;
-    ogc-ft:hasProperty elevation-att:localDepthDatum ;
-    rdfs:subClassOf ksa-ft:ElevationGridCoverage ;
-    skos:broader ksa-ft:ElevationGridCoverage ;
-    skos:definition "Elevation grid for bathymetric elevation.  The value of the grid cells is depth which is measured upwards."@en ;
-    skos:inScheme ksa-ft:Elevation ;
-    skos:prefLabel "Bathymetric Elevation Grid Coverage"@en .
-
-elevation:CRS a owl:Class,
-        skos:Concept ;
-    rdfs:label "CRS"@en ;
-    skos:definition "coordinate reference system which is usually single but may be compound"@en ;
-    skos:prefLabel "CRS"@en .
-
 elevation-att:CRSRepresentation a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "CRSRepresentation"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:CRSRepresentationInLASFileValue ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition """Representation of the Coordinate Reference System as it is in the LAS file.
@@ -296,6 +298,7 @@ elevation-att:GPSTimeType a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "GPSTimeType"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:GPSTimeTypeValue ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition "The meaning of GPS Time in the point records."@en ;
@@ -340,6 +343,7 @@ elevation-att:WDPStorageType a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "WDPStorageType"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:WDPStorageTypeValue ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition """Type of storage of Waveform Data Package.
@@ -354,6 +358,7 @@ elevation-att:acquisitionMethod a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "acquisitionMethod"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:AcquisitionMethodValue ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition "Method of acquisition of the points in the point cloud."@en ;
@@ -394,6 +399,7 @@ elevation-att:coordinateComputationalData a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "coordinateComputationalData"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:CoordinateComputationalData ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition """Encapsulation of data used to compute points coordinates in specified CRS when points are given in raw form of integers only.
@@ -406,6 +412,7 @@ elevation-att:domainProfile a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "domainProfile"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:DomainProfile ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition "Domain profile of LAS file associated with this point cloud."@en ;
@@ -432,6 +439,7 @@ elevation-att:extremalUnscaledCoordinates a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "extremalUnscaledCoordinates"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:ExtremalUnscaledCoordinates ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition """The max and min data fields are the actual unscaled extents of the LAS point file data, specified in the coordinate system of the LAS data.
@@ -479,6 +487,7 @@ elevation-att:generatingSoftware a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "generatingSoftware"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:GeneratingSoftwareValue ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition "Specification which generating software package and version was used during LAS file creation."@en ;
@@ -561,6 +570,7 @@ elevation-att:localDepthDatum a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "localDepthDatum"@en ;
     rdfs:domain elevation:BathymetricElevationGridCoverage ;
+    rdfs:range elevation:ChartDatum ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition """Identification of a local vertical coordinate reference system not included in a registry, which is used to refer depth measurements.
@@ -632,6 +642,7 @@ elevation-att:pointDataRecordFormat a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "pointDataRecordFormat"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:LASPointDataRecordFormatValue ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition "Format which is used to store points characteristics."@en ;
@@ -653,6 +664,7 @@ elevation-att:surfaceType a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "surfaceType"@en ;
     rdfs:domain elevation:ElevationTIN ;
+    rdfs:range transport:SurfaceTypeValue ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition "Attribute indicating the type of elevation surface that the elevation TIN describes in relation to the Earth's bare surface."@en ;
@@ -680,6 +692,7 @@ elevation-att:systemIdentifier a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "systemIdentifier"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:SystemIdentifierValue ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition """Information about what hardware or what method were used to create points.
@@ -716,6 +729,7 @@ elevation-att:waveformPacketDescriptor a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "waveformPacketDescriptor"@en ;
     rdfs:domain elevation:LASPointCloud ;
+    rdfs:range elevation:WaveformPacketDescriptor ;
     rdfs:subClassOf elevation:attribute ;
     skos:broader elevation:attribute ;
     skos:definition """Configuration of the waveform packets.
@@ -732,8 +746,8 @@ elevation:ElevationTIN a owl:Class,
     ogc-ft:hasProperty elevation-att:geometries,
         elevation-att:phenomenonTime,
         elevation-att:surfaceType ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "Collection of elevation features forming a particular tessellation of the space based on a Triangulated Irregular Network (TIN) according the geometry GM_Tin (defined in ISO 19107:2003). Its components are a set of control points whose depths are known, and a set of break lines and stop lines.  The TIN can be calculated using any triangulation method, which determines the spatial relationships between the features in the collection, for example, an elevation TIN model calculated by means of the Delaunay triangulation method."@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Elevation TIN"@en .
@@ -744,8 +758,8 @@ elevation:ElevationVectorObject a owl:Class,
     ogc-ft:hasProperty elevation-att:horizontalAccuracy,
         elevation-att:phenomenonTime,
         elevation-att:verticalAccuracy ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "Elevation feature forming part of a vector data set, which participates in the description of the elevation property of a real world surface. It consists of an identity base for all vector objects which can be included as part of an elevation data set.  It is an abstract feature type which generically describes every possible type of elevation vector object. It includes common attributes, properties and constraints for such features."@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "Elevation Vector Object"@en .
@@ -821,8 +835,8 @@ elevation:LASPointCloud a owl:Class,
         elevation-att:systemIdentifier,
         elevation-att:userData,
         elevation-att:waveformPacketDescriptor ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "Representation of set of points in a form of an LAS file."@en ;
     skos:inScheme ksa-ft:Elevation ;
     skos:prefLabel "LAS Point Cloud"@en .

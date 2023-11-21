@@ -38,14 +38,6 @@ water:HydrologicalPersistenceValue a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Hydrological Persistence Value"@en .
 
-water:OriginValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Origin Value"@en ;
-    skos:broader water:codeLists ;
-    skos:definition "An enumeration type specifying a set of hydrographic 'origin' categories (natural, man-made) for various hydrographic objects."@en ;
-    skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "Origin Value"@en .
-
 water:SeaAreaTypeClassificationValue a owl:Class,
         skos:Concept ;
     rdfs:label "Sea Area Type Classification Value"@en ;
@@ -94,14 +86,6 @@ water:ShoreTypeValue a owl:Class,
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Shore Type Value"@en .
 
-water:WaterLevelValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Water Level Value"@en ;
-    skos:broader water:codeLists ;
-    skos:definition "The tidal datum / waterlevel to which depths and heights are referenced."@en ;
-    skos:inScheme ksa-ft:Water ;
-    skos:prefLabel "Water Level Value"@en .
-
 water:ZoneTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Zone Type Value"@en ;
@@ -118,6 +102,22 @@ water-att:relatedRepresentation a owl:ObjectProperty,
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
     skos:prefLabel "relatedRepresentation" .
+
+water:OriginValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Origin Value"@en ;
+    skos:broader water:codeLists ;
+    skos:definition "An enumeration type specifying a set of hydrographic 'origin' categories (natural, man-made) for various hydrographic objects."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Origin Value"@en .
+
+water:WaterLevelValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Water Level Value"@en ;
+    skos:broader water:codeLists ;
+    skos:definition "The tidal datum / waterlevel to which depths and heights are referenced."@en ;
+    skos:inScheme ksa-ft:Water ;
+    skos:prefLabel "Water Level Value"@en .
 
 water-att:centerline a owl:ObjectProperty,
         skos:Concept ;
@@ -163,6 +163,7 @@ water-att:origin a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "origin"@en ;
     rdfs:domain water:LandWaterBoundary ;
+    rdfs:range water:OriginValue ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
     skos:definition "Origin of the land-water boundary."@en ;
@@ -183,6 +184,7 @@ water-att:waterLevelCategory a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "waterLevelCategory"@en ;
     rdfs:domain water:LandWaterBoundary ;
+    rdfs:range water:WaterLevelValue ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
     skos:definition "Water-level defining the land-water boundary."@en ;
@@ -194,8 +196,8 @@ water:AbstractMarineLayer a owl:Class,
     rdfs:label "Abstract Marine Layer"@en ;
     ogc-ft:hasProperty water-att:extent,
         water-att:validTime ;
-    rdfs:subClassOf ksa-ft:AbstractHydroFeature ;
-    skos:broader ksa-ft:AbstractHydroFeature ;
+    rdfs:subClassOf water:AbstractHydroFeature ;
+    skos:broader water:AbstractHydroFeature ;
     skos:definition "A layer that may cover any part of a sea surface or sea bottom, represented as either a surface or point. The point representation reflects the reality that many Marine Layers are identified by point observations."@en ;
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Abstract Marine Layer"@en .
@@ -205,8 +207,8 @@ water:WatercourseSeparatedCrossing a owl:Class,
     rdfs:label "Watercourse Separated Crossing"@en ;
     ogc-ft:hasProperty water-att:geographicalName,
         water-att:hydroID ;
-    rdfs:subClassOf ksa-ft:GradeSeparatedCrossing ;
-    skos:broader ksa-ft:GradeSeparatedCrossing ;
+    rdfs:subClassOf water:GradeSeparatedCrossing ;
+    skos:broader water:GradeSeparatedCrossing ;
     skos:definition "An element in the hydrographic network used to indicate non-interacting crossing of watercourse links separated by level."@en ;
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Watercourse Separated Crossing"@en .
@@ -216,6 +218,7 @@ water-att:hydroID a owl:ObjectProperty,
     rdfs:label "hydroID"@en ;
     rdfs:domain water:AbstractHydroFeature,
         water:WatercourseSeparatedCrossing ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/ThematicIdentifier> ;
     rdfs:subClassOf water:attribute ;
     skos:broader water:attribute ;
     skos:definition "A hydrographic thematic identifier, for example, a Data Owner internal identifier."@en ;
@@ -228,8 +231,8 @@ water:LandWaterBoundary a owl:Class,
     ogc-ft:hasProperty water-att:centerline,
         water-att:origin,
         water-att:waterLevelCategory ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "The line where a land mass is in contact with a body of water."@en ;
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Land Water Boundary"@en .
@@ -239,8 +242,8 @@ water:AbstractHydroFeature a owl:Class,
     rdfs:label "Abstract Hydro Feature"@en ;
     ogc-ft:hasProperty water-att:hydroID,
         water-att:name ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "This base abstract hydrographic class enables associations between different hydrographic feature instances representing the same real world entity. Three mechanisms are provided for this: a shared name attribute that allows an implicit association on the basis of a common name; a shared hydroID attribute where multiple representations are explicitly identified as the same instance; an explicit association between feature instances representing the same real-world entity."@en ;
     skos:inScheme ksa-ft:Water ;
     skos:prefLabel "Abstract Hydro Feature"@en .

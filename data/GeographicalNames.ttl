@@ -7,14 +7,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-geoNames:GeographicalName a owl:Class,
-        skos:Concept ;
-    rdfs:label "Geographical Name"@en ;
-    skos:broader geoNames:codeLists ;
-    skos:definition "Proper noun applied to a real world entity."@en ;
-    skos:inScheme ksa-ft:GeographicalNames ;
-    skos:prefLabel "Geographical Name"@en .
-
 geoNames:NameStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "Name Status Value"@en ;
@@ -31,14 +23,6 @@ geoNames:NativenessValue a owl:Class,
     skos:inScheme ksa-ft:GeographicalNames ;
     skos:prefLabel "Nativeness Value"@en .
 
-geoNames:PlaceNameTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Place Name Type Value"@en ;
-    skos:broader geoNames:codeLists ;
-    skos:definition "Code list for the place name type value of a geographical name"@en ;
-    skos:inScheme ksa-ft:GeographicalNames ;
-    skos:prefLabel "Place Name Type Value"@en .
-
 geoNames:SpellingOfName a owl:Class,
         skos:Concept ;
     rdfs:label "Spelling Of Name"@en ;
@@ -51,16 +35,26 @@ geoNames-att:relatedSpatialObject a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "relatedSpatialObject" ;
     rdfs:domain geoNames:PlaceName ;
-    rdfs:range geoNames:AbstractFeatureType ;
+    rdfs:range <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     rdfs:subClassOf geoNames:attribute ;
     skos:broader geoNames:attribute ;
     skos:prefLabel "relatedSpatialObject" .
 
-geoNames:AbstractFeatureType a owl:Class,
+geoNames:GeographicalName a owl:Class,
         skos:Concept ;
-    rdfs:label "Abstract Feature Type"@en ;
-    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en ;
-    skos:prefLabel "Abstract Feature Type"@en .
+    rdfs:label "Geographical Name"@en ;
+    skos:broader geoNames:codeLists ;
+    skos:definition "Proper noun applied to a real world entity."@en ;
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Geographical Name"@en .
+
+geoNames:PlaceNameTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Place Name Type Value"@en ;
+    skos:broader geoNames:codeLists ;
+    skos:definition "Code list for the place name type value of a geographical name"@en ;
+    skos:inScheme ksa-ft:GeographicalNames ;
+    skos:prefLabel "Place Name Type Value"@en .
 
 geoNames-att:leastDetailedViewingResolution a owl:DatatypeProperty,
         skos:Concept ;
@@ -136,6 +130,7 @@ geoNames-att:name a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "name"@en ;
     rdfs:domain geoNames:PlaceName ;
+    rdfs:range geoNames:GeographicalName ;
     rdfs:subClassOf geoNames:attribute ;
     skos:broader geoNames:attribute ;
     skos:definition "Name of the place name."@en ;
@@ -161,6 +156,7 @@ geoNames-att:type a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "type"@en ;
     rdfs:domain geoNames:PlaceName ;
+    rdfs:range geoNames:PlaceNameTypeValue ;
     rdfs:subClassOf geoNames:attribute ;
     skos:broader geoNames:attribute ;
     skos:definition """Characterization of the kind of entity designated by geographical name(s).
@@ -169,6 +165,12 @@ NOTE 1 This attribute should be consistent with the attribute 'relatedSpatialObj
 NOTE 2 Even if this attribute may introduce some redundancy with the attribute 'relatedSpatialObject', it has to be filled in order to allow to use geographical names on their own without accessing to any other INSPIRE data set, which may be necessary in most cases."""@en ;
     skos:inScheme ksa-ft:GeographicalNames ;
     skos:prefLabel "type"@en .
+
+<https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Feature Type"@en ;
+    skos:definition "Abstract base Feature Type, which holds common attributes that are inherited by all Foundation Theme Feature Types."@en ;
+    skos:prefLabel "Abstract Feature Type"@en .
 
 geoNames:codeLists a owl:Class,
         skos:Concept ;
@@ -186,8 +188,8 @@ geoNames:PlaceName a owl:Class,
         geoNames-att:name,
         geoNames-att:position,
         geoNames-att:type ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "Any real world entity referred to by one or several proper nouns."@en ;
     skos:inScheme ksa-ft:GeographicalNames ;
     skos:prefLabel "Place Name"@en .

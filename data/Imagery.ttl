@@ -7,30 +7,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-imagery:Attitude a owl:Class,
-        skos:Concept ;
-    rdfs:label "Attitude"@en ;
-    skos:broader imagery:codeLists ;
-    skos:definition "Values describing orientation of the satellite at the given moment in time."@en ;
-    skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "Attitude"@en .
-
-imagery:Ephemeris a owl:Class,
-        skos:Concept ;
-    rdfs:label "Ephemeris"@en ;
-    skos:broader imagery:codeLists ;
-    skos:definition "Position and velocity of the satellite at specific point in time. Position and velocity should be specified in the same Coordinate Reference System and in 3D."@en ;
-    skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "Ephemeris"@en .
-
-imagery:ExteriorOrientation a owl:Class,
-        skos:Concept ;
-    rdfs:label "Exterior Orientation"@en ;
-    skos:broader imagery:codeLists ;
-    skos:definition "Elements of the exterior orientation of the camera. The Coordinate Reference System is specified by the Coordinate Reference System of the nodal point."@en ;
-    skos:inScheme ksa-ft:Imagery ;
-    skos:prefLabel "Exterior Orientation"@en .
-
 imagery:ImageAggregation a owl:Class,
         skos:Concept ;
     rdfs:label "Image Aggregation"@en ;
@@ -67,6 +43,30 @@ imagery:ViewVolume a owl:Class,
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "View Volume"@en .
 
+imagery:Attitude a owl:Class,
+        skos:Concept ;
+    rdfs:label "Attitude"@en ;
+    skos:broader imagery:codeLists ;
+    skos:definition "Values describing orientation of the satellite at the given moment in time."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Attitude"@en .
+
+imagery:Ephemeris a owl:Class,
+        skos:Concept ;
+    rdfs:label "Ephemeris"@en ;
+    skos:broader imagery:codeLists ;
+    skos:definition "Position and velocity of the satellite at specific point in time. Position and velocity should be specified in the same Coordinate Reference System and in 3D."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Ephemeris"@en .
+
+imagery:ExteriorOrientation a owl:Class,
+        skos:Concept ;
+    rdfs:label "Exterior Orientation"@en ;
+    skos:broader imagery:codeLists ;
+    skos:definition "Elements of the exterior orientation of the camera. The Coordinate Reference System is specified by the Coordinate Reference System of the nodal point."@en ;
+    skos:inScheme ksa-ft:Imagery ;
+    skos:prefLabel "Exterior Orientation"@en .
+
 imagery-att:GSD a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "GSD"@en ;
@@ -92,6 +92,7 @@ imagery-att:attitude a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "attitude"@en ;
     rdfs:domain imagery:SpaceborneImage ;
+    rdfs:range imagery:Attitude ;
     rdfs:subClassOf imagery:attribute ;
     skos:broader imagery:attribute ;
     skos:definition "Values describing orientation of the satellite at the given moment in time."@en ;
@@ -122,6 +123,7 @@ imagery-att:ephemeris a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "ephemeris"@en ;
     rdfs:domain imagery:SpaceborneImage ;
+    rdfs:range imagery:Ephemeris ;
     rdfs:subClassOf imagery:attribute ;
     skos:broader imagery:attribute ;
     skos:definition "Ephemeris of the satellite during creating the image."@en ;
@@ -132,6 +134,7 @@ imagery-att:exteriorOrientation a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "exteriorOrientation"@en ;
     rdfs:domain imagery:ObliqueAirborneImage ;
+    rdfs:range imagery:ExteriorOrientation ;
     rdfs:subClassOf imagery:attribute ;
     skos:broader imagery:attribute ;
     skos:definition "Elements of the exterior orientation of the camera."@en ;
@@ -204,8 +207,8 @@ imagery:DepthMap a owl:Class,
     rdfs:label "Depth Map"@en ;
     ogc-ft:hasProperty imagery-att:auxFile,
         imagery-att:segFile ;
-    rdfs:subClassOf ksa-ft:AbstractTerrestrialImage ;
-    skos:broader ksa-ft:AbstractTerrestrialImage ;
+    rdfs:subClassOf imagery:AbstractTerrestrialImage ;
+    skos:broader imagery:AbstractTerrestrialImage ;
     skos:definition "Raster dataset representing distance between camera and specific spatial elements in the image. This type of dataset can be derived from LIDAR."@en ;
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Depth Map"@en .
@@ -215,8 +218,8 @@ imagery:MosaicElement a owl:Class,
     rdfs:label "Mosaic Element"@en ;
     ogc-ft:hasProperty imagery-att:mosaicExtent,
         imagery-att:phenomenonTime ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
     skos:definition "Abstract type identifying both the contributing area and the acquisition time of one or several input images used to generate a mosaiced orthoimage coverage. The main purpose of this feature type is the provision of a mechanism for describing the spatial distribution of the acquisition dates and times over a mosaiced orthoimage. The acquisition time can be supplied either for each individual input image, or for sets of input images grouped together according to temporal criteria."@en ;
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Mosaic Element"@en .
@@ -227,8 +230,8 @@ imagery:ObliqueAirborneImage a owl:Class,
     ogc-ft:hasProperty imagery-att:environmentalConditions,
         imagery-att:exteriorOrientation,
         imagery-att:flightHeight ;
-    rdfs:subClassOf ksa-ft:Image ;
-    skos:broader ksa-ft:Image ;
+    rdfs:subClassOf imagery:Image ;
+    skos:broader imagery:Image ;
     skos:definition "Image of the Earth surface intentionally captured at a very high offpointing angle for specific applications from aircraft (plane, UAV, helicopter etc.)."@en ;
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Oblique Airborne Image"@en .
@@ -241,8 +244,8 @@ imagery:SpaceborneImage a owl:Class,
         imagery-att:attitude,
         imagery-att:ephemeris,
         imagery-att:scale ;
-    rdfs:subClassOf ksa-ft:Image ;
-    skos:broader ksa-ft:Image ;
+    rdfs:subClassOf imagery:Image ;
+    skos:broader imagery:Image ;
     skos:definition "Raster image of the Earth surface that was acquired using spaceborne platform (e.g. satellite)."@en ;
     skos:inScheme ksa-ft:Imagery ;
     skos:prefLabel "Spaceborne Image"@en .

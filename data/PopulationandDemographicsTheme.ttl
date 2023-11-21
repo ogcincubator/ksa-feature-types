@@ -46,16 +46,6 @@ popDemo:ObservableProperty a owl:Class,
     skos:definition "The Observable Property represents a single observable property, for example, 'temperature'. It may have associations to additional constraints or measures that make it more complex, e.g. 'daily mean temperature'."@en ;
     skos:prefLabel "Observable Property"@en .
 
-popDemo-att:hasSimpleResult a owl:DatatypeProperty,
-        skos:Concept ;
-    rdfs:label "hasSimpleResult"@en ;
-    rdfs:domain popDemo:DemographicObservation ;
-    rdfs:range xsd:double ;
-    rdfs:subClassOf popDemo:attribute ;
-    skos:broader popDemo:attribute ;
-    skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
-    skos:prefLabel "hasSimpleResult"@en .
-
 popDemo-att:value a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "value"@en ;
@@ -73,10 +63,7 @@ ksa-ft:PopulationandDemographicsTheme a skos:ConceptScheme ;
 popDemo:DemographicObservation a owl:Class,
         skos:Concept ;
     rdfs:label "DemographicObservation"@en ;
-    ogc-ft:hasProperty popDemo-att:hasSimpleResult,
-        popDemo-att:value ;
-    rdfs:subClassOf ksa-ft:StatisticalObservation ;
-    skos:broader ksa-ft:StatisticalObservation ;
+    ogc-ft:hasProperty popDemo-att:value ;
     skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
     skos:prefLabel "DemographicObservation"@en .
 

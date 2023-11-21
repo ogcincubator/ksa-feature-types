@@ -127,14 +127,6 @@ transport:MetroConstructionTypeValue a owl:Class,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Metro Construction Type Value"@en .
 
-transport:PathwayTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Pathway Type Value"@en ;
-    skos:broader transport:codeLists ;
-    skos:definition "Type of pathway for pedestrian or wheelchair."@en ;
-    skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Pathway Type Value"@en .
-
 transport:PhysicalConditionTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Physical Condition Type Value"@en ;
@@ -213,8 +205,8 @@ transport:RoadSignTypeValue a owl:Class,
 transport:SeaportArea a owl:Class,
         skos:Concept ;
     rdfs:label "Seaport Area"@en ;
-    rdfs:subClassOf ksa-ft:TransportArea ;
-    skos:broader ksa-ft:TransportArea ;
+    rdfs:subClassOf transport:TransportArea ;
+    skos:broader transport:TransportArea ;
     skos:definition "An area which is used to represent the physical limits of all the facilities which constitute the terrestrial zone of a sea port."@en ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Seaport Area"@en .
@@ -248,14 +240,6 @@ transport:SpeedLimitSourceValue a owl:Class,
     skos:definition "Possible sources for speed limits."@en ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Speed Limit Source Value"@en .
-
-transport:StatusTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "Status Type Value"@en ;
-    skos:broader transport:codeLists ;
-    skos:definition "A coded domain value denoting a status of a transport element (e.g. projected, underConstruction)"@en ;
-    skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Status Type Value"@en .
 
 transport:SurfaceTypeValue a owl:Class,
         skos:Concept ;
@@ -310,6 +294,22 @@ transport:MetroNode a owl:Class,
     skos:definition "A point feature which represents a significant point along the metro network or defines an intersection of metro tracks used to describe its connectivity."@en ;
     skos:prefLabel "Metro Node"@en .
 
+transport:PathwayTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Pathway Type Value"@en ;
+    skos:broader transport:codeLists ;
+    skos:definition "Type of pathway for pedestrian or wheelchair."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Pathway Type Value"@en .
+
+transport:StatusTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "Status Type Value"@en ;
+    skos:broader transport:codeLists ;
+    skos:definition "A coded domain value denoting a status of a transport element (e.g. projected, underConstruction)"@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Status Type Value"@en .
+
 transport-att:alternativeName a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "alternativeName"@en ;
@@ -334,6 +334,7 @@ transport-att:class a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "class"@en ;
     rdfs:domain transport:Pathway ;
+    rdfs:range transport:PathwayTypeValue ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
     skos:definition "Type of pathway for pedestrian or wheelchair."@en ;
@@ -375,6 +376,7 @@ transport-att:status a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "status"@en ;
     rdfs:domain transport:AbstractTransportType ;
+    rdfs:range transport:StatusTypeValue ;
     rdfs:subClassOf transport:attribute ;
     skos:broader transport:attribute ;
     skos:definition "Status of the transport element (e.g. projected, under construction)."@en ;
@@ -396,8 +398,8 @@ transport:ControlTower a owl:Class,
     rdfs:label "Control Tower"@en ;
     ogc-ft:hasProperty transport-att:centerpoint,
         transport-att:height ;
-    rdfs:subClassOf ksa-ft:AbstractTransportType ;
-    skos:broader ksa-ft:AbstractTransportType ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
     skos:definition "A tall building at an airport from which the movements of air traffic are controlled."@en ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Control Tower"@en .
@@ -406,8 +408,8 @@ transport:MetroStation a owl:Class,
         skos:Concept ;
     rdfs:label "Metro Station"@en ;
     ogc-ft:hasProperty transport-att:centerpoint ;
-    rdfs:subClassOf ksa-ft:AbstractTransportType ;
-    skos:broader ksa-ft:AbstractTransportType ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
     skos:definition "A metro station is a type of railway station that is part of a metro, rapid transit system, subway or underground railway line or railway network. Geometry representation of metro station is a center point."@en ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Metro Station"@en .
@@ -424,18 +426,6 @@ transport-att:centerpoint a owl:ObjectProperty,
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "centerpoint"@en .
 
-transport:AbstractTransportType a owl:Class,
-        skos:Concept ;
-    rdfs:label "Abstract Transport Type"@en ;
-    ogc-ft:hasProperty transport-att:description,
-        transport-att:name,
-        transport-att:status ;
-    rdfs:subClassOf ksa-ft:AbstractFeatureType ;
-    skos:broader ksa-ft:AbstractFeatureType ;
-    skos:definition "Abstract parent class for feature types that holds common attributes."@en ;
-    skos:inScheme ksa-ft:Transport ;
-    skos:prefLabel "Abstract Transport Type"@en .
-
 transport:Pathway a owl:Class,
         skos:Concept ;
     rdfs:label "Pathway"@en ;
@@ -443,11 +433,23 @@ transport:Pathway a owl:Class,
         transport-att:centerline,
         transport-att:class,
         transport-att:width ;
-    rdfs:subClassOf ksa-ft:AbstractTransportType ;
-    skos:broader ksa-ft:AbstractTransportType ;
+    rdfs:subClassOf transport:AbstractTransportType ;
+    skos:broader transport:AbstractTransportType ;
     skos:definition "A way beaten, formed, or trodden by the feet of persons or animals."@en ;
     skos:inScheme ksa-ft:Transport ;
     skos:prefLabel "Pathway"@en .
+
+transport:AbstractTransportType a owl:Class,
+        skos:Concept ;
+    rdfs:label "Abstract Transport Type"@en ;
+    ogc-ft:hasProperty transport-att:description,
+        transport-att:name,
+        transport-att:status ;
+    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:broader <https://w3id.org/ksa/feature-types/BaseTypes/AbstractFeatureType> ;
+    skos:definition "Abstract parent class for feature types that holds common attributes."@en ;
+    skos:inScheme ksa-ft:Transport ;
+    skos:prefLabel "Abstract Transport Type"@en .
 
 transport:attribute a owl:Class,
         skos:Concept ;
