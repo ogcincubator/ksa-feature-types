@@ -1,105 +1,107 @@
 @prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix landCover: <https://w3id.org/ksa/feature-types/LandCover/> .
+@prefix landCover-att: <https://w3id.org/ksa/feature-types/LandCover/attribute/> .
 @prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/ksa/feature-types/LandCover/attribute/nomenclatureDocumentation> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "nomenclatureDocumentation" ;
-    rdfs:domain ksa-ft:LandCoverCollection ;
-    rdfs:range ksa-ft:LandCoverNomenclature ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:prefLabel "nomenclatureDocumentation" .
-
-ksa-ft:LandCoverClassificationValue a owl:Class,
+landCover:LandCoverClassificationValue a owl:Class,
         skos:Concept ;
     rdfs:label "Land Cover Classification"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandCover/codeLists> ;
+    skos:broader landCover:codeLists ;
     skos:definition "Abstract base type for code lists containing the land cover classification  values under different classification systems."@en ;
     skos:inScheme ksa-ft:LandCover ;
     skos:prefLabel "Land Cover Classification"@en .
 
-ksa-ft:LandCoverObservation a owl:Class,
+landCover:LandCoverObservation a owl:Class,
         skos:Concept ;
     rdfs:label "Land Cover Observation"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandCover/codeLists> ;
+    skos:broader landCover:codeLists ;
     skos:definition "Land Cover information interpreted at a specific time and place"@en ;
     skos:inScheme ksa-ft:LandCover ;
     skos:prefLabel "Land Cover Observation"@en .
 
-ksa-ft:LandCoverValue a owl:Class,
+landCover:LandCoverValue a owl:Class,
         skos:Concept ;
     rdfs:label "Land Cover Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandCover/codeLists> ;
+    skos:broader landCover:codeLists ;
     skos:definition "Generic class which includes land cover value and percentage."@en ;
     skos:inScheme ksa-ft:LandCover ;
     skos:prefLabel "Land Cover Value"@en .
 
-<https://w3id.org/ksa/feature-types/LandCover/attribute/extent> a owl:ObjectProperty,
+landCover-att:nomenclatureDocumentation a owl:ObjectProperty,
         skos:Concept ;
-    rdfs:label "extent"@en ;
-    rdfs:domain ksa-ft:LandCoverCollection ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:definition "Contains the extent of the data set."@en ;
-    skos:inScheme ksa-ft:LandCover ;
-    skos:prefLabel "extent"@en .
+    rdfs:label "nomenclatureDocumentation" ;
+    rdfs:domain landCover:LandCoverCollection ;
+    rdfs:range landCover:LandCoverNomenclature ;
+    rdfs:subClassOf landCover:attribute ;
+    skos:broader landCover:attribute ;
+    skos:prefLabel "nomenclatureDocumentation" .
 
-<https://w3id.org/ksa/feature-types/LandCover/attribute/name> a owl:DatatypeProperty,
-        skos:Concept ;
-    rdfs:label "name"@en ;
-    rdfs:domain ksa-ft:LandCoverCollection ;
-    rdfs:range xsd:string ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:definition "Name of the Land Cover data set."@en ;
-    skos:inScheme ksa-ft:LandCover ;
-    skos:prefLabel "name"@en .
-
-<https://w3id.org/ksa/feature-types/LandCover/attribute/validFrom> a owl:DatatypeProperty,
-        skos:Concept ;
-    rdfs:label "validFrom"@en ;
-    rdfs:domain ksa-ft:LandCoverCollection ;
-    rdfs:range xsd:date ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:definition "The date when the Land Cover data set started to exist in the real world."@en ;
-    skos:inScheme ksa-ft:LandCover ;
-    skos:prefLabel "validFrom"@en .
-
-<https://w3id.org/ksa/feature-types/LandCover/attribute/validTo> a owl:DatatypeProperty,
-        skos:Concept ;
-    rdfs:label "validTo"@en ;
-    rdfs:domain ksa-ft:LandCoverCollection ;
-    rdfs:range xsd:date ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandCover/attribute> ;
-    skos:definition "The date from which the Land Cover data set no longer exists in the real world."@en ;
-    skos:inScheme ksa-ft:LandCover ;
-    skos:prefLabel "validTo"@en .
-
-ksa-ft:LandCoverNomenclature a owl:Class,
+landCover:LandCoverNomenclature a owl:Class,
         skos:Concept ;
     rdfs:label "Land Cover Nomenclature"@en ;
     skos:definition "Information about reference national, institution or local Land Cover nomenclature.  The Land Cover Nomenclature allows references to nomenclatures documentation and associated code list or to define them through an external reference or included within the data according to ISO 19144-2."@en ;
     skos:prefLabel "Land Cover Nomenclature"@en .
 
-<https://w3id.org/ksa/feature-types/LandCover/codeLists> a owl:Class,
+landCover-att:extent a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "extent"@en ;
+    rdfs:domain landCover:LandCoverCollection ;
+    rdfs:subClassOf landCover:attribute ;
+    skos:broader landCover:attribute ;
+    skos:definition "Contains the extent of the data set."@en ;
+    skos:inScheme ksa-ft:LandCover ;
+    skos:prefLabel "extent"@en .
+
+landCover-att:name a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain landCover:LandCoverCollection ;
+    rdfs:range xsd:string ;
+    rdfs:subClassOf landCover:attribute ;
+    skos:broader landCover:attribute ;
+    skos:definition "Name of the Land Cover data set."@en ;
+    skos:inScheme ksa-ft:LandCover ;
+    skos:prefLabel "name"@en .
+
+landCover-att:validFrom a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validFrom"@en ;
+    rdfs:domain landCover:LandCoverCollection ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf landCover:attribute ;
+    skos:broader landCover:attribute ;
+    skos:definition "The date when the Land Cover data set started to exist in the real world."@en ;
+    skos:inScheme ksa-ft:LandCover ;
+    skos:prefLabel "validFrom"@en .
+
+landCover-att:validTo a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "validTo"@en ;
+    rdfs:domain landCover:LandCoverCollection ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf landCover:attribute ;
+    skos:broader landCover:attribute ;
+    skos:definition "The date from which the Land Cover data set no longer exists in the real world."@en ;
+    skos:inScheme ksa-ft:LandCover ;
+    skos:prefLabel "validTo"@en .
+
+landCover:codeLists a owl:Class,
         skos:Concept ;
     rdfs:label "Land Cover Foundation Theme code list or type"@en ;
     skos:inScheme ksa-ft:LandCover ;
     skos:prefLabel "Land Cover Foundation Theme code list or type"@en .
 
-ksa-ft:LandCoverCollection a owl:Class,
+landCover:LandCoverCollection a owl:Class,
         skos:Concept ;
     rdfs:label "Land Cover Collection"@en ;
-    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/LandCover/attribute/extent>,
-        <https://w3id.org/ksa/feature-types/LandCover/attribute/name>,
-        <https://w3id.org/ksa/feature-types/LandCover/attribute/validFrom>,
-        <https://w3id.org/ksa/feature-types/LandCover/attribute/validTo> ;
+    ogc-ft:hasProperty landCover-att:extent,
+        landCover-att:name,
+        landCover-att:validFrom,
+        landCover-att:validTo ;
     rdfs:subClassOf ksa-ft:AbstractFeatureType ;
     skos:broader ksa-ft:AbstractFeatureType ;
     skos:definition "A Land Cover Collection is a collection of units (areas or locations) for which information on observed (bio)physical cover on the Earth's surface is provided. A land cover information were captured in the same methodology and classification.  This representation allows Land Cover data being supported by a vector geometry."@en ;
@@ -111,7 +113,7 @@ ksa-ft:LandCover a skos:ConceptScheme ;
     skos:definition "The Land Cover Foundation Theme is the observed natural and built environment surface cover in the Kingdom of Saudi Arabia."@en ;
     skos:prefLabel "Land Cover Foundation Theme"@en .
 
-<https://w3id.org/ksa/feature-types/LandCover/attribute> a owl:Class,
+landCover:attribute a owl:Class,
         skos:Concept ;
     rdfs:label "Land Cover Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:LandCover ;

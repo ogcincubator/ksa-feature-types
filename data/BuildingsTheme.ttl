@@ -1,3 +1,5 @@
+@prefix buildings: <https://w3id.org/ksa/feature-types/BuildingsTheme/> .
+@prefix buildings-att: <https://w3id.org/ksa/feature-types/BuildingsTheme/attribute/> .
 @prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
 @prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -5,53 +7,53 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ksa-ft:BuildingConstructionStatusValue a owl:Class,
+buildings:BuildingConstructionStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "Building Construction Status Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/BuildingsTheme/codeLists> ;
+    skos:broader buildings:codeLists ;
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "Building Construction Status Value"@en .
 
-ksa-ft:BuildingMaterialValue a owl:Class,
+buildings:BuildingMaterialValue a owl:Class,
         skos:Concept ;
     rdfs:label "Building Material Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/BuildingsTheme/codeLists> ;
+    skos:broader buildings:codeLists ;
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "Building Material Value"@en .
 
-ksa-ft:BuildingStatusValue a owl:Class,
+buildings:BuildingStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "Building Status Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/BuildingsTheme/codeLists> ;
+    skos:broader buildings:codeLists ;
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "Building Status Value"@en .
 
-ksa-ft:BuildingUnit a owl:Class,
+buildings:BuildingUnit a owl:Class,
         skos:Concept ;
     rdfs:label "Building Unit"@en ;
-    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/BuildingsTheme/attribute/floorNumber> ;
+    ogc-ft:hasProperty buildings-att:floorNumber ;
     skos:definition "A BuildingUnit is a subdivision of Building with its own lockable access from the outside or from a common area (i.e. not from another BuildingUnit), which is atomic, functionally independent, and may be separately sold, rented out, inherited, etc."@en ;
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "Building Unit"@en .
 
-<https://w3id.org/ksa/feature-types/BuildingsTheme/attribute/floorNumber> a owl:DatatypeProperty,
+buildings-att:floorNumber a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "floorNumber"@en ;
-    rdfs:domain ksa-ft:BuildingUnit ;
+    rdfs:domain buildings:BuildingUnit ;
     rdfs:range xsd:integer ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/BuildingsTheme/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/BuildingsTheme/attribute> ;
+    rdfs:subClassOf buildings:attribute ;
+    skos:broader buildings:attribute ;
     skos:definition "Floor number of the main entrance level to the building unit in a building (to allow mezzaine, ground)."@en ;
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "floorNumber"@en .
 
-<https://w3id.org/ksa/feature-types/BuildingsTheme/attribute> a owl:Class,
+buildings:attribute a owl:Class,
         skos:Concept ;
     rdfs:label "Buildings Theme attribute"@en ;
     skos:inScheme ksa-ft:BuildingsTheme ;
     skos:prefLabel "Buildings Theme attribute"@en .
 
-<https://w3id.org/ksa/feature-types/BuildingsTheme/codeLists> a owl:Class,
+buildings:codeLists a owl:Class,
         skos:Concept ;
     rdfs:label "Buildings Theme code list or type"@en ;
     skos:inScheme ksa-ft:BuildingsTheme ;

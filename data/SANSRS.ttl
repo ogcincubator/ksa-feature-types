@@ -2,330 +2,325 @@
 @prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sansrs: <https://w3id.org/ksa/feature-types/SANSRS/> .
+@prefix sansrs-att: <https://w3id.org/ksa/feature-types/SANSRS/attribute/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ksa-ft:AbsoluteGravityTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "AbsoluteGravityTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AbsoluteGravityTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "AbsoluteGravityTypeValue"@en .
-
-ksa-ft:AccuracyOrderValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "AccuracyOrderValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AccuracyOrderValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "AccuracyOrderValue"@en .
-
-ksa-ft:AntennaCalibrationTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "AntennaCalibrationTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AntennaCalibrationTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "AntennaCalibrationTypeValue"@en .
-
-ksa-ft:AntennaTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "AntennaTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AntennaTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "AntennaTypeValue"@en .
-
-ksa-ft:CORSNetworkServiceValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "CORSNetworkServiceValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/CORSNetworkServiceValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "CORSNetworkServiceValue"@en .
-
-ksa-ft:CORSStationTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "CORSStationTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/CORSStationTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "CORSStationTypeValue"@en .
-
-ksa-ft:CRSNameValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "CRSNameValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "CRSNameValue"@en .
-
-ksa-ft:HeightTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "HeightTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "HeightTypeValue"@en .
-
-ksa-ft:NetworkOwnerValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "NetworkOwnerValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/NetworkOwnerValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "NetworkOwnerValue"@en .
-
-ksa-ft:ReceiverTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "ReceiverTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/ReceiverTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "ReceiverTypeValue"@en .
-
-ksa-ft:SatelliteSystemTypeValue a owl:Class,
-        skos:Concept ;
-    rdfs:label "SatelliteSystemTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
-    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/SatelliteSystemTypeValue"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "SatelliteSystemTypeValue"@en .
-
-ksa-ft:AbsoluteGravity a owl:Class,
+sansrs:AbsoluteGravity a owl:Class,
         skos:Concept ;
     rdfs:label "Absolute Gravity"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
+    skos:broader sansrs:codeLists ;
     skos:definition "Absolute gravity measure. The units (e.g. mGal, Gal) must be specified in the unit of measurement attribute."@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "Absolute Gravity"@en .
 
-ksa-ft:AbsoluteGravityCalibrationLineTypeValue a owl:Class,
+sansrs:AbsoluteGravityCalibrationLineTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "AbsoluteGravityCalibrationLineTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
+    skos:broader sansrs:codeLists ;
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AboluteGravityCalibrationLineTypeValue"@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "AbsoluteGravityCalibrationLineTypeValue"@en .
 
-ksa-ft:MaintenanceUnitValue a owl:Class,
+sansrs:AbsoluteGravityTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "AbsoluteGravityTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AbsoluteGravityTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "AbsoluteGravityTypeValue"@en .
+
+sansrs:AccuracyOrderValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "AccuracyOrderValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AccuracyOrderValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "AccuracyOrderValue"@en .
+
+sansrs:AntennaCalibrationTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "AntennaCalibrationTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AntennaCalibrationTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "AntennaCalibrationTypeValue"@en .
+
+sansrs:AntennaTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "AntennaTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/AntennaTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "AntennaTypeValue"@en .
+
+sansrs:CORSNetworkServiceValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "CORSNetworkServiceValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/CORSNetworkServiceValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "CORSNetworkServiceValue"@en .
+
+sansrs:CORSStationTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "CORSStationTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/CORSStationTypeValue"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "CORSStationTypeValue"@en .
+
+sansrs:CRSNameValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "CRSNameValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "CRSNameValue"@en .
+
+sansrs:HeightTypeValue a owl:Class,
+        skos:Concept ;
+    rdfs:label "HeightTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "HeightTypeValue"@en .
+
+sansrs:MaintenanceUnitValue a owl:Class,
         skos:Concept ;
     rdfs:label "MaintenanceUnitValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
+    skos:broader sansrs:codeLists ;
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MaintenanceUnitValue"@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "MaintenanceUnitValue"@en .
 
-ksa-ft:MonumentConditionTypeValue a owl:Class,
+sansrs:MonumentConditionTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "MonumentConditionTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
+    skos:broader sansrs:codeLists ;
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MonumentConditionTypeValue"@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "MonumentConditionTypeValue"@en .
 
-ksa-ft:MonumentTypeValue a owl:Class,
+sansrs:MonumentTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "MonumentTypeValue"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
+    skos:broader sansrs:codeLists ;
     skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/MonumentTypeValue"@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "MonumentTypeValue"@en .
 
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/absoluteGravity> a owl:ObjectProperty,
+sansrs:NetworkOwnerValue a owl:Class,
         skos:Concept ;
-    rdfs:label "absoluteGravity"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range ksa-ft:AbsoluteGravity ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "Value of absolute gravity, calculated based on the absolute gravity measure. The units (e.g. mGal,&#181;Gal) must be specified in the uom attribute."@en ;
+    rdfs:label "NetworkOwnerValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/NetworkOwnerValue"@en ;
     skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "absoluteGravity"@en .
+    skos:prefLabel "NetworkOwnerValue"@en .
 
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/absoluteGravityCalibrationLinePointID> a owl:ObjectProperty,
+sansrs:ReceiverTypeValue a owl:Class,
         skos:Concept ;
-    rdfs:label "absoluteGravityCalibrationLinePointID"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "Unique local ID for absolute gravity calibration point. Naming convention: <b><i>CB0XXY, where XX = (00…99);  Y = (0, 1)</i></b>"@en ;
+    rdfs:label "ReceiverTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/ReceiverTypeValue"@en ;
     skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "absoluteGravityCalibrationLinePointID"@en .
+    skos:prefLabel "ReceiverTypeValue"@en .
 
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/descriptionOfLocation> a owl:ObjectProperty,
+sansrs:SatelliteSystemTypeValue a owl:Class,
         skos:Concept ;
-    rdfs:label "descriptionOfLocation"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "General text description of the location (in English and/or Arabic)"@en ;
+    rdfs:label "SatelliteSystemTypeValue"@en ;
+    skos:broader sansrs:codeLists ;
+    skos:definition "This code list class is only an indicative placeholder for a vocabulary of terms. The official values are maintained in the following  code list register http://nsdi.sa/codelist/SatelliteSystemTypeValue"@en ;
     skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "descriptionOfLocation"@en .
+    skos:prefLabel "SatelliteSystemTypeValue"@en .
 
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/ellipsoidalHeight> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "ellipsoidalHeight"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range ksa-ft:VerticalHeight ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "Height measured along the perpendicular from the surface of the GRS80 ellipsoid. The units (e.g. meters, feet) must be specified in the uom attribute."@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "ellipsoidalHeight"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/lastMaintenanceDate> a owl:DatatypeProperty,
-        skos:Concept ;
-    rdfs:label "lastMaintenanceDate"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range xsd:date ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "The most recently maintained date"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "lastMaintenanceDate"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/maintenanceUnit> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "maintenanceUnit"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range ksa-ft:MaintenanceUnitValue ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "Code value of the organizational unit responsible for the maintenance. If there are more than one maintenance units listed, then the GCS Organizational unit is responsible for maintenance."@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "maintenanceUnit"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/monumentCondition> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "monumentCondition"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range ksa-ft:MonumentConditionTypeValue ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "The monument condition code, example values are: good, damaged, missing."@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "monumentCondition"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/monumentInstallationDate> a owl:DatatypeProperty,
-        skos:Concept ;
-    rdfs:label "monumentInstallationDate"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range xsd:date ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "The installation date of the monument"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "monumentInstallationDate"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/monumentType> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "monumentType"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range ksa-ft:MonumentTypeValue ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "The monument type code (e.g. type 1, type 2)"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "monumentType"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/name> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "name"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "Name in English and/or Arabic"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "name"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/orthometricHeight> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "orthometricHeight"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range ksa-ft:VerticalHeight ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "Height measured along the plumb line (gravity directed) to the KSA GEOID 2017. The units (e.g. meters, feet) must be specified in the uom attribute."@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "orthometricHeight"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/position> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "position"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:definition "A Point-valued 2-dimensional position"@en ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "position"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/siteLog> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "siteLog"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "siteLog"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/sitePicture> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "sitePicture"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "sitePicture"@en .
-
-<https://w3id.org/ksa/feature-types/SANSRS/attribute/type> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "type"@en ;
-    rdfs:domain ksa-ft:AbsoluteGravityCalibrationLinePoint ;
-    rdfs:range ksa-ft:AbsoluteGravityCalibrationLineTypeValue ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/attribute> ;
-    skos:inScheme ksa-ft:SANSRS ;
-    skos:prefLabel "type"@en .
-
-ksa-ft:VerticalHeight a owl:Class,
+sansrs:VerticalHeight a owl:Class,
         skos:Concept ;
     rdfs:label "Vertical Height"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/SANSRS/codeLists> ;
+    skos:broader sansrs:codeLists ;
     skos:definition "Height value for the vertical datum."@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "Vertical Height"@en .
 
-ksa-ft:AbsoluteGravityCalibrationLinePoint a owl:Class,
+sansrs-att:absoluteGravity a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "absoluteGravity"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Value of absolute gravity, calculated based on the absolute gravity measure. The units (e.g. mGal,&#181;Gal) must be specified in the uom attribute."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "absoluteGravity"@en .
+
+sansrs-att:absoluteGravityCalibrationLinePointID a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "absoluteGravityCalibrationLinePointID"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Unique local ID for absolute gravity calibration point. Naming convention: <b><i>CB0XXY, where XX = (00…99);  Y = (0, 1)</i></b>"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "absoluteGravityCalibrationLinePointID"@en .
+
+sansrs-att:descriptionOfLocation a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "descriptionOfLocation"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "General text description of the location (in English and/or Arabic)"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "descriptionOfLocation"@en .
+
+sansrs-att:ellipsoidalHeight a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "ellipsoidalHeight"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Height measured along the perpendicular from the surface of the GRS80 ellipsoid. The units (e.g. meters, feet) must be specified in the uom attribute."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "ellipsoidalHeight"@en .
+
+sansrs-att:lastMaintenanceDate a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "lastMaintenanceDate"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "The most recently maintained date"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "lastMaintenanceDate"@en .
+
+sansrs-att:maintenanceUnit a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "maintenanceUnit"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Code value of the organizational unit responsible for the maintenance. If there are more than one maintenance units listed, then the GCS Organizational unit is responsible for maintenance."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "maintenanceUnit"@en .
+
+sansrs-att:monumentCondition a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "monumentCondition"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "The monument condition code, example values are: good, damaged, missing."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "monumentCondition"@en .
+
+sansrs-att:monumentInstallationDate a owl:DatatypeProperty,
+        skos:Concept ;
+    rdfs:label "monumentInstallationDate"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:range xsd:date ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "The installation date of the monument"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "monumentInstallationDate"@en .
+
+sansrs-att:monumentType a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "monumentType"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "The monument type code (e.g. type 1, type 2)"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "monumentType"@en .
+
+sansrs-att:name a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "name"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Name in English and/or Arabic"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "name"@en .
+
+sansrs-att:orthometricHeight a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "orthometricHeight"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "Height measured along the plumb line (gravity directed) to the KSA GEOID 2017. The units (e.g. meters, feet) must be specified in the uom attribute."@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "orthometricHeight"@en .
+
+sansrs-att:position a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "position"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:definition "A Point-valued 2-dimensional position"@en ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "position"@en .
+
+sansrs-att:siteLog a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "siteLog"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "siteLog"@en .
+
+sansrs-att:sitePicture a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "sitePicture"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "sitePicture"@en .
+
+sansrs-att:type a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "type"@en ;
+    rdfs:domain sansrs:AbsoluteGravityCalibrationLinePoint ;
+    rdfs:subClassOf sansrs:attribute ;
+    skos:broader sansrs:attribute ;
+    skos:inScheme ksa-ft:SANSRS ;
+    skos:prefLabel "type"@en .
+
+sansrs:AbsoluteGravityCalibrationLinePoint a owl:Class,
         skos:Concept ;
     rdfs:label "Absolute Gravity Calibration Line Point"@en ;
-    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/SANSRS/attribute/absoluteGravity>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/absoluteGravityCalibrationLinePointID>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/descriptionOfLocation>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/ellipsoidalHeight>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/lastMaintenanceDate>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/maintenanceUnit>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/monumentCondition>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/monumentInstallationDate>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/monumentType>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/name>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/orthometricHeight>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/position>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/siteLog>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/sitePicture>,
-        <https://w3id.org/ksa/feature-types/SANSRS/attribute/type> ;
+    ogc-ft:hasProperty sansrs-att:absoluteGravity,
+        sansrs-att:absoluteGravityCalibrationLinePointID,
+        sansrs-att:descriptionOfLocation,
+        sansrs-att:ellipsoidalHeight,
+        sansrs-att:lastMaintenanceDate,
+        sansrs-att:maintenanceUnit,
+        sansrs-att:monumentCondition,
+        sansrs-att:monumentInstallationDate,
+        sansrs-att:monumentType,
+        sansrs-att:name,
+        sansrs-att:orthometricHeight,
+        sansrs-att:position,
+        sansrs-att:siteLog,
+        sansrs-att:sitePicture,
+        sansrs-att:type ;
     rdfs:subClassOf ksa-ft:AbstractFeatureType ;
     skos:broader ksa-ft:AbstractFeatureType ;
     skos:definition "A point on the earth's surface where the acceleration of gravity has been measured relative to other points in a sequence or 'calibration line'."@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "Absolute Gravity Calibration Line Point"@en .
 
-<https://w3id.org/ksa/feature-types/SANSRS/codeLists> a owl:Class,
+sansrs:codeLists a owl:Class,
         skos:Concept ;
     rdfs:label "SANSRS Foundation Theme code list or type"@en ;
     skos:inScheme ksa-ft:SANSRS ;
     skos:prefLabel "SANSRS Foundation Theme code list or type"@en .
 
-<https://w3id.org/ksa/feature-types/SANSRS/attribute> a owl:Class,
+sansrs:attribute a owl:Class,
         skos:Concept ;
     rdfs:label "SANSRS Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:SANSRS ;

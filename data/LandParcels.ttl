@@ -1,121 +1,123 @@
 @prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
+@prefix landParcels: <https://w3id.org/ksa/feature-types/LandParcels/> .
+@prefix landParcels-att: <https://w3id.org/ksa/feature-types/LandParcels/attribute/> .
 @prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ksa-ft:BuildingConstructionStatusValue a owl:Class,
+landParcels:BuildingConstructionStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "Building Construction Status Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/codeLists> ;
+    skos:broader landParcels:codeLists ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "Building Construction Status Value"@en .
 
-ksa-ft:BuildingMaterialValue a owl:Class,
+landParcels:BuildingMaterialValue a owl:Class,
         skos:Concept ;
     rdfs:label "Building Material Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/codeLists> ;
+    skos:broader landParcels:codeLists ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "Building Material Value"@en .
 
-ksa-ft:BuildingStatusValue a owl:Class,
+landParcels:BuildingStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "Building Status Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/codeLists> ;
+    skos:broader landParcels:codeLists ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "Building Status Value"@en .
 
-ksa-ft:FacilityTypeValue a owl:Class,
+landParcels:FacilityTypeValue a owl:Class,
         skos:Concept ;
     rdfs:label "Facility Type Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/codeLists> ;
+    skos:broader landParcels:codeLists ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "Facility Type Value"@en .
 
-<https://w3id.org/ksa/feature-types/LandParcels/attribute/address> a owl:ObjectProperty,
-        skos:Concept ;
-    rdfs:label "address" ;
-    rdfs:domain ksa-ft:SpatialUnit ;
-    rdfs:range ksa-ft:Address ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
-    skos:prefLabel "address" .
-
-ksa-ft:ParcelStatusValue a owl:Class,
+landParcels:ParcelStatusValue a owl:Class,
         skos:Concept ;
     rdfs:label "Parcel Status Value"@en ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/codeLists> ;
+    skos:broader landParcels:codeLists ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "Parcel Status Value"@en .
 
-ksa-ft:Address a owl:Class,
+landParcels-att:address a owl:ObjectProperty,
+        skos:Concept ;
+    rdfs:label "address" ;
+    rdfs:domain landParcels:SpatialUnit ;
+    rdfs:range landParcels:Address ;
+    rdfs:subClassOf landParcels:attribute ;
+    skos:broader landParcels:attribute ;
+    skos:prefLabel "address" .
+
+landParcels:Address a owl:Class,
         skos:Concept ;
     rdfs:label "Address"@en ;
     skos:definition "An identification of the fixed location of property by means of a structured composition of geographic names and identifiers."@en ;
     skos:prefLabel "Address"@en .
 
-<https://w3id.org/ksa/feature-types/LandParcels/attribute/area> a owl:ObjectProperty,
+landParcels-att:area a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "area"@en ;
-    rdfs:domain ksa-ft:SpatialUnit ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
+    rdfs:domain landParcels:SpatialUnit ;
+    rdfs:subClassOf landParcels:attribute ;
+    skos:broader landParcels:attribute ;
     skos:definition "The area of the 2D spatial unit."@en ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "area"@en .
 
-<https://w3id.org/ksa/feature-types/LandParcels/attribute/name> a owl:DatatypeProperty,
+landParcels-att:name a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "name"@en ;
-    rdfs:domain ksa-ft:SpatialUnit ;
+    rdfs:domain landParcels:SpatialUnit ;
     rdfs:range xsd:string ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
+    rdfs:subClassOf landParcels:attribute ;
+    skos:broader landParcels:attribute ;
     skos:definition "Short textual description of the spatial unit - parcel or building."@en ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "name"@en .
 
-<https://w3id.org/ksa/feature-types/LandParcels/attribute/referencePoint> a owl:ObjectProperty,
+landParcels-att:referencePoint a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "referencePoint"@en ;
-    rdfs:domain ksa-ft:SpatialUnit ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
+    rdfs:domain landParcels:SpatialUnit ;
+    rdfs:subClassOf landParcels:attribute ;
+    skos:broader landParcels:attribute ;
     skos:definition "The coordinates of a point inside the spatial unit."@en ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "referencePoint"@en .
 
-<https://w3id.org/ksa/feature-types/LandParcels/attribute/suId> a owl:ObjectProperty,
+landParcels-att:suId a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "suId"@en ;
-    rdfs:domain ksa-ft:SpatialUnit ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/LandParcels/attribute> ;
+    rdfs:domain landParcels:SpatialUnit ;
+    rdfs:subClassOf landParcels:attribute ;
+    skos:broader landParcels:attribute ;
     skos:definition "Local identifier qualified by registration organization."@en ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "suId"@en .
 
-<https://w3id.org/ksa/feature-types/LandParcels/codeLists> a owl:Class,
-        skos:Concept ;
-    rdfs:label "Land Parcels Foundation Theme code list or type"@en ;
-    skos:inScheme ksa-ft:LandParcels ;
-    skos:prefLabel "Land Parcels Foundation Theme code list or type"@en .
-
-ksa-ft:SpatialUnit a owl:Class,
+landParcels:SpatialUnit a owl:Class,
         skos:Concept ;
     rdfs:label "Spatial Unit"@en ;
-    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/LandParcels/attribute/area>,
-        <https://w3id.org/ksa/feature-types/LandParcels/attribute/name>,
-        <https://w3id.org/ksa/feature-types/LandParcels/attribute/referencePoint>,
-        <https://w3id.org/ksa/feature-types/LandParcels/attribute/suId> ;
+    ogc-ft:hasProperty landParcels-att:area,
+        landParcels-att:name,
+        landParcels-att:referencePoint,
+        landParcels-att:suId ;
     rdfs:subClassOf ksa-ft:AbstractFeatureType ;
     skos:broader ksa-ft:AbstractFeatureType ;
     skos:definition "Single area (or multiple areas) of land and/or water, or a single volume (or multiple volumes) of space."@en ;
     skos:inScheme ksa-ft:LandParcels ;
     skos:prefLabel "Spatial Unit"@en .
 
-<https://w3id.org/ksa/feature-types/LandParcels/attribute> a owl:Class,
+landParcels:codeLists a owl:Class,
+        skos:Concept ;
+    rdfs:label "Land Parcels Foundation Theme code list or type"@en ;
+    skos:inScheme ksa-ft:LandParcels ;
+    skos:prefLabel "Land Parcels Foundation Theme code list or type"@en .
+
+landParcels:attribute a owl:Class,
         skos:Concept ;
     rdfs:label "Land Parcels Foundation Theme attribute"@en ;
     skos:inScheme ksa-ft:LandParcels ;

@@ -1,29 +1,31 @@
 @prefix ksa-ft: <https://w3id.org/ksa/feature-types/> .
 @prefix ogc-ft: <http://www.opengis.net/def/metamodel/featuretypes/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix popDemo: <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/> .
+@prefix popDemo-att: <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/featureOfInterest> a owl:ObjectProperty,
+popDemo-att:featureOfInterest a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "featureOfInterest" ;
-    rdfs:domain ksa-ft:DemographicObservation ;
-    rdfs:range ksa-ft:AreaStatisticalUnit ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
+    rdfs:domain popDemo:DemographicObservation ;
+    rdfs:range popDemo:AreaStatisticalUnit ;
+    rdfs:subClassOf popDemo:attribute ;
+    skos:broader popDemo:attribute ;
     skos:prefLabel "featureOfInterest" .
 
-<https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/observableProperty> a owl:ObjectProperty,
+popDemo-att:observableProperty a owl:ObjectProperty,
         skos:Concept ;
     rdfs:label "observableProperty" ;
-    rdfs:domain ksa-ft:DemographicObservation ;
-    rdfs:range ksa-ft:ObservableProperty ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
+    rdfs:domain popDemo:DemographicObservation ;
+    rdfs:range popDemo:ObservableProperty ;
+    rdfs:subClassOf popDemo:attribute ;
+    skos:broader popDemo:attribute ;
     skos:prefLabel "observableProperty" .
 
-ksa-ft:AreaStatisticalUnit a owl:Class,
+popDemo:AreaStatisticalUnit a owl:Class,
         skos:Concept ;
     rdfs:label "AreaStatisticalUnit"@en ;
     skos:definition """-- Name --
@@ -38,47 +40,47 @@ Such object can be composed of other area statistical unit.
 EXAMPLE A country area, an administrative unit, a NUTS region."""@en ;
     skos:prefLabel "AreaStatisticalUnit"@en .
 
-ksa-ft:ObservableProperty a owl:Class,
+popDemo:ObservableProperty a owl:Class,
         skos:Concept ;
     rdfs:label "Observable Property"@en ;
     skos:definition "The Observable Property represents a single observable property, for example, 'temperature'. It may have associations to additional constraints or measures that make it more complex, e.g. 'daily mean temperature'."@en ;
     skos:prefLabel "Observable Property"@en .
 
-<https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/hasSimpleResult> a owl:DatatypeProperty,
+popDemo-att:hasSimpleResult a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "hasSimpleResult"@en ;
-    rdfs:domain ksa-ft:DemographicObservation ;
+    rdfs:domain popDemo:DemographicObservation ;
     rdfs:range xsd:double ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
+    rdfs:subClassOf popDemo:attribute ;
+    skos:broader popDemo:attribute ;
     skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
     skos:prefLabel "hasSimpleResult"@en .
 
-<https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/value> a owl:DatatypeProperty,
+popDemo-att:value a owl:DatatypeProperty,
         skos:Concept ;
     rdfs:label "value"@en ;
-    rdfs:domain ksa-ft:DemographicObservation ;
+    rdfs:domain popDemo:DemographicObservation ;
     rdfs:range xsd:double ;
-    rdfs:subClassOf <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
-    skos:broader <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> ;
+    rdfs:subClassOf popDemo:attribute ;
+    skos:broader popDemo:attribute ;
     skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
     skos:prefLabel "value"@en .
-
-ksa-ft:DemographicObservation a owl:Class,
-        skos:Concept ;
-    rdfs:label "DemographicObservation"@en ;
-    ogc-ft:hasProperty <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/hasSimpleResult>,
-        <https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute/value> ;
-    rdfs:subClassOf ksa-ft:StatisticalObservation ;
-    skos:broader ksa-ft:StatisticalObservation ;
-    skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
-    skos:prefLabel "DemographicObservation"@en .
 
 ksa-ft:PopulationandDemographicsTheme a skos:ConceptScheme ;
     rdfs:label "Population and Demographics Theme"@en ;
     skos:prefLabel "Population and Demographics Theme"@en .
 
-<https://w3id.org/ksa/feature-types/PopulationandDemographicsTheme/attribute> a owl:Class,
+popDemo:DemographicObservation a owl:Class,
+        skos:Concept ;
+    rdfs:label "DemographicObservation"@en ;
+    ogc-ft:hasProperty popDemo-att:hasSimpleResult,
+        popDemo-att:value ;
+    rdfs:subClassOf ksa-ft:StatisticalObservation ;
+    skos:broader ksa-ft:StatisticalObservation ;
+    skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
+    skos:prefLabel "DemographicObservation"@en .
+
+popDemo:attribute a owl:Class,
         skos:Concept ;
     rdfs:label "Population and Demographics Theme attribute"@en ;
     skos:inScheme ksa-ft:PopulationandDemographicsTheme ;
